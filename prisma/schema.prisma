@@ -61,3 +61,10 @@ model PricingRule {
   active      Boolean  @default(true)
   createdAt   DateTime @default(now())
 }
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String   // bcrypt hash
+  createdAt DateTime @default(now())
+}

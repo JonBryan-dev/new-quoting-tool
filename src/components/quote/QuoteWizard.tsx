@@ -7,6 +7,8 @@ import { useQuoteStore } from "@/lib/store";
 import ProgressBar from "./ProgressBar";
 import FuelTypeStep from "./steps/FuelTypeStep";
 import CurrentTypeStep from "./steps/CurrentTypeStep";
+import FlueTypeStep from "./steps/FlueTypeStep";
+import BoilerAgeStep from "./steps/BoilerAgeStep";
 import WorkingStep from "./steps/WorkingStep";
 import RelocateStep from "./steps/RelocateStep";
 import PropertyTypeStep from "./steps/PropertyTypeStep";
@@ -20,6 +22,8 @@ interface QuoteWizardProps {
 const BOILER_STEPS = [
   { label: "Fuel", component: FuelTypeStep },
   { label: "Type", component: CurrentTypeStep },
+  { label: "Flue", component: FlueTypeStep },
+  { label: "Age", component: BoilerAgeStep },
   { label: "Working", component: WorkingStep },
   { label: "Relocate", component: RelocateStep },
   { label: "Property", component: PropertyTypeStep },
@@ -51,6 +55,8 @@ export default function QuoteWizard({ category }: QuoteWizardProps) {
         category: answers.category,
         fuelType: answers.fuelType || "",
         currentType: answers.currentType || "",
+        flueType: answers.flueType || "",
+        boilerAge: answers.boilerAge || "",
         isWorking: answers.isWorking === null ? "" : String(answers.isWorking),
         relocate: answers.relocate === null ? "" : String(answers.relocate),
         propertyType: answers.propertyType || "",

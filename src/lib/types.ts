@@ -27,6 +27,8 @@ export interface QuoteAnswers {
   category: string;
   fuelType: string;
   currentType: string;
+  flueType: string;
+  boilerAge: string;
   isWorking: boolean | null;
   relocate: boolean | null;
   propertyType: string;
@@ -52,6 +54,7 @@ export interface QuoteResult {
   totalPrice: number;
   monthlyPrice: number;
   breakdown: PriceBreakdown;
+  recommendationScore?: number;
 }
 
 export interface HeatPumpQuote {

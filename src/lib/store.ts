@@ -17,6 +17,8 @@ const defaultAnswers: QuoteAnswers = {
   category: "",
   fuelType: "",
   currentType: "",
+  flueType: "",
+  boilerAge: "",
   isWorking: null,
   relocate: null,
   propertyType: "",

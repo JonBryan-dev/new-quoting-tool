@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getProductsByCategory } from "@/lib/products";
+import { getAdminConfig } from "@/lib/admin-config";
 import { buildQuoteResults, getRecommendedKw } from "@/lib/pricing";
 import type { QuoteAnswers } from "@/lib/types";
 
@@ -11,7 +11,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Category is required" }, { status: 400 });
     }
 
-    const products = getProductsByCategory(answers.category);
+    // Pull the latest products from the admin config (so admin changes are live)
+    const config = getAdminConfig();
+    const products = config.products.filter((p) => p.category === answers.category);
+
     const recommendedKw = getRecommendedKw(answers);
     const results = buildQuoteResults(products, answers);
 

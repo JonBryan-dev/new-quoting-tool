@@ -1,5 +1,5 @@
-// Database client - connects when DATABASE_URL is available
-// Uses Prisma Accelerate URL if available, falls back to direct DATABASE_URL
+// Database client - connects when PRISMA_ACCELERATE_URL is available
+// Prisma v7 requires `accelerateUrl` (not `datasourceUrl`)
 
 let prisma: any = null;
 
@@ -8,10 +8,13 @@ export async function getDb() {
 
   try {
     const { PrismaClient } = await import("@/generated/prisma/client");
-    // Use Accelerate URL on Vercel, direct URL locally
-    const url = process.env.PRISMA_ACCELERATE_URL || process.env.DATABASE_URL;
+    const accelerateUrl = process.env.PRISMA_ACCELERATE_URL;
+    if (!accelerateUrl) {
+      console.warn("PRISMA_ACCELERATE_URL not set — database unavailable");
+      return null;
+    }
     prisma = new PrismaClient({
-      datasourceUrl: url,
+      accelerateUrl,
     } as any);
     return prisma;
   } catch {

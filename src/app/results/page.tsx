@@ -20,6 +20,8 @@ function ResultsContent() {
     category: searchParams.get("category") || "boiler",
     fuelType: searchParams.get("fuelType") || "",
     currentType: searchParams.get("currentType") || "",
+    flueType: searchParams.get("flueType") || "",
+    boilerAge: searchParams.get("boilerAge") || "",
     isWorking: searchParams.get("isWorking") === "" ? null : searchParams.get("isWorking") === "true",
     relocate: searchParams.get("relocate") === "" ? null : searchParams.get("relocate") === "true",
     propertyType: searchParams.get("propertyType") || "",
@@ -58,6 +60,9 @@ function ResultsContent() {
     if (sortBy === "warranty") return b.product.warranty - a.product.warranty;
     return 0;
   });
+
+  // The boiler with the highest recommendation score (already first in the default results)
+  const topRecommendedId = results.length > 0 ? results[0].product.id : null;
 
   const handleSelect = (result: QuoteResult) => {
     router.push(
@@ -132,6 +137,16 @@ function ResultsContent() {
                 {answers.currentType}
               </span>
             )}
+            {answers.flueType && answers.flueType !== "unsure" && (
+              <span className="bg-white text-blue-700 px-3 py-1 rounded-full border border-blue-200 capitalize">
+                {answers.flueType} flue
+              </span>
+            )}
+            {answers.boilerAge && answers.boilerAge !== "unsure" && (
+              <span className="bg-white text-blue-700 px-3 py-1 rounded-full border border-blue-200">
+                {answers.boilerAge} years old
+              </span>
+            )}
             {answers.relocate === true && (
               <span className="bg-white text-blue-700 px-3 py-1 rounded-full border border-blue-200">
                 Relocating
@@ -174,7 +189,7 @@ function ResultsContent() {
             <ProductCard
               key={result.product.id}
               result={result}
-              recommended={index === 0 && sortBy === "price"}
+              recommended={result.product.id === topRecommendedId}
               onSelect={handleSelect}
             />
           ))}
