@@ -1,5 +1,5 @@
 // Database client - connects when DATABASE_URL is available
-// The quoting engine works without a DB; the DB is used to persist submitted quotes
+// Uses Prisma Accelerate URL if available, falls back to direct DATABASE_URL
 
 let prisma: any = null;
 
@@ -8,8 +8,10 @@ export async function getDb() {
 
   try {
     const { PrismaClient } = await import("@/generated/prisma/client");
+    // Use Accelerate URL on Vercel, direct URL locally
+    const url = process.env.PRISMA_ACCELERATE_URL || process.env.DATABASE_URL;
     prisma = new PrismaClient({
-      datasourceUrl: process.env.DATABASE_URL,
+      datasourceUrl: url,
     } as any);
     return prisma;
   } catch {
