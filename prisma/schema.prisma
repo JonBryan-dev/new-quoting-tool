@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  brand       String
+  category    String   // boiler, solar, aircon, battery, heatpump, ev-charger
+  type        String   // combi, system, regular, panel, split, etc.
+  description String
+  imageUrl    String?
+  basePrice   Float
+  efficiency  String?  // e.g., "94%", "A++"
+  warranty    Int      // years
+  kw          Float?   // power output
+  features    String[] // array of feature strings
+  popular     Boolean  @default(false)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  quotes      Quote[]
+}
+
+model Quote {
+  id              String   @id @default(cuid())
+  category        String
+  fuelType        String?
+  currentType     String?
+  isWorking       Boolean?
+  relocate        Boolean?
+  propertyType    String?
+  bedrooms        Int?
+  bathrooms       Int?
+  postcode        String?
+  email           String?
+  phone           String?
+  name            String?
+  totalPrice      Float?
+  installPrice    Float?
+  status          String   @default("pending") // pending, accepted, completed
+  productId       String?
+  product         Product? @relation(fields: [productId], references: [id])
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model PricingRule {
+  id          String   @id @default(cuid())
+  category    String
+  ruleType    String   // base_install, relocation, complexity, property_modifier
+  condition   String   // JSON string of conditions
+  adjustment  Float    // price adjustment (positive or negative)
+  isPercent   Boolean  @default(false)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}

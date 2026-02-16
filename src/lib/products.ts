@@ -1,0 +1,150 @@
+import type { Product, CategoryInfo } from "./types";
+
+export const categories: CategoryInfo[] = [
+  {
+    id: "boiler",
+    name: "Boilers",
+    description: "Gas & oil boiler installation with next-day fitting available",
+    icon: "Flame",
+    color: "#ef4444",
+    startingFrom: 1595,
+  },
+];
+
+export const sampleProducts: Product[] = [
+  // ── BOILERS ─────────────────────────────────────────────
+  {
+    id: "boiler-1",
+    name: "NCB 700 28kW",
+    brand: "Navien",
+    category: "boiler",
+    type: "combi",
+    description: "Reliable and affordable combi boiler with stainless steel heat exchanger. Great value for money with a compact, lightweight design.",
+    imageUrl: null,
+    basePrice: 1595,
+    efficiency: "92%",
+    warranty: 5,
+    kw: 28,
+    features: ["Stainless steel exchanger", "Lightweight design", "Affordable", "Quick installation"],
+    popular: false,
+  },
+  {
+    id: "boiler-2",
+    name: "EcoTec Plus 830i",
+    brand: "Vaillant",
+    category: "boiler",
+    type: "combi",
+    description: "High-efficiency combi boiler perfect for small to medium homes. Compact design with built-in weather compensation for maximum savings.",
+    imageUrl: null,
+    basePrice: 1795,
+    efficiency: "94%",
+    warranty: 5,
+    kw: 28,
+    features: ["Compact design", "Weather compensation", "Low NOx emissions", "Easy to maintain"],
+    popular: false,
+  },
+  {
+    id: "boiler-3",
+    name: "Logic Max Combi C35",
+    brand: "Ideal",
+    category: "boiler",
+    type: "combi",
+    description: "Powerful combi boiler ideal for larger homes with multiple bathrooms. Excellent hot water flow rate and built-in frost protection.",
+    imageUrl: null,
+    basePrice: 1999,
+    efficiency: "93%",
+    warranty: 7,
+    kw: 35,
+    features: ["High flow rate", "Built-in frost protection", "Easy install", "Compact footprint"],
+    popular: false,
+  },
+  {
+    id: "boiler-4",
+    name: "Greenstar 8000 Life",
+    brand: "Worcester Bosch",
+    category: "boiler",
+    type: "combi",
+    description: "Premium combi boiler with top-of-the-range efficiency and a sleek modern design. Smart thermostat compatible with ultra-quiet operation.",
+    imageUrl: null,
+    basePrice: 2299,
+    efficiency: "94%",
+    warranty: 10,
+    kw: 30,
+    features: ["Smart thermostat ready", "10-year warranty", "Ultra-quiet operation", "Hydrogen blend ready"],
+    popular: true,
+  },
+  {
+    id: "boiler-5",
+    name: "EcoTec Exclusive 843",
+    brand: "Vaillant",
+    category: "boiler",
+    type: "combi",
+    description: "Top-tier premium boiler with Green iQ technology. Maximum efficiency with smart connectivity built in and remote diagnostics.",
+    imageUrl: null,
+    basePrice: 2799,
+    efficiency: "98%",
+    warranty: 12,
+    kw: 43,
+    features: ["Green iQ technology", "12-year warranty", "Remote diagnostics", "Maximum efficiency"],
+    popular: true,
+  },
+  {
+    id: "boiler-6",
+    name: "Greenstar 8000 Life System",
+    brand: "Worcester Bosch",
+    category: "boiler",
+    type: "system",
+    description: "Premium system boiler for homes with a hot water cylinder. Perfect for larger households with high hot water demand.",
+    imageUrl: null,
+    basePrice: 2199,
+    efficiency: "94%",
+    warranty: 10,
+    kw: 30,
+    features: ["System boiler", "10-year warranty", "High output", "Smart compatible"],
+    popular: false,
+  },
+
+  // ── HEAT PUMPS (for upsell at the end) ──────────────────
+  {
+    id: "heatpump-1",
+    name: "Arotherm Plus 7kW",
+    brand: "Vaillant",
+    category: "heatpump",
+    type: "air-source",
+    description: "Air source heat pump with natural refrigerant. Eligible for the £7,500 Boiler Upgrade Scheme grant. Ultra-quiet operation.",
+    imageUrl: null,
+    basePrice: 7999,
+    efficiency: "A+++",
+    warranty: 7,
+    kw: 7,
+    features: ["£7,500 BUS grant eligible", "Natural refrigerant", "Ultra quiet", "Smart controls"],
+    popular: false,
+  },
+  {
+    id: "heatpump-2",
+    name: "Vitocal 150-A",
+    brand: "Viessmann",
+    category: "heatpump",
+    type: "air-source",
+    description: "Premium air source heat pump with exceptional COP rating. Suitable for larger homes with underfloor heating.",
+    imageUrl: null,
+    basePrice: 9999,
+    efficiency: "A+++",
+    warranty: 10,
+    kw: 10,
+    features: ["High COP rating", "£7,500 BUS grant eligible", "Underfloor compatible", "10-year warranty"],
+    popular: true,
+  },
+];
+
+export function getProductsByCategory(category: string): Product[] {
+  return sampleProducts.filter((p) => p.category === category);
+}
+
+export function getProductById(id: string): Product | undefined {
+  return sampleProducts.find((p) => p.id === id);
+}
+
+export function getHeatPumpProducts(): Product[] {
+  return sampleProducts.filter((p) => p.category === "heatpump");
+}
