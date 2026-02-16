@@ -25,7 +25,7 @@ export default function BedroomsStep() {
             onClick={() => handleSelect(num)}
             className={`py-6 px-4 rounded-xl border-2 text-center transition-all duration-200 hover:shadow-md ${
               answers.bedrooms === num
-                ? "border-[#1a56db] bg-blue-50 text-[#1a56db] shadow-md"
+                ? "border-[#144E82] bg-blue-50 text-[#144E82] shadow-md"
                 : "border-gray-200 bg-white text-gray-700 hover:border-gray-300"
             }`}
           >

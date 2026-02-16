@@ -41,7 +41,7 @@ export default function AdminLoginPage() {
       <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 w-full max-w-sm">
         {/* Icon */}
         <div className="flex justify-center mb-6">
-          <div className="w-14 h-14 bg-[#1a56db] rounded-2xl flex items-center justify-center">
+          <div className="w-14 h-14 bg-[#144E82] rounded-2xl flex items-center justify-center">
             <Lock className="w-7 h-7 text-white" />
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
               required
               autoFocus
               autoComplete="username"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
               placeholder="Enter your username"
             />
           </div>
@@ -87,7 +87,7 @@ export default function AdminLoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               autoComplete="current-password"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
               placeholder="Enter your password"
             />
           </div>
@@ -95,7 +95,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-[#1a56db] text-white text-sm font-semibold rounded-xl hover:bg-[#1642a3] disabled:opacity-50 transition-colors"
+            className="w-full py-3 bg-[#144E82] text-white text-sm font-semibold rounded-xl hover:bg-[#0e3a63] disabled:opacity-50 transition-colors"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>

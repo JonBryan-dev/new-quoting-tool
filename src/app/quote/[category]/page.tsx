@@ -17,7 +17,7 @@ export default function QuotePage() {
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Category not found</h1>
           <p className="text-gray-500 mb-4">The category you&apos;re looking for doesn&apos;t exist.</p>
-          <Link href="/" className="text-[#1a56db] hover:underline font-medium">
+          <Link href="/" className="text-[#144E82] hover:underline font-medium">
             Go back home
           </Link>
         </div>

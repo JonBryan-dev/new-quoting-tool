@@ -24,7 +24,7 @@ function CheckoutContent() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Product not found</h1>
-          <Link href="/" className="text-[#1a56db] hover:underline">Go back home</Link>
+          <Link href="/" className="text-[#144E82] hover:underline">Go back home</Link>
         </div>
       </div>
     );
@@ -81,7 +81,7 @@ function CheckoutContent() {
             </div>
             <Link
               href="/"
-              className="inline-block bg-[#1a56db] hover:bg-[#1642a3] text-white px-6 py-3 rounded-xl font-medium transition-colors"
+              className="inline-block bg-[#144E82] hover:bg-[#0e3a63] text-white px-6 py-3 rounded-xl font-medium transition-colors"
             >
               Back to home
             </Link>
@@ -165,7 +165,7 @@ function CheckoutContent() {
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="John Smith"
                   />
                 </div>
@@ -176,7 +176,7 @@ function CheckoutContent() {
                     required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -187,7 +187,7 @@ function CheckoutContent() {
                     required
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="07123 456789"
                   />
                 </div>
@@ -198,7 +198,7 @@ function CheckoutContent() {
                     required
                     value={form.postcode}
                     onChange={(e) => setForm({ ...form, postcode: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                     placeholder="SW1A 1AA"
                   />
                 </div>
@@ -208,7 +208,7 @@ function CheckoutContent() {
                   className={`w-full py-4 rounded-xl font-semibold text-lg transition-colors mt-4 text-white ${
                     isHeatPump
                       ? "bg-purple-600 hover:bg-purple-700"
-                      : "bg-[#1a56db] hover:bg-[#1642a3]"
+                      : "bg-[#144E82] hover:bg-[#0e3a63]"
                   }`}
                 >
                   Submit {isHeatPump ? "Heat Pump" : "Boiler"} Quote Request
@@ -313,7 +313,7 @@ export default function CheckoutPage() {
     <Suspense
       fallback={
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-          <div className="w-12 h-12 border-4 border-[#1a56db] border-t-transparent rounded-full animate-spin" />
+          <div className="w-12 h-12 border-4 border-[#144E82] border-t-transparent rounded-full animate-spin" />
         </div>
       }
     >

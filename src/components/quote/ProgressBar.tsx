@@ -15,7 +15,7 @@ export default function ProgressBar({ currentStep, totalSteps, stepLabels }: Pro
       <div className="relative mb-6">
         <div className="h-2 bg-gray-200 rounded-full">
           <div
-            className="h-2 bg-[#1a56db] rounded-full transition-all duration-500 ease-out"
+            className="h-2 bg-[#144E82] rounded-full transition-all duration-500 ease-out"
             style={{ width: `${((currentStep + 1) / totalSteps) * 100}%` }}
           />
         </div>
@@ -28,9 +28,9 @@ export default function ProgressBar({ currentStep, totalSteps, stepLabels }: Pro
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-300 ${
                 index < currentStep
-                  ? "bg-[#1a56db] text-white"
+                  ? "bg-[#144E82] text-white"
                   : index === currentStep
-                  ? "bg-[#1a56db] text-white ring-4 ring-blue-100"
+                  ? "bg-[#144E82] text-white ring-4 ring-blue-100"
                   : "bg-gray-200 text-gray-500"
               }`}
             >
@@ -38,7 +38,7 @@ export default function ProgressBar({ currentStep, totalSteps, stepLabels }: Pro
             </div>
             <span
               className={`text-xs mt-1 ${
-                index <= currentStep ? "text-[#1a56db] font-medium" : "text-gray-400"
+                index <= currentStep ? "text-[#144E82] font-medium" : "text-gray-400"
               }`}
             >
               {label}

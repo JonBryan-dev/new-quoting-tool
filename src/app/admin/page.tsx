@@ -120,7 +120,7 @@ export default function AdminPage() {
   if (loading || !config) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="w-10 h-10 border-4 border-[#1a56db] border-t-transparent rounded-full animate-spin" />
+        <div className="w-10 h-10 border-4 border-[#144E82] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -132,7 +132,7 @@ export default function AdminPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#1a56db] rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#144E82] rounded-xl flex items-center justify-center">
                 <Settings className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -163,7 +163,7 @@ export default function AdminPage() {
               </button>
               <a
                 href="/"
-                className="flex items-center gap-2 px-4 py-2 text-sm bg-[#1a56db] text-white rounded-lg hover:bg-[#1642a3]"
+                className="flex items-center gap-2 px-4 py-2 text-sm bg-[#144E82] text-white rounded-lg hover:bg-[#0e3a63]"
               >
                 View Live Site
               </a>
@@ -194,7 +194,7 @@ export default function AdminPage() {
               onClick={() => setTab(key)}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 tab === key
-                  ? "bg-[#1a56db] text-white"
+                  ? "bg-[#144E82] text-white"
                   : "text-gray-600 hover:bg-gray-100"
               }`}
             >
@@ -300,7 +300,7 @@ function ProductsTab({
           <button
             onClick={() => onSave(products)}
             disabled={saving}
-            className="flex items-center gap-2 px-4 py-2 bg-[#1a56db] text-white text-sm rounded-lg hover:bg-[#1642a3] disabled:opacity-50"
+            className="flex items-center gap-2 px-4 py-2 bg-[#144E82] text-white text-sm rounded-lg hover:bg-[#0e3a63] disabled:opacity-50"
           >
             <Save className="w-4 h-4" />
             {saving ? "Saving..." : "Save All Changes"}
@@ -378,7 +378,7 @@ function ProductsTab({
                   <textarea
                     value={product.description}
                     onChange={(e) => handleFieldChange(product.id, "description", e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none"
                     rows={2}
                   />
                 </div>
@@ -395,7 +395,7 @@ function ProductsTab({
                         e.target.value.split(",").map((f) => f.trim()).filter(Boolean)
                       )
                     }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none"
                   />
                 </div>
 
@@ -457,7 +457,7 @@ function PricingTab({
         <button
           onClick={() => onSave(pricing)}
           disabled={saving}
-          className="flex items-center gap-2 px-4 py-2 bg-[#1a56db] text-white text-sm rounded-lg hover:bg-[#1642a3] disabled:opacity-50"
+          className="flex items-center gap-2 px-4 py-2 bg-[#144E82] text-white text-sm rounded-lg hover:bg-[#0e3a63] disabled:opacity-50"
         >
           <Save className="w-4 h-4" />
           {saving ? "Saving..." : "Save Changes"}
@@ -629,7 +629,7 @@ function QuizTab({
         <button
           onClick={() => onSave(steps)}
           disabled={saving}
-          className="flex items-center gap-2 px-4 py-2 bg-[#1a56db] text-white text-sm rounded-lg hover:bg-[#1642a3] disabled:opacity-50"
+          className="flex items-center gap-2 px-4 py-2 bg-[#144E82] text-white text-sm rounded-lg hover:bg-[#0e3a63] disabled:opacity-50"
         >
           <Save className="w-4 h-4" />
           {saving ? "Saving..." : "Save Changes"}
@@ -645,7 +645,7 @@ function QuizTab({
               onClick={() => setExpandedId(expandedId === step.id ? null : step.id)}
             >
               <div className="flex items-center gap-4">
-                <div className="w-8 h-8 bg-[#1a56db] text-white rounded-lg flex items-center justify-center text-sm font-bold">
+                <div className="w-8 h-8 bg-[#144E82] text-white rounded-lg flex items-center justify-center text-sm font-bold">
                   {index + 1}
                 </div>
                 <div>
@@ -707,21 +707,21 @@ function QuizTab({
                           value={option.value}
                           onChange={(e) => handleOptionChange(step.id, optIndex, "value", e.target.value)}
                           placeholder="Value"
-                          className="px-2 py-1.5 border border-gray-300 rounded text-sm focus:border-[#1a56db] outline-none"
+                          className="px-2 py-1.5 border border-gray-300 rounded text-sm focus:border-[#144E82] outline-none"
                         />
                         <input
                           type="text"
                           value={option.label}
                           onChange={(e) => handleOptionChange(step.id, optIndex, "label", e.target.value)}
                           placeholder="Label"
-                          className="px-2 py-1.5 border border-gray-300 rounded text-sm focus:border-[#1a56db] outline-none"
+                          className="px-2 py-1.5 border border-gray-300 rounded text-sm focus:border-[#144E82] outline-none"
                         />
                         <input
                           type="text"
                           value={option.description}
                           onChange={(e) => handleOptionChange(step.id, optIndex, "description", e.target.value)}
                           placeholder="Description"
-                          className="px-2 py-1.5 border border-gray-300 rounded text-sm focus:border-[#1a56db] outline-none"
+                          className="px-2 py-1.5 border border-gray-300 rounded text-sm focus:border-[#144E82] outline-none"
                         />
                       </div>
                       <button
@@ -735,7 +735,7 @@ function QuizTab({
                 </div>
                 <button
                   onClick={() => addOption(step.id)}
-                  className="mt-3 flex items-center gap-2 px-3 py-2 text-sm text-[#1a56db] border border-dashed border-[#1a56db] rounded-lg hover:bg-blue-50"
+                  className="mt-3 flex items-center gap-2 px-3 py-2 text-sm text-[#144E82] border border-dashed border-[#144E82] rounded-lg hover:bg-blue-50"
                 >
                   <Plus className="w-4 h-4" />
                   Add Option
@@ -759,7 +759,7 @@ function FieldInput({ label, value, onChange }: { label: string; value: string; 
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none"
+        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none"
       />
     </div>
   );
@@ -784,7 +784,7 @@ function FieldNumber({
         value={value}
         step={step}
         onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none"
+        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none"
       />
     </div>
   );
@@ -807,7 +807,7 @@ function FieldSelect({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#1a56db] focus:ring-2 focus:ring-blue-100 outline-none"
+        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:border-[#144E82] focus:ring-2 focus:ring-blue-100 outline-none"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
@@ -835,7 +835,7 @@ function FieldToggle({
         type="button"
         onClick={() => onChange(!value)}
         className={`relative w-12 h-6 rounded-full transition-colors ${
-          value ? "bg-[#1a56db]" : "bg-gray-300"
+          value ? "bg-[#144E82]" : "bg-gray-300"
         }`}
       >
         <div

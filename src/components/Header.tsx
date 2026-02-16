@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Flame } from "lucide-react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,10 +12,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#1a56db] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">Q</span>
+            <div className="w-10 h-10 bg-[#144E82] rounded-lg flex items-center justify-center">
+              <Flame className="w-5 h-5 text-[#F26430]" />
             </div>
-            <span className="text-xl font-bold text-gray-900">QuoteEngine</span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-bold text-gray-900">
+                Plumb<span className="text-[#F26430]">Gas</span>
+              </span>
+            </div>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -31,15 +35,15 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:08001234567" className="flex items-center gap-2 text-sm text-gray-600">
+            <a href="tel:01785663990" className="flex items-center gap-2 text-sm font-semibold text-[#144E82]">
               <Phone className="w-4 h-4" />
-              0800 123 4567
+              01785 663 990
             </a>
             <Link
               href="/quote/boiler"
-              className="bg-[#1a56db] hover:bg-[#1642a3] text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors"
+              className="bg-[#F26430] hover:bg-[#d94f1a] text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors"
             >
-              Get a Boiler Quote
+              Get a Quote
             </Link>
           </div>
 
@@ -64,15 +68,15 @@ export default function Header() {
             <Link href="/#brands" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
               Our Brands
             </Link>
-            <a href="tel:08001234567" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              0800 123 4567
+            <a href="tel:01785663990" className="block text-[#144E82] font-semibold" onClick={() => setMenuOpen(false)}>
+              01785 663 990
             </a>
             <Link
               href="/quote/boiler"
-              className="block bg-[#1a56db] text-white text-center px-5 py-3 rounded-lg font-medium mt-4"
+              className="block bg-[#F26430] text-white text-center px-5 py-3 rounded-lg font-medium mt-4"
               onClick={() => setMenuOpen(false)}
             >
-              Get a Boiler Quote
+              Get a Quote
             </Link>
           </div>
         </div>

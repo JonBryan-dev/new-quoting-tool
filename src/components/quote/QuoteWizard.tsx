@@ -71,7 +71,7 @@ export default function QuoteWizard({ category }: QuoteWizardProps) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-[#1a56db] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#144E82] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-600 text-lg">Calculating your personalised quote...</p>
         </div>
       </div>

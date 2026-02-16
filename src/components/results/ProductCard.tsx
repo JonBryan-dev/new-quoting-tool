@@ -16,7 +16,7 @@ export default function ProductCard({ result, recommended, onSelect }: ProductCa
     <div
       className={`relative bg-white rounded-2xl border-2 transition-all duration-200 hover:shadow-lg ${
         recommended
-          ? "border-[#1a56db] shadow-md"
+          ? "border-[#144E82] shadow-md"
           : product.popular
           ? "border-orange-300"
           : "border-gray-200"
@@ -24,7 +24,7 @@ export default function ProductCard({ result, recommended, onSelect }: ProductCa
     >
       {recommended && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span className="bg-[#1a56db] text-white text-xs font-bold px-4 py-1 rounded-full">
+          <span className="bg-[#144E82] text-white text-xs font-bold px-4 py-1 rounded-full">
             RECOMMENDED FOR YOU
           </span>
         </div>
@@ -91,7 +91,7 @@ export default function ProductCard({ result, recommended, onSelect }: ProductCa
             <span className="text-sm text-gray-500">
               or from
             </span>
-            <span className="text-base font-semibold text-[#1a56db]">
+            <span className="text-base font-semibold text-[#144E82]">
               &pound;{monthlyPrice.toFixed(2)}/mo
             </span>
           </div>
@@ -129,7 +129,7 @@ export default function ProductCard({ result, recommended, onSelect }: ProductCa
             onClick={() => onSelect(result)}
             className={`w-full py-3 rounded-xl font-semibold text-sm transition-all ${
               recommended
-                ? "bg-[#1a56db] hover:bg-[#1642a3] text-white"
+                ? "bg-[#144E82] hover:bg-[#0e3a63] text-white"
                 : "bg-gray-100 hover:bg-gray-200 text-gray-900"
             }`}
           >

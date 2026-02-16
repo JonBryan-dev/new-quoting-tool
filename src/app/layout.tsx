@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
+const ubuntu = Ubuntu({
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-ubuntu",
 });
 
 export const metadata: Metadata = {
-  title: "QuoteEngine - Instant Fixed-Price Quotes",
-  description: "Get instant fixed-price quotes for boilers, solar panels, air conditioning, battery storage, heat pumps, and EV chargers.",
+  title: "PlumbGas - Independent Plumbing & Heating | Stafford, Stone & Uttoxeter",
+  description: "Get a fixed-price boiler or heat pump quote in 90 seconds. Gas Safe registered engineers, Which? Trusted Traders. Serving Stafford, Stone & Uttoxeter since 2003.",
 };
 
 export default function RootLayout({
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased font-sans`}>
+      <body className={`${ubuntu.variable} antialiased font-sans`}>
         <Header />
         <main>{children}</main>
         <Footer />
