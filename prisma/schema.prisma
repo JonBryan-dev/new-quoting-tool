@@ -62,6 +62,29 @@ model PricingRule {
   createdAt   DateTime @default(now())
 }
 
+model SurveyBooking {
+  id            String   @id @default(cuid())
+  name          String
+  email         String
+  phone         String
+  addressLine   String?
+  postcode      String
+  preferredDate String?  // ISO date string chosen by the customer
+  timeSlot      String?  // am, pm, either
+  notes         String?
+  source        String?  // estimate, boiler-results, homepage, direct
+  productId     String?
+  productName   String?
+  quotedPrice   Float?
+  priceBeforeGrant Float?
+  propertyType  String?
+  bedrooms      Int?
+  bathrooms     Int?
+  status        String   @default("new") // new, contacted, booked, surveyed, quoted, won, lost
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
 model AdminUser {
   id        String   @id @default(cuid())
   username  String   @unique

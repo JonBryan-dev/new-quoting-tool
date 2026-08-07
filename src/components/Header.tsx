@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Phone, Flame } from "lucide-react";
+import { Menu, X, Phone, Leaf } from "lucide-react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,24 +13,28 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-[#144E82] rounded-lg flex items-center justify-center">
-              <Flame className="w-5 h-5 text-[#F26430]" />
+              <Leaf className="w-5 h-5 text-[#7ee2a8]" />
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-xl font-bold text-gray-900">
-                Plumb<span className="text-[#F26430]">Gas</span>
+                Plumb<span className="text-[#F26430]">Gas</span>{" "}
+                <span className="text-[#1C834B]">Renewables</span>
               </span>
             </div>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/quote/boiler" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              Boiler Quotes
+            <Link href="/quote/heatpump" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+              Instant Estimate
             </Link>
             <Link href="/#how-it-works" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
               How It Works
             </Link>
-            <Link href="/#brands" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              Our Brands
+            <Link href="/#coverage" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+              Areas We Cover
+            </Link>
+            <Link href="/quote/boiler" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+              Boilers
             </Link>
           </nav>
 
@@ -40,10 +44,10 @@ export default function Header() {
               01785 663 990
             </a>
             <Link
-              href="/quote/boiler"
-              className="bg-[#F26430] hover:bg-[#d94f1a] text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors"
+              href="/book"
+              className="bg-[#1C834B] hover:bg-[#166a3c] text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors"
             >
-              Get a Quote
+              Book Free Survey
             </Link>
           </div>
 
@@ -59,24 +63,27 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-4 space-y-3">
-            <Link href="/quote/boiler" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              Boiler Quotes
+            <Link href="/quote/heatpump" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
+              Instant Estimate
             </Link>
             <Link href="/#how-it-works" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
               How It Works
             </Link>
-            <Link href="/#brands" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              Our Brands
+            <Link href="/#coverage" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
+              Areas We Cover
+            </Link>
+            <Link href="/quote/boiler" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
+              Boilers
             </Link>
             <a href="tel:01785663990" className="block text-[#144E82] font-semibold" onClick={() => setMenuOpen(false)}>
               01785 663 990
             </a>
             <Link
-              href="/quote/boiler"
-              className="block bg-[#F26430] text-white text-center px-5 py-3 rounded-lg font-medium mt-4"
+              href="/book"
+              className="block bg-[#1C834B] text-white text-center px-5 py-3 rounded-lg font-medium mt-4"
               onClick={() => setMenuOpen(false)}
             >
-              Get a Quote
+              Book Free Survey
             </Link>
           </div>
         </div>

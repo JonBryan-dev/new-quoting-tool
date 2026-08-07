@@ -59,7 +59,7 @@ export default function AdminPage() {
   const [config, setConfig] = useState<AdminConfig | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [tab, setTab] = useState<"products" | "pricing" | "quiz">("products");
+  const [tab, setTab] = useState<"leads" | "products" | "pricing" | "quiz">("leads");
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [adminUser, setAdminUser] = useState<string>("");
 
@@ -185,6 +185,7 @@ export default function AdminPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="flex gap-1 bg-white rounded-xl border border-gray-200 p-1 w-fit">
           {[
+            { key: "leads" as const, label: "Leads", icon: User },
             { key: "products" as const, label: "Products", icon: Package },
             { key: "pricing" as const, label: "Pricing", icon: DollarSign },
             { key: "quiz" as const, label: "Quiz Options", icon: ClipboardList },
@@ -207,6 +208,7 @@ export default function AdminPage() {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {tab === "leads" && <LeadsTab />}
         {tab === "products" && (
           <ProductsTab
             products={config.products}
@@ -227,6 +229,198 @@ export default function AdminPage() {
             onSave={(steps) => saveSection("quizSteps", steps)}
             saving={saving}
           />
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── LEADS TAB ──────────────────────────────────────────────
+
+interface LeadBooking {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  addressLine: string | null;
+  postcode: string;
+  preferredDate: string | null;
+  timeSlot: string | null;
+  notes: string | null;
+  source: string | null;
+  productName: string | null;
+  quotedPrice: number | null;
+  propertyType: string | null;
+  bedrooms: number | null;
+  bathrooms: number | null;
+  status: string;
+  createdAt: string;
+}
+
+interface LeadQuote {
+  id: string;
+  category: string;
+  name: string | null;
+  email: string | null;
+  phone: string | null;
+  postcode: string | null;
+  totalPrice: number | null;
+  status: string;
+  createdAt: string;
+}
+
+function LeadsTab() {
+  const [loading, setLoading] = useState(true);
+  const [dbAvailable, setDbAvailable] = useState(true);
+  const [bookings, setBookings] = useState<LeadBooking[]>([]);
+  const [quotes, setQuotes] = useState<LeadQuote[]>([]);
+
+  useEffect(() => {
+    fetch("/api/admin/bookings")
+      .then((r) => r.json())
+      .then((d) => {
+        setDbAvailable(d.dbAvailable !== false);
+        setBookings(d.bookings || []);
+        setQuotes(d.quotes || []);
+      })
+      .catch(() => setDbAvailable(false))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="w-10 h-10 border-4 border-[#144E82] border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (!dbAvailable) {
+    return (
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 text-sm text-yellow-800">
+        The database isn&apos;t connected in this environment, so leads can&apos;t be listed here.
+        Check the PRISMA_DATABASE_URL environment variable in Vercel.
+      </div>
+    );
+  }
+
+  const fmtDate = (iso: string) =>
+    new Date(iso).toLocaleString("en-GB", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" });
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <h2 className="text-lg font-bold text-gray-900 mb-1">Survey bookings</h2>
+        <p className="text-sm text-gray-500 mb-4">
+          Free heat loss survey requests from the website. Call each lead back within 1 working day.
+        </p>
+        {bookings.length === 0 ? (
+          <div className="bg-white border border-gray-200 rounded-xl p-8 text-center text-sm text-gray-500">
+            No survey bookings yet.
+          </div>
+        ) : (
+          <div className="overflow-x-auto bg-white border border-gray-200 rounded-xl">
+            <table className="min-w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-200 text-left text-xs text-gray-500 uppercase">
+                  <th className="px-4 py-3">Received</th>
+                  <th className="px-4 py-3">Name</th>
+                  <th className="px-4 py-3">Contact</th>
+                  <th className="px-4 py-3">Address</th>
+                  <th className="px-4 py-3">Preferred</th>
+                  <th className="px-4 py-3">Interested in</th>
+                  <th className="px-4 py-3">Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                {bookings.map((b) => (
+                  <tr key={b.id} className="border-b border-gray-100 last:border-0 align-top">
+                    <td className="px-4 py-3 whitespace-nowrap text-gray-500">{fmtDate(b.createdAt)}</td>
+                    <td className="px-4 py-3 font-medium text-gray-900">{b.name}</td>
+                    <td className="px-4 py-3">
+                      <a href={`tel:${b.phone}`} className="text-[#144E82] font-medium block">{b.phone}</a>
+                      {b.email && <a href={`mailto:${b.email}`} className="text-gray-500 block">{b.email}</a>}
+                    </td>
+                    <td className="px-4 py-3 text-gray-600">
+                      {b.addressLine && <span className="block">{b.addressLine}</span>}
+                      <span className="font-medium">{b.postcode}</span>
+                      {b.propertyType && (
+                        <span className="block text-xs text-gray-400 capitalize">
+                          {b.propertyType}, {b.bedrooms ?? "?"} bed / {b.bathrooms ?? "?"} bath
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
+                      {b.preferredDate || "Any date"}
+                      {b.timeSlot && b.timeSlot !== "either" && (
+                        <span className="block text-xs text-gray-400 uppercase">{b.timeSlot}</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-gray-600">
+                      {b.productName || "—"}
+                      {b.quotedPrice != null && (
+                        <span className="block text-xs text-gray-400">est. £{b.quotedPrice.toLocaleString()}</span>
+                      )}
+                      {b.notes && <span className="block text-xs text-gray-400 mt-1">&ldquo;{b.notes}&rdquo;</span>}
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className="text-xs bg-green-50 text-green-700 px-2 py-1 rounded-full whitespace-nowrap">
+                        {b.source || "direct"}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+
+      <div>
+        <h2 className="text-lg font-bold text-gray-900 mb-1">Quote requests</h2>
+        <p className="text-sm text-gray-500 mb-4">
+          Boiler/heat pump quote submissions saved to the quotes table.
+        </p>
+        {quotes.length === 0 ? (
+          <div className="bg-white border border-gray-200 rounded-xl p-8 text-center text-sm text-gray-500">
+            No quote requests yet.
+          </div>
+        ) : (
+          <div className="overflow-x-auto bg-white border border-gray-200 rounded-xl">
+            <table className="min-w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-200 text-left text-xs text-gray-500 uppercase">
+                  <th className="px-4 py-3">Received</th>
+                  <th className="px-4 py-3">Name</th>
+                  <th className="px-4 py-3">Contact</th>
+                  <th className="px-4 py-3">Postcode</th>
+                  <th className="px-4 py-3">Category</th>
+                  <th className="px-4 py-3">Price</th>
+                  <th className="px-4 py-3">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {quotes.map((q) => (
+                  <tr key={q.id} className="border-b border-gray-100 last:border-0">
+                    <td className="px-4 py-3 whitespace-nowrap text-gray-500">{fmtDate(q.createdAt)}</td>
+                    <td className="px-4 py-3 font-medium text-gray-900">{q.name || "—"}</td>
+                    <td className="px-4 py-3">
+                      {q.phone && <a href={`tel:${q.phone}`} className="text-[#144E82] font-medium block">{q.phone}</a>}
+                      {q.email && <a href={`mailto:${q.email}`} className="text-gray-500 block">{q.email}</a>}
+                    </td>
+                    <td className="px-4 py-3 text-gray-600">{q.postcode || "—"}</td>
+                    <td className="px-4 py-3 text-gray-600 capitalize">{q.category}</td>
+                    <td className="px-4 py-3 text-gray-600">
+                      {q.totalPrice != null ? `£${q.totalPrice.toLocaleString()}` : "—"}
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full">{q.status}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </div>

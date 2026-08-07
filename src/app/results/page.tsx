@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, Filter, SlidersHorizontal } from "lucide-react";
 import ProductCard from "@/components/results/ProductCard";
 import HeatPumpUpsell from "@/components/results/HeatPumpUpsell";
+import HeatPumpResults from "@/components/results/HeatPumpResults";
 import type { QuoteResult, QuoteAnswers } from "@/lib/types";
 import { getRecommendedKw } from "@/lib/pricing";
 
@@ -36,6 +37,11 @@ function ResultsContent() {
   const recommendedKw = getRecommendedKw(answers);
 
   useEffect(() => {
+    // Heat pump results are calculated client-side in HeatPumpResults
+    if (answers.category === "heatpump") {
+      setLoading(false);
+      return;
+    }
     async function fetchResults() {
       try {
         const res = await fetch("/api/quote", {
@@ -54,6 +60,10 @@ function ResultsContent() {
     fetchResults();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  if (answers.category === "heatpump") {
+    return <HeatPumpResults answers={answers} />;
+  }
 
   const sortedResults = [...results].sort((a, b) => {
     if (sortBy === "price") return a.totalPrice - b.totalPrice;

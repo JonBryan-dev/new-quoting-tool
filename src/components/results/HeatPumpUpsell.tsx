@@ -3,119 +3,17 @@
 import { useRouter } from "next/navigation";
 import { Thermometer, Check, ArrowRight, Leaf, PoundSterling, TrendingDown, Home, Zap } from "lucide-react";
 import { getHeatPumpProducts } from "@/lib/products";
-import type { QuoteAnswers, Product } from "@/lib/types";
+import type { QuoteAnswers } from "@/lib/types";
+import {
+  GRANT_AMOUNT,
+  estimateHeatLossKw,
+  pickBestHeatPump,
+  estimateInstallCost,
+  estimateAnnualCosts,
+} from "@/lib/heatpump";
 
 interface HeatPumpUpsellProps {
   answers: QuoteAnswers;
-}
-
-const GRANT_AMOUNT = 7500;
-
-// ── HEAT PUMP SIZING ────────────────────────────────────────
-// Based on property type, bedrooms, bathrooms — estimates the
-// heat loss in kW and picks the best-fit heat pump.
-//
-// Typical UK heat loss estimates:
-//   Flat:           3–5 kW
-//   Terraced:       5–7 kW
-//   Semi-detached:  7–10 kW
-//   Detached:       9–14 kW
-//   Bungalow:       6–9 kW
-//
-// We adjust up for more bedrooms/bathrooms.
-
-function estimateHeatLossKw(answers: QuoteAnswers): number {
-  const bedrooms = answers.bedrooms || 2;
-  const bathrooms = answers.bathrooms || 1;
-
-  // Base heat loss by property type (kW)
-  const baseByProperty: Record<string, number> = {
-    flat: 4,
-    terraced: 6,
-    "semi-detached": 8,
-    detached: 10,
-    bungalow: 7,
-  };
-
-  let kw = baseByProperty[answers.propertyType] || 7;
-
-  // Each bedroom above 2 adds ~1.2kW
-  if (bedrooms > 2) {
-    kw += (bedrooms - 2) * 1.2;
-  }
-
-  // Each bathroom above 1 adds ~0.8kW (hot water demand)
-  if (bathrooms > 1) {
-    kw += (bathrooms - 1) * 0.8;
-  }
-
-  // Slight reduction for small properties
-  if (bedrooms <= 1) {
-    kw *= 0.8;
-  }
-
-  return Math.round(kw * 10) / 10;
-}
-
-function pickBestHeatPump(heatLossKw: number, heatPumps: Product[]): Product {
-  // Pick the smallest heat pump that covers the heat loss
-  // (heat pump kW should be >= estimated heat loss)
-  const sorted = [...heatPumps].sort((a, b) => (a.kw || 0) - (b.kw || 0));
-
-  for (const hp of sorted) {
-    if ((hp.kw || 0) >= heatLossKw) {
-      return hp;
-    }
-  }
-
-  // If nothing's big enough, return the largest
-  return sorted[sorted.length - 1];
-}
-
-// ── INSTALL COST ────────────────────────────────────────────
-// Heat pump install is more complex than boiler — varies by property
-
-function estimateInstallCost(answers: QuoteAnswers): number {
-  const base = 3000; // Base install (pipework, cylinder, controls, commissioning)
-
-  const propertyAdj: Record<string, number> = {
-    flat: -500,        // Simpler, but may need planning for outdoor unit
-    terraced: 0,
-    "semi-detached": 250,
-    detached: 500,     // Longer pipe runs
-    bungalow: 0,
-  };
-
-  const bedroomAdj = Math.max(0, (answers.bedrooms || 2) - 2) * 200;
-
-  return base + (propertyAdj[answers.propertyType] || 0) + bedroomAdj;
-}
-
-// ── ANNUAL RUNNING COST COMPARISON ──────────────────────────
-// Gas boiler: ~90% efficient, gas costs ~7p/kWh
-// Heat pump: COP ~3.0 average, electricity costs ~24.5p/kWh
-// Annual heating demand estimated from heat loss x hours
-
-function estimateAnnualCosts(heatLossKw: number) {
-  // Typical UK home heats ~2,000 hours/year
-  const annualHeatDemandKwh = heatLossKw * 2000;
-
-  // Gas boiler (90% efficient)
-  const gasRate = 0.07;     // £/kWh
-  const boilerEfficiency = 0.90;
-  const gasAnnual = Math.round((annualHeatDemandKwh / boilerEfficiency) * gasRate);
-
-  // Heat pump (COP 3.0 average across the year)
-  const elecRate = 0.245;   // £/kWh
-  const cop = 3.0;
-  const hpAnnual = Math.round((annualHeatDemandKwh / cop) * elecRate);
-
-  return {
-    gasAnnual,
-    hpAnnual,
-    annualSaving: gasAnnual - hpAnnual,
-    annualHeatDemandKwh: Math.round(annualHeatDemandKwh),
-  };
 }
 
 export default function HeatPumpUpsell({ answers }: HeatPumpUpsellProps) {
@@ -135,7 +33,7 @@ export default function HeatPumpUpsell({ answers }: HeatPumpUpsellProps) {
 
   const handleGetQuote = () => {
     router.push(
-      `/checkout?productId=${recommended.id}&total=${afterGrant}&category=heatpump&grant=${GRANT_AMOUNT}&beforeGrant=${totalBeforeGrant}`
+      `/book?productId=${recommended.id}&total=${afterGrant}&grant=${GRANT_AMOUNT}&beforeGrant=${totalBeforeGrant}&propertyType=${answers.propertyType}&bedrooms=${answers.bedrooms}&bathrooms=${answers.bathrooms}&source=boiler-results`
     );
   };
 
@@ -318,7 +216,7 @@ export default function HeatPumpUpsell({ answers }: HeatPumpUpsellProps) {
             onClick={handleGetQuote}
             className="inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
           >
-            Get This Heat Pump Quote
+            Book Your Free Heat Loss Survey
             <ArrowRight className="w-5 h-5" />
           </button>
           <p className="text-sm text-gray-500 self-center">

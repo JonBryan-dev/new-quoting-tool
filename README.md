@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PlumbGas Renewables — Heat Pump Survey & Quoting Site
 
-## Getting Started
+Lead-generation site for [PlumbGas Services](https://www.plumbgas.services): free heat
+loss surveys and air source heat pump quotes across Staffordshire, with the £7,500
+Boiler Upgrade Scheme grant front and centre. Live at
+[www.plumbgasrenewables.services](https://www.plumbgasrenewables.services).
 
-First, run the development server:
+## What the site does
+
+- **Homepage** — heat-pump-first landing page with grant explainer, how-it-works,
+  Staffordshire coverage, and booking CTAs.
+- **/book** — free heat loss survey booking form (the main conversion goal). Leads are
+  saved to the database and optionally emailed/Slacked to the team.
+- **/quote/heatpump** — 3-question instant estimate: sizes a heat pump from property
+  type/bedrooms/bathrooms and shows the price after the £7,500 grant, then pushes to
+  the survey booking.
+- **/quote/boiler** — original 9-step fixed-price boiler quote flow (kept as a
+  secondary offering).
+- **/admin** — password-protected dashboard: **Leads** (survey bookings + quote
+  requests), Products, Pricing and Quiz options.
+
+## Stack
+
+Next.js (App Router) · React · Tailwind CSS 4 · Prisma (PostgreSQL via Prisma
+Accelerate) · Zustand · deployed on Vercel.
+
+## Environment variables (set in Vercel)
+
+| Variable | Required | Purpose |
+|---|---|---|
+| `PRISMA_DATABASE_URL` (or `PRISMA_ACCELERATE_URL`) | Yes, for lead storage | Prisma Accelerate connection string |
+| `JWT_SECRET` | Yes | Signs admin login cookies |
+| `RESEND_API_KEY` | Optional | Emails each new lead via [Resend](https://resend.com) |
+| `LEADS_EMAIL` | Optional | Where lead emails go (default `jon@plumbgas.services`) |
+| `LEADS_FROM` | Optional | From address for lead emails |
+| `SLACK_LEADS_WEBHOOK_URL` | Optional | Posts each new lead to a Slack channel |
+
+## Database
+
+After changing `prisma/schema.prisma`, push the schema (needs a direct database URL):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run db:push        # creates/updates tables, including SurveyBooking
+npm run db:create-admin # one-off: create an admin user
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Until `SurveyBooking` exists, the booking API automatically falls back to saving leads
+in the `Quote` table, so nothing is lost.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000).

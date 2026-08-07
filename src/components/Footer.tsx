@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Flame, Shield, Award } from "lucide-react";
+import { Leaf, Shield, Award } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -9,14 +9,17 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-[#144E82] rounded-lg flex items-center justify-center">
-                <Flame className="w-4 h-4 text-[#F26430]" />
+                <Leaf className="w-4 h-4 text-[#7ee2a8]" />
               </div>
               <span className="text-lg font-bold text-white">
-                Plumb<span className="text-[#F26430]">Gas</span>
+                Plumb<span className="text-[#F26430]">Gas</span>{" "}
+                <span className="text-[#1C834B]">Renewables</span>
               </span>
             </div>
             <p className="text-sm mb-4">
-              Independent plumbing &amp; heating company serving Stafford, Stone &amp; Uttoxeter since 2003. Which? Trusted Traders endorsed.
+              Air source heat pump installation and free heat loss surveys across
+              Staffordshire, from the team behind PlumbGas Services &mdash; trusted local
+              heating engineers since 2003.
             </p>
             <div className="flex items-center gap-3 mt-3">
               <div className="flex items-center gap-1.5 text-xs bg-gray-800 px-2.5 py-1.5 rounded-lg">
@@ -37,11 +40,11 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/book" className="hover:text-white transition-colors">Free Heat Loss Survey</Link></li>
+              <li><Link href="/quote/heatpump" className="hover:text-white transition-colors">Air Source Heat Pumps</Link></li>
+              <li><Link href="/quote/heatpump" className="hover:text-white transition-colors">&pound;7,500 BUS Grant Installs</Link></li>
               <li><Link href="/quote/boiler" className="hover:text-white transition-colors">Boiler Installation</Link></li>
-              <li><Link href="/quote/boiler" className="hover:text-white transition-colors">Boiler Servicing</Link></li>
-              <li><Link href="/quote/boiler" className="hover:text-white transition-colors">Boiler Repair</Link></li>
-              <li><Link href="/quote/boiler" className="hover:text-white transition-colors">Heat Pumps</Link></li>
-              <li><Link href="/quote/boiler" className="hover:text-white transition-colors">Central Heating</Link></li>
+              <li><a href="https://www.plumbgas.services/" className="hover:text-white transition-colors">Plumbing &amp; Heating</a></li>
             </ul>
           </div>
 
@@ -51,7 +54,7 @@ export default function Footer() {
               <li><a href="https://www.plumbgas.services/about-us/" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="https://www.trustpilot.com/review/plumbgas.services" className="hover:text-white transition-colors">Reviews</a></li>
               <li><Link href="/#how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
-              <li><Link href="/#brands" className="hover:text-white transition-colors">Our Brands</Link></li>
+              <li><Link href="/#coverage" className="hover:text-white transition-colors">Areas We Cover</Link></li>
             </ul>
           </div>
 
@@ -64,12 +67,16 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@plumbgas.services" className="hover:text-white transition-colors">
-                  contact@plumbgas.services
+                <a href="mailto:info@plumbgasrenewables.services" className="hover:text-white transition-colors">
+                  info@plumbgasrenewables.services
                 </a>
               </li>
               <li>29c Marston Rd, Stafford ST16 3BS</li>
               <li>Mon &ndash; Fri: 8am &ndash; 7pm</li>
+              <li className="pt-2 text-xs text-gray-500">
+                Serving Stafford, Stone, Uttoxeter, Cannock, Lichfield, Stoke-on-Trent
+                &amp; all of Staffordshire
+              </li>
             </ul>
           </div>
         </div>

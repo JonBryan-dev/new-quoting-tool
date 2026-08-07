@@ -17,7 +17,33 @@ function CheckoutContent() {
   const product = getProductById(productId);
   const isHeatPump = category === "heatpump";
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", postcode: "" });
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      await fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          source: isHeatPump ? "heatpump-quote" : "boiler-quote",
+          productId,
+          productName: product ? `${product.brand} ${product.name}` : undefined,
+          quotedPrice: total > 0 ? total : undefined,
+          priceBeforeGrant: beforeGrant > 0 ? beforeGrant : undefined,
+        }),
+      });
+    } catch {
+      // The confirmation screen still shows — the customer shouldn't be
+      // blocked by a save failure; the team can follow up by phone.
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
+  }
 
   if (!product) {
     return (
@@ -151,13 +177,7 @@ function CheckoutContent() {
                 Enter your details so we can arrange your {isHeatPump ? "heat pump" : "boiler"} installation.
               </p>
 
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                }}
-                className="space-y-4"
-              >
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Full name</label>
                   <input
@@ -205,13 +225,14 @@ function CheckoutContent() {
 
                 <button
                   type="submit"
-                  className={`w-full py-4 rounded-xl font-semibold text-lg transition-colors mt-4 text-white ${
+                  disabled={submitting}
+                  className={`w-full py-4 rounded-xl font-semibold text-lg transition-colors mt-4 text-white disabled:opacity-60 ${
                     isHeatPump
                       ? "bg-purple-600 hover:bg-purple-700"
                       : "bg-[#144E82] hover:bg-[#0e3a63]"
                   }`}
                 >
-                  Submit {isHeatPump ? "Heat Pump" : "Boiler"} Quote Request
+                  {submitting ? "Sending..." : `Submit ${isHeatPump ? "Heat Pump" : "Boiler"} Quote Request`}
                 </button>
               </form>
             </div>

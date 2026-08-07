@@ -10,9 +10,95 @@ const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
 });
 
+const SITE_URL = "https://www.plumbgasrenewables.services";
+
 export const metadata: Metadata = {
-  title: "PlumbGas - Independent Plumbing & Heating | Stafford, Stone & Uttoxeter",
-  description: "Get a fixed-price boiler or heat pump quote in 90 seconds. Gas Safe registered engineers, Which? Trusted Traders. Serving Stafford, Stone & Uttoxeter since 2003.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Air Source Heat Pumps Staffordshire | Free Heat Loss Survey | PlumbGas Renewables",
+    template: "%s | PlumbGas Renewables",
+  },
+  description:
+    "Free heat loss surveys and air source heat pump installation across Staffordshire. £7,500 Boiler Upgrade Scheme grant handled for you. MCS & Gas Safe engineers, Which? Trusted Traders, 4.9★ on Trustpilot.",
+  keywords: [
+    "air source heat pump Staffordshire",
+    "heat pump installation Stafford",
+    "free heat loss survey",
+    "boiler upgrade scheme grant",
+    "heat pump installers Stone Uttoxeter Cannock Lichfield",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "PlumbGas Renewables",
+    title: "Air Source Heat Pumps Staffordshire | Free Heat Loss Survey",
+    description:
+      "Book a free heat loss survey and get a fixed-price heat pump quote with the £7,500 government grant already applied. Trusted local engineers covering all of Staffordshire.",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Air Source Heat Pumps Staffordshire | Free Heat Loss Survey",
+    description:
+      "Free heat loss surveys and heat pump installation across Staffordshire with the £7,500 grant handled for you.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  name: "PlumbGas Renewables",
+  url: SITE_URL,
+  telephone: "+441785663990",
+  email: "info@plumbgasrenewables.services",
+  parentOrganization: {
+    "@type": "Organization",
+    name: "PlumbGas Services Limited",
+    url: "https://www.plumbgas.services",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "29c Marston Rd",
+    addressLocality: "Stafford",
+    addressRegion: "Staffordshire",
+    postalCode: "ST16 3BS",
+    addressCountry: "GB",
+  },
+  areaServed: [
+    "Stafford", "Stone", "Uttoxeter", "Cannock", "Rugeley", "Lichfield",
+    "Penkridge", "Eccleshall", "Gnosall", "Stoke-on-Trent", "Newcastle-under-Lyme",
+    "Cheadle", "Leek", "Burton upon Trent", "Tamworth", "Staffordshire",
+  ],
+  description:
+    "Air source heat pump installation and free heat loss surveys across Staffordshire. £7,500 Boiler Upgrade Scheme grant applications handled for customers.",
+  openingHours: "Mo-Fr 08:00-19:00",
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Free Heat Loss Survey",
+        description: "Free room-by-room heat loss survey for heat pump sizing, with no obligation.",
+      },
+      price: "0",
+      priceCurrency: "GBP",
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Air Source Heat Pump Installation",
+        description: "MCS-certified air source heat pump installation with the £7,500 Boiler Upgrade Scheme grant applied.",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -23,6 +109,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ubuntu.variable} antialiased font-sans`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

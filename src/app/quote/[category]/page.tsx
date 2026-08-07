@@ -36,10 +36,14 @@ export default function QuotePage() {
             <span className="text-gray-900 font-medium">{categoryInfo.name}</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-            Get your {categoryInfo.name.toLowerCase()} quote
+            {category === "heatpump"
+              ? "Get your instant heat pump estimate"
+              : `Get your ${categoryInfo.name.toLowerCase()} quote`}
           </h1>
           <p className="text-gray-500 mt-1">
-            Answer a few quick questions to get your personalised, fixed-price quote.
+            {category === "heatpump"
+              ? "Three quick questions to size a heat pump for your home and see your price after the £7,500 grant."
+              : "Answer a few quick questions to get your personalised, fixed-price quote."}
           </p>
         </div>
       </div>
