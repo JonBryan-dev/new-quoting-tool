@@ -1,8 +1,15 @@
 import type { MetadataRoute } from "next";
+import { towns } from "@/lib/towns";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const townPages: MetadataRoute.Sitemap = towns.map((t) => ({
+    url: `${SITE_URL}/heat-pumps/${t.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   return [
     {
       url: `${SITE_URL}/`,
@@ -15,6 +22,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/heat-pumps`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/boiler-upgrade-scheme`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/quote/heatpump`,
       changeFrequency: "monthly",
       priority: 0.8,
@@ -24,5 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    ...townPages,
   ];
 }

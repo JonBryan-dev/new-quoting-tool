@@ -16,6 +16,10 @@ Boiler Upgrade Scheme grant front and centre. Live at
   the survey booking.
 - **/quote/boiler** — original 9-step fixed-price boiler quote flow (kept as a
   secondary offering).
+- **/heat-pumps** — hub page linking local SEO landing pages for 16 Staffordshire
+  towns (`/heat-pumps/[town]`, data in `src/lib/towns.ts`), each with unique local
+  copy, FAQs and FAQ/Service structured data.
+- **/boiler-upgrade-scheme** — plain-English £7,500 grant guide with FAQ schema.
 - **/admin** — password-protected dashboard: **Leads** (survey bookings + quote
   requests), Products, Pricing and Quiz options.
 
@@ -34,6 +38,8 @@ Accelerate) · Zustand · deployed on Vercel.
 | `LEADS_EMAIL` | Optional | Where lead emails go (default `jon@plumbgas.services`) |
 | `LEADS_FROM` | Optional | From address for lead emails |
 | `SLACK_LEADS_WEBHOOK_URL` | Optional | Posts each new lead to a Slack channel |
+| `NEXT_PUBLIC_GTM_ID` | Optional | Google Tag Manager container ID (GTM-XXXXXXX) |
+| `NEXT_PUBLIC_GA4_ID` | Optional | GA4 measurement ID (G-XXXXXXXXXX) — skip if GA4 loads via GTM |
 
 ## Database
 

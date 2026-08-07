@@ -41,20 +41,25 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/book" className="hover:text-white transition-colors">Free Heat Loss Survey</Link></li>
-              <li><Link href="/quote/heatpump" className="hover:text-white transition-colors">Air Source Heat Pumps</Link></li>
-              <li><Link href="/quote/heatpump" className="hover:text-white transition-colors">&pound;7,500 BUS Grant Installs</Link></li>
+              <li><Link href="/heat-pumps" className="hover:text-white transition-colors">Air Source Heat Pumps</Link></li>
+              <li><Link href="/boiler-upgrade-scheme" className="hover:text-white transition-colors">&pound;7,500 Grant Guide</Link></li>
+              <li><Link href="/quote/heatpump" className="hover:text-white transition-colors">Instant Estimate</Link></li>
               <li><Link href="/quote/boiler" className="hover:text-white transition-colors">Boiler Installation</Link></li>
               <li><a href="https://www.plumbgas.services/" className="hover:text-white transition-colors">Plumbing &amp; Heating</a></li>
+              <li><a href="https://www.plumbgas.services/about-us/" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="https://www.trustpilot.com/review/plumbgas.services" className="hover:text-white transition-colors">Reviews</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+            <h3 className="text-white font-semibold mb-4">Heat Pumps Near You</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="https://www.plumbgas.services/about-us/" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="https://www.trustpilot.com/review/plumbgas.services" className="hover:text-white transition-colors">Reviews</a></li>
-              <li><Link href="/#how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
-              <li><Link href="/#coverage" className="hover:text-white transition-colors">Areas We Cover</Link></li>
+              <li><Link href="/heat-pumps/stafford" className="hover:text-white transition-colors">Stafford</Link></li>
+              <li><Link href="/heat-pumps/stone" className="hover:text-white transition-colors">Stone</Link></li>
+              <li><Link href="/heat-pumps/cannock" className="hover:text-white transition-colors">Cannock</Link></li>
+              <li><Link href="/heat-pumps/lichfield" className="hover:text-white transition-colors">Lichfield</Link></li>
+              <li><Link href="/heat-pumps/stoke-on-trent" className="hover:text-white transition-colors">Stoke-on-Trent</Link></li>
+              <li><Link href="/heat-pumps" className="hover:text-white transition-colors">All areas &rarr;</Link></li>
             </ul>
           </div>
 

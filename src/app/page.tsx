@@ -5,11 +5,7 @@ import {
   Wrench, CalendarCheck, Flame, Volume2, BatteryCharging,
 } from "lucide-react";
 
-const TOWNS = [
-  "Stafford", "Stone", "Uttoxeter", "Cannock", "Rugeley", "Lichfield",
-  "Penkridge", "Eccleshall", "Gnosall", "Stoke-on-Trent", "Newcastle-under-Lyme",
-  "Cheadle", "Leek", "Burton upon Trent", "Tamworth", "Market Drayton",
-];
+import { towns } from "@/lib/towns";
 
 export default function HomePage() {
   return (
@@ -315,17 +311,20 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
-            {TOWNS.map((town) => (
-              <span
-                key={town}
-                className="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
+            {towns.map((town) => (
+              <Link
+                key={town.slug}
+                href={`/heat-pumps/${town.slug}`}
+                className="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:border-[#1C834B]/50 hover:text-[#1C834B] transition-colors"
               >
                 <MapPin className="w-3.5 h-3.5 text-[#1C834B]" />
-                {town}
-              </span>
+                {town.name}
+              </Link>
             ))}
           </div>
           <p className="text-center text-sm text-gray-400 mt-6">
+            Tap your town for local prices and advice, or see{" "}
+            <Link href="/heat-pumps" className="text-[#144E82] underline">everywhere we cover</Link>.
             Not listed? If you&apos;re in or around Staffordshire, we almost certainly cover you &mdash;{" "}
             <a href="tel:01785663990" className="text-[#144E82] underline">give us a ring</a>.
           </p>
