@@ -40,6 +40,12 @@ function CheckoutContent() {
       // The confirmation screen still shows — the customer shouldn't be
       // blocked by a save failure; the team can follow up by phone.
     } finally {
+      // GA4 conversion event for the quote request
+      (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.(
+        "event",
+        "generate_lead",
+        { lead_source: isHeatPump ? "heatpump-quote" : "boiler-quote" }
+      );
       setSubmitting(false);
       setSubmitted(true);
     }

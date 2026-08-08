@@ -18,6 +18,12 @@ import {
 } from "lucide-react";
 import { getProductById } from "@/lib/products";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 function minBookingDate(): string {
   const d = new Date();
   d.setDate(d.getDate() + 1);
@@ -74,6 +80,8 @@ function BookContent() {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Something went wrong");
       }
+      // GA4 conversion event for the survey booking
+      window.gtag?.("event", "generate_lead", { lead_source: source });
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong — please call us on 01785 663 990");
