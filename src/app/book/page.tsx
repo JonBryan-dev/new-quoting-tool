@@ -1,13 +1,12 @@
 "use client";
 
 import { Suspense, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
   ArrowLeft,
   ArrowRight,
   CalendarCheck,
-  Check,
   ClipboardList,
   Home,
   Leaf,
@@ -31,6 +30,7 @@ function minBookingDate(): string {
 }
 
 function BookContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
 
   const productId = searchParams.get("productId") || "";
@@ -53,7 +53,6 @@ function BookContent() {
     notes: "",
   });
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
@@ -80,52 +79,19 @@ function BookContent() {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Something went wrong");
       }
-      // GA4 conversion event for the survey booking
+      // GA4 conversion event, then a real confirmation URL so analytics
+      // can also track the booking as a /book/thank-you page view
       window.gtag?.("event", "generate_lead", { lead_source: source });
-      setSubmitted(true);
+      const confirmParams = new URLSearchParams();
+      if (form.name) confirmParams.set("name", form.name);
+      if (form.preferredDate) confirmParams.set("date", form.preferredDate);
+      router.push(`/book/thank-you?${confirmParams.toString()}`);
+      return;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong — please call us on 01785 663 990");
     } finally {
       setSubmitting(false);
     }
-  }
-
-  if (submitted) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="max-w-2xl mx-auto px-4 py-12">
-          <div className="bg-white rounded-2xl border border-gray-200 p-8 sm:p-12 text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="w-8 h-8 text-green-600" />
-            </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
-              Survey request received!
-            </h1>
-            <p className="text-gray-500 mb-6">
-              Thanks {form.name.split(" ")[0]} — we&apos;ll call you within 1 working day to
-              confirm your free heat loss survey
-              {form.preferredDate && (
-                <> for <strong>{new Date(form.preferredDate + "T00:00:00").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</strong></>
-              )}.
-            </p>
-            <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-6 text-left">
-              <p className="text-sm text-green-800 font-medium mb-1">What happens next</p>
-              <ul className="text-sm text-green-700 space-y-1">
-                <li>1. We confirm a time that suits you</li>
-                <li>2. A heating engineer visits and measures your home room by room (about 45 minutes)</li>
-                <li>3. You get a fixed-price heat pump quote with the &pound;7,500 grant already applied &mdash; no obligation</li>
-              </ul>
-            </div>
-            <Link
-              href="/"
-              className="inline-block bg-[#1C834B] hover:bg-[#166a3c] text-white px-6 py-3 rounded-xl font-medium transition-colors"
-            >
-              Back to home
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
   }
 
   return (
