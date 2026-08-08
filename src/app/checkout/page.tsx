@@ -1,12 +1,13 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Check, Shield, Phone, Calendar, Thermometer, ArrowRight, Leaf } from "lucide-react";
 import { getProductById } from "@/lib/products";
 
 function CheckoutContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const productId = searchParams.get("productId") || "";
   const total = parseFloat(searchParams.get("total") || "0");
@@ -160,13 +161,13 @@ function CheckoutContent() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Link
-            href={isHeatPump ? "/" : `/results?category=${category}`}
+          <button
+            onClick={() => router.back()}
             className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 mb-4 text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
-            {isHeatPump ? "Back to boiler results" : "Back to boiler results"}
-          </Link>
+            Back to results
+          </button>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
             {isHeatPump ? "Complete your heat pump quote" : "Complete your boiler quote"}
           </h1>

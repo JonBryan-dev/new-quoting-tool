@@ -15,7 +15,7 @@ function ResultsContent() {
   const router = useRouter();
   const [results, setResults] = useState<QuoteResult[]>([]);
   const [loading, setLoading] = useState(true);
-  const [sortBy, setSortBy] = useState<"price" | "warranty">("price");
+  const [sortBy, setSortBy] = useState<"recommended" | "price" | "warranty">("recommended");
 
   const answers: QuoteAnswers = {
     category: searchParams.get("category") || "boiler",
@@ -65,6 +65,7 @@ function ResultsContent() {
     return <HeatPumpResults answers={answers} />;
   }
 
+  // "recommended" keeps the API's recommendation-score order
   const sortedResults = [...results].sort((a, b) => {
     if (sortBy === "price") return a.totalPrice - b.totalPrice;
     if (sortBy === "warranty") return b.product.warranty - a.product.warranty;
@@ -175,6 +176,7 @@ function ResultsContent() {
           </div>
           <div className="flex gap-2">
             {[
+              { value: "recommended" as const, label: "Recommended" },
               { value: "price" as const, label: "Price" },
               { value: "warranty" as const, label: "Warranty" },
             ].map((option) => (
