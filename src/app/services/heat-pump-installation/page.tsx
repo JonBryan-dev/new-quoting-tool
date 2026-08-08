@@ -87,7 +87,7 @@ export default function HeatPumpInstallationPage() {
       "@type": "HVACBusiness",
       name: "PlumbGas Renewables",
       url: SITE_URL,
-      telephone: "+441785663990",
+      telephone: "+447872626573",
     },
     description:
       "MCS-certified air source heat pump installation across Staffordshire with survey-first design and the £7,500 Boiler Upgrade Scheme grant applied.",
@@ -283,11 +283,11 @@ export default function HeatPumpInstallationPage() {
               Book Your Free Survey
             </Link>
             <a
-              href="tel:01785663990"
+              href="tel:07872626573"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors backdrop-blur"
             >
               <Phone className="w-5 h-5" />
-              01785 663 990
+              07872 626573
             </a>
           </div>
           <p className="text-blue-200 text-sm mt-4">

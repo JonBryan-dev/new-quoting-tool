@@ -69,8 +69,8 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="tel:01785663990" className="hover:text-white transition-colors font-medium">
-                  01785 663 990
+                <a href="tel:07872626573" className="hover:text-white transition-colors font-medium">
+                  07872 626573
                 </a>
               </li>
               <li>
@@ -89,7 +89,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          &copy; {new Date().getFullYear()} PlumbGas Services Limited. All rights reserved. Company No. 10883260.
+          &copy; {new Date().getFullYear()} PlumbGas Renewables. All rights reserved.
+          PlumbGas Renewables is the trading name of Jon Bryan, 29c Marston Rd, Stafford ST16 3BS.
         </div>
       </div>
     </footer>

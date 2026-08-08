@@ -42,9 +42,9 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:01785663990" className="flex items-center gap-2 text-sm font-semibold text-[#144E82]">
+            <a href="tel:07872626573" className="flex items-center gap-2 text-sm font-semibold text-[#144E82]">
               <Phone className="w-4 h-4" />
-              01785 663 990
+              07872 626573
             </a>
             <Link
               href="/book"
@@ -81,8 +81,8 @@ export default function Header() {
             <Link href="/quote/heatpump" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
               Instant Estimate
             </Link>
-            <a href="tel:01785663990" className="block text-[#144E82] font-semibold" onClick={() => setMenuOpen(false)}>
-              01785 663 990
+            <a href="tel:07872626573" className="block text-[#144E82] font-semibold" onClick={() => setMenuOpen(false)}>
+              07872 626573
             </a>
             <Link
               href="/book"

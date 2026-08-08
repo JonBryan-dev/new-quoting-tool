@@ -59,11 +59,7 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   telephone: "+441785663990",
   email: "info@plumbgasrenewables.services",
-  parentOrganization: {
-    "@type": "Organization",
-    name: "PlumbGas Services Limited",
-    url: "https://www.plumbgas.services",
-  },
+  founder: { "@type": "Person", name: "Jon Bryan" },
   address: {
     "@type": "PostalAddress",
     streetAddress: "29c Marston Rd",

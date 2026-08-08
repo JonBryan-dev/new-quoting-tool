@@ -186,9 +186,9 @@ export default function CostGuidePage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <a href="tel:01785663990" className="inline-flex items-center gap-2 text-sm font-semibold text-[#144E82] mt-4">
+            <a href="tel:07872626573" className="inline-flex items-center gap-2 text-sm font-semibold text-[#144E82] mt-4">
               <Phone className="w-4 h-4" />
-              Or call 01785 663 990
+              Or call 07872 626573
             </a>
           </div>
         </div>

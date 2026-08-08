@@ -54,7 +54,7 @@ export default function HeatLossSurveysPage() {
       "@type": "HVACBusiness",
       name: "PlumbGas Renewables",
       url: SITE_URL,
-      telephone: "+441785663990",
+      telephone: "+447872626573",
     },
     description:
       "Room-by-room heat loss surveys and heat pump system design to Heat Geek standards, free with every heat pump quote across Staffordshire.",
@@ -246,11 +246,11 @@ export default function HeatLossSurveysPage() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:01785663990"
+              href="tel:07872626573"
               className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 hover:bg-gray-50 text-[#144E82] px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
-              01785 663 990
+              07872 626573
             </a>
           </div>
         </div>

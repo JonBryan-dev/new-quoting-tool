@@ -46,7 +46,7 @@ export default function HomePage() {
             </div>
             <p className="text-blue-200 text-sm mt-4">
               Heat pumps from &pound;1,999 after the grant &bull; Free survey, no obligation &bull;{" "}
-              <a href="tel:01785663990" className="underline hover:text-white">01785 663 990</a>
+              <a href="tel:07872626573" className="underline hover:text-white">07872 626573</a>
             </p>
           </div>
         </div>
@@ -326,7 +326,7 @@ export default function HomePage() {
             Tap your town for local prices and advice, or see{" "}
             <Link href="/heat-pumps" className="text-[#144E82] underline">everywhere we cover</Link>.
             Not listed? If you&apos;re in or around Staffordshire, we almost certainly cover you &mdash;{" "}
-            <a href="tel:01785663990" className="text-[#144E82] underline">give us a ring</a>.
+            <a href="tel:07872626573" className="text-[#144E82] underline">give us a ring</a>.
           </p>
         </div>
       </section>
@@ -379,11 +379,11 @@ export default function HomePage() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:01785663990"
+              href="tel:07872626573"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors backdrop-blur"
             >
               <Phone className="w-5 h-5" />
-              01785 663 990
+              07872 626573
             </a>
           </div>
         </div>

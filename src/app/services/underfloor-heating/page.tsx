@@ -54,7 +54,7 @@ export default function UnderfloorHeatingPage() {
       "@type": "HVACBusiness",
       name: "PlumbGas Renewables",
       url: SITE_URL,
-      telephone: "+441785663990",
+      telephone: "+447872626573",
     },
     description:
       "Design and installation of wet underfloor heating systems — screed and retrofit overlay — across Staffordshire, optimised for heat pumps.",
@@ -95,7 +95,7 @@ export default function UnderfloorHeatingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="tel:01785663990"
+              href="tel:07872626573"
               className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
             >
               <Phone className="w-5 h-5" />
@@ -246,11 +246,11 @@ export default function UnderfloorHeatingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:01785663990"
+              href="tel:07872626573"
               className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
-              01785 663 990
+              07872 626573
             </a>
             <Link
               href="/book"

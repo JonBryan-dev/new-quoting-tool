@@ -90,7 +90,7 @@ export default async function TownPage({
       "@type": "HVACBusiness",
       name: "PlumbGas Renewables",
       url: SITE_URL,
-      telephone: "+441785663990",
+      telephone: "+447872626573",
     },
     description: `Free heat loss surveys and MCS-certified air source heat pump installation in ${town.name} and surrounding villages, with the £7,500 Boiler Upgrade Scheme grant applied.`,
   };
@@ -233,11 +233,11 @@ export default async function TownPage({
                 Book Free Survey
               </Link>
               <a
-                href="tel:01785663990"
+                href="tel:07872626573"
                 className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-[#144E82]"
               >
                 <Phone className="w-4 h-4" />
-                01785 663 990
+                07872 626573
               </a>
             </div>
 
@@ -290,11 +290,11 @@ export default async function TownPage({
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:01785663990"
+              href="tel:07872626573"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors backdrop-blur"
             >
               <Phone className="w-5 h-5" />
-              01785 663 990
+              07872 626573
             </a>
           </div>
         </div>

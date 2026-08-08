@@ -88,7 +88,7 @@ function BookContent() {
       router.push(`/book/thank-you?${confirmParams.toString()}`);
       return;
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong — please call us on 01785 663 990");
+      setError(err instanceof Error ? err.message : "Something went wrong — please call us on 07872 626573");
     } finally {
       setSubmitting(false);
     }
@@ -321,8 +321,8 @@ function BookContent() {
                 </div>
                 <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
                   <Phone className="w-4 h-4 text-[#144E82]" />
-                  <a href="tel:01785663990" className="font-semibold text-[#144E82]">
-                    Prefer to talk? 01785 663 990
+                  <a href="tel:07872626573" className="font-semibold text-[#144E82]">
+                    Prefer to talk? 07872 626573
                   </a>
                 </div>
               </div>
