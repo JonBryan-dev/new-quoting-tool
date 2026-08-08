@@ -18,7 +18,7 @@ export const towns: TownInfo[] = [
     name: "Stafford",
     postcodes: ["ST16", "ST17", "ST18"],
     intro:
-      "Stafford is our home town — our office is on Marston Road, so nowhere in the county gets a faster response for surveys, installations and aftercare.",
+      "Stafford is our home town — we're based right here, so nowhere in the county gets a faster response for surveys, installations and aftercare.",
     housing:
       "Stafford's mix of Victorian terraces around the town centre, inter-war semis in Rowley Park and Castletown, and modern estates at Wildwood, Meadowcroft Park and Doxey suits air source heat pumps well — most homes need only modest radiator upgrades to run at heat-pump temperatures.",
     nearby: ["Doxey", "Castletown", "Wildwood", "Weeping Cross", "Baswich", "Hopton", "Tixall", "Great Haywood"],

@@ -11,9 +11,9 @@ export default function Footer() {
               <div className="w-8 h-8 bg-[#144E82] rounded-lg flex items-center justify-center">
                 <Leaf className="w-4 h-4 text-[#7ee2a8]" />
               </div>
-              <span className="text-lg font-bold text-white">
-                Plumb<span className="text-[#F26430]">Gas</span>{" "}
-                <span className="text-[#1C834B]">Renewables</span>
+              <span className="text-lg font-bold">
+                <span className="text-white">PG</span>{" "}
+                <span className="text-[#4cc97e]">Renewables</span>
               </span>
             </div>
             <p className="text-sm mb-4">
@@ -78,7 +78,7 @@ export default function Footer() {
                   info@plumbgasrenewables.services
                 </a>
               </li>
-              <li>29c Marston Rd, Stafford ST16 3BS</li>
+              <li>27 Barnbank Lane, Stafford ST17</li>
               <li>Mon &ndash; Fri: 8am &ndash; 7pm</li>
               <li className="pt-2 text-xs text-gray-500">
                 Serving Stafford, Stone, Uttoxeter, Cannock, Lichfield, Stoke-on-Trent
@@ -90,7 +90,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
           &copy; {new Date().getFullYear()} PlumbGas Renewables. All rights reserved.
-          PlumbGas Renewables is the trading name of Jon Bryan, 29c Marston Rd, Stafford ST16 3BS.
+          PG Renewables is the trading name of Jon Bryan, 27 Barnbank Lane, Stafford ST17.
         </div>
       </div>
     </footer>

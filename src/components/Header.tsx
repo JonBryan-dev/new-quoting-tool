@@ -16,8 +16,8 @@ export default function Header() {
               <Leaf className="w-5 h-5 text-[#7ee2a8]" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-xl font-bold text-gray-900">
-                Plumb<span className="text-[#F26430]">Gas</span>{" "}
+              <span className="text-xl font-bold">
+                <span className="text-[#144E82]">PG</span>{" "}
                 <span className="text-[#1C834B]">Renewables</span>
               </span>
             </div>

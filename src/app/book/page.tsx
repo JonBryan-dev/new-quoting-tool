@@ -165,7 +165,7 @@ function BookContent() {
                       value={form.addressLine}
                       onChange={(e) => setForm({ ...form, addressLine: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all"
-                      placeholder="29 Marston Road"
+                      placeholder="1 High Street"
                     />
                   </div>
                   <div>
@@ -176,7 +176,7 @@ function BookContent() {
                       value={form.postcode}
                       onChange={(e) => setForm({ ...form, postcode: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all"
-                      placeholder="ST16 3BS"
+                      placeholder="ST17 4AA"
                     />
                   </div>
                 </div>

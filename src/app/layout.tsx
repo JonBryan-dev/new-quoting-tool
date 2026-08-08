@@ -62,10 +62,10 @@ const localBusinessJsonLd = {
   founder: { "@type": "Person", name: "Jon Bryan" },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "29c Marston Rd",
+    streetAddress: "27 Barnbank Lane",
     addressLocality: "Stafford",
     addressRegion: "Staffordshire",
-    postalCode: "ST16 3BS",
+    postalCode: "ST17",
     addressCountry: "GB",
   },
   areaServed: [
