@@ -41,12 +41,14 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/book" className="hover:text-white transition-colors">Free Heat Loss Survey</Link></li>
-              <li><Link href="/heat-pumps" className="hover:text-white transition-colors">Air Source Heat Pumps</Link></li>
+              <li><Link href="/services/heat-pump-installation" className="hover:text-white transition-colors">Heat Pump Installation</Link></li>
+              <li><Link href="/services/heat-pump-servicing" className="hover:text-white transition-colors">Heat Pump Servicing</Link></li>
+              <li><Link href="/services/underfloor-heating" className="hover:text-white transition-colors">Underfloor Heating</Link></li>
               <li><Link href="/boiler-upgrade-scheme" className="hover:text-white transition-colors">&pound;7,500 Grant Guide</Link></li>
-              <li><Link href="/quote/heatpump" className="hover:text-white transition-colors">Instant Estimate</Link></li>
               <li><Link href="/quote/boiler" className="hover:text-white transition-colors">Boiler Installation</Link></li>
-              <li><a href="https://www.plumbgas.services/" className="hover:text-white transition-colors">Plumbing &amp; Heating</a></li>
-              <li><a href="https://www.plumbgas.services/about-us/" className="hover:text-white transition-colors">About Us</a></li>
+              <li><Link href="/accreditations" className="hover:text-white transition-colors">Accreditations</Link></li>
+              <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
+              <li><Link href="/guides" className="hover:text-white transition-colors">Guides &amp; Advice</Link></li>
               <li><a href="https://www.trustpilot.com/review/plumbgas.services" className="hover:text-white transition-colors">Reviews</a></li>
             </ul>
           </div>

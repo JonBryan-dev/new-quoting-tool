@@ -80,6 +80,18 @@ const localBusinessJsonLd = {
   description:
     "Air source heat pump installation and free heat loss surveys across Staffordshire. £7,500 Boiler Upgrade Scheme grant applications handled for customers.",
   openingHours: "Mo-Fr 08:00-19:00",
+  memberOf: [
+    { "@type": "Organization", name: "MCS (Microgeneration Certification Scheme)" },
+    { "@type": "Organization", name: "Gas Safe Register" },
+    { "@type": "Organization", name: "Which? Trusted Traders" },
+  ],
+  knowsAbout: [
+    "Air source heat pumps",
+    "Heat loss surveys",
+    "Boiler Upgrade Scheme",
+    "Underfloor heating",
+    "Heat pump servicing",
+  ],
   makesOffer: [
     {
       "@type": "Offer",

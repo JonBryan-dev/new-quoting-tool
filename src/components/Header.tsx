@@ -23,18 +23,21 @@ export default function Header() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/quote/heatpump" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              Instant Estimate
+          <nav className="hidden md:flex items-center gap-7">
+            <Link href="/services" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+              Services
             </Link>
-            <Link href="/#how-it-works" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              How It Works
-            </Link>
-            <Link href="/#coverage" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            <Link href="/heat-pumps" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
               Areas We Cover
             </Link>
-            <Link href="/quote/boiler" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              Boilers
+            <Link href="/boiler-upgrade-scheme" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+              &pound;7,500 Grant
+            </Link>
+            <Link href="/guides" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+              Guides
+            </Link>
+            <Link href="/quote/heatpump" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+              Instant Estimate
             </Link>
           </nav>
 
@@ -63,17 +66,20 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-4 space-y-3">
-            <Link href="/quote/heatpump" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              Instant Estimate
+            <Link href="/services" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
+              Services
             </Link>
-            <Link href="/#how-it-works" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              How It Works
-            </Link>
-            <Link href="/#coverage" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
+            <Link href="/heat-pumps" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
               Areas We Cover
             </Link>
-            <Link href="/quote/boiler" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              Boilers
+            <Link href="/boiler-upgrade-scheme" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
+              &pound;7,500 Grant
+            </Link>
+            <Link href="/guides" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
+              Guides
+            </Link>
+            <Link href="/quote/heatpump" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
+              Instant Estimate
             </Link>
             <a href="tel:01785663990" className="block text-[#144E82] font-semibold" onClick={() => setMenuOpen(false)}>
               01785 663 990
