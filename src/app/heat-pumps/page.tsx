@@ -5,6 +5,7 @@ import {
   Ruler, TrendingDown, Volume2,
 } from "lucide-react";
 import { towns } from "@/lib/towns";
+import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 
 export const metadata: Metadata = {
   title: "Air Source Heat Pump Installation Staffordshire | £7,500 Grant",
@@ -105,6 +106,9 @@ export default function HeatPumpsHubPage() {
           </p>
         </div>
       </section>
+
+      {/* Instant estimate — Heat Geek */}
+      <HeatGeekEstimateSection />
 
       {/* Towns grid */}
       <section className="bg-gray-50 py-14 sm:py-16">

@@ -4,6 +4,7 @@ import {
   ArrowRight, Check, ClipboardCheck, Leaf, Phone,
   PoundSterling, ShieldCheck, X,
 } from "lucide-react";
+import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 
 export const metadata: Metadata = {
   title: "£7,500 Boiler Upgrade Scheme Grant Explained | Staffordshire",
@@ -194,6 +195,17 @@ export default function BoilerUpgradeSchemePage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Instant estimate — Heat Geek */}
+      <section className="bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-14">
+          <HeatGeekEstimateSection
+            compact
+            heading="See your price with the grant applied"
+            sub="Two minutes, no obligation — your estimate comes back with the £7,500 Boiler Upgrade Scheme grant already deducted."
+          />
         </div>
       </section>
 

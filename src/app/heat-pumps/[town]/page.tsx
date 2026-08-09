@@ -6,6 +6,7 @@ import {
   Phone, PoundSterling, Ruler, TrendingDown, Wrench,
 } from "lucide-react";
 import { towns, getTownBySlug, getNeighbouringTowns } from "@/lib/towns";
+import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -195,6 +196,15 @@ export default async function TownPage({
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Instant estimate — Heat Geek */}
+            <div className="mb-8">
+              <HeatGeekEstimateSection
+                compact
+                heading={`What would a heat pump cost in ${town.name}?`}
+                sub="Get a personalised price for your home in about two minutes — £7,500 grant included, installed locally by us."
+              />
             </div>
 
             {/* FAQs */}

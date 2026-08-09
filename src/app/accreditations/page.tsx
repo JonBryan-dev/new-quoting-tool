@@ -23,8 +23,8 @@ const ACCREDITATIONS = [
     icon: <Zap className="w-7 h-7" />,
     name: "Heat Geek Trained",
     body: "Heat Geek is the UK's most respected heat pump design and training community, famous for one obsession: designing systems that run at the lowest possible flow temperature for the highest real-world efficiency. Our engineers train to Heat Geek standards — room-by-room heat loss, emitter verification, weather compensation — which is why we survey before we quote, every time.",
-    linkLabel: "Find us on the Heat Geek map",
-    href: "https://www.heatgeek.com/find-a-heat-geek/",
+    linkLabel: "View our Heat Geek partner profile",
+    href: "https://upgrades.heatgeek.com/partner/plumbgas-services-limited/",
   },
   {
     icon: <ShieldCheck className="w-7 h-7" />,

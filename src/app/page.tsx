@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 
 import { towns } from "@/lib/towns";
+import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 
 export default function HomePage() {
   return (
@@ -154,6 +155,13 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Instant estimate — Heat Geek */}
+      <section className="bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <HeatGeekEstimateSection compact />
         </div>
       </section>
 

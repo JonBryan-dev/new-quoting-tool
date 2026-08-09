@@ -4,6 +4,7 @@ import {
   ArrowRight, CalendarCheck, Check, ClipboardCheck, Leaf, Phone,
   PoundSterling, Ruler, ShieldCheck, Thermometer, Wrench,
 } from "lucide-react";
+import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -243,6 +244,12 @@ export default function HeatPumpInstallationPage() {
           </p>
         </div>
       </section>
+
+      {/* Instant estimate — Heat Geek */}
+      <HeatGeekEstimateSection
+        heading="Get your installation price now"
+        sub="A personalised heat pump estimate for your home in about two minutes — £7,500 grant included, installed by our local MCS-accredited team."
+      />
 
       {/* FAQs */}
       <section className="py-14 sm:py-16">

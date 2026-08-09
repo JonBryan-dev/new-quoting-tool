@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Filter, SlidersHorizontal } from "lucide-react";
 import ProductCard from "@/components/results/ProductCard";
-import HeatPumpUpsell from "@/components/results/HeatPumpUpsell";
+import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 import HeatPumpResults from "@/components/results/HeatPumpResults";
 import type { QuoteResult, QuoteAnswers } from "@/lib/types";
 import { getRecommendedKw } from "@/lib/pricing";
@@ -234,8 +234,14 @@ function ResultsContent() {
           </div>
         </div>
 
-        {/* ── HEAT PUMP UPSELL ─────────────────────────────── */}
-        <HeatPumpUpsell answers={answers} />
+        {/* ── HEAT PUMP UPSELL (Heat Geek) ─────────────────── */}
+        <div className="mt-12">
+          <HeatGeekEstimateSection
+            compact
+            heading="Before you buy a boiler — have you seen what a heat pump costs?"
+            sub="With the £7,500 government grant, a heat pump can cost less than you think and cut your bills long-term. Check your price in two minutes — no obligation."
+          />
+        </div>
       </div>
     </div>
   );
