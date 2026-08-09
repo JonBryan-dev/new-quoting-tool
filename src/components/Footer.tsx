@@ -78,7 +78,7 @@ export default function Footer() {
                   info@plumbgasrenewables.services
                 </a>
               </li>
-              <li>27 Barnbank Lane, Stafford ST17</li>
+              <li>27 Barnbank Lane, Stafford ST17 9HB</li>
               <li>Mon &ndash; Fri: 8am &ndash; 7pm</li>
               <li className="pt-2 text-xs text-gray-500">
                 Serving Stafford, Stone, Uttoxeter, Cannock, Lichfield, Stoke-on-Trent
@@ -90,7 +90,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
           &copy; {new Date().getFullYear()} PlumbGas Renewables. All rights reserved.
-          PG Renewables is the trading name of Jon Bryan, 27 Barnbank Lane, Stafford ST17.
+          PG Renewables is the trading name of Jon Bryan, 27 Barnbank Lane, Stafford ST17 9HB.
         </div>
       </div>
     </footer>

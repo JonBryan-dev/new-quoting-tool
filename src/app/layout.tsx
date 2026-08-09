@@ -65,7 +65,7 @@ const localBusinessJsonLd = {
     streetAddress: "27 Barnbank Lane",
     addressLocality: "Stafford",
     addressRegion: "Staffordshire",
-    postalCode: "ST17",
+    postalCode: "ST17 9HB",
     addressCountry: "GB",
   },
   areaServed: [
