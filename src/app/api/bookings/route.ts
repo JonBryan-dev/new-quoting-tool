@@ -118,25 +118,36 @@ export async function POST(request: NextRequest) {
 
   const notified: string[] = [];
 
-  // Email via Resend (set RESEND_API_KEY and optionally LEADS_EMAIL in Vercel)
+  // Email via Resend (set RESEND_API_KEY and optionally LEADS_EMAIL in Vercel).
+  // Prefers the branded domain sender; falls back to Resend's shared address
+  // if the domain isn't verified yet, so notifications never silently stop.
   if (process.env.RESEND_API_KEY) {
-    try {
-      const res = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: process.env.LEADS_FROM || "PlumbGas Renewables <onboarding@resend.dev>",
-          to: [process.env.LEADS_EMAIL || "jon@plumbgas.services"],
-          subject: `New lead: ${name} (${postcode})`,
-          text: summary,
-        }),
-      });
-      if (res.ok) notified.push("email");
-    } catch {
-      // Notification failure must never fail the customer's booking
+    const fromCandidates = [
+      process.env.LEADS_FROM || "PG Renewables <leads@plumbgasrenewables.services>",
+      "PG Renewables <onboarding@resend.dev>",
+    ].filter((v, i, arr) => arr.indexOf(v) === i);
+    for (const from of fromCandidates) {
+      try {
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from,
+            to: [process.env.LEADS_EMAIL || "jon@plumbgas.services"],
+            subject: `New lead: ${name} (${postcode})`,
+            text: summary,
+          }),
+        });
+        if (res.ok) {
+          notified.push("email");
+          break;
+        }
+      } catch {
+        // Notification failure must never fail the customer's booking
+      }
     }
   }
 
