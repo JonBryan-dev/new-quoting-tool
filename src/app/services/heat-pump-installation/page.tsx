@@ -5,6 +5,8 @@ import {
   PoundSterling, Ruler, ShieldCheck, Thermometer, Wrench,
 } from "lucide-react";
 import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
+import InstallGallery from "@/components/InstallGallery";
+import { photosFor } from "@/lib/install-photos";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -228,6 +230,22 @@ export default function HeatPumpInstallationPage() {
             className="w-full rounded-2xl border border-gray-200 shadow-lg bg-black"
             src="/heat-pump-install.mp4"
           />
+        </div>
+      </section>
+
+      {/* Recent installs */}
+      <section className="py-4 pb-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+              Recent installs across Staffordshire
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              Every photo below is our own work — no stock imagery. Neat siting
+              outside, tidy pipework inside.
+            </p>
+          </div>
+          <InstallGallery photos={photosFor("install-page")} columns={4} />
         </div>
       </section>
 

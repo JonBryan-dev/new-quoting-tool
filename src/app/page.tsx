@@ -7,6 +7,8 @@ import {
 
 import { towns } from "@/lib/towns";
 import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
+import InstallGallery from "@/components/InstallGallery";
+import { photosFor } from "@/lib/install-photos";
 
 export default function HomePage() {
   return (
@@ -243,6 +245,31 @@ export default function HomePage() {
             >
               Book Your Free Heat Loss Survey
               <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Real install photos */}
+      <section className="bg-white border-y border-gray-100 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Our work, not stock photos
+            </h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              Real installations by our own engineers across Staffordshire — tidy
+              pipework, neat siting, and plant rooms we&apos;re proud to photograph.
+            </p>
+          </div>
+          <InstallGallery photos={photosFor("homepage")} columns={4} />
+          <div className="text-center mt-8">
+            <Link
+              href="/services/heat-pump-installation"
+              className="inline-flex items-center gap-2 text-[#144E82] font-semibold hover:underline"
+            >
+              See more of our installs
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

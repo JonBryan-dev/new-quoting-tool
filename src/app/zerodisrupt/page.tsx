@@ -5,6 +5,8 @@ import {
   Phone, PoundSterling, ShieldCheck, Snowflake, TrendingDown, Zap,
 } from "lucide-react";
 import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
+import InstallGallery from "@/components/InstallGallery";
+import { photosFor } from "@/lib/install-photos";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -213,6 +215,22 @@ export default function ZeroDisruptPage() {
             See our accreditations
             <ArrowRight className="w-4 h-4" />
           </Link>
+        </div>
+      </section>
+
+      {/* Real installs */}
+      <section className="py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+              What a PG Renewables install looks like
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              Boiler-price doesn&apos;t mean corner-cutting — these are our own
+              recent Staffordshire installs.
+            </p>
+          </div>
+          <InstallGallery photos={photosFor("zerodisrupt")} />
         </div>
       </section>
 
