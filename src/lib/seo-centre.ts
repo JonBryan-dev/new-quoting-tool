@@ -1,0 +1,66 @@
+// SEO Command Centre — shared types and the default task plan.
+// The task list is seeded into the SeoTask table the first time the
+// admin SEO tab loads with a working database; after that the DB copy
+// is the source of truth and Jon can add/complete/delete freely.
+
+export interface SeoTaskSeed {
+  title: string;
+  category: "weekly" | "content" | "backlinks" | "gbp" | "technical";
+  frequency: "weekly" | "monthly" | "once";
+  sortOrder: number;
+}
+
+export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
+  // ── Weekly office routine ────────────────────────────────
+  { title: "Check Search Console: new queries, clicks, coverage errors", category: "weekly", frequency: "weekly", sortOrder: 10 },
+  { title: "Check GA4: sessions, generate_lead events, top landing pages", category: "weekly", frequency: "weekly", sortOrder: 20 },
+  { title: "Reply to every new review (Google, Trustpilot, Checkatrade)", category: "weekly", frequency: "weekly", sortOrder: 30 },
+  { title: "Post one GBP update (job photo, offer, or tip)", category: "weekly", frequency: "weekly", sortOrder: 40 },
+  { title: "Ask one happy customer for a Google review", category: "weekly", frequency: "weekly", sortOrder: 50 },
+  { title: "Record rank positions for tracked keywords (incognito search)", category: "weekly", frequency: "weekly", sortOrder: 60 },
+
+  // ── Content engine ───────────────────────────────────────
+  { title: "Publish first real case study with photos + measured figures", category: "content", frequency: "once", sortOrder: 100 },
+  { title: "Draft new guide with Claude in Content Studio, review, publish", category: "content", frequency: "monthly", sortOrder: 110 },
+  { title: "Add an About / Meet Jon page with a photo and story", category: "content", frequency: "once", sortOrder: 120 },
+  { title: "Expand thin service pages: timelines, warranty, install-day detail", category: "content", frequency: "once", sortOrder: 130 },
+
+  // ── Backlinks playbook ───────────────────────────────────
+  { title: "Claim / update MCS installer directory listing with new domain", category: "backlinks", frequency: "once", sortOrder: 200 },
+  { title: "Update Checkatrade & Which? Trusted Traders profiles to mention plumbgasrenewables.services", category: "backlinks", frequency: "once", sortOrder: 210 },
+  { title: "Link to renewables site from plumbgas.services heat pump pages", category: "backlinks", frequency: "once", sortOrder: 220 },
+  { title: "Ask Vaillant / Viessmann / Daikin for installer-finder listings", category: "backlinks", frequency: "once", sortOrder: 230 },
+  { title: "Approach Staffordshire local press with a ZeroDisrupt story (£3k heat pumps)", category: "backlinks", frequency: "once", sortOrder: 240 },
+  { title: "Join / post in local Facebook groups & Nextdoor as the local heat pump expert", category: "backlinks", frequency: "monthly", sortOrder: 250 },
+
+  // ── Google Business Profile ──────────────────────────────
+  { title: "Create separate PG Renewables GBP (NAP: 27 Barnbank Lane, Stafford ST17 9HB, 07872 626573)", category: "gbp", frequency: "once", sortOrder: 300 },
+  { title: "Add services + service areas (all 16 towns) to GBP", category: "gbp", frequency: "once", sortOrder: 310 },
+  { title: "Upload 10+ real job photos to GBP", category: "gbp", frequency: "once", sortOrder: 320 },
+
+  // ── Technical / setup ────────────────────────────────────
+  { title: "Add PRISMA_DATABASE_URL in Vercel + run npm run db:push (unlocks leads + SEO data)", category: "technical", frequency: "once", sortOrder: 400 },
+  { title: "Add ANTHROPIC_API_KEY in Vercel (unlocks Content Studio)", category: "technical", frequency: "once", sortOrder: 410 },
+  { title: "Mark generate_lead as a key event in GA4 once data flows", category: "technical", frequency: "once", sortOrder: 420 },
+  { title: "301-redirect the other 19 domains to plumbgasrenewables.services", category: "technical", frequency: "once", sortOrder: 430 },
+  { title: "Set up Google Cloud service account for Search Console + GA4 APIs (Phase C)", category: "technical", frequency: "once", sortOrder: 440 },
+];
+
+// Starter keyword set — seeded once, then managed from the admin UI.
+export const DEFAULT_SEO_KEYWORDS: { phrase: string; targetPath: string }[] = [
+  { phrase: "heat pump installation stafford", targetPath: "/heat-pumps/stafford" },
+  { phrase: "air source heat pump staffordshire", targetPath: "/services/heat-pump-installation" },
+  { phrase: "heat pump installer near me", targetPath: "/" },
+  { phrase: "boiler upgrade scheme stafford", targetPath: "/boiler-upgrade-scheme" },
+  { phrase: "heat pump cost staffordshire", targetPath: "/guides/heat-pump-cost-staffordshire-2026" },
+  { phrase: "£3000 heat pump", targetPath: "/zerodisrupt" },
+  { phrase: "free heat loss survey stafford", targetPath: "/services/heat-loss-surveys" },
+];
+
+export const SEO_TASK_CATEGORIES = [
+  { key: "weekly", label: "Weekly routine" },
+  { key: "content", label: "Content engine" },
+  { key: "backlinks", label: "Backlinks" },
+  { key: "gbp", label: "Google Business Profile" },
+  { key: "technical", label: "Technical & setup" },
+] as const;

@@ -1,9 +1,10 @@
 import { ArrowRight, ExternalLink, ShieldCheck, Timer, Zap } from "lucide-react";
-import HeatGeekWidget from "./HeatGeekWidget";
 
-// Branded lead-gen section wrapping the Heat Geek estimate widget.
-// The widget is the primary action; a direct link to the full Heat Geek
-// estimate flow acts as both a bold CTA and a no-JS fallback.
+// Branded lead-gen section for the Heat Geek estimate flow.
+// The embedded script widget was removed here — Heat Geek's "banner"
+// style renders as a fixed bar that floats over page content on mobile.
+// The CTA link carries the same tenancy attribution; the contained
+// "block" embed lives only on /quote/heatpump.
 
 export const HEATGEEK_ESTIMATE_URL =
   "https://upgrades.heatgeek.com/switch/plumbgas-services-limited/generate-estimate/";
@@ -13,8 +14,6 @@ export const HEATGEEK_PARTNER_URL =
 interface HeatGeekEstimateSectionProps {
   heading?: string;
   sub?: string;
-  widgetStyle?: "banner" | "block" | "widget";
-  align?: "left" | "center" | "right";
   /** compact renders without the outer section padding, for embedding in cards */
   compact?: boolean;
 }
@@ -22,8 +21,6 @@ interface HeatGeekEstimateSectionProps {
 export default function HeatGeekEstimateSection({
   heading = "Get your instant heat pump estimate",
   sub = "See your home's heat pump price in about two minutes — powered by Heat Geek, the UK's most trusted heat pump platform, and installed by us locally.",
-  widgetStyle = "banner",
-  align = "center",
   compact = false,
 }: HeatGeekEstimateSectionProps) {
   const inner = (
@@ -39,8 +36,6 @@ export default function HeatGeekEstimateSection({
           {heading}
         </h2>
         <p className="text-gray-600 mb-6">{sub}</p>
-
-        <HeatGeekWidget widgetStyle={widgetStyle} align={align} className="mb-6" />
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a

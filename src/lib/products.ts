@@ -15,7 +15,7 @@ export const categories: CategoryInfo[] = [
     description: "Air source heat pump installation with the £7,500 BUS grant handled for you",
     icon: "Thermometer",
     color: "#1C834B",
-    startingFrom: 1999,
+    startingFrom: 2999,
   },
 ];
 

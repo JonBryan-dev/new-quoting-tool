@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { categories } from "@/lib/products";
 import QuoteWizard from "@/components/quote/QuoteWizard";
 import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
+import HeatGeekWidget from "@/components/heatgeek/HeatGeekWidget";
 import Link from "next/link";
 import { CalendarCheck, Phone } from "lucide-react";
 
@@ -33,11 +34,15 @@ export default function QuotePage() {
           </div>
         </div>
 
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+          <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-6 overflow-hidden">
+            <HeatGeekWidget widgetStyle="block" align="center" />
+          </div>
+        </div>
+
         <HeatGeekEstimateSection
-          heading="Start your estimate below"
+          heading="Prefer the full estimate tool?"
           sub="Powered by Heat Geek — the UK's most trusted heat pump platform — and installed locally by our own MCS-accredited engineers."
-          widgetStyle="block"
-          align="center"
         />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">

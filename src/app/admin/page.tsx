@@ -17,8 +17,10 @@ import {
   Check,
   LogOut,
   User,
+  TrendingUp,
 } from "lucide-react";
 import type { Product } from "@/lib/types";
+import SeoTab from "@/components/admin/SeoTab";
 
 // ── TYPES ──────────────────────────────────────────────────
 
@@ -59,7 +61,7 @@ export default function AdminPage() {
   const [config, setConfig] = useState<AdminConfig | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [tab, setTab] = useState<"leads" | "products" | "pricing" | "quiz">("leads");
+  const [tab, setTab] = useState<"leads" | "seo" | "products" | "pricing" | "quiz">("leads");
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [adminUser, setAdminUser] = useState<string>("");
 
@@ -186,6 +188,7 @@ export default function AdminPage() {
         <div className="flex gap-1 bg-white rounded-xl border border-gray-200 p-1 w-fit">
           {[
             { key: "leads" as const, label: "Leads", icon: User },
+            { key: "seo" as const, label: "SEO", icon: TrendingUp },
             { key: "products" as const, label: "Products", icon: Package },
             { key: "pricing" as const, label: "Pricing", icon: DollarSign },
             { key: "quiz" as const, label: "Quiz Options", icon: ClipboardList },
@@ -209,6 +212,7 @@ export default function AdminPage() {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {tab === "leads" && <LeadsTab />}
+        {tab === "seo" && <SeoTab />}
         {tab === "products" && (
           <ProductsTab
             products={config.products}

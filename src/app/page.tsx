@@ -153,7 +153,7 @@ export default function HomePage() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Heat pump + full installation</span>
-                  <span className="text-xl font-bold text-gray-900">&pound;11,249</span>
+                  <span className="text-xl font-bold text-gray-900">&pound;10,500</span>
                 </div>
                 <div className="flex justify-between items-center text-[#1C834B]">
                   <span className="flex items-center gap-2 font-medium">
@@ -164,7 +164,7 @@ export default function HomePage() {
                 </div>
                 <div className="border-t-2 border-dashed border-green-200 pt-4 flex justify-between items-center">
                   <span className="font-semibold text-gray-900">You pay</span>
-                  <span className="text-4xl font-bold text-gray-900">&pound;3,749</span>
+                  <span className="text-4xl font-bold text-gray-900">&pound;3,000</span>
                 </div>
                 <div className="bg-white rounded-xl p-4 flex items-center gap-3 mt-2">
                   <TrendingDown className="w-6 h-6 text-[#1C834B] shrink-0" />

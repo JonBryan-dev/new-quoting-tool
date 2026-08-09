@@ -89,9 +89,23 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          &copy; {new Date().getFullYear()} PlumbGas Renewables. All rights reserved.
-          PG Renewables is the trading name of Jon Bryan, 27 Barnbank Lane, Stafford ST17 9HB.
+        <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center space-y-1.5">
+          <p>
+            PG Renewables is the renewables arm of{" "}
+            <a
+              href="https://www.plumbgas.services"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 underline hover:text-white"
+            >
+              PlumbGas Services
+            </a>
+            , Stafford&apos;s trusted heating company since 2003.
+          </p>
+          <p>
+            &copy; {new Date().getFullYear()} PlumbGas Renewables. All rights reserved.
+            PG Renewables is the trading name of Jon Bryan, 27 Barnbank Lane, Stafford ST17 9HB.
+          </p>
         </div>
       </div>
     </footer>

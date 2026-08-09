@@ -42,7 +42,7 @@ function faqsFor(townName: string, postcodes: string[]) {
     },
     {
       q: `How much does an air source heat pump cost in ${townName}?`,
-      a: `Most fully installed systems come to £8,000–£14,000 before the grant, depending on the size of your home and whether radiators or a hot water cylinder need upgrading. The £7,500 Boiler Upgrade Scheme grant comes straight off that, so typical customers pay £1,999–£6,500. Your free heat loss survey gives you an exact fixed price.`,
+      a: `Most fully installed systems come to £10,000–£14,000 before the grant, depending on the size of your home and whether radiators or a hot water cylinder need upgrading. The £7,500 Boiler Upgrade Scheme grant comes straight off that, so most customers pay from around £3,000 — about the same as a new gas boiler. Your free heat loss survey gives you an exact fixed price.`,
     },
     {
       q: `Do I qualify for the £7,500 heat pump grant?`,

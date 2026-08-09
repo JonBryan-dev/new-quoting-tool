@@ -80,7 +80,7 @@ export default function GuidesPage() {
             ))}
           </div>
           <p className="text-center text-sm text-gray-400 mt-8">
-            New guides published fortnightly — including performance write-ups from our
+            New guides published regularly — including performance write-ups from our
             own installs.
           </p>
         </div>

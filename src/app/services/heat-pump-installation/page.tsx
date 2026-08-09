@@ -11,7 +11,7 @@ const SITE_URL = "https://www.plumbgasrenewables.services";
 export const metadata: Metadata = {
   title: "Air Source Heat Pump Installation Staffordshire | MCS Certified",
   description:
-    "MCS-certified air source heat pump installation across Staffordshire from £1,999 after the £7,500 grant. Survey-first design, Vaillant, Viessmann & Daikin systems, 2-year workmanship warranty. Book a free heat loss survey.",
+    "MCS-certified air source heat pump installation across Staffordshire from around £3,000 after the £7,500 grant — the same price as a gas boiler. Survey-first design, Vaillant, Viessmann & Daikin systems, 2-year workmanship warranty. Book a free heat loss survey.",
   alternates: { canonical: "/services/heat-pump-installation" },
   openGraph: {
     title: "Air Source Heat Pump Installation in Staffordshire",

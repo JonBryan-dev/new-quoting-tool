@@ -91,3 +91,45 @@ model AdminUser {
   password  String   // bcrypt hash
   createdAt DateTime @default(now())
 }
+
+// ── SEO Command Centre ─────────────────────────────────────
+
+model SeoKeyword {
+  id         String         @id @default(cuid())
+  phrase     String
+  targetPath String? // page this keyword should rank for, e.g. /heat-pumps/stafford
+  notes      String?
+  createdAt  DateTime       @default(now())
+  checks     SeoRankCheck[]
+}
+
+model SeoRankCheck {
+  id        String     @id @default(cuid())
+  keywordId String
+  keyword   SeoKeyword @relation(fields: [keywordId], references: [id], onDelete: Cascade)
+  position  Int? // Google position; null = not found in top 100
+  source    String     @default("manual") // manual, gsc
+  checkedAt DateTime   @default(now())
+}
+
+model SeoTask {
+  id          String    @id @default(cuid())
+  title       String
+  category    String // weekly, content, backlinks, gbp, technical
+  frequency   String? // weekly, monthly, once
+  status      String    @default("open") // open, done
+  sortOrder   Int       @default(0)
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+}
+
+model SeoDraft {
+  id         String   @id @default(cuid())
+  kind       String // meta, article, improve, keywords, gbp-post, custom
+  targetPath String?
+  brief      String
+  content    String
+  model      String?
+  status     String   @default("draft") // draft, approved, published
+  createdAt  DateTime @default(now())
+}

@@ -17,7 +17,7 @@ const SERVICES = [
     icon: <Thermometer className="w-7 h-7" />,
     title: "Air Source Heat Pump Installation",
     desc: "Survey-first, MCS-certified installation with the £7,500 grant handled for you. Vaillant, Viessmann and Daikin systems from 5–16kW.",
-    highlight: "from £1,999 after grant",
+    highlight: "from around £3,000 after grant — same price as a gas boiler",
   },
   {
     href: "/services/heat-loss-surveys",
