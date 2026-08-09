@@ -32,6 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/zerodisrupt`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/quote/heatpump`,
       changeFrequency: "monthly",
       priority: 0.8,

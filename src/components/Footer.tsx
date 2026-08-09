@@ -41,6 +41,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/book" className="hover:text-white transition-colors">Free Heat Loss Survey</Link></li>
+              <li><Link href="/zerodisrupt" className="hover:text-white transition-colors">ZeroDisrupt &mdash; &pound;3k Heat Pumps</Link></li>
               <li><Link href="/services/heat-pump-installation" className="hover:text-white transition-colors">Heat Pump Installation</Link></li>
               <li><Link href="/services/heat-pump-servicing" className="hover:text-white transition-colors">Heat Pump Servicing</Link></li>
               <li><Link href="/services/underfloor-heating" className="hover:text-white transition-colors">Underfloor Heating</Link></li>

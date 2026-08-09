@@ -53,6 +53,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ZeroDisrupt promo band */}
+      <Link
+        href="/zerodisrupt"
+        className="block bg-[#F26430] hover:bg-[#d94f1a] transition-colors"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-3 text-white text-sm sm:text-base font-semibold text-center">
+          <span className="hidden sm:inline-flex bg-white/20 rounded-full px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide">New</span>
+          <span>ZeroDisrupt has landed: a heat pump for the price of a gas boiler — from around &pound;3,000</span>
+          <ArrowRight className="w-4 h-4 shrink-0" />
+        </div>
+      </Link>
+
       {/* Trust Bar */}
       <section className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

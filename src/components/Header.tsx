@@ -36,8 +36,8 @@ export default function Header() {
             <Link href="/guides" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
               Guides
             </Link>
-            <Link href="/quote/heatpump" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              Instant Estimate
+            <Link href="/zerodisrupt" className="text-[#F26430] hover:text-[#d94f1a] text-sm font-bold">
+              &pound;3k Heat Pumps
             </Link>
           </nav>
 
@@ -77,6 +77,9 @@ export default function Header() {
             </Link>
             <Link href="/guides" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
               Guides
+            </Link>
+            <Link href="/zerodisrupt" className="block text-[#F26430] font-bold" onClick={() => setMenuOpen(false)}>
+              &pound;3k Heat Pumps
             </Link>
             <Link href="/quote/heatpump" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
               Instant Estimate
