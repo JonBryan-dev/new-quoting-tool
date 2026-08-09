@@ -1,13 +1,13 @@
+import Link from "next/link";
 import { ArrowRight, ExternalLink, ShieldCheck, Timer, Zap } from "lucide-react";
 
 // Branded lead-gen section for the Heat Geek estimate flow.
 // The embedded script widget was removed here — Heat Geek's "banner"
 // style renders as a fixed bar that floats over page content on mobile.
-// The CTA link carries the same tenancy attribution; the contained
-// "block" embed lives only on /quote/heatpump.
+// The CTA sends visitors to /quote/heatpump, our own page hosting the
+// contained address-search widget (no Heat Geek sign-in required —
+// unlike the partner "generate-estimate" URL, which demands an account).
 
-export const HEATGEEK_ESTIMATE_URL =
-  "https://upgrades.heatgeek.com/switch/plumbgas-services-limited/generate-estimate/";
 export const HEATGEEK_PARTNER_URL =
   "https://upgrades.heatgeek.com/partner/plumbgas-services-limited/";
 
@@ -38,15 +38,13 @@ export default function HeatGeekEstimateSection({
         <p className="text-gray-600 mb-6">{sub}</p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-          <a
-            href={HEATGEEK_ESTIMATE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/quote/heatpump"
             className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
           >
             Start My Estimate
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
           <a
             href={HEATGEEK_PARTNER_URL}
             target="_blank"

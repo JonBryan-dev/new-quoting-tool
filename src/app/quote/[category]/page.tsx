@@ -3,7 +3,6 @@
 import { useParams } from "next/navigation";
 import { categories } from "@/lib/products";
 import QuoteWizard from "@/components/quote/QuoteWizard";
-import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 import HeatGeekWidget from "@/components/heatgeek/HeatGeekWidget";
 import Link from "next/link";
 import { CalendarCheck, Phone } from "lucide-react";
@@ -34,16 +33,18 @@ export default function QuotePage() {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-          <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-6 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="bg-white rounded-2xl border-2 border-[#1C834B]/30 p-4 sm:p-8 overflow-hidden">
+            <p className="text-center text-sm font-semibold text-[#1C834B] uppercase tracking-wide mb-1">
+              Start here
+            </p>
+            <p className="text-center text-gray-500 text-sm mb-4">
+              Type your address below — no sign-up needed to see your price. Powered by Heat
+              Geek, installed locally by our own MCS-accredited engineers.
+            </p>
             <HeatGeekWidget widgetStyle="block" align="center" />
           </div>
         </div>
-
-        <HeatGeekEstimateSection
-          heading="Prefer the full estimate tool?"
-          sub="Powered by Heat Geek — the UK's most trusted heat pump platform — and installed locally by our own MCS-accredited engineers."
-        />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
           <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">

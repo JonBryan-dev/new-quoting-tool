@@ -4,9 +4,7 @@ import {
   ArrowRight, CalendarCheck, Check, ClipboardCheck, Gauge, Home,
   Phone, PoundSterling, ShieldCheck, Snowflake, TrendingDown, Zap,
 } from "lucide-react";
-import HeatGeekEstimateSection, {
-  HEATGEEK_ESTIMATE_URL,
-} from "@/components/heatgeek/HeatGeekEstimateSection";
+import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -85,15 +83,13 @@ export default function ZeroDisruptPage() {
             installation, lower bills every month, backed by the Heat Geek Guarantee.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={HEATGEEK_ESTIMATE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/quote/heatpump"
               className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Get Your Instant Estimate
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
             <a
               href="tel:07872626573"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors backdrop-blur"
@@ -257,15 +253,13 @@ export default function ZeroDisruptPage() {
             heat pump would cost — you might never pay a gas bill again.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={HEATGEEK_ESTIMATE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/quote/heatpump"
               className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Get My Instant Estimate
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
             <Link
               href="/book"
               className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 hover:bg-gray-50 text-[#144E82] px-8 py-4 rounded-xl font-semibold text-lg transition-colors"

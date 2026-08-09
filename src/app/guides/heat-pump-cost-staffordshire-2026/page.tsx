@@ -105,9 +105,9 @@ export default function CostGuidePage() {
             installation labour, commissioning, MCS certification and the grant
             application. Larger homes or ones needing radiator upgrades cost more than
             the starting price — your{" "}
-            <a href="https://upgrades.heatgeek.com/switch/plumbgas-services-limited/generate-estimate/" target="_blank" rel="noopener noreferrer" className="text-[#1C834B] font-medium underline">
+            <Link href="/quote/heatpump" className="text-[#1C834B] font-medium underline">
               instant estimate
-            </a>{" "}
+            </Link>{" "}
             gives you your own number in about two minutes.
           </p>
           <p>
