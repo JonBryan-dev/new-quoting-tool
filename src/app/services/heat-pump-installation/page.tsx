@@ -209,6 +209,28 @@ export default function HeatPumpInstallationPage() {
         </div>
       </section>
 
+      {/* Watch an install */}
+      <section className="py-4 pb-14">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+              Watch a PG Renewables installation
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              See what actually happens when we fit a heat pump — from first fix to
+              a warm home.
+            </p>
+          </div>
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            className="w-full rounded-2xl border border-gray-200 shadow-lg bg-black"
+            src="/heat-pump-install.mp4"
+          />
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className="bg-gray-50 py-14 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

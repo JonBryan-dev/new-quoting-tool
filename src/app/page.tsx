@@ -11,10 +11,19 @@ import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSecti
 export default function HomePage() {
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section — video background with gradient fallback/overlay */}
       <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#1C834B] text-white relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/5 rounded-full" />
-        <div className="absolute -bottom-32 -left-16 w-80 h-80 bg-white/5 rounded-full" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/hero-survey.mp4"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0c3560]/90 via-[#144E82]/80 to-[#1C834B]/75" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 text-green-50 px-4 py-1.5 rounded-full text-sm mb-6 backdrop-blur">
