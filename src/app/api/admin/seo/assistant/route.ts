@@ -34,7 +34,10 @@ const MODE_PROMPTS: Record<string, string> = {
 };
 
 export async function POST(request: NextRequest) {
-  if (!process.env.ANTHROPIC_API_KEY) {
+  // Jon's Vercel project already had an ANTHROPIC_API_KEY, so the fresh
+  // key was added as ANTHROPIC_API_KEY2 — prefer it when present.
+  const apiKey = process.env.ANTHROPIC_API_KEY2 || process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
     return NextResponse.json(
       { error: "ANTHROPIC_API_KEY is not set in Vercel. Add it in Project Settings → Environment Variables, then redeploy." },
       { status: 503 },
@@ -64,7 +67,7 @@ export async function POST(request: NextRequest) {
     .join("\n\n");
 
   try {
-    const client = new Anthropic();
+    const client = new Anthropic({ apiKey });
     const message = await client.messages.create({
       model: "claude-opus-5",
       max_tokens: 6000,

@@ -91,9 +91,220 @@ export default function SeoTab() {
   return (
     <div className="space-y-8">
       <StatusSection status={status} />
+      <GoogleSection />
       <ContentStudio anthropicReady={Boolean(status?.anthropicKey)} />
       <KeywordTracker enabled={Boolean(status?.tablesReady)} />
       <TaskChecklist enabled={Boolean(status?.tablesReady)} />
+    </div>
+  );
+}
+
+// ── Search performance (Search Console + GA4) ──────────────
+
+interface GscRow {
+  keys: string[];
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+interface GoogleData {
+  configured: { serviceAccount: boolean; ga4PropertyId: boolean };
+  gsc: { siteUrl: string; queries: GscRow[]; pages: GscRow[] } | null;
+  ga4: { sessions: number; activeUsers: number; leads: number } | null;
+  errors: string[];
+}
+
+const GOOGLE_SETUP_STEPS = [
+  "Go to console.cloud.google.com and create a project (e.g. \"pg-renewables-seo\").",
+  "In \"APIs & Services → Library\", enable BOTH the \"Google Search Console API\" and the \"Google Analytics Data API\".",
+  "In \"IAM & Admin → Service Accounts\", create a service account, then under its \"Keys\" tab add a new JSON key — a file downloads.",
+  "In Vercel → Project Settings → Environment Variables, add GOOGLE_SERVICE_ACCOUNT_KEY and paste the ENTIRE contents of that JSON file as the value.",
+  "In Search Console → Settings → Users and permissions, add the service account's email address (it ends @...iam.gserviceaccount.com) as a Restricted user.",
+  "In GA4 → Admin → Property access management, add the same email as a Viewer.",
+  "In GA4 → Admin → Property Settings, copy the numeric Property ID and add it to Vercel as GA4_PROPERTY_ID.",
+  "Redeploy the site (Vercel → Deployments → Redeploy) and refresh this page.",
+];
+
+function GoogleSection() {
+  const [data, setData] = useState<GoogleData | null>(null);
+  const [syncMsg, setSyncMsg] = useState("");
+  const [syncing, setSyncing] = useState(false);
+
+  const load = useCallback(() => {
+    fetch("/api/admin/seo/google")
+      .then((r) => r.json())
+      .then(setData)
+      .catch(() => {});
+  }, []);
+
+  useEffect(load, [load]);
+
+  async function syncKeywords() {
+    setSyncing(true);
+    setSyncMsg("");
+    try {
+      const res = await fetch("/api/admin/seo/google", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "sync-keywords" }),
+      });
+      const result = await res.json();
+      setSyncMsg(
+        res.ok
+          ? `Synced ${result.synced} of ${result.totalTracked} tracked keywords from Search Console.`
+          : result.error || "Sync failed",
+      );
+    } catch {
+      setSyncMsg("Sync failed — try again.");
+    } finally {
+      setSyncing(false);
+    }
+  }
+
+  const configured = data?.configured.serviceAccount;
+
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <div className="flex items-center justify-between mb-1">
+        <h3 className="font-bold text-gray-900">Search performance</h3>
+        {configured && (
+          <button
+            onClick={load}
+            className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700"
+          >
+            <RefreshCw className="w-3.5 h-3.5" />
+            Refresh
+          </button>
+        )}
+      </div>
+      <p className="text-sm text-gray-500 mb-4">
+        Live data from Google Search Console and GA4, last 28 days.
+      </p>
+
+      {!data ? (
+        <div className="flex items-center gap-2 text-sm text-gray-400 py-4">
+          <Loader2 className="w-4 h-4 animate-spin" /> Loading…
+        </div>
+      ) : !configured ? (
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <p className="text-sm font-semibold text-blue-900 mb-2">
+            One-time setup (about 10 minutes, one Google Cloud service account unlocks both feeds):
+          </p>
+          <ol className="list-decimal list-inside space-y-1.5 text-sm text-blue-900">
+            {GOOGLE_SETUP_STEPS.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+        </div>
+      ) : (
+        <>
+          {data.errors.length > 0 && (
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800 mb-4 space-y-1">
+              {data.errors.map((e) => (
+                <p key={e}>{e}</p>
+              ))}
+              {!data.configured.ga4PropertyId && (
+                <p>GA4_PROPERTY_ID is not set — add it in Vercel for visitor numbers.</p>
+              )}
+            </div>
+          )}
+
+          {data.ga4 && (
+            <div className="grid grid-cols-3 gap-3 mb-5">
+              {[
+                { label: "Sessions", value: data.ga4.sessions },
+                { label: "Visitors", value: data.ga4.activeUsers },
+                { label: "Leads (generate_lead)", value: data.ga4.leads },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-gray-50 rounded-lg p-4 text-center">
+                  <p className="text-2xl font-bold text-gray-900">{stat.value.toLocaleString()}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {data.gsc && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-sm font-semibold text-gray-900">Top search queries</p>
+                  <button
+                    onClick={syncKeywords}
+                    disabled={syncing}
+                    className="text-xs text-[#144E82] hover:underline disabled:opacity-50"
+                  >
+                    {syncing ? "Syncing…" : "Sync positions to tracker"}
+                  </button>
+                </div>
+                {syncMsg && <p className="text-xs text-gray-500 mb-2">{syncMsg}</p>}
+                <table className="min-w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-200 text-left text-xs text-gray-500 uppercase">
+                      <th className="py-1.5 pr-3">Query</th>
+                      <th className="py-1.5 pr-3 text-right">Clicks</th>
+                      <th className="py-1.5 pr-3 text-right">Impr.</th>
+                      <th className="py-1.5 text-right">Pos.</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.gsc.queries.slice(0, 15).map((row) => (
+                      <tr key={row.keys[0]} className="border-b border-gray-100 last:border-0">
+                        <td className="py-1.5 pr-3 text-gray-800">{row.keys[0]}</td>
+                        <td className="py-1.5 pr-3 text-right text-gray-600">{row.clicks}</td>
+                        <td className="py-1.5 pr-3 text-right text-gray-500">{row.impressions}</td>
+                        <td className="py-1.5 text-right font-medium text-gray-800">
+                          {row.position.toFixed(1)}
+                        </td>
+                      </tr>
+                    ))}
+                    {data.gsc.queries.length === 0 && (
+                      <tr>
+                        <td colSpan={4} className="py-3 text-gray-400 text-center">
+                          No query data yet — normal for a new site; check back weekly.
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold text-gray-900 mb-2">Top pages</p>
+                <table className="min-w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-200 text-left text-xs text-gray-500 uppercase">
+                      <th className="py-1.5 pr-3">Page</th>
+                      <th className="py-1.5 pr-3 text-right">Clicks</th>
+                      <th className="py-1.5 text-right">Impr.</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.gsc.pages.map((row) => (
+                      <tr key={row.keys[0]} className="border-b border-gray-100 last:border-0">
+                        <td className="py-1.5 pr-3 text-gray-800 break-all">
+                          {row.keys[0]?.replace("https://www.plumbgasrenewables.services", "") || "/"}
+                        </td>
+                        <td className="py-1.5 pr-3 text-right text-gray-600">{row.clicks}</td>
+                        <td className="py-1.5 text-right text-gray-500">{row.impressions}</td>
+                      </tr>
+                    ))}
+                    {data.gsc.pages.length === 0 && (
+                      <tr>
+                        <td colSpan={3} className="py-3 text-gray-400 text-center">
+                          No page data yet.
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }

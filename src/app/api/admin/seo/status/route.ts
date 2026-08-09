@@ -11,7 +11,7 @@ export async function GET() {
   const status = {
     dbConnected: false,
     tablesReady: false,
-    anthropicKey: Boolean(process.env.ANTHROPIC_API_KEY),
+    anthropicKey: Boolean(process.env.ANTHROPIC_API_KEY2 || process.env.ANTHROPIC_API_KEY),
     googleServiceAccount: Boolean(process.env.GOOGLE_SERVICE_ACCOUNT_KEY),
     ga4MeasurementId: "G-F7Z434DHFX",
     counts: { keywords: 0, openTasks: 0, doneTasks: 0, drafts: 0, leads: 0 },
