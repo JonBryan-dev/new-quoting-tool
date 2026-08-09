@@ -37,3 +37,66 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* ── Heat Geek widget brand overrides ─────────────────────────
+   Scoped to .hg-embed so they only touch the embedded widget.
+   These restyle the widget's buttons, inputs and cards in PG
+   Renewables colours. If Heat Geek renders inside an iframe these
+   rules simply have no effect (iframe internals are unreachable
+   from the host page). */
+
+.hg-embed,
+.hg-embed * {
+  font-family: 'Ubuntu', system-ui, -apple-system, sans-serif !important;
+}
+
+.hg-embed button,
+.hg-embed input[type="submit"],
+.hg-embed input[type="button"],
+.hg-embed [class*="btn"],
+.hg-embed [class*="Button"],
+.hg-embed [role="button"] {
+  background-color: var(--success) !important;
+  border-color: var(--success) !important;
+  color: #ffffff !important;
+  border-radius: 0.75rem !important;
+  font-weight: 600 !important;
+  transition: background-color 150ms ease !important;
+}
+
+.hg-embed button:hover,
+.hg-embed [class*="btn"]:hover,
+.hg-embed [class*="Button"]:hover,
+.hg-embed [role="button"]:hover {
+  background-color: #166a3c !important;
+  border-color: #166a3c !important;
+}
+
+.hg-embed input[type="text"],
+.hg-embed input[type="search"],
+.hg-embed input[type="email"],
+.hg-embed input:not([type]),
+.hg-embed select {
+  border: 1px solid var(--border) !important;
+  border-radius: 0.75rem !important;
+  background-color: #ffffff !important;
+  color: var(--foreground) !important;
+}
+
+.hg-embed input:focus,
+.hg-embed select:focus {
+  border-color: var(--success) !important;
+  outline: 2px solid rgba(28, 131, 75, 0.25) !important;
+  outline-offset: 1px !important;
+}
+
+.hg-embed a {
+  color: var(--primary) !important;
+}
+
+.hg-embed [class*="banner"],
+.hg-embed [class*="card"],
+.hg-embed [class*="container"],
+.hg-embed [class*="widget"] {
+  border-radius: 1rem !important;
+}

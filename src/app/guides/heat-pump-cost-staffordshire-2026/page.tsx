@@ -7,7 +7,7 @@ const SITE_URL = "https://www.plumbgasrenewables.services";
 export const metadata: Metadata = {
   title: "How Much Does a Heat Pump Cost in Staffordshire? (2026 Prices)",
   description:
-    "Real 2026 installed prices for air source heat pumps in Staffordshire: £8,000–£14,000 before the grant, £1,999–£6,500 after. What changes the price, what's included, and how the £7,500 grant works.",
+    "2026 heat pump prices in Staffordshire have changed: through Heat Geek's ZeroDisrupt we now install from around £3,000 — the same price as a new gas boiler. What's included, what moves the price, and how the £7,500 grant works.",
   alternates: { canonical: "/guides/heat-pump-cost-staffordshire-2026" },
   openGraph: {
     type: "article",
@@ -59,54 +59,65 @@ export default function CostGuidePage() {
       <article className="py-12 sm:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-gray-700 leading-relaxed">
           <p className="text-lg text-gray-600">
-            The short answer: for most Staffordshire homes in 2026, a fully installed
-            air source heat pump system costs <strong>&pound;8,000&ndash;&pound;14,000
-            before the grant</strong> — and because the &pound;7,500 Boiler Upgrade
-            Scheme grant comes straight off that,{" "}
-            <strong>most of our customers pay between &pound;1,999 and
-            &pound;6,500</strong>. Here&apos;s where those numbers come from, what moves
-            them up or down, and what they include.
+            The short answer just changed. Until recently a heat pump install cost
+            &pound;12&ndash;15k, which put it out of reach for most families. Through
+            Heat Geek&apos;s <strong>ZeroDisrupt</strong> system we can now install a
+            heat pump in Staffordshire{" "}
+            <strong>from around &pound;3,000 — about the same price as a new gas
+            boiler</strong> — with the &pound;7,500 Boiler Upgrade Scheme grant already
+            deducted. Here&apos;s how that&apos;s possible, what&apos;s included, and
+            what moves the price for your home.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 pt-2">
-            Typical installed prices by home type
+            Heat pump vs new gas boiler: the 2026 price comparison
           </h2>
           <p>
-            These are our current after-grant starting prices, based on the systems we
-            install (Vaillant aroTHERM plus, Viessmann Vitocal, Daikin Altherma):
+            The honest way to think about it is against the thing you&apos;d otherwise
+            buy — another gas boiler:
           </p>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
               <thead className="bg-gray-50">
                 <tr className="text-left">
-                  <th className="px-4 py-3 font-semibold text-gray-900">Home</th>
-                  <th className="px-4 py-3 font-semibold text-gray-900">Typical system</th>
-                  <th className="px-4 py-3 font-semibold text-gray-900">Before grant</th>
-                  <th className="px-4 py-3 font-semibold text-gray-900">You pay (after &pound;7,500)</th>
+                  <th className="px-4 py-3 font-semibold text-gray-900">Option</th>
+                  <th className="px-4 py-3 font-semibold text-gray-900">Typical installed price</th>
+                  <th className="px-4 py-3 font-semibold text-gray-900">What happens to your bills</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ["Flat / small terrace", "5kW + 150–180L cylinder", "£9,000–£10,000", "from £1,999"],
-                  ["2–3 bed semi or terrace", "7kW + 180–210L cylinder", "£10,500–£11,500", "from £3,749"],
-                  ["3–4 bed semi/detached", "9kW + 210–250L cylinder", "£12,000–£13,000", "from £4,999"],
-                  ["4–5 bed detached", "12–16kW + 250–300L cylinder", "£13,000–£14,500+", "from £5,449"],
+                  ["New gas boiler", "£2,000–£4,000", "Locked into gas prices for 10–15 years"],
+                  ["ZeroDisrupt heat pump (after £7,500 grant)", "from ~£3,000", "Lower running costs, month after month"],
+                  ["Heat pump the old way (pre-ZeroDisrupt)", "£12,000–£15,000", "Same savings — but few could afford the install"],
                 ].map((row) => (
                   <tr key={row[0]} className="border-t border-gray-100">
                     <td className="px-4 py-3 font-medium text-gray-900">{row[0]}</td>
-                    <td className="px-4 py-3 text-gray-600">{row[1]}</td>
+                    <td className="px-4 py-3 font-bold text-[#1C834B]">{row[1]}</td>
                     <td className="px-4 py-3 text-gray-600">{row[2]}</td>
-                    <td className="px-4 py-3 font-bold text-[#1C834B]">{row[3]}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
           <p className="text-sm text-gray-500">
-            Every price above includes the heat pump, hot water cylinder, controls,
+            The ZeroDisrupt price includes the heat pump, hot water cylinder, controls,
             installation labour, commissioning, MCS certification and the grant
-            application. They&apos;re starting prices — your fixed quote comes from a
-            free heat loss survey, not a table.
+            application. Larger homes or ones needing radiator upgrades cost more than
+            the starting price — your{" "}
+            <a href="https://upgrades.heatgeek.com/switch/plumbgas-services-limited/generate-estimate/" target="_blank" rel="noopener noreferrer" className="text-[#1C834B] font-medium underline">
+              instant estimate
+            </a>{" "}
+            gives you your own number in about two minutes.
+          </p>
+          <p>
+            How is boiler-price possible without cutting corners? By cutting{" "}
+            <em>waste</em>: ZeroDisrupt designs are generated from data on thousands of
+            real UK homes, so there&apos;s no over-sized kit, no unnecessary upgrades
+            and no padded quotes. Read the full story on our{" "}
+            <Link href="/zerodisrupt" className="text-[#1C834B] font-medium underline">
+              ZeroDisrupt page
+            </Link>.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 pt-2">

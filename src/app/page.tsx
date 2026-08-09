@@ -46,7 +46,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="text-blue-200 text-sm mt-4">
-              Heat pumps from &pound;1,999 after the grant &bull; Free survey, no obligation &bull;{" "}
+              Heat pumps from around &pound;3,000 &mdash; the same price as a gas boiler &bull; Free survey, no obligation &bull;{" "}
               <a href="tel:07872626573" className="underline hover:text-white">07872 626573</a>
             </p>
           </div>

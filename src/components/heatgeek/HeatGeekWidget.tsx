@@ -39,5 +39,5 @@ export default function HeatGeekWidget({
     };
   }, [widgetStyle, align]);
 
-  return <div ref={ref} className={className} />;
+  return <div ref={ref} className={`hg-embed${className ? ` ${className}` : ""}`} />;
 }

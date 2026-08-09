@@ -168,29 +168,22 @@ export default function BoilerUpgradeSchemePage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <p className="text-sm text-gray-500 mb-3">
-                Typical after-grant prices in Staffordshire:
+            <div className="bg-white rounded-2xl border-2 border-[#1C834B]/40 p-6">
+              <p className="text-sm font-semibold text-[#1C834B] mb-2">
+                With the grant + ZeroDisrupt:
               </p>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Flat / small terrace</span>
-                  <span className="font-bold text-gray-900">from &pound;1,999</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">3-bed semi</span>
-                  <span className="font-bold text-gray-900">from &pound;3,749</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">4-bed detached</span>
-                  <span className="font-bold text-gray-900">from &pound;5,449</span>
-                </div>
-              </div>
+              <p className="text-3xl font-bold text-gray-900 mb-1">
+                from ~&pound;3,000 installed
+              </p>
+              <p className="text-sm text-gray-500 mb-4">
+                About the same price as a new gas boiler — through Heat Geek&apos;s
+                smart-design ZeroDisrupt system, installed locally by us.
+              </p>
               <Link
-                href="/quote/heatpump"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1C834B] hover:underline"
+                href="/zerodisrupt"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#1C834B] hover:underline"
               >
-                Get an instant estimate for your home
+                How boiler-price heat pumps work
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

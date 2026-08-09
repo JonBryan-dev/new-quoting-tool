@@ -217,29 +217,35 @@ export default function HeatPumpInstallationPage() {
               What does installation cost?
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              Fully installed systems typically come to &pound;8,000&ndash;&pound;14,000
-              before the grant. The &pound;7,500 Boiler Upgrade Scheme grant comes
-              straight off that — these are our typical after-grant prices:
+              Through Heat Geek&apos;s <strong>ZeroDisrupt</strong> system and the
+              &pound;7,500 Boiler Upgrade Scheme grant, we now install heat pumps{" "}
+              <strong className="text-gray-900">from around &pound;3,000 — about the
+              same price as a new gas boiler</strong>.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { home: "Flat / small terrace", size: "5kW system", price: "from £1,999" },
-              { home: "3-bed semi", size: "7–9kW system", price: "from £3,749" },
-              { home: "4-bed detached", size: "9–12kW system", price: "from £5,449" },
+              { home: "New gas boiler", size: "the old default", price: "£2,000–£4,000", note: "locked into gas prices" },
+              { home: "ZeroDisrupt heat pump", size: "smart-designed system", price: "from ~£3,000", note: "after £7,500 grant — lower bills monthly" },
+              { home: "Heat pump, the old way", size: "pre-ZeroDisrupt", price: "£12,000–£15,000", note: "why so few could switch until now" },
             ].map((row) => (
-              <div key={row.home} className="bg-white rounded-2xl border border-gray-200 p-6 text-center">
+              <div key={row.home} className={`rounded-2xl border p-6 text-center ${row.home === "ZeroDisrupt heat pump" ? "bg-white border-2 border-[#1C834B]" : "bg-white border-gray-200"}`}>
                 <p className="font-bold text-gray-900 mb-1">{row.home}</p>
                 <p className="text-sm text-gray-500 mb-3">{row.size}</p>
                 <p className="text-3xl font-bold text-[#1C834B]">{row.price}</p>
-                <p className="text-xs text-gray-400 mt-1">after &pound;7,500 grant</p>
+                <p className="text-xs text-gray-400 mt-1">{row.note}</p>
               </div>
             ))}
           </div>
           <p className="text-center text-sm text-gray-500 mt-8">
-            Read our full guide:{" "}
+            Larger homes and radiator upgrades add to the starting price — your instant
+            estimate gives you your own number. Read more:{" "}
+            <Link href="/zerodisrupt" className="text-[#1C834B] font-medium underline">
+              ZeroDisrupt explained
+            </Link>{" "}
+            &middot;{" "}
             <Link href="/guides/heat-pump-cost-staffordshire-2026" className="text-[#1C834B] font-medium underline">
-              How much does a heat pump cost in Staffordshire in 2026?
+              full 2026 cost guide
             </Link>
           </p>
         </div>
