@@ -26,12 +26,22 @@ export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
   { title: "Expand thin service pages: timelines, warranty, install-day detail", category: "content", frequency: "once", sortOrder: 130 },
 
   // ── Backlinks playbook ───────────────────────────────────
+  // Expanded 2026-08-10 after Jon asked for the full backlink plan.
   { title: "Claim / update MCS installer directory listing with new domain", category: "backlinks", frequency: "once", sortOrder: 200 },
   { title: "Update Checkatrade & Which? Trusted Traders profiles to mention plumbgasrenewables.services", category: "backlinks", frequency: "once", sortOrder: 210 },
+  { title: "Update Trustpilot profile website to plumbgasrenewables.services", category: "backlinks", frequency: "once", sortOrder: 212 },
+  { title: "Check Gas Safe register entry lists the new website", category: "backlinks", frequency: "once", sortOrder: 214 },
   { title: "Link to renewables site from plumbgas.services heat pump pages", category: "backlinks", frequency: "once", sortOrder: 220 },
   { title: "Ask Vaillant / Viessmann / Daikin for installer-finder listings", category: "backlinks", frequency: "once", sortOrder: 230 },
+  { title: "Ask Heat Geek rep about a partner profile page that links to the site", category: "backlinks", frequency: "once", sortOrder: 232 },
   { title: "Approach Staffordshire local press with a ZeroDisrupt story (£3k heat pumps)", category: "backlinks", frequency: "once", sortOrder: 240 },
+  { title: "Set up citations: Bing Places, Apple Business Connect, Yell, FreeIndex", category: "backlinks", frequency: "once", sortOrder: 242 },
+  { title: "Sponsor a local club or event (kit / website sponsorship earns a link)", category: "backlinks", frequency: "once", sortOrder: 244 },
+  { title: "Join Staffordshire Chambers of Commerce (member directory listing)", category: "backlinks", frequency: "once", sortOrder: 246 },
+  { title: "Pitch a ZeroDisrupt install case study to Installer / HVP magazine", category: "backlinks", frequency: "once", sortOrder: 248 },
+  { title: "Ask merchant / suppliers about a customer spotlight feature", category: "backlinks", frequency: "once", sortOrder: 249 },
   { title: "Join / post in local Facebook groups & Nextdoor as the local heat pump expert", category: "backlinks", frequency: "monthly", sortOrder: 250 },
+  { title: "NEVER buy links or Fiverr backlink packages (penalty risk on a new domain)", category: "backlinks", frequency: "once", sortOrder: 260 },
 
   // ── Google Business Profile ──────────────────────────────
   { title: "Create separate PG Renewables GBP (NAP: 27 Barnbank Lane, Stafford ST17 9HB, 07872 626573)", category: "gbp", frequency: "once", sortOrder: 300 },
@@ -44,6 +54,7 @@ export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
   { title: "Mark generate_lead as a key event in GA4 once data flows", category: "technical", frequency: "once", sortOrder: 420 },
   { title: "301-redirect the other 19 domains to plumbgasrenewables.services", category: "technical", frequency: "once", sortOrder: 430 },
   { title: "Set up Google Cloud service account for Search Console + GA4 APIs (Phase C)", category: "technical", frequency: "once", sortOrder: 440 },
+  { title: "Register with Bing Webmaster Tools (Import from Google Search Console button): covers Bing, DuckDuckGo, Yahoo and ChatGPT search", category: "technical", frequency: "once", sortOrder: 450 },
 ];
 
 // Starter keyword set, seeded once, then managed from the admin UI.

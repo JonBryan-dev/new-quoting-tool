@@ -16,6 +16,16 @@ export async function GET() {
   try {
     if ((await db.seoTask.count()) === 0) {
       await db.seoTask.createMany({ data: DEFAULT_SEO_TASKS });
+    } else {
+      // Top up defaults added after the first seed (matched by title).
+      // Trade-off: deleting a default task brings it back on next load;
+      // acceptable while the plan is still growing.
+      const existing = await db.seoTask.findMany({ select: { title: true } });
+      const have = new Set(existing.map((t: { title: string }) => t.title));
+      const missing = DEFAULT_SEO_TASKS.filter((t) => !have.has(t.title));
+      if (missing.length > 0) {
+        await db.seoTask.createMany({ data: missing });
+      }
     }
     const tasks = await db.seoTask.findMany({ orderBy: { sortOrder: "asc" } });
     return NextResponse.json({ dbAvailable: true, tasks });
