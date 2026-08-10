@@ -41,6 +41,15 @@ export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
   { title: "Pitch a ZeroDisrupt install case study to Installer / HVP magazine", category: "backlinks", frequency: "once", sortOrder: 248 },
   { title: "Ask merchant / suppliers about a customer spotlight feature", category: "backlinks", frequency: "once", sortOrder: 249 },
   { title: "Join / post in local Facebook groups & Nextdoor as the local heat pump expert", category: "backlinks", frequency: "monthly", sortOrder: 250 },
+  // From the Aug 2026 research pack: specific finds with existing footholds
+  { title: "Email SBEN (sben.co.uk) to add renewables site to existing green-supplier listing", category: "backlinks", frequency: "once", sortOrder: 251 },
+  { title: "Update RECC member directory entry with renewables site", category: "backlinks", frequency: "once", sortOrder: 252 },
+  { title: "Claim Reach plc directory listing: fix old Salcombe Avenue address, add new URL", category: "backlinks", frequency: "once", sortOrder: 253 },
+  { title: "Reactivate Checkatrade profile, merge duplicates, add heat pump category", category: "backlinks", frequency: "once", sortOrder: 254 },
+  { title: "Free directory claims afternoon: heatpumpinstallerdirectory, findcertifiedinstallers, findheatpumpsinstallers, renewablesexcellence", category: "backlinks", frequency: "once", sortOrder: 255 },
+  { title: "Register on Staffordshire Trader Register (Trading Standards backed)", category: "backlinks", frequency: "once", sortOrder: 256 },
+  { title: "Contact Stafford Rangers FC re sponsorship (commercial@staffordrangersfc.co.uk)", category: "backlinks", frequency: "once", sortOrder: 257 },
+  { title: "Join Renewable Heating Hub forum, answer homeowner questions monthly", category: "backlinks", frequency: "monthly", sortOrder: 258 },
   { title: "NEVER buy links or Fiverr backlink packages (penalty risk on a new domain)", category: "backlinks", frequency: "once", sortOrder: 260 },
 
   // ── Google Business Profile ──────────────────────────────
