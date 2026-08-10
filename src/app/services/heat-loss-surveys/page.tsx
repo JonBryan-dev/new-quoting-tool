@@ -8,9 +8,9 @@ import {
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
 export const metadata: Metadata = {
-  title: "Free Heat Loss Surveys & Heat Pump System Design | Staffordshire",
+  title: "Free Heat Pump Survey Stafford & Staffordshire | Book Today",
   description:
-    "Heat Geek trained, MCS-certified heat loss surveys and heat pump system design across Staffordshire. Room-by-room calculations, correct sizing, low flow temperatures and honest advice — free with every heat pump quote.",
+    "Book a free heat pump survey in Stafford or anywhere in Staffordshire. Room-by-room heat loss calculations, MCS-certified, no obligation — takes 45 minutes.",
   alternates: { canonical: "/services/heat-loss-surveys" },
   openGraph: {
     title: "Heat Loss Surveys & System Design — the PlumbGas Renewables way",

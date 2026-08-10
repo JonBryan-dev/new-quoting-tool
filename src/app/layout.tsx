@@ -16,7 +16,7 @@ const SITE_URL = "https://www.plumbgasrenewables.services";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Air Source Heat Pumps Staffordshire | Free Heat Loss Survey | PlumbGas Renewables",
+    default: "Heat Pump Installation Stafford & Staffordshire | PG Renewables",
     template: "%s | PlumbGas Renewables",
   },
   description:

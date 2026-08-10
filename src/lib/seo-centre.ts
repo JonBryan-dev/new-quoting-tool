@@ -47,14 +47,29 @@ export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
 ];
 
 // Starter keyword set — seeded once, then managed from the admin UI.
+// Expanded 2026-08-10 at Jon's request ("more keywords needed"), based on
+// the queries Search Console is already showing the site for.
 export const DEFAULT_SEO_KEYWORDS: { phrase: string; targetPath: string }[] = [
   { phrase: "heat pump installation stafford", targetPath: "/heat-pumps/stafford" },
+  { phrase: "stafford heat pump installation", targetPath: "/heat-pumps/stafford" },
+  { phrase: "heat pumps stafford", targetPath: "/heat-pumps/stafford" },
+  { phrase: "heat pump surveys stafford", targetPath: "/services/heat-loss-surveys" },
+  { phrase: "free heat loss survey stafford", targetPath: "/services/heat-loss-surveys" },
   { phrase: "air source heat pump staffordshire", targetPath: "/services/heat-pump-installation" },
+  { phrase: "air source heat pump stafford", targetPath: "/heat-pumps/stafford" },
+  { phrase: "heat pump installers staffordshire", targetPath: "/services/heat-pump-installation" },
   { phrase: "heat pump installer near me", targetPath: "/" },
   { phrase: "boiler upgrade scheme stafford", targetPath: "/boiler-upgrade-scheme" },
+  { phrase: "heat pump grant staffordshire", targetPath: "/boiler-upgrade-scheme" },
   { phrase: "heat pump cost staffordshire", targetPath: "/guides/heat-pump-cost-staffordshire-2026" },
   { phrase: "£3000 heat pump", targetPath: "/zerodisrupt" },
-  { phrase: "free heat loss survey stafford", targetPath: "/services/heat-loss-surveys" },
+  { phrase: "cheap heat pump installation", targetPath: "/zerodisrupt" },
+  { phrase: "heat pump installation stone", targetPath: "/heat-pumps/stone" },
+  { phrase: "heat pump installation cannock", targetPath: "/heat-pumps/cannock" },
+  { phrase: "heat pump installation lichfield", targetPath: "/heat-pumps/lichfield" },
+  { phrase: "heat pump installation stoke-on-trent", targetPath: "/heat-pumps/stoke-on-trent" },
+  { phrase: "heat pump installation rugeley", targetPath: "/heat-pumps/rugeley" },
+  { phrase: "heat pump installation uttoxeter", targetPath: "/heat-pumps/uttoxeter" },
 ];
 
 export const SEO_TASK_CATEGORIES = [
