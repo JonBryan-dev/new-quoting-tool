@@ -69,6 +69,15 @@ export async function GET(request: NextRequest) {
         } catch {
           report.keywordSync = { error: "SEO tables unavailable" };
         }
+
+        // Weekly progress snapshot — one row per week, upserted
+        try {
+          const { captureSeoSnapshot } = await import("@/lib/seo-snapshot");
+          const snapshot = await captureSeoSnapshot(db);
+          report.snapshot = { weekStart: snapshot.weekStart, captured: true };
+        } catch (err) {
+          report.snapshot = { error: err instanceof Error ? err.message : "failed" };
+        }
       }
     } catch (err) {
       report.searchConsole = { error: err instanceof Error ? err.message : "failed" };

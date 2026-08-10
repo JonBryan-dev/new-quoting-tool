@@ -91,10 +91,176 @@ export default function SeoTab() {
   return (
     <div className="space-y-8">
       <StatusSection status={status} />
+      <ProgressSection />
       <GoogleSection />
       <ContentStudio anthropicReady={Boolean(status?.anthropicKey)} />
       <KeywordTracker enabled={Boolean(status?.tablesReady)} />
       <TaskChecklist enabled={Boolean(status?.tablesReady)} />
+    </div>
+  );
+}
+
+// ── Weekly progress ────────────────────────────────────────
+
+interface Snapshot {
+  id: string;
+  weekStart: string;
+  sessions: number;
+  activeUsers: number;
+  leads: number;
+  gscClicks: number;
+  gscImpressions: number;
+  gscQueries: number;
+  avgPosition: number | null;
+  top10Count: number;
+  tasksDone: number;
+  tasksOpen: number;
+}
+
+function Delta({ now, prev, downIsGood }: { now: number | null; prev: number | null; downIsGood?: boolean }) {
+  if (now == null || prev == null || now === prev) return null;
+  const up = now > prev;
+  const good = downIsGood ? !up : up;
+  return (
+    <span className={`ml-1 text-[10px] font-bold ${good ? "text-green-600" : "text-red-500"}`}>
+      {up ? "▲" : "▼"}
+    </span>
+  );
+}
+
+function ProgressSection() {
+  const [snapshots, setSnapshots] = useState<Snapshot[]>([]);
+  const [available, setAvailable] = useState(true);
+  const [capturing, setCapturing] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const load = useCallback(() => {
+    fetch("/api/admin/seo/progress")
+      .then((r) => r.json())
+      .then((d) => {
+        setAvailable(d.dbAvailable !== false);
+        setSnapshots(d.snapshots || []);
+      })
+      .catch(() => setAvailable(false));
+  }, []);
+
+  useEffect(load, [load]);
+
+  async function capture() {
+    setCapturing(true);
+    setMessage("");
+    try {
+      const res = await fetch("/api/admin/seo/progress", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "capture" }),
+      });
+      const data = await res.json();
+      if (!res.ok) setMessage(data.error || "Capture failed");
+      else {
+        setMessage("Snapshot recorded for this week.");
+        load();
+      }
+    } catch {
+      setMessage("Capture failed, try again.");
+    } finally {
+      setCapturing(false);
+    }
+  }
+
+  const fmtWeek = (iso: string) =>
+    new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
+
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <div className="flex items-center justify-between mb-1">
+        <h3 className="font-bold text-gray-900">Weekly progress</h3>
+        <button
+          onClick={capture}
+          disabled={capturing || !available}
+          className="flex items-center gap-1.5 text-xs text-[#4e7522] font-semibold hover:underline disabled:opacity-50"
+        >
+          {capturing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Plus className="w-3.5 h-3.5" />}
+          {capturing ? "Capturing…" : "Capture snapshot now"}
+        </button>
+      </div>
+      <p className="text-sm text-gray-500 mb-4">
+        One row per week, recorded automatically every Monday morning. Google figures are
+        rolling 28-day totals at the time of capture; arrows compare with the week before.
+      </p>
+      {message && <p className="text-xs text-gray-500 mb-3">{message}</p>}
+
+      {!available ? (
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-sm text-yellow-800">
+          Needs the database connected.
+        </div>
+      ) : snapshots.length === 0 ? (
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 text-center text-sm text-gray-500">
+          No snapshots yet. Tap &ldquo;Capture snapshot now&rdquo; to record your baseline week.
+        </div>
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="min-w-full text-sm">
+            <thead>
+              <tr className="border-b border-gray-200 text-left text-xs text-gray-500 uppercase">
+                <th className="py-2 pr-3">Week</th>
+                <th className="py-2 pr-3 text-right">Sessions</th>
+                <th className="py-2 pr-3 text-right">Visitors</th>
+                <th className="py-2 pr-3 text-right">Leads</th>
+                <th className="py-2 pr-3 text-right">Clicks</th>
+                <th className="py-2 pr-3 text-right">Impressions</th>
+                <th className="py-2 pr-3 text-right">Avg pos.</th>
+                <th className="py-2 pr-3 text-right">Top-10 queries</th>
+                <th className="py-2 text-right">Tasks done</th>
+              </tr>
+            </thead>
+            <tbody>
+              {snapshots.map((s, i) => {
+                const prev = snapshots[i + 1] ?? null;
+                return (
+                  <tr key={s.id} className="border-b border-gray-100 last:border-0">
+                    <td className="py-2 pr-3 font-medium text-gray-900 whitespace-nowrap">
+                      w/c {fmtWeek(s.weekStart)}
+                    </td>
+                    <td className="py-2 pr-3 text-right text-gray-700">
+                      {s.sessions.toLocaleString()}
+                      <Delta now={s.sessions} prev={prev?.sessions ?? null} />
+                    </td>
+                    <td className="py-2 pr-3 text-right text-gray-700">
+                      {s.activeUsers.toLocaleString()}
+                      <Delta now={s.activeUsers} prev={prev?.activeUsers ?? null} />
+                    </td>
+                    <td className="py-2 pr-3 text-right font-semibold text-gray-900">
+                      {s.leads}
+                      <Delta now={s.leads} prev={prev?.leads ?? null} />
+                    </td>
+                    <td className="py-2 pr-3 text-right text-gray-700">
+                      {s.gscClicks}
+                      <Delta now={s.gscClicks} prev={prev?.gscClicks ?? null} />
+                    </td>
+                    <td className="py-2 pr-3 text-right text-gray-700">
+                      {s.gscImpressions.toLocaleString()}
+                      <Delta now={s.gscImpressions} prev={prev?.gscImpressions ?? null} />
+                    </td>
+                    <td className="py-2 pr-3 text-right text-gray-700">
+                      {s.avgPosition ?? "–"}
+                      <Delta now={s.avgPosition} prev={prev?.avgPosition ?? null} downIsGood />
+                    </td>
+                    <td className="py-2 pr-3 text-right text-gray-700">
+                      {s.top10Count}
+                      <Delta now={s.top10Count} prev={prev?.top10Count ?? null} />
+                    </td>
+                    <td className="py-2 text-right text-gray-700">
+                      {s.tasksDone}
+                      <span className="text-gray-400 text-xs"> / {s.tasksDone + s.tasksOpen}</span>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

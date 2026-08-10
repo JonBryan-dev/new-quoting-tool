@@ -123,6 +123,23 @@ model SeoTask {
   createdAt   DateTime  @default(now())
 }
 
+model SeoSnapshot {
+  id              String   @id @default(cuid())
+  weekStart       DateTime @unique // Monday of the captured week
+  sessions        Int      @default(0)
+  activeUsers     Int      @default(0)
+  leads           Int      @default(0)
+  gscClicks       Int      @default(0)
+  gscImpressions  Int      @default(0)
+  gscQueries      Int      @default(0)
+  avgPosition     Float?
+  top10Count      Int      @default(0)
+  trackedKeywords Int      @default(0)
+  tasksDone       Int      @default(0)
+  tasksOpen       Int      @default(0)
+  createdAt       DateTime @default(now())
+}
+
 model SeoDraft {
   id         String   @id @default(cuid())
   kind       String // meta, article, improve, keywords, gbp-post, custom
