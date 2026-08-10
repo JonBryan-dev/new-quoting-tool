@@ -18,7 +18,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   // Vercel Cron sends `Authorization: Bearer ${CRON_SECRET}` when the
-  // env var is set — reject other callers in that case.
+  // env var is set, reject other callers in that case.
   if (process.env.CRON_SECRET) {
     const auth = request.headers.get("authorization");
     if (auth !== `Bearer ${process.env.CRON_SECRET}`) {
@@ -103,7 +103,7 @@ export async function GET(request: NextRequest) {
             from,
             to: [process.env.LEADS_EMAIL || "jon@plumbgas.services"],
             subject: `SEO Autopilot data ${new Date().toISOString().slice(0, 10)}`,
-            text: `Weekly SEO data export for plumbgasrenewables.services.\nThe SEO autopilot reads this automatically — no action needed.\n\n===JSON===\n${json}\n===END===\n`,
+            text: `Weekly SEO data export for plumbgasrenewables.services.\nThe SEO autopilot reads this automatically, no action needed.\n\n===JSON===\n${json}\n===END===\n`,
           }),
         });
         if (res.ok) {

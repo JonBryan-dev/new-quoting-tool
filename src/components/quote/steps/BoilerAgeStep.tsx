@@ -11,7 +11,7 @@ export default function BoilerAgeStep() {
     {
       value: "0-5",
       label: "Less than 5 years",
-      description: "Relatively new — installed after 2020",
+      description: "Relatively new, installed after 2020",
     },
     {
       value: "5-10",
@@ -21,12 +21,12 @@ export default function BoilerAgeStep() {
     {
       value: "10-15",
       label: "10 – 15 years",
-      description: "Likely losing efficiency — a good time to replace",
+      description: "Likely losing efficiency, a good time to replace",
     },
     {
       value: "15+",
       label: "Over 15 years",
-      description: "Past its expected lifespan — replacement recommended",
+      description: "Past its expected lifespan, replacement recommended",
     },
     {
       value: "unsure",

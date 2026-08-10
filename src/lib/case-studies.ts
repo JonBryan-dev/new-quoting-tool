@@ -1,6 +1,6 @@
 // Real installation case studies with measured performance data.
 //
-// IMPORTANT: only add real installs with real numbers — published performance
+// IMPORTANT: only add real installs with real numbers, published performance
 // data is this company's SEO and sales moat precisely because it's genuine.
 // Add one object per install; the /case-studies pages render automatically.
 
@@ -23,5 +23,5 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-  // First real installs being written up — add them here.
+  // First real installs being written up, add them here.
 ];

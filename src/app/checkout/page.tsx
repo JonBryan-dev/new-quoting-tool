@@ -38,7 +38,7 @@ function CheckoutContent() {
         }),
       });
     } catch {
-      // The confirmation screen still shows — the customer shouldn't be
+      // The confirmation screen still shows, the customer shouldn't be
       // blocked by a save failure; the team can follow up by phone.
     } finally {
       // GA4 conversion event for the quote request
@@ -147,7 +147,7 @@ function CheckoutContent() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <p className="text-xs text-gray-500 self-center">
-                  Same quick process &mdash; check if you qualify for the &pound;7,500 grant
+                  Same quick process, check if you qualify for the &pound;7,500 grant
                 </p>
               </div>
             </div>
@@ -309,7 +309,7 @@ function CheckoutContent() {
               {isHeatPump && (
                 <div className="bg-green-50 border border-green-200 rounded-xl p-3 mb-4">
                   <p className="text-xs text-green-700 font-medium">
-                    The &pound;7,500 Boiler Upgrade Scheme grant is applied directly — we handle the application for you. No upfront grant paperwork needed.
+                    The &pound;7,500 Boiler Upgrade Scheme grant is applied directly, we handle the application for you. No upfront grant paperwork needed.
                   </p>
                 </div>
               )}

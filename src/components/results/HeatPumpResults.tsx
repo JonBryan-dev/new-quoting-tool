@@ -74,7 +74,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Sizing banner */}
         <div className="bg-white rounded-2xl border border-gray-200 p-5 mb-6 flex items-start gap-4">
-          <div className="w-12 h-12 bg-green-50 text-[#1C834B] rounded-xl flex items-center justify-center shrink-0">
+          <div className="w-12 h-12 bg-green-50 text-[#4e7522] rounded-xl flex items-center justify-center shrink-0">
             <Home className="w-6 h-6" />
           </div>
           <div>
@@ -82,15 +82,15 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
               Your home needs approximately {heatLossKw}kW of heating
             </p>
             <p className="text-sm text-gray-500">
-              This is an estimate &mdash; your free heat loss survey measures every room to
+              This is an estimate, your free heat loss survey measures every room to
               confirm the exact size, so you never pay for a bigger heat pump than you need.
             </p>
           </div>
         </div>
 
         {/* Recommended */}
-        <div className="bg-white rounded-2xl border-2 border-[#1C834B] p-6 sm:p-8 mb-6 relative">
-          <span className="absolute -top-3.5 left-6 bg-[#1C834B] text-white text-xs font-bold px-3 py-1.5 rounded-full">
+        <div className="bg-white rounded-2xl border-2 border-[#4e7522] p-6 sm:p-8 mb-6 relative">
+          <span className="absolute -top-3.5 left-6 bg-[#4e7522] text-white text-xs font-bold px-3 py-1.5 rounded-full">
             RECOMMENDED FOR YOUR HOME
           </span>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -106,7 +106,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
                   {recommended.warranty}yr warranty
                 </span>
               </div>
-              <p className="text-sm text-[#1C834B] font-medium">{recommended.brand}</p>
+              <p className="text-sm text-[#4e7522] font-medium">{recommended.brand}</p>
               <h2 className="text-2xl font-bold text-gray-900">{recommended.name}</h2>
               <p className="text-sm text-gray-500 mt-1 max-w-xl">{recommended.description}</p>
               <div className="flex flex-wrap gap-2 mt-3">
@@ -133,7 +133,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
               </p>
               <button
                 onClick={() => router.push(bookUrl(recommended.id, afterGrant, totalBeforeGrant))}
-                className="mt-4 inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-6 py-3.5 rounded-xl font-semibold transition-colors w-full sm:w-auto"
+                className="mt-4 inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-6 py-3.5 rounded-xl font-semibold transition-colors w-full sm:w-auto"
               >
                 Book Free Survey
                 <ArrowRight className="w-5 h-5" />
@@ -186,7 +186,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
             </div>
             <p className="text-3xl font-bold text-green-600">&pound;{costs.hpAnnual.toLocaleString()}</p>
           </div>
-          <div className="bg-[#1C834B] rounded-2xl p-5 text-white">
+          <div className="bg-[#4e7522] rounded-2xl p-5 text-white">
             <div className="flex items-center gap-2 mb-1">
               <TrendingDown className="w-5 h-5" />
               <span className="text-sm font-medium text-green-100">Estimated saving</span>
@@ -226,7 +226,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
                       </div>
                       <button
                         onClick={() => router.push(bookUrl(alt.id, altAfter, altTotal))}
-                        className="text-sm font-semibold text-[#1C834B] hover:text-[#166a3c] inline-flex items-center gap-1"
+                        className="text-sm font-semibold text-[#4e7522] hover:text-[#3f5e1b] inline-flex items-center gap-1"
                       >
                         Book survey
                         <ArrowRight className="w-4 h-4" />
@@ -251,7 +251,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => router.push(bookUrl(recommended.id, afterGrant, totalBeforeGrant))}
-              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold transition-colors"
             >
               Book My Free Survey
               <ArrowRight className="w-5 h-5" />

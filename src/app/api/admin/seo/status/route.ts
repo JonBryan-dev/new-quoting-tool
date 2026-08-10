@@ -32,7 +32,7 @@ export async function GET() {
       status.counts.doneTasks = doneTasks;
       status.counts.drafts = drafts;
     } catch {
-      // SEO tables don't exist yet — `npm run db:push` hasn't been run
+      // SEO tables don't exist yet, `npm run db:push` hasn't been run
     }
     try {
       status.counts.leads = await db.surveyBooking.count();

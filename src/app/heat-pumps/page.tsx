@@ -10,7 +10,7 @@ import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSecti
 export const metadata: Metadata = {
   title: "Air Source Heat Pump Installation Staffordshire | £7,500 Grant",
   description:
-    "MCS-accredited air source heat pump installers covering the whole of Staffordshire — Stafford, Stone, Cannock, Lichfield, Stoke-on-Trent and more. Free heat loss survey, £7,500 Boiler Upgrade Scheme grant handled for you.",
+    "MCS-accredited air source heat pump installers covering the whole of Staffordshire, Stafford, Stone, Cannock, Lichfield, Stoke-on-Trent and more. Free heat loss survey, £7,500 Boiler Upgrade Scheme grant handled for you.",
   alternates: { canonical: "/heat-pumps" },
   openGraph: {
     title: "Air Source Heat Pump Installation Across Staffordshire",
@@ -24,7 +24,7 @@ export default function HeatPumpsHubPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#1C834B] text-white">
+      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#4e7522] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <nav className="text-sm text-blue-200 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
@@ -33,7 +33,7 @@ export default function HeatPumpsHubPage() {
           </nav>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 max-w-3xl">
             Air source heat pump installation across{" "}
-            <span className="text-[#7ee2a8]">Staffordshire</span>
+            <span className="text-[#c4dd9b]">Staffordshire</span>
           </h1>
           <p className="text-lg text-blue-100 mb-6 max-w-2xl">
             Free heat loss surveys, fixed prices with the &pound;7,500 Boiler Upgrade
@@ -43,7 +43,7 @@ export default function HeatPumpsHubPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/book"
-              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
             >
               Book Your Free Survey
               <ArrowRight className="w-5 h-5" />
@@ -66,7 +66,7 @@ export default function HeatPumpsHubPage() {
               {
                 icon: <PoundSterling className="w-6 h-6" />,
                 title: "£7,500 grant included",
-                desc: "We claim the Boiler Upgrade Scheme for you — the grant comes straight off your fixed quote.",
+                desc: "We claim the Boiler Upgrade Scheme for you, the grant comes straight off your fixed quote.",
               },
               {
                 icon: <TrendingDown className="w-6 h-6" />,
@@ -76,16 +76,16 @@ export default function HeatPumpsHubPage() {
               {
                 icon: <Ruler className="w-6 h-6" />,
                 title: "Survey-first sizing",
-                desc: "Free room-by-room heat loss survey before any price is fixed — never guesswork.",
+                desc: "Free room-by-room heat loss survey before any price is fixed, never guesswork.",
               },
               {
                 icon: <Volume2 className="w-6 h-6" />,
                 title: "Quiet, proven kit",
-                desc: "Vaillant, Viessmann and Daikin units running at around 35dB — quieter than a fridge.",
+                desc: "Vaillant, Viessmann and Daikin units running at around 35dB, quieter than a fridge.",
               },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-2xl border border-gray-200 p-6">
-                <div className="w-12 h-12 bg-green-50 text-[#1C834B] rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-green-50 text-[#4e7522] rounded-xl flex items-center justify-center mb-4">
                   {item.icon}
                 </div>
                 <h2 className="font-bold text-gray-900 mb-2">{item.title}</h2>
@@ -95,11 +95,11 @@ export default function HeatPumpsHubPage() {
           </div>
           <p className="text-sm text-gray-500">
             New to heat pumps? Read our plain-English guide to the{" "}
-            <Link href="/boiler-upgrade-scheme" className="text-[#1C834B] font-medium underline">
+            <Link href="/boiler-upgrade-scheme" className="text-[#4e7522] font-medium underline">
               &pound;7,500 Boiler Upgrade Scheme grant
             </Link>{" "}
             or get an{" "}
-            <Link href="/quote/heatpump" className="text-[#1C834B] font-medium underline">
+            <Link href="/quote/heatpump" className="text-[#4e7522] font-medium underline">
               instant online estimate
             </Link>{" "}
             for your home.
@@ -107,7 +107,7 @@ export default function HeatPumpsHubPage() {
         </div>
       </section>
 
-      {/* Instant estimate — Heat Geek */}
+      {/* Instant estimate, Heat Geek */}
       <HeatGeekEstimateSection />
 
       {/* Towns grid */}
@@ -118,7 +118,7 @@ export default function HeatPumpsHubPage() {
               Where we install heat pumps
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              Local pages for every area we cover — including typical costs, housing
+              Local pages for every area we cover, including typical costs, housing
               advice and the villages we serve around each town.
             </p>
           </div>
@@ -127,11 +127,11 @@ export default function HeatPumpsHubPage() {
               <Link
                 key={town.slug}
                 href={`/heat-pumps/${town.slug}`}
-                className="group bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-[#1C834B]/40 transition-all"
+                className="group bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-[#4e7522]/40 transition-all"
               >
                 <div className="flex items-center gap-2 mb-1">
-                  <MapPin className="w-4 h-4 text-[#1C834B]" />
-                  <span className="font-bold text-gray-900 group-hover:text-[#1C834B] transition-colors">
+                  <MapPin className="w-4 h-4 text-[#4e7522]" />
+                  <span className="font-bold text-gray-900 group-hover:text-[#4e7522] transition-colors">
                     {town.name}
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export default function HeatPumpsHubPage() {
       {/* CTA */}
       <section className="py-14">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-green-50 text-[#1C834B] px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 bg-green-50 text-[#4e7522] px-4 py-1.5 rounded-full text-sm font-medium mb-4">
             <Leaf className="w-4 h-4" />
             Free survey &bull; No obligation
           </div>
@@ -163,7 +163,7 @@ export default function HeatPumpsHubPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/book"
-              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Book Your Free Survey
               <ArrowRight className="w-5 h-5" />

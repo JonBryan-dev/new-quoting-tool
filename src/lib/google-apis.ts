@@ -1,12 +1,12 @@
 import crypto from "crypto";
 
 // Google Search Console + GA4 Data API access via a service account,
-// using Node's built-in crypto for the JWT — no googleapis dependency.
+// using Node's built-in crypto for the JWT, no googleapis dependency.
 //
 // Required env vars (all set in Vercel):
 //   GOOGLE_SERVICE_ACCOUNT_KEY  full JSON key file contents
 //   GA4_PROPERTY_ID             numeric GA4 property id (Admin → Property Settings)
-//   GSC_SITE_URL                optional — defaults try the domain property
+//   GSC_SITE_URL                optional, defaults try the domain property
 //                               then the https URL-prefix property
 
 const SCOPES = [

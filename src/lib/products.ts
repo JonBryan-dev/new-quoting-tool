@@ -112,7 +112,7 @@ export const sampleProducts: Product[] = [
     popular: false,
   },
 
-  // ── HEAT PUMPS (for upsell — range of sizes) ─────────────
+  // ── HEAT PUMPS (for upsell, range of sizes) ─────────────
   {
     id: "heatpump-1",
     name: "Arotherm Plus 5kW",

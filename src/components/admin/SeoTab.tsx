@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { SEO_TASK_CATEGORIES } from "@/lib/seo-centre";
 
-// SEO Command Centre — rendered as a tab inside the admin dashboard.
+// SEO Command Centre, rendered as a tab inside the admin dashboard.
 // Four sections: setup status, keyword rank tracker, Claude content
 // studio, and the task checklist seeded from the SEO growth plan.
 
@@ -119,7 +119,7 @@ interface GoogleData {
 const GOOGLE_SETUP_STEPS = [
   "Go to console.cloud.google.com and create a project (e.g. \"pg-renewables-seo\").",
   "In \"APIs & Services → Library\", enable BOTH the \"Google Search Console API\" and the \"Google Analytics Data API\".",
-  "In \"IAM & Admin → Service Accounts\", create a service account, then under its \"Keys\" tab add a new JSON key — a file downloads.",
+  "In \"IAM & Admin → Service Accounts\", create a service account, then under its \"Keys\" tab add a new JSON key, a file downloads.",
   "In Vercel → Project Settings → Environment Variables, add GOOGLE_SERVICE_ACCOUNT_KEY and paste the ENTIRE contents of that JSON file as the value.",
   "In Search Console → Settings → Users and permissions, add the service account's email address (it ends @...iam.gserviceaccount.com) as a Restricted user.",
   "In GA4 → Admin → Property access management, add the same email as a Viewer.",
@@ -157,7 +157,7 @@ function GoogleSection() {
           : result.error || "Sync failed",
       );
     } catch {
-      setSyncMsg("Sync failed — try again.");
+      setSyncMsg("Sync failed, try again.");
     } finally {
       setSyncing(false);
     }
@@ -206,7 +206,7 @@ function GoogleSection() {
                 <p key={e}>{e}</p>
               ))}
               {!data.configured.ga4PropertyId && (
-                <p>GA4_PROPERTY_ID is not set — add it in Vercel for visitor numbers.</p>
+                <p>GA4_PROPERTY_ID is not set, add it in Vercel for visitor numbers.</p>
               )}
             </div>
           )}
@@ -263,7 +263,7 @@ function GoogleSection() {
                     {data.gsc.queries.length === 0 && (
                       <tr>
                         <td colSpan={4} className="py-3 text-gray-400 text-center">
-                          No query data yet — normal for a new site; check back weekly.
+                          No query data yet, normal for a new site; check back weekly.
                         </td>
                       </tr>
                     )}
@@ -318,22 +318,22 @@ function StatusSection({ status }: { status: SeoStatus | null }) {
       label: "Database",
       detail: status?.dbConnected
         ? status?.tablesReady
-          ? "Connected — keywords, tasks and drafts are being saved"
-          : "Connected, but SEO tables missing — run npm run db:push on the laptop"
-        : "Not connected — add PRISMA_DATABASE_URL in Vercel, then run npm run db:push",
+          ? "Connected, keywords, tasks and drafts are being saved"
+          : "Connected, but SEO tables missing, run npm run db:push on the laptop"
+        : "Not connected, add PRISMA_DATABASE_URL in Vercel, then run npm run db:push",
     },
     {
       ok: Boolean(status?.anthropicKey),
       label: "Claude (Content Studio)",
       detail: status?.anthropicKey
-        ? "API key set — drafting is live"
+        ? "API key set, drafting is live"
         : "Add ANTHROPIC_API_KEY in Vercel to switch on AI drafting",
     },
     {
       ok: Boolean(status?.googleServiceAccount),
       label: "Google APIs (Phase C)",
       detail: status?.googleServiceAccount
-        ? "Service account set — Search Console + GA4 feeds ready"
+        ? "Service account set, Search Console + GA4 feeds ready"
         : "Coming next: one Google Cloud service account unlocks Search Console + GA4 data here",
     },
     {
@@ -346,7 +346,7 @@ function StatusSection({ status }: { status: SeoStatus | null }) {
   return (
     <div>
       <div className="flex items-center gap-2 mb-1">
-        <TrendingUp className="w-5 h-5 text-[#1C834B]" />
+        <TrendingUp className="w-5 h-5 text-[#4e7522]" />
         <h2 className="text-lg font-bold text-gray-900">SEO Command Centre</h2>
       </div>
       <p className="text-sm text-gray-500 mb-4">
@@ -425,7 +425,7 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
         loadDrafts();
       }
     } catch {
-      setError("Request failed — check your connection and try again.");
+      setError("Request failed, check your connection and try again.");
     } finally {
       setBusy(false);
     }
@@ -438,14 +438,14 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
         <h3 className="font-bold text-gray-900">Content Studio</h3>
       </div>
       <p className="text-sm text-gray-500 mb-4">
-        Claude drafts it, you review and publish. Nothing goes live automatically — that keeps
+        Claude drafts it, you review and publish. Nothing goes live automatically, that keeps
         Google&apos;s content guidelines on side.
       </p>
 
       {!anthropicReady && (
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800 mb-4">
           Add <code className="font-mono">ANTHROPIC_API_KEY</code> in Vercel (Project Settings →
-          Environment Variables) to switch this on. Get a key at console.anthropic.com — paste it
+          Environment Variables) to switch this on. Get a key at console.anthropic.com, paste it
           straight into Vercel, never into email or chat.
         </div>
       )}
@@ -545,7 +545,7 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
         <div className="mt-4 space-y-2">
           {drafts.length === 0 && (
             <p className="text-sm text-gray-400">
-              No saved drafts yet — drafts save automatically once the database is connected.
+              No saved drafts yet, drafts save automatically once the database is connected.
             </p>
           )}
           {drafts.map((d) => (
@@ -610,7 +610,7 @@ function KeywordTracker({ enabled }: { enabled: boolean }) {
 
       {!enabled ? (
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-sm text-yellow-800">
-          Needs the database — complete the PRISMA_DATABASE_URL setup to switch this on.
+          Needs the database, complete the PRISMA_DATABASE_URL setup to switch this on.
         </div>
       ) : (
         <>
@@ -720,7 +720,7 @@ function KeywordTracker({ enabled }: { enabled: boolean }) {
                 setNewPhrase("");
                 setNewPath("");
               }}
-              className="flex items-center gap-2 px-4 py-2 bg-[#1C834B] text-white text-sm rounded-lg hover:bg-[#166a3c]"
+              className="flex items-center gap-2 px-4 py-2 bg-[#4e7522] text-white text-sm rounded-lg hover:bg-[#3f5e1b]"
             >
               <Plus className="w-4 h-4" />
               Track
@@ -766,7 +766,7 @@ function TaskChecklist({ enabled }: { enabled: boolean }) {
           <button
             onClick={() => post({ action: "reset-weekly" })}
             className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700"
-            title="Reopen all weekly tasks — do this each Monday"
+            title="Reopen all weekly tasks, do this each Monday"
           >
             <RefreshCw className="w-3.5 h-3.5" />
             Reset weekly tasks
@@ -780,7 +780,7 @@ function TaskChecklist({ enabled }: { enabled: boolean }) {
 
       {!enabled ? (
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-sm text-yellow-800">
-          Needs the database — complete the PRISMA_DATABASE_URL setup to switch this on.
+          Needs the database, complete the PRISMA_DATABASE_URL setup to switch this on.
         </div>
       ) : (
         <>
@@ -854,7 +854,7 @@ function TaskChecklist({ enabled }: { enabled: boolean }) {
                 post({ action: "add", title: newTitle, category: newCategory });
                 setNewTitle("");
               }}
-              className="flex items-center gap-2 px-4 py-2 bg-[#1C834B] text-white text-sm rounded-lg hover:bg-[#166a3c]"
+              className="flex items-center gap-2 px-4 py-2 bg-[#4e7522] text-white text-sm rounded-lg hover:bg-[#3f5e1b]"
             >
               <Plus className="w-4 h-4" />
               Add

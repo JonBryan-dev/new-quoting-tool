@@ -2,8 +2,8 @@ import Script from "next/script";
 
 // Google tracking. The GA4 measurement ID is public by nature, so the live
 // site's ID is the default; env vars in Vercel override or extend it:
-//   NEXT_PUBLIC_GTM_ID  — Google Tag Manager container (GTM-XXXXXXX)
-//   NEXT_PUBLIC_GA4_ID  — GA4 measurement ID override
+//   NEXT_PUBLIC_GTM_ID , Google Tag Manager container (GTM-XXXXXXX)
+//   NEXT_PUBLIC_GA4_ID , GA4 measurement ID override
 
 export default function Analytics() {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;

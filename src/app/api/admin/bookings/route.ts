@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 
-// Admin-only (protected by middleware): list captured leads —
+// Admin-only (protected by middleware): list captured leads,
 // survey bookings plus any quote-table fallbacks with contact details.
 
 export async function GET() {

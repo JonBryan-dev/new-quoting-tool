@@ -10,12 +10,12 @@ const SITE_URL = "https://www.plumbgasrenewables.services";
 export const metadata: Metadata = {
   title: "Underfloor Heating Installation Staffordshire | Wet UFH Systems",
   description:
-    "Wet underfloor heating design and installation across Staffordshire — new builds, extensions, renovations and retrofit overlay systems. The perfect partner for a heat pump. Designed and installed by local MCS accredited engineers.",
+    "Wet underfloor heating design and installation across Staffordshire, new builds, extensions, renovations and retrofit overlay systems. The perfect partner for a heat pump. Designed and installed by local MCS accredited engineers.",
   alternates: { canonical: "/services/underfloor-heating" },
   openGraph: {
     title: "Underfloor Heating Installation in Staffordshire",
     description:
-      "Wet UFH for new floors, extensions and retrofits — designed properly, installed by the local heat pump specialists.",
+      "Wet UFH for new floors, extensions and retrofits, designed properly, installed by the local heat pump specialists.",
     url: `${SITE_URL}/services/underfloor-heating`,
   },
 };
@@ -23,19 +23,19 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "Can underfloor heating be retrofitted to an existing house?",
-    a: "Yes. Alongside traditional screed systems for new floors and extensions, we install low-profile overlay systems from around 15–20mm high that go on top of your existing floor — no digging up the ground floor. Overlay boards have come a long way and heat up faster than thick screed systems.",
+    a: "Yes. Alongside traditional screed systems for new floors and extensions, we install low-profile overlay systems from around 15–20mm high that go on top of your existing floor, no digging up the ground floor. Overlay boards have come a long way and heat up faster than thick screed systems.",
   },
   {
     q: "Why do underfloor heating and heat pumps work so well together?",
-    a: "A floor is one enormous radiator, so it can heat a room with water at just 30–40°C — exactly the temperature range where a heat pump is at its most efficient. Pairing UFH with an air source heat pump typically achieves the best efficiency (SCOP) of any system we install. That said, UFH also works beautifully with a boiler if you're not ready for a heat pump yet.",
+    a: "A floor is one enormous radiator, so it can heat a room with water at just 30–40°C, exactly the temperature range where a heat pump is at its most efficient. Pairing UFH with an air source heat pump typically achieves the best efficiency (SCOP) of any system we install. That said, UFH also works beautifully with a boiler if you're not ready for a heat pump yet.",
   },
   {
     q: "Can I have underfloor heating downstairs and radiators upstairs?",
-    a: "Absolutely — it's the most popular arrangement we fit. The system is designed with separate circuits: UFH zones downstairs running at low temperature, and correctly sized radiators upstairs. Each room gets its own control so you only heat what you're using.",
+    a: "Absolutely, it's the most popular arrangement we fit. The system is designed with separate circuits: UFH zones downstairs running at low temperature, and correctly sized radiators upstairs. Each room gets its own control so you only heat what you're using.",
   },
   {
     q: "What floor coverings work with UFH?",
-    a: "Tile and stone are best (highest heat transfer), engineered wood and LVT work very well, and carpet is fine provided the combined tog of carpet and underlay stays under about 1.5. We check your intended floor coverings during design so the system is sized to suit them — this genuinely matters and is often skipped.",
+    a: "Tile and stone are best (highest heat transfer), engineered wood and LVT work very well, and carpet is fine provided the combined tog of carpet and underlay stays under about 1.5. We check your intended floor coverings during design so the system is sized to suit them, this genuinely matters and is often skipped.",
   },
   {
     q: "How much does underfloor heating cost?",
@@ -57,7 +57,7 @@ export default function UnderfloorHeatingPage() {
       telephone: "+447872626573",
     },
     description:
-      "Design and installation of wet underfloor heating systems — screed and retrofit overlay — across Staffordshire, optimised for heat pumps.",
+      "Design and installation of wet underfloor heating systems, screed and retrofit overlay, across Staffordshire, optimised for heat pumps.",
   };
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -75,7 +75,7 @@ export default function UnderfloorHeatingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#1C834B] text-white">
+      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#4e7522] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <nav className="text-sm text-blue-200 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
@@ -86,17 +86,17 @@ export default function UnderfloorHeatingPage() {
           </nav>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 max-w-3xl">
             Underfloor heating,{" "}
-            <span className="text-[#7ee2a8]">designed like a heating system</span>
+            <span className="text-[#c4dd9b]">designed like a heating system</span>
           </h1>
           <p className="text-lg text-blue-100 mb-6 max-w-2xl">
             Warm floors, no radiators on the walls, and the lowest running costs of any
-            emitter — especially paired with a heat pump. Screed systems for new floors
+            emitter, especially paired with a heat pump. Screed systems for new floors
             and extensions, low-profile overlays for retrofits.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="tel:07872626573"
-              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
             >
               <Phone className="w-5 h-5" />
               Discuss Your Project
@@ -122,17 +122,17 @@ export default function UnderfloorHeatingPage() {
             <p className="text-gray-600 mb-4">
               Underfloor heating turns the whole floor into a gentle, even emitter.
               No hot-and-cold spots, no radiators dictating where furniture goes, and
-              a room that feels warm at a lower air temperature — which is itself a
+              a room that feels warm at a lower air temperature, which is itself a
               saving, because every degree off the thermostat cuts consumption by
               around 6&ndash;10%.
             </p>
             <p className="text-gray-600 mb-4">
               Because the emitting surface is so large, UFH runs on water at just
               30&ndash;40&deg;C. That makes it the natural partner for an{" "}
-              <Link href="/services/heat-pump-installation" className="text-[#1C834B] font-medium underline">
+              <Link href="/services/heat-pump-installation" className="text-[#4e7522] font-medium underline">
                 air source heat pump
               </Link>{" "}
-              — the lower the flow temperature, the higher the heat pump&apos;s
+             , the lower the flow temperature, the higher the heat pump&apos;s
               efficiency. A UFH-plus-heat-pump ground floor is the most efficient
               setup we install. It works just as happily with a boiler if that&apos;s
               what you have today.
@@ -146,13 +146,13 @@ export default function UnderfloorHeatingPage() {
             <ul className="space-y-3">
               {[
                 "In-screed systems for new builds, extensions and renovations",
-                "Low-profile overlay retrofits from ~15mm — no digging up floors",
+                "Low-profile overlay retrofits from ~15mm, no digging up floors",
                 "Room-by-room zoning with modern smart controls",
-                "Designed to your floor coverings — tile, wood, LVT or carpet",
+                "Designed to your floor coverings, tile, wood, LVT or carpet",
                 "Works with heat pumps and boilers alike",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <Check className="w-5 h-5 text-[#1C834B] shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#4e7522] shrink-0 mt-0.5" />
                   {item}
                 </li>
               ))}
@@ -166,22 +166,22 @@ export default function UnderfloorHeatingPage() {
                 {[
                   {
                     icon: <Layers className="w-5 h-5" />,
-                    title: "New floor going in? — In-screed",
+                    title: "New floor going in?, In-screed",
                     desc: "Pipes clipped or stapled into the new floor build-up. Slowest to respond but beautifully stable and invisible. Ideal for extensions and renovations.",
                   },
                   {
                     icon: <Waves className="w-5 h-5" />,
-                    title: "Existing floor staying? — Overlay",
+                    title: "Existing floor staying?, Overlay",
                     desc: "Pre-routed low-profile boards laid on top of the existing floor, from around 15mm. Fast response, minimal disruption, perfect for retrofits.",
                   },
                   {
                     icon: <Thermometer className="w-5 h-5" />,
-                    title: "Mixed system? — UFH + radiators",
+                    title: "Mixed system?, UFH + radiators",
                     desc: "UFH downstairs, correctly sized radiators upstairs, one properly balanced system. Our most popular arrangement.",
                   },
                 ].map((s) => (
                   <div key={s.title} className="flex gap-4">
-                    <div className="w-10 h-10 bg-green-50 text-[#1C834B] rounded-xl flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 bg-green-50 text-[#4e7522] rounded-xl flex items-center justify-center shrink-0">
                       {s.icon}
                     </div>
                     <div>
@@ -193,7 +193,7 @@ export default function UnderfloorHeatingPage() {
               </div>
             </div>
             <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl border border-green-100 p-6 flex gap-4">
-              <div className="w-12 h-12 bg-white text-[#1C834B] rounded-xl flex items-center justify-center shrink-0 border border-green-100">
+              <div className="w-12 h-12 bg-white text-[#4e7522] rounded-xl flex items-center justify-center shrink-0 border border-green-100">
                 <TrendingDown className="w-6 h-6" />
               </div>
               <div>
@@ -201,9 +201,9 @@ export default function UnderfloorHeatingPage() {
                   Planning a heat pump too?
                 </p>
                 <p className="text-sm text-gray-600">
-                  Designing the UFH and heat pump together gets the best result — and
+                  Designing the UFH and heat pump together gets the best result, and
                   the &pound;7,500{" "}
-                  <Link href="/boiler-upgrade-scheme" className="text-[#1C834B] font-medium underline">
+                  <Link href="/boiler-upgrade-scheme" className="text-[#4e7522] font-medium underline">
                     Boiler Upgrade Scheme grant
                   </Link>{" "}
                   applies to the heat pump side of the project.
@@ -241,13 +241,13 @@ export default function UnderfloorHeatingPage() {
             Tell us about your floor
           </h2>
           <p className="text-gray-500 mb-6">
-            Extension, renovation or retrofit — we&apos;ll design it properly and give
+            Extension, renovation or retrofit, we&apos;ll design it properly and give
             you a fixed price.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:07872626573"
-              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
               Call Now

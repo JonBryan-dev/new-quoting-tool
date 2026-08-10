@@ -8,21 +8,21 @@ import { getDb } from "@/lib/db";
 // still works without a DB (the draft just isn't stored).
 //
 // Google spam-policy guardrail: everything produced here is a DRAFT for
-// Jon to review and publish by hand — nothing is auto-published.
+// Jon to review and publish by hand, nothing is auto-published.
 
 export const maxDuration = 60;
 
-const BRAND_CONTEXT = `You write for PG Renewables (plumbgasrenewables.services), the renewables arm of PlumbGas Services — a Gas Safe & MCS-certified, Which? Trusted Trader heating company in Stafford, run by Jon Bryan, serving the whole of Staffordshire since 2003 (4.9★ on Trustpilot, 270+ reviews).
+const BRAND_CONTEXT = `You write for PG Renewables (plumbgasrenewables.services), the renewables arm of PlumbGas Services, a Gas Safe & MCS-certified, Which? Trusted Trader heating company in Stafford, run by Jon Bryan, serving the whole of Staffordshire since 2003 (4.9★ on Trustpilot, 270+ reviews).
 
 Key facts you must keep accurate:
 - Core offer: FREE heat loss survey → fixed-price air source heat pump quote.
-- ZeroDisrupt heat pumps from around £3,000 installed after the £7,500 Boiler Upgrade Scheme grant — about the same price as a new gas boiler. PG Renewables handles the grant paperwork.
+- ZeroDisrupt heat pumps from around £3,000 installed after the £7,500 Boiler Upgrade Scheme grant, about the same price as a new gas boiler. PG Renewables handles the grant paperwork.
 - Brands installed: Vaillant, Viessmann, Daikin (5–16kW). 2-year workmanship warranty.
 - Instant estimates powered by Heat Geek (partner tenancy).
 - Phone 07872 626573 · 27 Barnbank Lane, Stafford ST17 9HB.
 - Towns served: Stafford, Stone, Cannock, Rugeley, Uttoxeter, Stoke-on-Trent, Newcastle-under-Lyme, Lichfield, Tamworth, Burton upon Trent, Leek, Cheadle, Penkridge, Eccleshall, Gnosall, Brewood.
 
-Style: plain British English, warm and expert, no hype, no invented statistics or fake reviews. Write for homeowners, not engineers. Content must read as genuinely local and helpful — never boilerplate.`;
+Style: plain British English, warm and expert, no hype, no invented statistics or fake reviews. Write for homeowners, not engineers. Content must read as genuinely local and helpful, never boilerplate.`;
 
 const MODE_PROMPTS: Record<string, string> = {
   meta: "Write an SEO title tag (max 60 characters) and meta description (max 155 characters) for the page described in the brief. Return them labelled 'Title:' and 'Description:', then 2 alternative options.",
@@ -35,7 +35,7 @@ const MODE_PROMPTS: Record<string, string> = {
 
 export async function POST(request: NextRequest) {
   // Jon's Vercel project already had an ANTHROPIC_API_KEY, so the fresh
-  // key was added as ANTHROPIC_API_KEY2 — prefer it when present.
+  // key was added as ANTHROPIC_API_KEY2, prefer it when present.
   const apiKey = process.env.ANTHROPIC_API_KEY2 || process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (message.stop_reason === "refusal") {
-      return NextResponse.json({ error: "Claude declined this request — try rephrasing the brief." }, { status: 422 });
+      return NextResponse.json({ error: "Claude declined this request, try rephrasing the brief." }, { status: 422 });
     }
 
     const content = message.content
@@ -85,10 +85,10 @@ export async function POST(request: NextRequest) {
       .join("\n");
 
     if (!content.trim()) {
-      return NextResponse.json({ error: "Empty response from Claude — try again." }, { status: 502 });
+      return NextResponse.json({ error: "Empty response from Claude, try again." }, { status: 502 });
     }
 
-    // Best-effort draft save — never fail the request over storage
+    // Best-effort draft save, never fail the request over storage
     let draftId: string | null = null;
     const db = await getDb();
     if (db) {
@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
         });
         draftId = draft.id;
       } catch {
-        // SeoDraft table missing — draft still returned to the UI
+        // SeoDraft table missing, draft still returned to the UI
       }
     }
 

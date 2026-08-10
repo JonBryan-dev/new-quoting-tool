@@ -25,7 +25,7 @@ export default function FlueTypeStep() {
     {
       value: "unsure",
       label: "I'm not sure",
-      description: "No worries — our engineer will check on installation day",
+      description: "No worries, our engineer will check on installation day",
     },
   ];
 

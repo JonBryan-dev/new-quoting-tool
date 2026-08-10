@@ -238,8 +238,8 @@ function ResultsContent() {
         <div className="mt-12">
           <HeatGeekEstimateSection
             compact
-            heading="Before you buy a boiler — have you seen what a heat pump costs?"
-            sub="With the £7,500 government grant, a heat pump can cost less than you think and cut your bills long-term. Check your price in two minutes — no obligation."
+            heading="Before you buy a boiler, have you seen what a heat pump costs?"
+            sub="With the £7,500 government grant, a heat pump can cost less than you think and cut your bills long-term. Check your price in two minutes, no obligation."
           />
         </div>
       </div>

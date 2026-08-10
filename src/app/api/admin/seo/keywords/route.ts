@@ -63,6 +63,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ error: "Unknown action" }, { status: 400 });
   } catch {
-    return NextResponse.json({ error: "Database write failed — run npm run db:push?" }, { status: 500 });
+    return NextResponse.json({ error: "Database write failed, run npm run db:push?" }, { status: 500 });
   }
 }

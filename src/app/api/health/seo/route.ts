@@ -7,7 +7,7 @@ import {
   getServiceAccount,
 } from "@/lib/google-apis";
 
-// Public health check for the SEO integrations — exposes only booleans
+// Public health check for the SEO integrations, exposes only booleans
 // and short status lines (no secrets), so setup can be verified without
 // the admin login (which itself needs the database connected).
 
@@ -42,7 +42,7 @@ export async function GET() {
 
       try {
         const gsc = await fetchSearchConsole(token);
-        result.searchConsole = `ok — reading ${gsc.siteUrl} (${gsc.queries.length} queries in last 28 days)`;
+        result.searchConsole = `ok, reading ${gsc.siteUrl} (${gsc.queries.length} queries in last 28 days)`;
       } catch (err) {
         result.searchConsole = `error: ${trim(err instanceof Error ? err.message : "failed")}`;
       }
@@ -52,7 +52,7 @@ export async function GET() {
       } else {
         try {
           const ga4 = await fetchGa4Summary(token);
-          result.ga4 = `ok — ${ga4.sessions} sessions, ${ga4.activeUsers} visitors, ${ga4.leads} leads (28 days)`;
+          result.ga4 = `ok, ${ga4.sessions} sessions, ${ga4.activeUsers} visitors, ${ga4.leads} leads (28 days)`;
         } catch (err) {
           result.ga4 = `error: ${trim(err instanceof Error ? err.message : "failed")}`;
         }

@@ -38,7 +38,7 @@ export default function Header() {
                 href={link.href}
                 className={
                   link.highlight
-                    ? "text-[#1C834B] hover:text-[#166a3c] text-sm font-bold"
+                    ? "text-[#4e7522] hover:text-[#3f5e1b] text-sm font-bold"
                     : "text-gray-600 hover:text-gray-900 text-sm font-medium"
                 }
               >
@@ -50,14 +50,14 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:07872626573"
-              className="flex items-center gap-2 border border-[#1C834B] text-[#1C834B] hover:bg-green-50 px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+              className="flex items-center gap-2 border border-[#4e7522] text-[#4e7522] hover:bg-green-50 px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
             >
               <Phone className="w-4 h-4" />
               Call Now
             </a>
             <Link
               href="/book"
-              className="flex items-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+              className="flex items-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
             >
               <CalendarCheck className="w-4 h-4" />
               Book Free Survey
@@ -67,7 +67,7 @@ export default function Header() {
           <div className="flex items-center gap-2 lg:hidden">
             <a
               href="tel:07872626573"
-              className="flex items-center gap-1.5 bg-[#1C834B] text-white px-3.5 py-2 rounded-lg text-sm font-semibold"
+              className="flex items-center gap-1.5 bg-[#4e7522] text-white px-3.5 py-2 rounded-lg text-sm font-semibold"
             >
               <Phone className="w-4 h-4" />
               Call
@@ -92,7 +92,7 @@ export default function Header() {
                 href={link.href}
                 className={
                   link.highlight
-                    ? "block text-[#1C834B] font-bold"
+                    ? "block text-[#4e7522] font-bold"
                     : "block text-gray-700 hover:text-gray-900 font-medium"
                 }
                 onClick={() => setMenuOpen(false)}
@@ -110,7 +110,7 @@ export default function Header() {
             <div className="grid grid-cols-2 gap-3 pt-3">
               <a
                 href="tel:07872626573"
-                className="flex items-center justify-center gap-2 border border-[#1C834B] text-[#1C834B] px-4 py-3 rounded-lg font-semibold"
+                className="flex items-center justify-center gap-2 border border-[#4e7522] text-[#4e7522] px-4 py-3 rounded-lg font-semibold"
                 onClick={() => setMenuOpen(false)}
               >
                 <Phone className="w-4 h-4" />
@@ -118,7 +118,7 @@ export default function Header() {
               </a>
               <Link
                 href="/book"
-                className="flex items-center justify-center gap-2 bg-[#1C834B] text-white px-4 py-3 rounded-lg font-semibold"
+                className="flex items-center justify-center gap-2 bg-[#4e7522] text-white px-4 py-3 rounded-lg font-semibold"
                 onClick={() => setMenuOpen(false)}
               >
                 <CalendarCheck className="w-4 h-4" />

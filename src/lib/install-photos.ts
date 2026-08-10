@@ -1,5 +1,5 @@
 // Manifest of real job photos in /public. Populated from the photo
-// catalogue; alt text stays honest — "Staffordshire" until Jon confirms
+// catalogue; alt text stays honest, "Staffordshire" until Jon confirms
 // a specific town for a given shot.
 
 export interface InstallPhoto {
@@ -14,7 +14,7 @@ export const INSTALL_PHOTOS: InstallPhoto[] = [
   {
     src: "/install-heat-pump-brick-garden.jpg",
     alt: "Vaillant aroTHERM plus air source heat pump installed against a brick wall with the garden behind, Staffordshire",
-    caption: "Vaillant aroTHERM plus — Staffordshire",
+    caption: "Vaillant aroTHERM plus, Staffordshire",
     tags: ["homepage", "install-page", "hero"],
   },
   {
@@ -32,13 +32,13 @@ export const INSTALL_PHOTOS: InstallPhoto[] = [
   {
     src: "/install-heat-pump-patio.jpg",
     alt: "Front view of a twin-fan Vaillant air source heat pump on a sunny patio, Staffordshire installation",
-    caption: "Twin-fan aroTHERM plus — Staffordshire",
+    caption: "Twin-fan aroTHERM plus, Staffordshire",
     tags: ["homepage", "install-page"],
   },
   {
     src: "/install-heat-pump-gravel-pad.jpg",
     alt: "Vaillant aroTHERM plus heat pump on a gravel pad against a cream wall, installed by PG Renewables",
-    caption: "Set on a gravel pad — quiet and out of the way",
+    caption: "Set on a gravel pad, quiet and out of the way",
     tags: ["install-page", "zerodisrupt"],
   },
   {
@@ -56,7 +56,7 @@ export const INSTALL_PHOTOS: InstallPhoto[] = [
   {
     src: "/install-heat-pump-new-build.jpg",
     alt: "Newly installed Vaillant aroTHERM plus heat pump in a tidy new-build garden corner, Staffordshire",
-    caption: "Fresh off the tools — stickers still on",
+    caption: "Fresh off the tools, stickers still on",
     tags: ["install-page", "zerodisrupt"],
   },
 ];

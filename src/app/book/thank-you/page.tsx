@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 
 // Dedicated confirmation URL so analytics can treat the booking as a
-// page-based conversion (/book/thank-you). Not indexed — it only makes
+// page-based conversion (/book/thank-you). Not indexed, it only makes
 // sense after submitting the form.
 export const metadata: Metadata = {
   title: "Survey request received",
@@ -40,7 +40,7 @@ export default async function BookThankYouPage({
             Survey request received!
           </h1>
           <p className="text-gray-500 mb-6">
-            Thanks{firstName ? ` ${firstName}` : ""} &mdash; we&apos;ll call you within 1
+            Thanks{firstName ? ` ${firstName}` : ""}, we&apos;ll call you within 1
             working day to confirm your free heat loss survey
             {prettyDate && (
               <> for <strong>{prettyDate}</strong></>
@@ -51,12 +51,12 @@ export default async function BookThankYouPage({
             <ul className="text-sm text-green-700 space-y-1">
               <li>1. We confirm a time that suits you</li>
               <li>2. A heating engineer visits and measures your home room by room (about 45 minutes)</li>
-              <li>3. You get a fixed-price heat pump quote with the &pound;7,500 grant already applied &mdash; no obligation</li>
+              <li>3. You get a fixed-price heat pump quote with the &pound;7,500 grant already applied, no obligation</li>
             </ul>
           </div>
           <Link
             href="/"
-            className="inline-block bg-[#1C834B] hover:bg-[#166a3c] text-white px-6 py-3 rounded-xl font-medium transition-colors"
+            className="inline-block bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-6 py-3 rounded-xl font-medium transition-colors"
           >
             Back to home
           </Link>

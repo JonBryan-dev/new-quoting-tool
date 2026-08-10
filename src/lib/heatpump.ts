@@ -3,7 +3,7 @@ import type { Product, QuoteAnswers } from "./types";
 export const GRANT_AMOUNT = 7500;
 
 // ── HEAT PUMP SIZING ────────────────────────────────────────
-// Based on property type, bedrooms, bathrooms — estimates the
+// Based on property type, bedrooms, bathrooms, estimates the
 // heat loss in kW and picks the best-fit heat pump.
 //
 // Typical UK heat loss estimates:
@@ -64,7 +64,7 @@ export function pickBestHeatPump(heatLossKw: number, heatPumps: Product[]): Prod
 }
 
 // ── INSTALL COST ────────────────────────────────────────────
-// Heat pump install is more complex than boiler — varies by property
+// Heat pump install is more complex than boiler, varies by property
 
 export function estimateInstallCost(answers: QuoteAnswers): number {
   const base = 3000; // Base install (pipework, cylinder, controls, commissioning)

@@ -13,8 +13,8 @@ import { photosFor } from "@/lib/install-photos";
 export default function HomePage() {
   return (
     <div>
-      {/* Hero Section — video background with gradient fallback/overlay */}
-      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#1C834B] text-white relative overflow-hidden">
+      {/* Hero Section, video background with gradient fallback/overlay */}
+      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#4e7522] text-white relative overflow-hidden">
         <video
           autoPlay
           muted
@@ -25,16 +25,16 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-full object-cover"
           src="/hero-survey.mp4"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0c3560]/90 via-[#144E82]/80 to-[#1C834B]/75" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0c3560]/90 via-[#144E82]/80 to-[#4e7522]/75" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 text-green-50 px-4 py-1.5 rounded-full text-sm mb-6 backdrop-blur">
-              <Leaf className="w-4 h-4 text-[#7ee2a8]" />
+              <Leaf className="w-4 h-4 text-[#c4dd9b]" />
               &pound;7,500 government grant &bull; MCS &bull; Which? Trusted Traders
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Cut your heating bills with an{" "}
-              <span className="text-[#7ee2a8]">air source heat pump</span>
+              <span className="text-[#c4dd9b]">air source heat pump</span>
             </h1>
             <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-2xl">
               Book a <strong className="text-white">free heat loss survey</strong> and get a
@@ -44,7 +44,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
               >
                 Book Your Free Survey
                 <ArrowRight className="w-5 h-5" />
@@ -57,7 +57,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="text-blue-200 text-sm mt-4">
-              Heat pumps from around &pound;3,000 &mdash; the same price as a gas boiler &bull; Free survey, no obligation &bull;{" "}
+              Heat pumps from around &pound;3,000, the same price as a gas boiler &bull; Free survey, no obligation &bull;{" "}
               <a href="tel:07872626573" className="underline hover:text-white font-semibold">Call Now</a>
             </p>
           </div>
@@ -67,11 +67,11 @@ export default function HomePage() {
       {/* ZeroDisrupt promo band */}
       <Link
         href="/zerodisrupt"
-        className="block bg-[#1C834B] hover:bg-[#166a3c] transition-colors"
+        className="block bg-[#4e7522] hover:bg-[#3f5e1b] transition-colors"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-3 text-white text-sm sm:text-base font-semibold text-center">
           <span className="hidden sm:inline-flex bg-white/20 rounded-full px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide">New</span>
-          <span>ZeroDisrupt has landed: a heat pump for the price of a gas boiler — from around &pound;3,000</span>
+          <span>ZeroDisrupt has landed: a heat pump for the price of a gas boiler, from around &pound;3,000</span>
           <ArrowRight className="w-4 h-4 shrink-0" />
         </div>
       </Link>
@@ -88,14 +88,14 @@ export default function HomePage() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Star className="w-8 h-8 text-[#1C834B] shrink-0" />
+              <Star className="w-8 h-8 text-[#4e7522] shrink-0" />
               <div>
                 <p className="font-semibold text-gray-900 text-sm">4.9★ on Trustpilot</p>
                 <p className="text-xs text-gray-500">270+ five-star reviews</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Award className="w-8 h-8 text-[#1C834B] shrink-0" />
+              <Award className="w-8 h-8 text-[#4e7522] shrink-0" />
               <div>
                 <p className="font-semibold text-gray-900 text-sm">Which? Trusted</p>
                 <p className="text-xs text-gray-500">Independently endorsed</p>
@@ -117,7 +117,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-green-50 text-[#1C834B] px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 bg-green-50 text-[#4e7522] px-4 py-1.5 rounded-full text-sm font-medium mb-4">
                 <PoundSterling className="w-4 h-4" />
                 Boiler Upgrade Scheme
               </div>
@@ -127,24 +127,24 @@ export default function HomePage() {
               <p className="text-lg text-gray-500 mb-6">
                 If you&apos;re replacing a gas, oil or LPG boiler, the Boiler Upgrade Scheme
                 takes &pound;7,500 straight off the price of an air source heat pump. We handle
-                the whole grant application for you &mdash; there&apos;s no paperwork on your side.
+                the whole grant application for you, there&apos;s no paperwork on your side.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Grant deducted directly from your quote — nothing to claim back",
+                  "Grant deducted directly from your quote, nothing to claim back",
                   "3–4x more efficient than a gas boiler",
                   "No gas bills, no flue, no annual gas safety worries",
                   "Future-proof: new gas boilers face phase-out from 2035",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-gray-700">
-                    <Leaf className="w-5 h-5 text-[#1C834B] shrink-0 mt-0.5" />
+                    <Leaf className="w-5 h-5 text-[#4e7522] shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
               </ul>
               <Link
                 href="/quote/heatpump"
-                className="inline-flex items-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-6 py-3.5 rounded-xl font-semibold transition-colors"
+                className="inline-flex items-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-6 py-3.5 rounded-xl font-semibold transition-colors"
               >
                 See What You&apos;d Pay
                 <ArrowRight className="w-5 h-5" />
@@ -157,7 +157,7 @@ export default function HomePage() {
                   <span className="text-gray-600">Heat pump + full installation</span>
                   <span className="text-xl font-bold text-gray-900">&pound;10,500</span>
                 </div>
-                <div className="flex justify-between items-center text-[#1C834B]">
+                <div className="flex justify-between items-center text-[#4e7522]">
                   <span className="flex items-center gap-2 font-medium">
                     <Leaf className="w-4 h-4" />
                     Boiler Upgrade Scheme grant
@@ -169,7 +169,7 @@ export default function HomePage() {
                   <span className="text-4xl font-bold text-gray-900">&pound;3,000</span>
                 </div>
                 <div className="bg-white rounded-xl p-4 flex items-center gap-3 mt-2">
-                  <TrendingDown className="w-6 h-6 text-[#1C834B] shrink-0" />
+                  <TrendingDown className="w-6 h-6 text-[#4e7522] shrink-0" />
                   <p className="text-sm text-gray-600">
                     Plus save around <strong className="text-gray-900">&pound;300&ndash;£600 a year</strong> on
                     running costs vs an older gas boiler
@@ -181,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Instant estimate — Heat Geek */}
+      {/* Instant estimate, Heat Geek */}
       <section className="bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <HeatGeekEstimateSection compact />
@@ -206,13 +206,13 @@ export default function HomePage() {
                 icon: <CalendarCheck className="w-7 h-7" />,
                 step: "1",
                 title: "Book your free survey",
-                description: "Pick a day that suits you. A local engineer visits — it takes about 45 minutes.",
+                description: "Pick a day that suits you. A local engineer visits, it takes about 45 minutes.",
               },
               {
                 icon: <Ruler className="w-7 h-7" />,
                 step: "2",
                 title: "We measure your home",
-                description: "A proper room-by-room heat loss calculation, so your heat pump is sized right — never guesswork.",
+                description: "A proper room-by-room heat loss calculation, so your heat pump is sized right, never guesswork.",
               },
               {
                 icon: <ClipboardCheck className="w-7 h-7" />,
@@ -229,7 +229,7 @@ export default function HomePage() {
             ].map((item) => (
               <div key={item.step} className="bg-white rounded-2xl border border-gray-200 p-6 relative">
                 <span className="absolute top-6 right-6 text-4xl font-bold text-gray-100">{item.step}</span>
-                <div className="w-14 h-14 bg-green-50 text-[#1C834B] rounded-xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-green-50 text-[#4e7522] rounded-xl flex items-center justify-center mb-4">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -258,7 +258,7 @@ export default function HomePage() {
               Our work, not stock photos
             </h2>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              Real installations by our own engineers across Staffordshire — tidy
+              Real installations by our own engineers across Staffordshire, tidy
               pipework, neat siting, and plant rooms we&apos;re proud to photograph.
             </p>
           </div>
@@ -299,7 +299,7 @@ export default function HomePage() {
               {
                 icon: <Volume2 className="w-6 h-6" />,
                 title: "Quiet & low maintenance",
-                desc: "Modern units run at around 35dB — quieter than a fridge — with no annual gas safety certificate needed.",
+                desc: "Modern units run at around 35dB, quieter than a fridge, with no annual gas safety certificate needed.",
               },
               {
                 icon: <BatteryCharging className="w-6 h-6" />,
@@ -308,7 +308,7 @@ export default function HomePage() {
               },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-2xl border border-gray-200 p-6">
-                <div className="w-12 h-12 bg-green-50 text-[#1C834B] rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-green-50 text-[#4e7522] rounded-xl flex items-center justify-center mb-4">
                   {item.icon}
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -342,10 +342,10 @@ export default function HomePage() {
                 className="bg-white border border-gray-200 rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
               >
                 <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Thermometer className="w-7 h-7 text-[#1C834B]" />
+                  <Thermometer className="w-7 h-7 text-[#4e7522]" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-1">{brand.name}</h3>
-                <p className="text-sm font-medium text-[#1C834B] mb-1">{brand.range}</p>
+                <p className="text-sm font-medium text-[#4e7522] mb-1">{brand.range}</p>
                 <p className="text-sm text-gray-500 mb-1">{brand.desc}</p>
                 <p className="text-xs text-[#144E82] font-medium">{brand.warranty}</p>
               </div>
@@ -371,9 +371,9 @@ export default function HomePage() {
               <Link
                 key={town.slug}
                 href={`/heat-pumps/${town.slug}`}
-                className="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:border-[#1C834B]/50 hover:text-[#1C834B] transition-colors"
+                className="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:border-[#4e7522]/50 hover:text-[#4e7522] transition-colors"
               >
-                <MapPin className="w-3.5 h-3.5 text-[#1C834B]" />
+                <MapPin className="w-3.5 h-3.5 text-[#4e7522]" />
                 {town.name}
               </Link>
             ))}
@@ -381,7 +381,7 @@ export default function HomePage() {
           <p className="text-center text-sm text-gray-400 mt-6">
             Tap your town for local prices and advice, or see{" "}
             <Link href="/heat-pumps" className="text-[#144E82] underline">everywhere we cover</Link>.
-            Not listed? If you&apos;re in or around Staffordshire, we almost certainly cover you &mdash;{" "}
+            Not listed? If you&apos;re in or around Staffordshire, we almost certainly cover you,{" "}
             <a href="tel:07872626573" className="text-[#144E82] underline">give us a ring</a>.
           </p>
         </div>
@@ -401,7 +401,7 @@ export default function HomePage() {
                 </h3>
                 <p className="text-sm text-gray-500 max-w-xl">
                   Get a fixed-price quote for a new Worcester Bosch, Vaillant, Ideal or Navien
-                  boiler in 90 seconds &mdash; from &pound;1,595 fully installed.
+                  boiler in 90 seconds, from &pound;1,595 fully installed.
                 </p>
               </div>
             </div>
@@ -417,19 +417,19 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-[#144E82] to-[#1C834B] py-16">
+      <section className="bg-gradient-to-br from-[#144E82] to-[#4e7522] py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Your free heat loss survey is the first step
           </h2>
           <p className="text-blue-100 text-lg mb-8">
-            No cost, no obligation, no pushy sales &mdash; just an honest, accurate picture of
+            No cost, no obligation, no pushy sales, just an honest, accurate picture of
             what a heat pump would look like for your home and your bills.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/book"
-              className="inline-flex items-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Book Your Free Survey
               <ArrowRight className="w-5 h-5" />

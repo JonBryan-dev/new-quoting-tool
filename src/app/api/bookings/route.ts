@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
       savedId = booking.id;
       savedTo = "surveyBooking";
     } catch {
-      // SurveyBooking table may not exist yet (prisma db push pending) —
+      // SurveyBooking table may not exist yet (prisma db push pending),
       // fall back to the Quote table so the lead is still captured.
       try {
         const quote = await db.quote.create({
@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
         savedId = quote.id;
         savedTo = "quote";
       } catch {
-        // DB completely unavailable — notifications below are the safety net.
+        // DB completely unavailable, notifications below are the safety net.
       }
     }
   }
@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
       ? `Property: ${body.propertyType}, ${body.bedrooms ?? "?"} bed, ${body.bathrooms ?? "?"} bath`
       : null,
     body.notes ? `Notes: ${body.notes}` : null,
-    savedTo ? `Saved to database (${savedTo}: ${savedId})` : "NOT saved to database — follow up from this notification",
+    savedTo ? `Saved to database (${savedTo}: ${savedId})` : "NOT saved to database, follow up from this notification",
   ].filter(Boolean);
   const summary = summaryLines.join("\n");
 
@@ -161,7 +161,7 @@ export async function POST(request: NextRequest) {
       });
       if (res.ok) notified.push("slack");
     } catch {
-      // Same — never fail the booking over a notification
+      // Same, never fail the booking over a notification
     }
   }
 

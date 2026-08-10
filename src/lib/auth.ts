@@ -49,7 +49,7 @@ export async function clearAuthCookie() {
   cookieStore.delete(COOKIE_NAME);
 }
 
-// ── Password helpers (dynamic import — Node.js only, not Edge) ──
+// ── Password helpers (dynamic import, Node.js only, not Edge) ──
 
 export async function hashPassword(plain: string): Promise<string> {
   const bcrypt = await import("bcryptjs");

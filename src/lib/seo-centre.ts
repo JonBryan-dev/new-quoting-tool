@@ -1,4 +1,4 @@
-// SEO Command Centre — shared types and the default task plan.
+// SEO Command Centre, shared types and the default task plan.
 // The task list is seeded into the SeoTask table the first time the
 // admin SEO tab loads with a working database; after that the DB copy
 // is the source of truth and Jon can add/complete/delete freely.
@@ -46,7 +46,7 @@ export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
   { title: "Set up Google Cloud service account for Search Console + GA4 APIs (Phase C)", category: "technical", frequency: "once", sortOrder: 440 },
 ];
 
-// Starter keyword set — seeded once, then managed from the admin UI.
+// Starter keyword set, seeded once, then managed from the admin UI.
 // Expanded 2026-08-10 at Jon's request ("more keywords needed"), based on
 // the queries Search Console is already showing the site for.
 export const DEFAULT_SEO_KEYWORDS: { phrase: string; targetPath: string }[] = [

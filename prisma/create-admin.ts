@@ -14,14 +14,24 @@ async function main() {
   // Dynamic import of Prisma client
   const { PrismaClient } = await import("../src/generated/prisma/client");
 
-  // Prisma v7 requires either `adapter` or `accelerateUrl`
-  const accelerateUrl = process.env.PRISMA_ACCELERATE_URL;
-  if (!accelerateUrl) {
-    console.error("PRISMA_ACCELERATE_URL not set in .env");
+  // Prisma v7 requires either `adapter` or `accelerateUrl`. Supports
+  // Accelerate URLs and plain Postgres URLs (e.g. Supabase) alike.
+  const url =
+    process.env.PRISMA_ACCELERATE_URL ||
+    process.env.PRISMA_DATABASE_URL ||
+    process.env.DATABASE_URL;
+  if (!url) {
+    console.error("Set DATABASE_URL (or PRISMA_ACCELERATE_URL) in .env");
     process.exit(1);
   }
 
-  const prisma = new PrismaClient({ accelerateUrl } as any);
+  let prisma: InstanceType<typeof PrismaClient>;
+  if (url.startsWith("prisma://") || url.startsWith("prisma+postgres://")) {
+    prisma = new PrismaClient({ accelerateUrl: url } as any);
+  } else {
+    const { PrismaPg } = await import("@prisma/adapter-pg");
+    prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString: url }) } as any);
+  }
 
   try {
     const hashed = await bcrypt.hash(password, 12);

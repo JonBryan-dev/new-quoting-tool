@@ -3,14 +3,14 @@
 :root {
   --primary: #144E82;
   --primary-dark: #0e3a63;
-  --accent: #1C834B;
-  --accent-dark: #166a3c;
+  --accent: #4e7522;
+  --accent-dark: #3f5e1b;
   --background: #ffffff;
   --foreground: #111827;
   --muted: #6b7280;
   --border: #e5e7eb;
   --card: #f9fafb;
-  --success: #1C834B;
+  --success: #4e7522;
   --error: #ef4444;
 }
 
@@ -68,8 +68,8 @@ body {
 .hg-embed [class*="btn"]:hover,
 .hg-embed [class*="Button"]:hover,
 .hg-embed [role="button"]:hover {
-  background-color: #166a3c !important;
-  border-color: #166a3c !important;
+  background-color: #3f5e1b !important;
+  border-color: #3f5e1b !important;
 }
 
 .hg-embed input[type="text"],

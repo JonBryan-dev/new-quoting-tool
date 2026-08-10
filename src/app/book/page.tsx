@@ -27,7 +27,7 @@ const SURVEY_TYPES = [
   {
     value: "heatpump",
     label: "Heat pump survey",
-    desc: "Free heat loss survey for an air source heat pump — our most popular visit",
+    desc: "Free heat loss survey for an air source heat pump, our most popular visit",
   },
   {
     value: "boiler",
@@ -114,7 +114,7 @@ function BookContent() {
       router.push(`/book/thank-you?${confirmParams.toString()}`);
       return;
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong — please call us on 07872 626573");
+      setError(err instanceof Error ? err.message : "Something went wrong, please call us on 07872 626573");
     } finally {
       setSubmitting(false);
     }
@@ -160,7 +160,7 @@ function BookContent() {
                         onClick={() => setForm({ ...form, surveyType: type.value })}
                         className={`text-left rounded-xl border-2 p-3.5 transition-all ${
                           form.surveyType === type.value
-                            ? "border-[#1C834B] bg-green-50"
+                            ? "border-[#4e7522] bg-green-50"
                             : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
@@ -180,7 +180,7 @@ function BookContent() {
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#4e7522] focus:ring-2 focus:ring-green-100 outline-none transition-all"
                     placeholder="John Smith"
                   />
                 </div>
@@ -192,7 +192,7 @@ function BookContent() {
                       required
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#4e7522] focus:ring-2 focus:ring-green-100 outline-none transition-all"
                       placeholder="07123 456789"
                     />
                   </div>
@@ -202,7 +202,7 @@ function BookContent() {
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#4e7522] focus:ring-2 focus:ring-green-100 outline-none transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -215,7 +215,7 @@ function BookContent() {
                       required
                       value={form.addressLine}
                       onChange={(e) => setForm({ ...form, addressLine: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#4e7522] focus:ring-2 focus:ring-green-100 outline-none transition-all"
                       placeholder="1 High Street"
                     />
                   </div>
@@ -226,7 +226,7 @@ function BookContent() {
                       required
                       value={form.postcode}
                       onChange={(e) => setForm({ ...form, postcode: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#4e7522] focus:ring-2 focus:ring-green-100 outline-none transition-all"
                       placeholder="ST17 4AA"
                     />
                   </div>
@@ -239,7 +239,7 @@ function BookContent() {
                       min={minBookingDate()}
                       value={form.preferredDate}
                       onChange={(e) => setForm({ ...form, preferredDate: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#4e7522] focus:ring-2 focus:ring-green-100 outline-none transition-all"
                     />
                   </div>
                   <div>
@@ -256,7 +256,7 @@ function BookContent() {
                           onClick={() => setForm({ ...form, timeSlot: slot.value })}
                           className={`flex-1 px-2 py-3 rounded-xl text-sm font-medium border transition-colors ${
                             form.timeSlot === slot.value
-                              ? "bg-[#1C834B] text-white border-[#1C834B]"
+                              ? "bg-[#4e7522] text-white border-[#4e7522]"
                               : "bg-white text-gray-600 border-gray-300 hover:bg-gray-50"
                           }`}
                         >
@@ -272,7 +272,7 @@ function BookContent() {
                     value={form.notes}
                     onChange={(e) => setForm({ ...form, notes: e.target.value })}
                     rows={3}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1C834B] focus:ring-2 focus:ring-green-100 outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#4e7522] focus:ring-2 focus:ring-green-100 outline-none transition-all resize-none"
                     placeholder="e.g. current boiler type, solar panels, underfloor heating, parking..."
                   />
                 </div>
@@ -286,7 +286,7 @@ function BookContent() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-4 rounded-xl font-semibold text-lg transition-colors mt-2 text-white bg-[#1C834B] hover:bg-[#166a3c] disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-xl font-semibold text-lg transition-colors mt-2 text-white bg-[#4e7522] hover:bg-[#3f5e1b] disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                 >
                   {submitting ? "Sending..." : "Book My Free Survey"}
                   {!submitting && <ArrowRight className="w-5 h-5" />}
@@ -314,7 +314,7 @@ function BookContent() {
                         <p className="text-sm text-gray-400 line-through">&pound;{beforeGrant.toLocaleString()}</p>
                       )}
                       <p className="text-2xl font-bold text-gray-900">&pound;{total.toLocaleString()}</p>
-                      <p className="text-xs text-green-600 font-medium">After &pound;7,500 BUS grant &mdash; confirmed at your survey</p>
+                      <p className="text-xs text-green-600 font-medium">After &pound;7,500 BUS grant, confirmed at your survey</p>
                     </div>
                   )}
                 </div>
@@ -324,16 +324,16 @@ function BookContent() {
                 <h3 className="font-bold text-gray-900 mb-4">What happens at your survey</h3>
                 <div className="space-y-4 text-sm">
                   <div className="flex gap-3">
-                    <div className="w-9 h-9 bg-green-50 text-[#1C834B] rounded-lg flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 bg-green-50 text-[#4e7522] rounded-lg flex items-center justify-center shrink-0">
                       <Ruler className="w-4 h-4" />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Room-by-room heat loss check</p>
-                      <p className="text-gray-500">We measure your home properly &mdash; no guesswork sizing.</p>
+                      <p className="text-gray-500">We measure your home properly, no guesswork sizing.</p>
                     </div>
                   </div>
                   <div className="flex gap-3">
-                    <div className="w-9 h-9 bg-green-50 text-[#1C834B] rounded-lg flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 bg-green-50 text-[#4e7522] rounded-lg flex items-center justify-center shrink-0">
                       <Home className="w-4 h-4" />
                     </div>
                     <div>
@@ -342,7 +342,7 @@ function BookContent() {
                     </div>
                   </div>
                   <div className="flex gap-3">
-                    <div className="w-9 h-9 bg-green-50 text-[#1C834B] rounded-lg flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 bg-green-50 text-[#4e7522] rounded-lg flex items-center justify-center shrink-0">
                       <PoundSterling className="w-4 h-4" />
                     </div>
                     <div>
@@ -390,7 +390,7 @@ export default function BookPage() {
     <Suspense
       fallback={
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-          <div className="w-12 h-12 border-4 border-[#1C834B] border-t-transparent rounded-full animate-spin" />
+          <div className="w-12 h-12 border-4 border-[#4e7522] border-t-transparent rounded-full animate-spin" />
         </div>
       }
     >

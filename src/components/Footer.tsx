@@ -9,25 +9,25 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-[#144E82] rounded-lg flex items-center justify-center">
-                <Leaf className="w-4 h-4 text-[#7ee2a8]" />
+                <Leaf className="w-4 h-4 text-[#c4dd9b]" />
               </div>
               <span className="text-lg font-bold">
                 <span className="text-white">PG</span>{" "}
-                <span className="text-[#4cc97e]">Renewables</span>
+                <span className="text-[#83b54b]">Renewables</span>
               </span>
             </div>
             <p className="text-sm mb-4">
               Air source heat pump installation and free heat loss surveys across
-              Staffordshire, from the team behind PlumbGas Services &mdash; trusted local
+              Staffordshire, from the team behind PlumbGas Services, trusted local
               heating engineers since 2003.
             </p>
             <div className="flex items-center gap-3 mt-3">
               <div className="flex items-center gap-1.5 text-xs bg-gray-800 px-2.5 py-1.5 rounded-lg">
-                <Shield className="w-3.5 h-3.5 text-[#1C834B]" />
+                <Shield className="w-3.5 h-3.5 text-[#4e7522]" />
                 <span className="text-gray-300">Gas Safe</span>
               </div>
               <div className="flex items-center gap-1.5 text-xs bg-gray-800 px-2.5 py-1.5 rounded-lg">
-                <Award className="w-3.5 h-3.5 text-[#1C834B]" />
+                <Award className="w-3.5 h-3.5 text-[#4e7522]" />
                 <span className="text-gray-300">Which? Trusted</span>
               </div>
               <div className="flex items-center gap-1.5 text-xs bg-gray-800 px-2.5 py-1.5 rounded-lg">
@@ -41,7 +41,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/book" className="hover:text-white transition-colors">Free Heat Loss Survey</Link></li>
-              <li><Link href="/zerodisrupt" className="hover:text-white transition-colors">ZeroDisrupt &mdash; &pound;3k Heat Pumps</Link></li>
+              <li><Link href="/zerodisrupt" className="hover:text-white transition-colors">ZeroDisrupt, &pound;3k Heat Pumps</Link></li>
               <li><Link href="/services/heat-pump-installation" className="hover:text-white transition-colors">Heat Pump Installation</Link></li>
               <li><Link href="/services/heat-pump-servicing" className="hover:text-white transition-colors">Heat Pump Servicing</Link></li>
               <li><Link href="/services/underfloor-heating" className="hover:text-white transition-colors">Underfloor Heating</Link></li>

@@ -113,7 +113,7 @@ const defaultQuizSteps: QuizStepConfig[] = [
       { value: "standard", label: "Standard Flue", description: "Vertical flue going up through the roof (older style)" },
       { value: "balanced", label: "Balanced / Room-Sealed Flue", description: "Horizontal flue going through an outside wall (most common)" },
       { value: "vertical", label: "Vertical Balanced Flue", description: "Goes up through the roof but is sealed (modern installations)" },
-      { value: "unsure", label: "I'm not sure", description: "No worries — our engineer will check on installation day" },
+      { value: "unsure", label: "I'm not sure", description: "No worries, our engineer will check on installation day" },
     ],
   },
   {
@@ -122,10 +122,10 @@ const defaultQuizSteps: QuizStepConfig[] = [
     subtitle: "Older boilers are less efficient and more expensive to run.",
     answerKey: "boilerAge",
     options: [
-      { value: "0-5", label: "Less than 5 years", description: "Relatively new — installed after 2020" },
+      { value: "0-5", label: "Less than 5 years", description: "Relatively new, installed after 2020" },
       { value: "5-10", label: "5 – 10 years", description: "Getting older but may still be efficient" },
-      { value: "10-15", label: "10 – 15 years", description: "Likely losing efficiency — a good time to replace" },
-      { value: "15+", label: "Over 15 years", description: "Past its expected lifespan — replacement recommended" },
+      { value: "10-15", label: "10 – 15 years", description: "Likely losing efficiency, a good time to replace" },
+      { value: "15+", label: "Over 15 years", description: "Past its expected lifespan, replacement recommended" },
       { value: "unsure", label: "I'm not sure", description: "Don't worry, we'll help you work it out" },
     ],
   },

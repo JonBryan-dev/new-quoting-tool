@@ -220,7 +220,7 @@ export default function HeatPumpUpsell({ answers }: HeatPumpUpsellProps) {
             <ArrowRight className="w-5 h-5" />
           </button>
           <p className="text-sm text-gray-500 self-center">
-            Includes the &pound;7,500 BUS grant &mdash; we handle the application for you
+            Includes the &pound;7,500 BUS grant, we handle the application for you
           </p>
         </div>
       </div>

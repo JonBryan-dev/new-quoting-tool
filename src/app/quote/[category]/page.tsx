@@ -11,7 +11,7 @@ export default function QuotePage() {
   const params = useParams();
   const category = params.category as string;
 
-  // Heat pump estimates run through our Heat Geek partner tenancy —
+  // Heat pump estimates run through our Heat Geek partner tenancy,
   // their tool generates the estimate and the lead comes to us.
   if (category === "heatpump") {
     return (
@@ -27,19 +27,19 @@ export default function QuotePage() {
               Your heat pump estimate, in about two minutes
             </h1>
             <p className="text-gray-500 mt-1">
-              Answer a few questions about your home and get a personalised price —
+              Answer a few questions about your home and get a personalised price,
               with the &pound;7,500 grant already included.
             </p>
           </div>
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="bg-white rounded-2xl border-2 border-[#1C834B]/30 p-4 sm:p-8 overflow-hidden">
-            <p className="text-center text-sm font-semibold text-[#1C834B] uppercase tracking-wide mb-1">
+          <div className="bg-white rounded-2xl border-2 border-[#4e7522]/30 p-4 sm:p-8 overflow-hidden">
+            <p className="text-center text-sm font-semibold text-[#4e7522] uppercase tracking-wide mb-1">
               Start here
             </p>
             <p className="text-center text-gray-500 text-sm mb-4">
-              Type your address below — no sign-up needed to see your price. Powered by Heat
+              Type your address below, no sign-up needed to see your price. Powered by Heat
               Geek, installed locally by our own MCS-accredited engineers.
             </p>
             <HeatGeekWidget widgetStyle="block" align="center" />
@@ -53,7 +53,7 @@ export default function QuotePage() {
                 Rather talk to a human first?
               </h2>
               <p className="text-sm text-gray-500 max-w-xl">
-                Skip the tool and book a free heat loss survey — a local engineer
+                Skip the tool and book a free heat loss survey, a local engineer
                 visits, measures your home room by room, and gives you a fixed
                 price with no obligation.
               </p>

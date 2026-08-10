@@ -7,13 +7,13 @@ const SITE_URL = "https://www.plumbgasrenewables.services";
 export const metadata: Metadata = {
   title: "How Much Does a Heat Pump Cost in Staffordshire? (2026 Prices)",
   description:
-    "2026 heat pump prices in Staffordshire have changed: through Heat Geek's ZeroDisrupt we now install from around £3,000 — the same price as a new gas boiler. What's included, what moves the price, and how the £7,500 grant works.",
+    "2026 heat pump prices in Staffordshire have changed: through Heat Geek's ZeroDisrupt we now install from around £3,000, the same price as a new gas boiler. What's included, what moves the price, and how the £7,500 grant works.",
   alternates: { canonical: "/guides/heat-pump-cost-staffordshire-2026" },
   openGraph: {
     type: "article",
     title: "How much does a heat pump cost in Staffordshire in 2026?",
     description:
-      "Installed prices by property type, the factors that move them, and what the £7,500 grant leaves you paying — from a local MCS installer.",
+      "Installed prices by property type, the factors that move them, and what the £7,500 grant leaves you paying, from a local MCS installer.",
     url: `${SITE_URL}/guides/heat-pump-cost-staffordshire-2026`,
   },
 };
@@ -42,7 +42,7 @@ export default function CostGuidePage() {
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
 
-      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#1C834B] text-white">
+      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#4e7522] text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
           <nav className="text-sm text-blue-200 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
@@ -63,8 +63,8 @@ export default function CostGuidePage() {
             &pound;12&ndash;15k, which put it out of reach for most families. Through
             Heat Geek&apos;s <strong>ZeroDisrupt</strong> system we can now install a
             heat pump in Staffordshire{" "}
-            <strong>from around &pound;3,000 — about the same price as a new gas
-            boiler</strong> — with the &pound;7,500 Boiler Upgrade Scheme grant already
+            <strong>from around &pound;3,000, about the same price as a new gas
+            boiler</strong>, with the &pound;7,500 Boiler Upgrade Scheme grant already
             deducted. Here&apos;s how that&apos;s possible, what&apos;s included, and
             what moves the price for your home.
           </p>
@@ -74,7 +74,7 @@ export default function CostGuidePage() {
           </h2>
           <p>
             The honest way to think about it is against the thing you&apos;d otherwise
-            buy — another gas boiler:
+            buy, another gas boiler:
           </p>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
@@ -89,11 +89,11 @@ export default function CostGuidePage() {
                 {[
                   ["New gas boiler", "£2,000–£4,000", "Locked into gas prices for 10–15 years"],
                   ["ZeroDisrupt heat pump (after £7,500 grant)", "from ~£3,000", "Lower running costs, month after month"],
-                  ["Heat pump the old way (pre-ZeroDisrupt)", "£12,000–£15,000", "Same savings — but few could afford the install"],
+                  ["Heat pump the old way (pre-ZeroDisrupt)", "£12,000–£15,000", "Same savings, but few could afford the install"],
                 ].map((row) => (
                   <tr key={row[0]} className="border-t border-gray-100">
                     <td className="px-4 py-3 font-medium text-gray-900">{row[0]}</td>
-                    <td className="px-4 py-3 font-bold text-[#1C834B]">{row[1]}</td>
+                    <td className="px-4 py-3 font-bold text-[#4e7522]">{row[1]}</td>
                     <td className="px-4 py-3 text-gray-600">{row[2]}</td>
                   </tr>
                 ))}
@@ -104,8 +104,8 @@ export default function CostGuidePage() {
             The ZeroDisrupt price includes the heat pump, hot water cylinder, controls,
             installation labour, commissioning, MCS certification and the grant
             application. Larger homes or ones needing radiator upgrades cost more than
-            the starting price — your{" "}
-            <Link href="/quote/heatpump" className="text-[#1C834B] font-medium underline">
+            the starting price, your{" "}
+            <Link href="/quote/heatpump" className="text-[#4e7522] font-medium underline">
               instant estimate
             </Link>{" "}
             gives you your own number in about two minutes.
@@ -115,7 +115,7 @@ export default function CostGuidePage() {
             <em>waste</em>: ZeroDisrupt designs are generated from data on thousands of
             real UK homes, so there&apos;s no over-sized kit, no unnecessary upgrades
             and no padded quotes. Read the full story on our{" "}
-            <Link href="/zerodisrupt" className="text-[#1C834B] font-medium underline">
+            <Link href="/zerodisrupt" className="text-[#4e7522] font-medium underline">
               ZeroDisrupt page
             </Link>.
           </p>
@@ -125,7 +125,7 @@ export default function CostGuidePage() {
           </h2>
           <p><strong>1. The size of the system.</strong>{" "}
             Bigger homes lose more heat and need more kilowatts, a bigger cylinder and
-            sometimes larger pipework. This is the single biggest factor — and it&apos;s
+            sometimes larger pipework. This is the single biggest factor, and it&apos;s
             why we won&apos;t quote a fixed price without measuring your home first.
           </p>
           <p><strong>2. Radiator upgrades.</strong>{" "}
@@ -137,8 +137,8 @@ export default function CostGuidePage() {
           </p>
           <p><strong>3. Cylinder location and pipework.</strong>{" "}
             If you have an airing cupboard (or an old cylinder to replace), it&apos;s
-            straightforward. Combi-boiler homes need space finding for a cylinder —
-            usually the airing cupboard, loft or garage — and that can add pipework
+            straightforward. Combi-boiler homes need space finding for a cylinder,
+            usually the airing cupboard, loft or garage, and that can add pipework
             time.
           </p>
           <p><strong>4. Your old fuel.</strong>{" "}
@@ -148,7 +148,7 @@ export default function CostGuidePage() {
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 pt-2">
-            The &pound;7,500 grant — the bit that changes everything
+            The &pound;7,500 grant, the bit that changes everything
           </h2>
           <p>
             The Boiler Upgrade Scheme pays &pound;7,500 towards an air source heat pump
@@ -156,7 +156,7 @@ export default function CostGuidePage() {
             claim afterwards: as your MCS-certified installer, <strong>we apply for it
             and deduct it from your quote</strong>, so the prices you see from us are
             the prices you pay. Most owner-occupied homes qualify.{" "}
-            <Link href="/boiler-upgrade-scheme" className="text-[#1C834B] font-medium underline">
+            <Link href="/boiler-upgrade-scheme" className="text-[#4e7522] font-medium underline">
               Full grant guide here
             </Link>.
           </p>
@@ -166,7 +166,7 @@ export default function CostGuidePage() {
           </h2>
           <p>
             Any installer who gives you a fixed heat pump price from a phone call is
-            guessing — and guessed systems are where the horror stories come from
+            guessing, and guessed systems are where the horror stories come from
             (oversized units short-cycling, undersized ones limping through January).
             A room-by-room heat loss survey takes 45 minutes, it&apos;s free, and it&apos;s
             the difference between a heat pump that delivers its promised efficiency
@@ -191,7 +191,7 @@ export default function CostGuidePage() {
               </Link>
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-6 py-3 rounded-xl font-semibold transition-colors"
               >
                 Book Free Survey
                 <ArrowRight className="w-4 h-4" />

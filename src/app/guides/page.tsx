@@ -20,7 +20,7 @@ const GUIDES = [
   {
     href: "/guides/heat-pump-vs-gas-boiler-running-costs",
     icon: <TrendingDown className="w-6 h-6" />,
-    title: "Heat pump vs gas boiler running costs — the honest maths",
+    title: "Heat pump vs gas boiler running costs, the honest maths",
     desc: "The efficiency-vs-unit-price equation explained with worked examples, and what actually decides whether you save.",
     date: "August 2026",
   },
@@ -36,7 +36,7 @@ const GUIDES = [
 export default function GuidesPage() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#1C834B] text-white">
+      <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#4e7522] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <nav className="text-sm text-blue-200 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
@@ -45,10 +45,10 @@ export default function GuidesPage() {
           </nav>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 max-w-3xl">
             Heat pump guides,{" "}
-            <span className="text-[#7ee2a8]">without the sales pitch</span>
+            <span className="text-[#c4dd9b]">without the sales pitch</span>
           </h1>
           <p className="text-lg text-blue-100 max-w-2xl">
-            Written by the engineers who do the installs — real prices, real maths and
+            Written by the engineers who do the installs, real prices, real maths and
             honest answers for Staffordshire homeowners.
           </p>
         </div>
@@ -61,26 +61,26 @@ export default function GuidesPage() {
               <Link
                 key={g.href}
                 href={g.href}
-                className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-7 flex gap-5 hover:shadow-lg hover:border-[#1C834B]/40 transition-all"
+                className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-7 flex gap-5 hover:shadow-lg hover:border-[#4e7522]/40 transition-all"
               >
-                <div className="w-12 h-12 bg-green-50 text-[#1C834B] rounded-xl flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-green-50 text-[#4e7522] rounded-xl flex items-center justify-center shrink-0">
                   {g.icon}
                 </div>
                 <div className="flex-1">
                   <p className="text-xs text-gray-400 mb-1">{g.date}</p>
-                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-[#1C834B] transition-colors">
+                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-[#4e7522] transition-colors">
                     {g.title}
                   </h2>
                   <p className="text-sm text-gray-500">{g.desc}</p>
                 </div>
-                <span className="self-center text-[#1C834B] group-hover:translate-x-1 transition-transform">
+                <span className="self-center text-[#4e7522] group-hover:translate-x-1 transition-transform">
                   <ArrowRight className="w-5 h-5" />
                 </span>
               </Link>
             ))}
           </div>
           <p className="text-center text-sm text-gray-400 mt-8">
-            New guides published regularly — including performance write-ups from our
+            New guides published regularly, including performance write-ups from our
             own installs.
           </p>
         </div>
