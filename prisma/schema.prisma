@@ -141,12 +141,16 @@ model SeoSnapshot {
 }
 
 model SeoDraft {
-  id         String   @id @default(cuid())
-  kind       String // meta, article, improve, keywords, gbp-post, custom
-  targetPath String?
-  brief      String
-  content    String
-  model      String?
-  status     String   @default("draft") // draft, approved, published
-  createdAt  DateTime @default(now())
+  id              String    @id @default(cuid())
+  kind            String // meta, article, improve, keywords, gbp-post, custom
+  targetPath      String?
+  brief           String
+  content         String
+  model           String?
+  status          String    @default("draft") // draft, approved, published
+  title           String? // article drafts: page H1
+  slug            String?   @unique // article drafts: /guides/[slug]
+  metaDescription String? // article drafts: <meta name="description">
+  publishedAt     DateTime? // set when status becomes published
+  createdAt       DateTime  @default(now())
 }

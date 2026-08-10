@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { getDb } from "@/lib/db";
+import { BRAND_CONTEXT, ensureArticleColumns } from "@/lib/seo-content";
 
 // Admin-only (protected by middleware): the Content Studio brain.
 // POST { mode, brief, currentText?, targetPath? } → Claude-drafted content.
@@ -11,18 +12,6 @@ import { getDb } from "@/lib/db";
 // Jon to review and publish by hand, nothing is auto-published.
 
 export const maxDuration = 60;
-
-const BRAND_CONTEXT = `You write for PG Renewables (plumbgasrenewables.services), the renewables arm of PlumbGas Services, a Gas Safe & MCS-certified, Which? Trusted Trader heating company in Stafford, run by Jon Bryan, serving the whole of Staffordshire since 2003 (4.9★ on Trustpilot, 270+ reviews).
-
-Key facts you must keep accurate:
-- Core offer: FREE heat loss survey → fixed-price air source heat pump quote.
-- ZeroDisrupt heat pumps from around £3,000 installed after the £7,500 Boiler Upgrade Scheme grant, about the same price as a new gas boiler. PG Renewables handles the grant paperwork.
-- Brands installed: Vaillant, Viessmann, Daikin (5–16kW). 2-year workmanship warranty.
-- Instant estimates powered by Heat Geek (partner tenancy).
-- Phone 07872 626573 · 27 Barnbank Lane, Stafford ST17 9HB.
-- Towns served: Stafford, Stone, Cannock, Rugeley, Uttoxeter, Stoke-on-Trent, Newcastle-under-Lyme, Lichfield, Tamworth, Burton upon Trent, Leek, Cheadle, Penkridge, Eccleshall, Gnosall, Brewood.
-
-Style: plain British English, warm and expert, no hype, no invented statistics or fake reviews. Write for homeowners, not engineers. Content must read as genuinely local and helpful, never boilerplate.`;
 
 const MODE_PROMPTS: Record<string, string> = {
   meta: "Write an SEO title tag (max 60 characters) and meta description (max 155 characters) for the page described in the brief. Return them labelled 'Title:' and 'Description:', then 2 alternative options.",
@@ -93,6 +82,7 @@ export async function POST(request: NextRequest) {
     const db = await getDb();
     if (db) {
       try {
+        await ensureArticleColumns(db);
         const draft = await db.seoDraft.create({
           data: {
             kind: mode,

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, PoundSterling, TrendingDown } from "lucide-react";
+import { getDb } from "@/lib/db";
+import { ensureArticleColumns } from "@/lib/seo-content";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Heat Pump Guides & Advice | PlumbGas Renewables",
@@ -33,7 +37,37 @@ const GUIDES = [
   },
 ];
 
-export default function GuidesPage() {
+// Approved articles from the Content Studio join the hand-written
+// guides below; publishing happens in the admin, never automatically.
+async function getPublishedArticles() {
+  const db = await getDb();
+  if (!db) return [];
+  try {
+    await ensureArticleColumns(db);
+    const rows = await db.seoDraft.findMany({
+      where: { kind: "article", status: "published", slug: { not: null } },
+      orderBy: { publishedAt: "desc" },
+    });
+    return rows
+      .filter((r: { slug: string | null; title: string | null }) => r.slug && r.title)
+      .map((r: { slug: string | null; title: string | null; metaDescription: string | null; publishedAt: Date | null; createdAt: Date }) => ({
+        href: `/guides/${r.slug}`,
+        icon: <BookOpen className="w-6 h-6" />,
+        title: r.title as string,
+        desc: r.metaDescription || "",
+        date: new Date(r.publishedAt || r.createdAt).toLocaleDateString("en-GB", {
+          month: "long",
+          year: "numeric",
+        }),
+      }));
+  } catch {
+    return [];
+  }
+}
+
+export default async function GuidesPage() {
+  const articles = await getPublishedArticles();
+  const allGuides = [...articles, ...GUIDES];
   return (
     <div>
       <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#4e7522] text-white">
@@ -57,7 +91,7 @@ export default function GuidesPage() {
       <section className="py-14 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-5">
-            {GUIDES.map((g) => (
+            {allGuides.map((g) => (
               <Link
                 key={g.href}
                 href={g.href}

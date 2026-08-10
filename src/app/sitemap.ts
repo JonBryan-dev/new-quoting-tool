@@ -1,14 +1,41 @@
 import type { MetadataRoute } from "next";
 import { towns } from "@/lib/towns";
+import { getDb } from "@/lib/db";
+import { ensureArticleColumns } from "@/lib/seo-content";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Revalidate hourly so newly published guide articles appear without a
+// redeploy.
+export const revalidate = 3600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const townPages: MetadataRoute.Sitemap = towns.map((t) => ({
     url: `${SITE_URL}/heat-pumps/${t.slug}`,
     changeFrequency: "monthly",
     priority: 0.7,
   }));
+
+  let articlePages: MetadataRoute.Sitemap = [];
+  try {
+    const db = await getDb();
+    if (db) {
+      await ensureArticleColumns(db);
+      const rows = await db.seoDraft.findMany({
+        where: { kind: "article", status: "published", slug: { not: null } },
+        select: { slug: true },
+      });
+      articlePages = rows
+        .filter((r: { slug: string | null }) => r.slug)
+        .map((r: { slug: string | null }) => ({
+          url: `${SITE_URL}/guides/${r.slug}`,
+          changeFrequency: "monthly" as const,
+          priority: 0.7,
+        }));
+    }
+  } catch {
+    // DB unavailable at render time, static entries still ship
+  }
 
   return [
     {
@@ -106,6 +133,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...articlePages,
     ...townPages,
   ];
 }

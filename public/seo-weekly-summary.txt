@@ -1,0 +1,10 @@
+Week of 2026-08-10
+
+Hello Jon, this file is where your weekly SEO summary lives from now on. Every Monday the SEO autopilot writes its plain-English summary here, and the site emails it to you at about 9:45am.
+
+This week:
+- The autopilot made its first live pass over the site using real Search Console and GA4 data, and picked up your "more keywords needed" request.
+- Weekly progress snapshots now record every Monday, see the Progress section of the SEO tab in the admin.
+- New: a fresh guide article is drafted automatically every Wednesday morning. You get an email with the full text, and it only goes live when you press Approve and publish in the admin.
+
+From next Monday this email will cover exactly what changed on the site that morning and why, plus your headline numbers.

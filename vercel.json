@@ -6,6 +6,14 @@
     {
       "path": "/api/cron/seo-report",
       "schedule": "30 5 * * 1"
+    },
+    {
+      "path": "/api/cron/email-summary",
+      "schedule": "45 8 * * 1"
+    },
+    {
+      "path": "/api/cron/auto-draft",
+      "schedule": "30 5 * * 3"
     }
   ]
 }

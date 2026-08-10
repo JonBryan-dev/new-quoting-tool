@@ -1,16 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
+import { ensureArticleColumns } from "@/lib/seo-content";
 
 // Admin-only (protected by middleware): saved Content Studio drafts.
 // GET  → list recent drafts
 // POST → { action: "status", draftId, status } (draft | approved | published)
 //        { action: "delete", draftId }
+// Publishing an article draft sets publishedAt, which makes it live at
+// /guides/[slug]; moving it back to draft/approved takes it down again.
 
 export async function GET() {
   const db = await getDb();
   if (!db) return NextResponse.json({ dbAvailable: false, drafts: [] });
 
   try {
+    await ensureArticleColumns(db);
     const drafts = await db.seoDraft.findMany({
       orderBy: { createdAt: "desc" },
       take: 50,
@@ -35,10 +39,15 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    await ensureArticleColumns(db);
+
     if (body.action === "status" && body.draftId && ["draft", "approved", "published"].includes(body.status || "")) {
       const draft = await db.seoDraft.update({
         where: { id: body.draftId },
-        data: { status: body.status },
+        data: {
+          status: body.status,
+          publishedAt: body.status === "published" ? new Date() : null,
+        },
       });
       return NextResponse.json({ success: true, draft });
     }

@@ -56,6 +56,9 @@ interface Draft {
   brief: string;
   content: string;
   status: string;
+  title: string | null;
+  slug: string | null;
+  publishedAt: string | null;
   createdAt: string;
 }
 
@@ -567,6 +570,19 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
 
   useEffect(loadDrafts, [loadDrafts]);
 
+  async function setDraftStatus(draftId: string, status: string) {
+    try {
+      const res = await fetch("/api/admin/seo/drafts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "status", draftId, status }),
+      });
+      if (res.ok) loadDrafts();
+    } catch {
+      // list refresh next time round
+    }
+  }
+
   async function generate() {
     if (!brief.trim() || busy) return;
     setBusy(true);
@@ -604,8 +620,9 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
         <h3 className="font-bold text-gray-900">Content Studio</h3>
       </div>
       <p className="text-sm text-gray-500 mb-4">
-        Claude drafts it, you review and publish. Nothing goes live automatically, that keeps
-        Google&apos;s content guidelines on side.
+        Claude drafts it, you review and publish. A fresh guide article also arrives here
+        automatically every Wednesday morning (you get an email). Nothing goes live until you
+        press Approve &amp; publish, that keeps Google&apos;s content guidelines on side.
       </p>
 
       {!anthropicReady && (
@@ -717,20 +734,58 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
           {drafts.map((d) => (
             <details key={d.id} className="bg-gray-50 border border-gray-200 rounded-lg p-3">
               <summary className="cursor-pointer text-sm text-gray-700">
-                <span className="font-medium capitalize">{d.kind}</span>
+                <span className="font-medium">
+                  {d.title || <span className="capitalize">{d.kind}</span>}
+                </span>
                 {d.targetPath && <span className="text-gray-400"> · {d.targetPath}</span>}
                 <span className="text-gray-400">
                   {" "}
                   · {new Date(d.createdAt).toLocaleDateString("en-GB")}
                 </span>
-                <span className="ml-2 text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">
-                  {d.status}
+                <span
+                  className={`ml-2 text-xs px-2 py-0.5 rounded-full ${
+                    d.status === "published"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-blue-50 text-blue-700"
+                  }`}
+                >
+                  {d.status === "published" ? "live" : d.status}
                 </span>
               </summary>
               <p className="text-xs text-gray-500 mt-2 mb-1">Brief: {d.brief}</p>
               <pre className="text-xs text-gray-700 whitespace-pre-wrap max-h-60 overflow-y-auto mt-2">
                 {d.content}
               </pre>
+              {d.kind === "article" && d.slug && (
+                <div className="flex flex-wrap items-center gap-3 mt-3 pt-3 border-t border-gray-200">
+                  {d.status === "published" ? (
+                    <>
+                      <a
+                        href={`/guides/${d.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-medium text-[#4e7522] hover:underline"
+                      >
+                        View live page ↗
+                      </a>
+                      <button
+                        onClick={() => setDraftStatus(d.id, "draft")}
+                        className="text-xs font-medium text-red-600 hover:underline"
+                      >
+                        Unpublish
+                      </button>
+                    </>
+                  ) : (
+                    <button
+                      onClick={() => setDraftStatus(d.id, "published")}
+                      className="px-3 py-1.5 bg-[#83b54b] text-[#213311] text-xs font-semibold rounded-lg hover:bg-[#74a43f]"
+                    >
+                      Approve &amp; publish
+                    </button>
+                  )}
+                  <span className="text-xs text-gray-400">/guides/{d.slug}</span>
+                </div>
+              )}
             </details>
           ))}
         </div>
