@@ -5,33 +5,60 @@
 
 let prisma: any = null;
 
+const URL_CANDIDATES = [
+  "PRISMA_ACCELERATE_URL",
+  "PRISMA_DATABASE_URL",
+  "POSTGRES_PRISMA_URL",
+  "DATABASE_URL",
+  "POSTGRES_URL",
+] as const;
+
+export function resolveDbUrl(): { name: string; url: string } | null {
+  for (const name of URL_CANDIDATES) {
+    const url = process.env[name];
+    if (url) return { name, url };
+  }
+  return null;
+}
+
+// Supabase's certificate chain is self-signed, which the driver rejects
+// by default. Encode no-verify into the URL itself (pg maps
+// sslmode=no-verify to TLS without chain verification) so the setting
+// can't be lost in option passing.
+function withNoVerify(url: string): string {
+  try {
+    const u = new URL(url);
+    u.searchParams.delete("sslmode");
+    u.searchParams.delete("ssl");
+    u.searchParams.delete("sslcert");
+    u.searchParams.set("sslmode", "no-verify");
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 export async function getDb() {
   if (prisma) return prisma;
 
   try {
     const { PrismaClient } = await import("@/generated/prisma/client");
-    const url =
-      process.env.PRISMA_ACCELERATE_URL ||
-      process.env.PRISMA_DATABASE_URL ||
-      process.env.POSTGRES_PRISMA_URL ||
-      process.env.DATABASE_URL ||
-      process.env.POSTGRES_URL;
+    const resolved = resolveDbUrl();
 
-    if (!url) {
+    if (!resolved) {
       console.warn("No database URL set, database unavailable");
       return null;
     }
 
+    const { url } = resolved;
     if (url.startsWith("prisma://") || url.startsWith("prisma+postgres://")) {
       prisma = new PrismaClient({ accelerateUrl: url } as any);
     } else {
       const { PrismaPg } = await import("@prisma/adapter-pg");
-      // Supabase's cert chain is self-signed; keep TLS but skip chain
-      // verification, which node-postgres rejects by default.
       const adapter = new PrismaPg({
-        connectionString: url,
+        connectionString: withNoVerify(url),
         ssl: { rejectUnauthorized: false },
-      });
+      } as any);
       prisma = new PrismaClient({ adapter } as any);
     }
     return prisma;

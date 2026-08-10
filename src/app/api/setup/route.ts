@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, resolveDbUrl } from "@/lib/db";
 import { hashPassword } from "@/lib/auth";
 
 // One-time database initialisation: creates the site's tables and the
@@ -136,11 +136,45 @@ async function alreadyInitialised(db: any): Promise<boolean> {
 }
 
 export async function GET() {
+  // Diagnostics (no secrets): which env var is in use, its host and
+  // whether it will take the Accelerate or the pg-driver path.
+  const resolved = resolveDbUrl();
+  let connection: Record<string, string> = { source: "none" };
+  if (resolved) {
+    let host = "unparseable";
+    try {
+      host = new URL(resolved.url).host;
+    } catch {
+      // leave as unparseable
+    }
+    connection = {
+      source: resolved.name,
+      host,
+      driver:
+        resolved.url.startsWith("prisma://") || resolved.url.startsWith("prisma+postgres://")
+          ? "accelerate"
+          : "pg-adapter",
+    };
+  }
+
   const db = await getDb();
   if (!db) {
-    return NextResponse.json({ dbConnected: false, initialised: false });
+    return NextResponse.json({ dbConnected: false, initialised: false, connection });
   }
-  return NextResponse.json({ dbConnected: true, initialised: await alreadyInitialised(db) });
+
+  let queryTest = "ok";
+  try {
+    await db.$queryRawUnsafe("SELECT 1");
+  } catch (err) {
+    queryTest = err instanceof Error ? err.message.slice(0, 300) : "failed";
+  }
+
+  return NextResponse.json({
+    dbConnected: true,
+    initialised: await alreadyInitialised(db),
+    connection,
+    queryTest,
+  });
 }
 
 export async function POST(request: NextRequest) {

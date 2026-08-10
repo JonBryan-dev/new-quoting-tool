@@ -30,8 +30,21 @@ async function main() {
     prisma = new PrismaClient({ accelerateUrl: url } as any);
   } else {
     const { PrismaPg } = await import("@prisma/adapter-pg");
+    const noVerifyUrl = (() => {
+      try {
+        const u = new URL(url);
+        u.searchParams.delete("sslmode");
+        u.searchParams.set("sslmode", "no-verify");
+        return u.toString();
+      } catch {
+        return url;
+      }
+    })();
     prisma = new PrismaClient({
-      adapter: new PrismaPg({ connectionString: url, ssl: { rejectUnauthorized: false } }),
+      adapter: new PrismaPg({
+        connectionString: noVerifyUrl,
+        ssl: { rejectUnauthorized: false },
+      } as any),
     } as any);
   }
 
