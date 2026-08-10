@@ -256,7 +256,7 @@ function BookContent() {
                           onClick={() => setForm({ ...form, timeSlot: slot.value })}
                           className={`flex-1 px-2 py-3 rounded-xl text-sm font-medium border transition-colors ${
                             form.timeSlot === slot.value
-                              ? "bg-[#4e7522] text-white border-[#4e7522]"
+                              ? "bg-[#83b54b] text-[#213311] border-[#4e7522]"
                               : "bg-white text-gray-600 border-gray-300 hover:bg-gray-50"
                           }`}
                         >
@@ -286,7 +286,7 @@ function BookContent() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-4 rounded-xl font-semibold text-lg transition-colors mt-2 text-white bg-[#4e7522] hover:bg-[#3f5e1b] disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-xl font-semibold text-lg transition-colors mt-2 text-[#213311] bg-[#83b54b] hover:bg-[#74a43f] disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                 >
                   {submitting ? "Sending..." : "Book My Free Survey"}
                   {!submitting && <ArrowRight className="w-5 h-5" />}

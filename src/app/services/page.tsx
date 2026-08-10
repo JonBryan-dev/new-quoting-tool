@@ -41,6 +41,13 @@ const SERVICES = [
     highlight: "Screed & overlay systems",
   },
   {
+    href: "/services/boiler-servicing",
+    icon: <Wrench className="w-7 h-7" />,
+    title: "Boiler Servicing & Repairs",
+    desc: "Annual services, breakdowns and honest advice on all major makes, from the Gas Safe team that has looked after Staffordshire boilers since 2003.",
+    highlight: "Stafford, Stone & county-wide",
+  },
+  {
     href: "/quote/boiler",
     icon: <Flame className="w-7 h-7" />,
     title: "Boiler Installation",
@@ -106,7 +113,7 @@ export default function ServicesPage() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/book"
-                  className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-5 py-3 rounded-xl font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-5 py-3 rounded-xl font-semibold transition-colors"
                 >
                   Book Free Survey
                   <ArrowRight className="w-4 h-4" />

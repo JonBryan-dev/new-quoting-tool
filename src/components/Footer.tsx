@@ -45,8 +45,10 @@ export default function Footer() {
               <li><Link href="/services/heat-pump-installation" className="hover:text-white transition-colors">Heat Pump Installation</Link></li>
               <li><Link href="/services/heat-pump-servicing" className="hover:text-white transition-colors">Heat Pump Servicing</Link></li>
               <li><Link href="/services/underfloor-heating" className="hover:text-white transition-colors">Underfloor Heating</Link></li>
+              <li><Link href="/services/boiler-servicing" className="hover:text-white transition-colors">Boiler Servicing &amp; Repairs</Link></li>
               <li><Link href="/boiler-upgrade-scheme" className="hover:text-white transition-colors">&pound;7,500 Grant Guide</Link></li>
               <li><Link href="/quote/boiler" className="hover:text-white transition-colors">Boiler Installation</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/accreditations" className="hover:text-white transition-colors">Accreditations</Link></li>
               <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
               <li><Link href="/guides" className="hover:text-white transition-colors">Guides &amp; Advice</Link></li>

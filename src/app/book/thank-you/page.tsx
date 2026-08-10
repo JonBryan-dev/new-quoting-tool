@@ -56,7 +56,7 @@ export default async function BookThankYouPage({
           </div>
           <Link
             href="/"
-            className="inline-block bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-6 py-3 rounded-xl font-medium transition-colors"
+            className="inline-block bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-6 py-3 rounded-xl font-medium transition-colors"
           >
             Back to home
           </Link>

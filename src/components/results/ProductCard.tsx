@@ -31,7 +31,7 @@ export default function ProductCard({ result, recommended, onSelect }: ProductCa
       )}
       {!recommended && product.popular && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span className="bg-[#4e7522] text-white text-xs font-bold px-4 py-1 rounded-full flex items-center gap-1">
+          <span className="bg-[#83b54b] text-[#213311] text-xs font-bold px-4 py-1 rounded-full flex items-center gap-1">
             <Star className="w-3 h-3" /> POPULAR
           </span>
         </div>

@@ -26,7 +26,12 @@ export async function getDb() {
       prisma = new PrismaClient({ accelerateUrl: url } as any);
     } else {
       const { PrismaPg } = await import("@prisma/adapter-pg");
-      const adapter = new PrismaPg({ connectionString: url });
+      // Supabase's cert chain is self-signed; keep TLS but skip chain
+      // verification, which node-postgres rejects by default.
+      const adapter = new PrismaPg({
+        connectionString: url,
+        ssl: { rejectUnauthorized: false },
+      });
       prisma = new PrismaClient({ adapter } as any);
     }
     return prisma;

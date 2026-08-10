@@ -95,7 +95,7 @@ export default function HeatPumpServicingPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="tel:07872626573"
-              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-7 py-3.5 rounded-xl font-semibold transition-colors"
             >
               <Phone className="w-5 h-5" />
               Call to Book a Service
@@ -216,7 +216,7 @@ export default function HeatPumpServicingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:07872626573"
-              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
               Call Now

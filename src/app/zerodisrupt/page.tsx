@@ -70,7 +70,7 @@ export default function ZeroDisruptPage() {
             <span className="mx-2">/</span>
             <span className="text-white">ZeroDisrupt</span>
           </nav>
-          <div className="inline-flex items-center gap-2 bg-[#4e7522] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-5">
+          <div className="inline-flex items-center gap-2 bg-[#83b54b] text-[#213311] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-5">
             <Zap className="w-3.5 h-3.5" />
             New for Staffordshire
           </div>
@@ -87,7 +87,7 @@ export default function ZeroDisruptPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/quote/heatpump"
-              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Get Your Instant Estimate
               <ArrowRight className="w-5 h-5" />
@@ -273,7 +273,7 @@ export default function ZeroDisruptPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/quote/heatpump"
-              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Get My Instant Estimate
               <ArrowRight className="w-5 h-5" />

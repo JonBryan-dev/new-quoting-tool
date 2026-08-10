@@ -191,7 +191,7 @@ export default function CostGuidePage() {
               </Link>
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-6 py-3 rounded-xl font-semibold transition-colors"
               >
                 Book Free Survey
                 <ArrowRight className="w-4 h-4" />

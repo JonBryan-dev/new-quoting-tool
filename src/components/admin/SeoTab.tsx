@@ -720,7 +720,7 @@ function KeywordTracker({ enabled }: { enabled: boolean }) {
                 setNewPhrase("");
                 setNewPath("");
               }}
-              className="flex items-center gap-2 px-4 py-2 bg-[#4e7522] text-white text-sm rounded-lg hover:bg-[#3f5e1b]"
+              className="flex items-center gap-2 px-4 py-2 bg-[#83b54b] text-[#213311] text-sm rounded-lg hover:bg-[#3f5e1b]"
             >
               <Plus className="w-4 h-4" />
               Track
@@ -854,7 +854,7 @@ function TaskChecklist({ enabled }: { enabled: boolean }) {
                 post({ action: "add", title: newTitle, category: newCategory });
                 setNewTitle("");
               }}
-              className="flex items-center gap-2 px-4 py-2 bg-[#4e7522] text-white text-sm rounded-lg hover:bg-[#3f5e1b]"
+              className="flex items-center gap-2 px-4 py-2 bg-[#83b54b] text-[#213311] text-sm rounded-lg hover:bg-[#3f5e1b]"
             >
               <Plus className="w-4 h-4" />
               Add

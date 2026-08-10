@@ -28,7 +28,7 @@ export default function HeatGeekEstimateSection({
       <div className="absolute -top-16 -right-16 w-56 h-56 bg-[#4e7522]/5 rounded-full" />
       <div className="absolute -bottom-20 -left-12 w-48 h-48 bg-[#144E82]/5 rounded-full" />
       <div className="relative text-center max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 bg-[#4e7522] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
+        <div className="inline-flex items-center gap-2 bg-[#83b54b] text-[#213311] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
           <Zap className="w-3.5 h-3.5" />
           2-minute estimate
         </div>
@@ -40,7 +40,7 @@ export default function HeatGeekEstimateSection({
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <Link
             href="/quote/heatpump"
-            className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-7 py-3.5 rounded-xl font-semibold transition-colors"
           >
             Start My Estimate
             <ArrowRight className="w-5 h-5" />

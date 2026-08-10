@@ -90,7 +90,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
 
         {/* Recommended */}
         <div className="bg-white rounded-2xl border-2 border-[#4e7522] p-6 sm:p-8 mb-6 relative">
-          <span className="absolute -top-3.5 left-6 bg-[#4e7522] text-white text-xs font-bold px-3 py-1.5 rounded-full">
+          <span className="absolute -top-3.5 left-6 bg-[#83b54b] text-[#213311] text-xs font-bold px-3 py-1.5 rounded-full">
             RECOMMENDED FOR YOUR HOME
           </span>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -133,7 +133,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
               </p>
               <button
                 onClick={() => router.push(bookUrl(recommended.id, afterGrant, totalBeforeGrant))}
-                className="mt-4 inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-6 py-3.5 rounded-xl font-semibold transition-colors w-full sm:w-auto"
+                className="mt-4 inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-6 py-3.5 rounded-xl font-semibold transition-colors w-full sm:w-auto"
               >
                 Book Free Survey
                 <ArrowRight className="w-5 h-5" />
@@ -251,7 +251,7 @@ export default function HeatPumpResults({ answers }: HeatPumpResultsProps) {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => router.push(bookUrl(recommended.id, afterGrant, totalBeforeGrant))}
-              className="inline-flex items-center justify-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-8 py-4 rounded-xl font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-8 py-4 rounded-xl font-semibold transition-colors"
             >
               Book My Free Survey
               <ArrowRight className="w-5 h-5" />

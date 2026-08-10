@@ -8,7 +8,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/boiler-servicing",
-        destination: "/quote/boiler",
+        destination: "/services/boiler-servicing",
+        permanent: true,
+      },
+      {
+        source: "/areas/:town",
+        destination: "/heat-pumps/:town",
         permanent: true,
       },
     ];

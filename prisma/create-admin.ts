@@ -30,7 +30,9 @@ async function main() {
     prisma = new PrismaClient({ accelerateUrl: url } as any);
   } else {
     const { PrismaPg } = await import("@prisma/adapter-pg");
-    prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString: url }) } as any);
+    prisma = new PrismaClient({
+      adapter: new PrismaPg({ connectionString: url, ssl: { rejectUnauthorized: false } }),
+    } as any);
   }
 
   try {

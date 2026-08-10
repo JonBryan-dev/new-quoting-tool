@@ -10,6 +10,7 @@ const SERVICE_LINKS = [
   { href: "/services/heat-loss-surveys", label: "Free Heat Loss Surveys" },
   { href: "/services/heat-pump-servicing", label: "Heat Pump Servicing" },
   { href: "/services/underfloor-heating", label: "Underfloor Heating" },
+  { href: "/services/boiler-servicing", label: "Boiler Servicing & Repairs" },
   { href: "/quote/boiler", label: "Boiler Installation" },
   { href: "/services", label: "All services →" },
 ];
@@ -19,6 +20,7 @@ const NAV_LINKS = [
   { href: "/boiler-upgrade-scheme", label: "£7,500 Grant" },
   { href: "/heat-pumps", label: "Areas" },
   { href: "/guides", label: "Guides" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Header() {
@@ -93,7 +95,7 @@ export default function Header() {
             </a>
             <Link
               href="/book"
-              className="flex items-center gap-2 bg-[#4e7522] hover:bg-[#3f5e1b] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+              className="flex items-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
             >
               <CalendarCheck className="w-4 h-4" />
               Book Free Survey
@@ -103,7 +105,7 @@ export default function Header() {
           <div className="flex items-center gap-2 lg:hidden">
             <a
               href="tel:07872626573"
-              className="flex items-center gap-1.5 bg-[#4e7522] text-white px-3.5 py-2 rounded-lg text-sm font-semibold"
+              className="flex items-center gap-1.5 bg-[#83b54b] text-[#213311] px-3.5 py-2 rounded-lg text-sm font-semibold"
             >
               <Phone className="w-4 h-4" />
               Call
@@ -166,7 +168,7 @@ export default function Header() {
               </a>
               <Link
                 href="/book"
-                className="flex items-center justify-center gap-2 bg-[#4e7522] text-white px-4 py-3 rounded-lg font-semibold"
+                className="flex items-center justify-center gap-2 bg-[#83b54b] text-[#213311] px-4 py-3 rounded-lg font-semibold"
                 onClick={() => setMenuOpen(false)}
               >
                 <CalendarCheck className="w-4 h-4" />
