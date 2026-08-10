@@ -44,7 +44,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
               >
                 Book Your Free Survey
                 <ArrowRight className="w-5 h-5" />
@@ -58,7 +58,7 @@ export default function HomePage() {
             </div>
             <p className="text-blue-200 text-sm mt-4">
               Heat pumps from around &pound;3,000 &mdash; the same price as a gas boiler &bull; Free survey, no obligation &bull;{" "}
-              <a href="tel:07872626573" className="underline hover:text-white">07872 626573</a>
+              <a href="tel:07872626573" className="underline hover:text-white font-semibold">Call Now</a>
             </p>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function HomePage() {
       {/* ZeroDisrupt promo band */}
       <Link
         href="/zerodisrupt"
-        className="block bg-[#F26430] hover:bg-[#d94f1a] transition-colors"
+        className="block bg-[#1C834B] hover:bg-[#166a3c] transition-colors"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-3 text-white text-sm sm:text-base font-semibold text-center">
           <span className="hidden sm:inline-flex bg-white/20 rounded-full px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide">New</span>
@@ -88,9 +88,9 @@ export default function HomePage() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Star className="w-8 h-8 text-[#F26430] shrink-0" />
+              <Star className="w-8 h-8 text-[#1C834B] shrink-0" />
               <div>
-                <p className="font-semibold text-gray-900 text-sm">4.9&star; on Trustpilot</p>
+                <p className="font-semibold text-gray-900 text-sm">4.9★ on Trustpilot</p>
                 <p className="text-xs text-gray-500">270+ five-star reviews</p>
               </div>
             </div>
@@ -429,7 +429,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/book"
-              className="inline-flex items-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Book Your Free Survey
               <ArrowRight className="w-5 h-5" />
@@ -439,7 +439,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors backdrop-blur"
             >
               <Phone className="w-5 h-5" />
-              07872 626573
+              Call Now
             </a>
           </div>
         </div>

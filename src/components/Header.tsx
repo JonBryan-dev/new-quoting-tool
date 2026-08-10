@@ -3,7 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, CalendarCheck } from "lucide-react";
+
+const NAV_LINKS = [
+  { href: "/services", label: "Services" },
+  { href: "/zerodisrupt", label: "£3k Heat Pumps", highlight: true },
+  { href: "/boiler-upgrade-scheme", label: "£7,500 Grant" },
+  { href: "/heat-pumps", label: "Areas" },
+  { href: "/guides", label: "Guides" },
+];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +20,7 @@ export default function Header() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/pg-renewables-logo.svg"
               alt="PG Renewables"
@@ -23,77 +31,100 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7">
-            <Link href="/services" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              Services
-            </Link>
-            <Link href="/heat-pumps" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              Areas We Cover
-            </Link>
-            <Link href="/boiler-upgrade-scheme" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              &pound;7,500 Grant
-            </Link>
-            <Link href="/guides" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
-              Guides
-            </Link>
-            <Link href="/zerodisrupt" className="text-[#F26430] hover:text-[#d94f1a] text-sm font-bold">
-              &pound;3k Heat Pumps
-            </Link>
+          <nav className="hidden lg:flex items-center gap-6">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={
+                  link.highlight
+                    ? "text-[#1C834B] hover:text-[#166a3c] text-sm font-bold"
+                    : "text-gray-600 hover:text-gray-900 text-sm font-medium"
+                }
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a href="tel:07872626573" className="flex items-center gap-2 text-sm font-semibold text-[#144E82]">
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="tel:07872626573"
+              className="flex items-center gap-2 border border-[#1C834B] text-[#1C834B] hover:bg-green-50 px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+            >
               <Phone className="w-4 h-4" />
-              07872 626573
+              Call Now
             </a>
             <Link
               href="/book"
-              className="bg-[#1C834B] hover:bg-[#166a3c] text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors"
+              className="flex items-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
             >
+              <CalendarCheck className="w-4 h-4" />
               Book Free Survey
             </Link>
           </div>
 
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <a
+              href="tel:07872626573"
+              className="flex items-center gap-1.5 bg-[#1C834B] text-white px-3.5 py-2 rounded-lg text-sm font-semibold"
+            >
+              <Phone className="w-4 h-4" />
+              Call
+            </a>
+            <button
+              className="p-2"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
+        <div className="lg:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-4 space-y-3">
-            <Link href="/services" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              Services
-            </Link>
-            <Link href="/heat-pumps" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              Areas We Cover
-            </Link>
-            <Link href="/boiler-upgrade-scheme" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              &pound;7,500 Grant
-            </Link>
-            <Link href="/guides" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              Guides
-            </Link>
-            <Link href="/zerodisrupt" className="block text-[#F26430] font-bold" onClick={() => setMenuOpen(false)}>
-              &pound;3k Heat Pumps
-            </Link>
-            <Link href="/quote/heatpump" className="block text-gray-700 hover:text-gray-900 font-medium" onClick={() => setMenuOpen(false)}>
-              Instant Estimate
-            </Link>
-            <a href="tel:07872626573" className="block text-[#144E82] font-semibold" onClick={() => setMenuOpen(false)}>
-              07872 626573
-            </a>
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={
+                  link.highlight
+                    ? "block text-[#1C834B] font-bold"
+                    : "block text-gray-700 hover:text-gray-900 font-medium"
+                }
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
-              href="/book"
-              className="block bg-[#1C834B] text-white text-center px-5 py-3 rounded-lg font-medium mt-4"
+              href="/quote/heatpump"
+              className="block text-gray-700 hover:text-gray-900 font-medium"
               onClick={() => setMenuOpen(false)}
             >
-              Book Free Survey
+              Instant Estimate
             </Link>
+            <div className="grid grid-cols-2 gap-3 pt-3">
+              <a
+                href="tel:07872626573"
+                className="flex items-center justify-center gap-2 border border-[#1C834B] text-[#1C834B] px-4 py-3 rounded-lg font-semibold"
+                onClick={() => setMenuOpen(false)}
+              >
+                <Phone className="w-4 h-4" />
+                Call Now
+              </a>
+              <Link
+                href="/book"
+                className="flex items-center justify-center gap-2 bg-[#1C834B] text-white px-4 py-3 rounded-lg font-semibold"
+                onClick={() => setMenuOpen(false)}
+              >
+                <CalendarCheck className="w-4 h-4" />
+                Book Survey
+              </Link>
+            </div>
           </div>
         </div>
       )}

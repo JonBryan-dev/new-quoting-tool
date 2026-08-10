@@ -23,6 +23,29 @@ declare global {
   }
 }
 
+const SURVEY_TYPES = [
+  {
+    value: "heatpump",
+    label: "Heat pump survey",
+    desc: "Free heat loss survey for an air source heat pump — our most popular visit",
+  },
+  {
+    value: "boiler",
+    label: "Boiler replacement survey",
+    desc: "Fixed-price quote visit for a new gas boiler",
+  },
+  {
+    value: "ufh",
+    label: "Underfloor heating survey",
+    desc: "For new floors, extensions or retrofits",
+  },
+  {
+    value: "other",
+    label: "Not sure / something else",
+    desc: "We'll work out what you need together",
+  },
+];
+
 function minBookingDate(): string {
   const d = new Date();
   d.setDate(d.getDate() + 1);
@@ -51,6 +74,7 @@ function BookContent() {
     preferredDate: "",
     timeSlot: "either",
     notes: "",
+    surveyType: "heatpump",
   });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -67,7 +91,9 @@ function BookContent() {
           ...form,
           source,
           productId: productId || undefined,
-          productName: product ? `${product.brand} ${product.name}` : undefined,
+          productName: product
+            ? `${product.brand} ${product.name}`
+            : SURVEY_TYPES.find((t) => t.value === form.surveyType)?.label,
           quotedPrice: total > 0 ? total : undefined,
           priceBeforeGrant: beforeGrant > 0 ? beforeGrant : undefined,
           propertyType: propertyType || undefined,
@@ -122,6 +148,31 @@ function BookContent() {
               <h2 className="text-lg font-bold text-gray-900 mb-4">Your details</h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    What type of survey do you need?
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {SURVEY_TYPES.map((type) => (
+                      <button
+                        key={type.value}
+                        type="button"
+                        onClick={() => setForm({ ...form, surveyType: type.value })}
+                        className={`text-left rounded-xl border-2 p-3.5 transition-all ${
+                          form.surveyType === type.value
+                            ? "border-[#1C834B] bg-green-50"
+                            : "border-gray-200 hover:border-gray-300"
+                        }`}
+                      >
+                        <span className="block font-semibold text-gray-900 text-sm">
+                          {type.label}
+                        </span>
+                        <span className="block text-xs text-gray-500 mt-0.5">{type.desc}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Full name</label>
                   <input
@@ -322,7 +373,7 @@ function BookContent() {
                 <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
                   <Phone className="w-4 h-4 text-[#144E82]" />
                   <a href="tel:07872626573" className="font-semibold text-[#144E82]">
-                    Prefer to talk? 07872 626573
+                    Prefer to talk? Call Now
                   </a>
                 </div>
               </div>

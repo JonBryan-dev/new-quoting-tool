@@ -99,7 +99,7 @@ export default function HeatLossSurveysPage() {
           </p>
           <Link
             href="/book"
-            className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
           >
             Book a Free Survey
             <ArrowRight className="w-5 h-5" />
@@ -250,7 +250,7 @@ export default function HeatLossSurveysPage() {
               className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 hover:bg-gray-50 text-[#144E82] px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
-              07872 626573
+              Call Now
             </a>
           </div>
         </div>

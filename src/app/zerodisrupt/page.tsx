@@ -70,7 +70,7 @@ export default function ZeroDisruptPage() {
             <span className="mx-2">/</span>
             <span className="text-white">ZeroDisrupt</span>
           </nav>
-          <div className="inline-flex items-center gap-2 bg-[#F26430] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-5">
+          <div className="inline-flex items-center gap-2 bg-[#1C834B] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-5">
             <Zap className="w-3.5 h-3.5" />
             New for Staffordshire
           </div>
@@ -87,7 +87,7 @@ export default function ZeroDisruptPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/quote/heatpump"
-              className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Get Your Instant Estimate
               <ArrowRight className="w-5 h-5" />
@@ -97,7 +97,7 @@ export default function ZeroDisruptPage() {
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors backdrop-blur"
             >
               <Phone className="w-5 h-5" />
-              07872 626573
+              Call Now
             </a>
           </div>
         </div>

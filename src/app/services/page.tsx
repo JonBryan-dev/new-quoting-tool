@@ -116,7 +116,7 @@ export default function ServicesPage() {
                   className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 hover:bg-gray-50 text-[#144E82] px-5 py-3 rounded-xl font-semibold transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  07872 626573
+                  Call Now
                 </a>
               </div>
             </div>

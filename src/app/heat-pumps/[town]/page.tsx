@@ -127,7 +127,7 @@ export default async function TownPage({
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/book"
-              className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
             >
               Book a Free Survey in {town.name}
               <ArrowRight className="w-5 h-5" />
@@ -247,7 +247,7 @@ export default async function TownPage({
                 className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-[#144E82]"
               >
                 <Phone className="w-4 h-4" />
-                07872 626573
+                Call Now
               </a>
             </div>
 
@@ -294,7 +294,7 @@ export default async function TownPage({
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/book"
-              className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               Book Your Free Survey
               <ArrowRight className="w-5 h-5" />
@@ -304,7 +304,7 @@ export default async function TownPage({
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors backdrop-blur"
             >
               <Phone className="w-5 h-5" />
-              07872 626573
+              Call Now
             </a>
           </div>
         </div>

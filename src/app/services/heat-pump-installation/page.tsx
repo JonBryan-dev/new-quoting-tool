@@ -132,7 +132,7 @@ export default function HeatPumpInstallationPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/book"
-              className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
             >
               Book a Free Heat Loss Survey
               <ArrowRight className="w-5 h-5" />
@@ -212,24 +212,32 @@ export default function HeatPumpInstallationPage() {
       </section>
 
       {/* Watch an install */}
-      <section className="py-4 pb-14">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-              Watch a PG Renewables installation
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              See what actually happens when we fit a heat pump — from first fix to
-              a warm home.
-            </p>
-          </div>
-          <video
-            controls
-            playsInline
-            preload="metadata"
-            className="w-full rounded-2xl border border-gray-200 shadow-lg bg-black"
-            src="/heat-pump-install.mp4"
-          />
+      <section className="relative overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/heat-pump-install.mp4"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0c3560]/85 via-[#144E82]/70 to-[#1C834B]/60" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            This is us on the tools
+          </h2>
+          <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
+            A real Staffordshire installation — from first fix to a warm home,
+            by our own MCS-certified engineers.
+          </p>
+          <Link
+            href="/book"
+            className="inline-flex items-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+          >
+            Book Your Free Survey
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
 
@@ -330,7 +338,7 @@ export default function HeatPumpInstallationPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/book"
-              className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               <CalendarCheck className="w-5 h-5" />
               Book Your Free Survey
@@ -340,7 +348,7 @@ export default function HeatPumpInstallationPage() {
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors backdrop-blur"
             >
               <Phone className="w-5 h-5" />
-              07872 626573
+              Call Now
             </a>
           </div>
           <p className="text-blue-200 text-sm mt-4">

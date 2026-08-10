@@ -199,7 +199,7 @@ export default function CostGuidePage() {
             </div>
             <a href="tel:07872626573" className="inline-flex items-center gap-2 text-sm font-semibold text-[#144E82] mt-4">
               <Phone className="w-4 h-4" />
-              Or call 07872 626573
+              Or Call Now
             </a>
           </div>
         </div>

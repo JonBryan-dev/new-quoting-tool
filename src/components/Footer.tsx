@@ -23,7 +23,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 mt-3">
               <div className="flex items-center gap-1.5 text-xs bg-gray-800 px-2.5 py-1.5 rounded-lg">
-                <Shield className="w-3.5 h-3.5 text-[#F26430]" />
+                <Shield className="w-3.5 h-3.5 text-[#1C834B]" />
                 <span className="text-gray-300">Gas Safe</span>
               </div>
               <div className="flex items-center gap-1.5 text-xs bg-gray-800 px-2.5 py-1.5 rounded-lg">

@@ -96,7 +96,7 @@ export default function UnderfloorHeatingPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="tel:07872626573"
-              className="inline-flex items-center justify-center gap-2 bg-[#F26430] hover:bg-[#d94f1a] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
             >
               <Phone className="w-5 h-5" />
               Discuss Your Project
@@ -250,7 +250,7 @@ export default function UnderfloorHeatingPage() {
               className="inline-flex items-center justify-center gap-2 bg-[#1C834B] hover:bg-[#166a3c] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
-              07872 626573
+              Call Now
             </a>
             <Link
               href="/book"
