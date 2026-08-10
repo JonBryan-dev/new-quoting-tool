@@ -3,10 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Phone, CalendarCheck } from "lucide-react";
+import { Menu, X, Phone, CalendarCheck, ChevronDown } from "lucide-react";
+
+const SERVICE_LINKS = [
+  { href: "/services/heat-pump-installation", label: "Heat Pump Installation" },
+  { href: "/services/heat-loss-surveys", label: "Free Heat Loss Surveys" },
+  { href: "/services/heat-pump-servicing", label: "Heat Pump Servicing" },
+  { href: "/services/underfloor-heating", label: "Underfloor Heating" },
+  { href: "/quote/boiler", label: "Boiler Installation" },
+  { href: "/services", label: "All services →" },
+];
 
 const NAV_LINKS = [
-  { href: "/services", label: "Services" },
   { href: "/zerodisrupt", label: "£3k Heat Pumps", highlight: true },
   { href: "/boiler-upgrade-scheme", label: "£7,500 Grant" },
   { href: "/heat-pumps", label: "Areas" },
@@ -15,6 +23,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -32,6 +41,33 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 text-gray-600 hover:text-gray-900 text-sm font-medium py-5"
+                onClick={() => setServicesOpen(!servicesOpen)}
+              >
+                Services
+                <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+              </button>
+              {servicesOpen && (
+                <div className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-xl shadow-lg py-2 -mt-2">
+                  {SERVICE_LINKS.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 hover:text-[#4e7522]"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -86,6 +122,18 @@ export default function Header() {
       {menuOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-4 space-y-3">
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Services</p>
+            {SERVICE_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block text-gray-700 hover:text-gray-900 font-medium pl-3"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide pt-2">Explore</p>
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
