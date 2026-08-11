@@ -16,6 +16,27 @@ const nextConfig: NextConfig = {
         destination: "/heat-pumps/:town",
         permanent: true,
       },
+      // Short forms people type or link to, pointed at the real pages
+      {
+        source: "/air-conditioning",
+        destination: "/services/air-conditioning",
+        permanent: true,
+      },
+      {
+        source: "/boiler-installation",
+        destination: "/services/boiler-installation",
+        permanent: true,
+      },
+      {
+        source: "/new-boiler",
+        destination: "/services/boiler-installation",
+        permanent: true,
+      },
+      {
+        source: "/oil-grant",
+        destination: "/oil-boiler-grant",
+        permanent: true,
+      },
     ];
   },
 };

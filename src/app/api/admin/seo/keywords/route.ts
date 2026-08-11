@@ -15,6 +15,17 @@ export async function GET() {
   try {
     if ((await db.seoKeyword.count()) === 0) {
       await db.seoKeyword.createMany({ data: DEFAULT_SEO_KEYWORDS });
+    } else {
+      // Top up defaults added after the first seed (matched by phrase), so
+      // keywords for new pages reach an existing tracker. Deleting a default
+      // phrase brings it back on next load, which is the accepted trade-off
+      // while the page set is still growing.
+      const existing = await db.seoKeyword.findMany({ select: { phrase: true } });
+      const have = new Set(existing.map((k: { phrase: string }) => k.phrase));
+      const missing = DEFAULT_SEO_KEYWORDS.filter((k) => !have.has(k.phrase));
+      if (missing.length > 0) {
+        await db.seoKeyword.createMany({ data: missing });
+      }
     }
     const keywords = await db.seoKeyword.findMany({
       orderBy: { createdAt: "asc" },

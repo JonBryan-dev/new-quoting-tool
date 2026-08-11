@@ -90,6 +90,18 @@ export const DEFAULT_SEO_KEYWORDS: { phrase: string; targetPath: string }[] = [
   { phrase: "heat pump installation stoke-on-trent", targetPath: "/heat-pumps/stoke-on-trent" },
   { phrase: "heat pump installation rugeley", targetPath: "/heat-pumps/rugeley" },
   { phrase: "heat pump installation uttoxeter", targetPath: "/heat-pumps/uttoxeter" },
+  // Added Aug 2026 with the boiler installation, oil grant and air con pages
+  { phrase: "oil boiler replacement grant", targetPath: "/oil-boiler-grant" },
+  { phrase: "£9000 heat pump grant", targetPath: "/oil-boiler-grant" },
+  { phrase: "oil to heat pump staffordshire", targetPath: "/oil-boiler-grant" },
+  { phrase: "off gas grid heat pump grant", targetPath: "/oil-boiler-grant" },
+  { phrase: "lpg boiler replacement grant", targetPath: "/oil-boiler-grant" },
+  { phrase: "new boiler stafford", targetPath: "/services/boiler-installation" },
+  { phrase: "boiler installation stafford", targetPath: "/services/boiler-installation" },
+  { phrase: "boiler replacement staffordshire", targetPath: "/services/boiler-installation" },
+  { phrase: "air conditioning installation stafford", targetPath: "/services/air-conditioning" },
+  { phrase: "air con installation staffordshire", targetPath: "/services/air-conditioning" },
+  { phrase: "home air conditioning stafford", targetPath: "/services/air-conditioning" },
 ];
 
 export const SEO_TASK_CATEGORIES = [

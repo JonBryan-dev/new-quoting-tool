@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What is the Boiler Upgrade Scheme?",
-    a: "The Boiler Upgrade Scheme (BUS) is a government grant that pays £7,500 towards the cost of replacing a fossil-fuel boiler (gas, oil or LPG) with an air source heat pump in England and Wales. It runs until 2028 and the money goes to your MCS-certified installer, who deducts it from your bill, you never handle it.",
+    a: "The Boiler Upgrade Scheme (BUS) is a government grant that pays £7,500 towards the cost of replacing a fossil-fuel boiler (gas, oil or LPG) with an air source heat pump in England and Wales. Homes off the mains gas grid heated by oil or LPG currently get £9,000, an uplift that runs until 31 March 2027. The money goes to your MCS-certified installer, who deducts it from your bill, you never handle it.",
   },
   {
     q: "Who qualifies for the £7,500 grant?",
@@ -93,6 +93,32 @@ export default function BoilerUpgradeSchemePage() {
             Check Your Eligibility, Free Survey
             <ArrowRight className="w-5 h-5" />
           </Link>
+        </div>
+      </section>
+
+      {/* Oil & LPG uplift */}
+      <section className="bg-[#eff5e4] py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start gap-4">
+          <div className="w-11 h-11 bg-[#83b54b] text-[#213311] rounded-xl flex items-center justify-center shrink-0">
+            <PoundSterling className="w-5 h-5" />
+          </div>
+          <div>
+            <h2 className="font-bold text-[#213311] mb-1">
+              Heated by oil or LPG? Yours is &pound;9,000, not &pound;7,500
+            </h2>
+            <p className="text-sm text-[#3f5e1b] mb-2">
+              Since 21 July 2026, homes off the mains gas grid running on oil or
+              LPG get an extra &pound;1,500 on top of the standard grant. It is a
+              temporary uplift and it ends on 31 March 2027.
+            </p>
+            <Link
+              href="/oil-boiler-grant"
+              className="inline-flex items-center gap-1.5 text-[#4e7522] font-semibold text-sm hover:underline"
+            >
+              Read about the &pound;9,000 oil &amp; LPG grant
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

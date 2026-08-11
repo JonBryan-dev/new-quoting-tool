@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  ArrowRight, Flame, Layers, Phone, Ruler, Thermometer, Wrench,
+  ArrowRight, Flame, Layers, Phone, Ruler, Snowflake, Thermometer, Wrench,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Services | Heat Pumps, Surveys, Servicing & Underfloor Heating",
+  title: "Our Services | Heat Pumps, Air Con, Surveys & Boilers",
   description:
-    "Everything PlumbGas Renewables does across Staffordshire: air source heat pump installation, free heat loss surveys and system design, heat pump servicing, underfloor heating and boiler installation.",
+    "Everything PlumbGas Renewables does across Staffordshire: air source heat pump installation, free heat loss surveys, servicing, underfloor heating, air conditioning and boiler installation.",
   alternates: { canonical: "/services" },
 };
 
@@ -41,6 +41,13 @@ const SERVICES = [
     highlight: "Screed & overlay systems",
   },
   {
+    href: "/services/air-conditioning",
+    icon: <Snowflake className="w-7 h-7" />,
+    title: "Air Conditioning",
+    desc: "Cool in summer, efficient heating in winter. Modern air conditioning is an air-to-air heat pump, sized properly for the room and sited with the neighbours in mind.",
+    highlight: "Now grant-eligible",
+  },
+  {
     href: "/services/boiler-servicing",
     icon: <Wrench className="w-7 h-7" />,
     title: "Boiler Servicing & Repairs",
@@ -48,7 +55,7 @@ const SERVICES = [
     highlight: "Stafford, Stone & county-wide",
   },
   {
-    href: "/quote/boiler",
+    href: "/services/boiler-installation",
     icon: <Flame className="w-7 h-7" />,
     title: "Boiler Installation",
     desc: "Not ready for a heat pump? Fixed-price Worcester Bosch, Vaillant, Ideal and Navien boiler installation, quoted online in 90 seconds.",

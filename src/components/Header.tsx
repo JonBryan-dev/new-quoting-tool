@@ -10,22 +10,64 @@ const SERVICE_LINKS = [
   { href: "/services/heat-loss-surveys", label: "Free Heat Loss Surveys" },
   { href: "/services/heat-pump-servicing", label: "Heat Pump Servicing" },
   { href: "/services/underfloor-heating", label: "Underfloor Heating" },
+  { href: "/services/air-conditioning", label: "Air Conditioning" },
+  { href: "/services/boiler-installation", label: "Boiler Installation" },
   { href: "/services/boiler-servicing", label: "Boiler Servicing & Repairs" },
-  { href: "/quote/boiler", label: "Boiler Installation" },
   { href: "/services", label: "All services →" },
 ];
 
-const NAV_LINKS = [
-  { href: "/zerodisrupt", label: "£3k Heat Pumps", highlight: true },
-  { href: "/boiler-upgrade-scheme", label: "£7,500 Grant" },
+const GRANT_LINKS = [
+  { href: "/boiler-upgrade-scheme", label: "£7,500 heat pump grant" },
+  { href: "/oil-boiler-grant", label: "£9,000 oil & LPG grant" },
+];
+
+const EXPLORE_LINKS = [
   { href: "/heat-pumps", label: "Areas" },
   { href: "/guides", label: "Guides" },
   { href: "/about", label: "About" },
 ];
 
+function NavDropdown({
+  label,
+  links,
+}: {
+  label: string;
+  links: { href: string; label: string }[];
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        className="flex items-center gap-1 text-gray-600 hover:text-gray-900 text-sm font-medium py-5"
+        onClick={() => setOpen(!open)}
+      >
+        {label}
+        <ChevronDown className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-xl shadow-lg py-2 -mt-2">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 hover:text-[#4e7522]"
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -43,42 +85,19 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+            <NavDropdown label="Services" links={SERVICE_LINKS} />
+            <Link
+              href="/zerodisrupt"
+              className="text-[#4e7522] hover:text-[#3f5e1b] text-sm font-bold"
             >
-              <button
-                className="flex items-center gap-1 text-gray-600 hover:text-gray-900 text-sm font-medium py-5"
-                onClick={() => setServicesOpen(!servicesOpen)}
-              >
-                Services
-                <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
-              </button>
-              {servicesOpen && (
-                <div className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-xl shadow-lg py-2 -mt-2">
-                  {SERVICE_LINKS.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 hover:text-[#4e7522]"
-                      onClick={() => setServicesOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-            {NAV_LINKS.map((link) => (
+              £3k Heat Pumps
+            </Link>
+            <NavDropdown label="Grants" links={GRANT_LINKS} />
+            {EXPLORE_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={
-                  link.highlight
-                    ? "text-[#4e7522] hover:text-[#3f5e1b] text-sm font-bold"
-                    : "text-gray-600 hover:text-gray-900 text-sm font-medium"
-                }
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
               >
                 {link.label}
               </Link>
@@ -135,16 +154,30 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide pt-2">Explore</p>
-            {NAV_LINKS.map((link) => (
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide pt-2">Grants</p>
+            {GRANT_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={
-                  link.highlight
-                    ? "block text-[#4e7522] font-bold"
-                    : "block text-gray-700 hover:text-gray-900 font-medium"
-                }
+                className="block text-gray-700 hover:text-gray-900 font-medium pl-3"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide pt-2">Explore</p>
+            <Link
+              href="/zerodisrupt"
+              className="block text-[#4e7522] font-bold"
+              onClick={() => setMenuOpen(false)}
+            >
+              £3k Heat Pumps
+            </Link>
+            {EXPLORE_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block text-gray-700 hover:text-gray-900 font-medium"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
