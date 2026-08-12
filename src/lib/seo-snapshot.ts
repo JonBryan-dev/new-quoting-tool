@@ -27,6 +27,25 @@ export async function ensureSnapshotTable(db: any): Promise<void> {
   await db.$executeRawUnsafe(
     `CREATE UNIQUE INDEX IF NOT EXISTS "SeoSnapshot_weekStart_key" ON "SeoSnapshot"("weekStart")`,
   );
+  // Added later than the table itself, so existing installs need the
+  // column adding rather than the table creating.
+  await db.$executeRawUnsafe(
+    `ALTER TABLE "SeoSnapshot" ADD COLUMN IF NOT EXISTS "aiImpressions" INTEGER`,
+  );
+}
+
+// Google's Generative AI performance report (AI Overviews and AI Mode)
+// is not exposed by the Search Console API, only in the Search Console
+// interface. Until that changes the figure is read off the screen and
+// entered by hand, so it still lands in the weekly history.
+export async function setAiImpressions(db: any, value: number | null) {
+  await ensureSnapshotTable(db);
+  const weekStart = mondayOf(new Date());
+  return db.seoSnapshot.upsert({
+    where: { weekStart },
+    update: { aiImpressions: value },
+    create: { weekStart, aiImpressions: value },
+  });
 }
 
 function mondayOf(date: Date): Date {

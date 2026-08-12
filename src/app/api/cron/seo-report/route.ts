@@ -64,7 +64,13 @@ export async function GET(request: NextRequest) {
         try {
           const { captureSeoSnapshot } = await import("@/lib/seo-snapshot");
           const snapshot = await captureSeoSnapshot(db);
-          report.snapshot = { weekStart: snapshot.weekStart, captured: true };
+          report.snapshot = {
+            weekStart: snapshot.weekStart,
+            captured: true,
+            // Google's AI Overviews / AI Mode figure has no API, so this
+            // is whatever was last entered by hand in the admin.
+            aiImpressions: snapshot.aiImpressions ?? null,
+          };
         } catch (err) {
           report.snapshot = { error: err instanceof Error ? err.message : "failed" };
         }

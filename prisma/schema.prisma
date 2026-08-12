@@ -139,6 +139,7 @@ model SeoSnapshot {
   trackedKeywords Int      @default(0)
   tasksDone       Int      @default(0)
   tasksOpen       Int      @default(0)
+  aiImpressions   Int? // AI Overviews / AI Mode, entered by hand (no API)
   createdAt       DateTime @default(now())
 }
 

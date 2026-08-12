@@ -121,6 +121,7 @@ interface Snapshot {
   top10Count: number;
   tasksDone: number;
   tasksOpen: number;
+  aiImpressions: number | null;
 }
 
 function Delta({ now, prev, downIsGood }: { now: number | null; prev: number | null; downIsGood?: boolean }) {
@@ -139,6 +140,8 @@ function ProgressSection() {
   const [available, setAvailable] = useState(true);
   const [capturing, setCapturing] = useState(false);
   const [message, setMessage] = useState("");
+  const [aiValue, setAiValue] = useState("");
+  const [savingAi, setSavingAi] = useState(false);
 
   const load = useCallback(() => {
     fetch("/api/admin/seo/progress")
@@ -171,6 +174,32 @@ function ProgressSection() {
       setMessage("Capture failed, try again.");
     } finally {
       setCapturing(false);
+    }
+  }
+
+  async function saveAiImpressions() {
+    setSavingAi(true);
+    setMessage("");
+    try {
+      const res = await fetch("/api/admin/seo/progress", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "ai-impressions",
+          value: aiValue === "" ? null : Number(aiValue),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) setMessage(data.error || "Could not save");
+      else {
+        setMessage("AI visibility saved for this week.");
+        setAiValue("");
+        load();
+      }
+    } catch {
+      setMessage("Could not save, try again.");
+    } finally {
+      setSavingAi(false);
     }
   }
 
@@ -217,6 +246,7 @@ function ProgressSection() {
                 <th className="py-2 pr-3 text-right">Impressions</th>
                 <th className="py-2 pr-3 text-right">Avg pos.</th>
                 <th className="py-2 pr-3 text-right">Top-10 queries</th>
+                <th className="py-2 pr-3 text-right">AI answers</th>
                 <th className="py-2 text-right">Tasks done</th>
               </tr>
             </thead>
@@ -256,6 +286,10 @@ function ProgressSection() {
                       {s.top10Count}
                       <Delta now={s.top10Count} prev={prev?.top10Count ?? null} />
                     </td>
+                    <td className="py-2 pr-3 text-right text-gray-700">
+                      {s.aiImpressions ?? "–"}
+                      <Delta now={s.aiImpressions} prev={prev?.aiImpressions ?? null} />
+                    </td>
                     <td className="py-2 text-right text-gray-700">
                       {s.tasksDone}
                       <span className="text-gray-400 text-xs"> / {s.tasksDone + s.tasksOpen}</span>
@@ -265,6 +299,52 @@ function ProgressSection() {
               })}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {available && (
+        <div className="mt-5 pt-5 border-t border-gray-100">
+          <h4 className="font-semibold text-gray-900 text-sm mb-1">
+            AI answers: how often Google&apos;s AI shows your site
+          </h4>
+          <p className="text-sm text-gray-500 mb-3">
+            Google reports this in Search Console but does not yet hand it over automatically, so
+            this is the one number that needs typing in. Open Search Console, go to Performance,
+            then the Generative AI report, set the date range to the last 28 days and copy the
+            total impressions here. Takes about a minute, once a week.
+          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <input
+              type="number"
+              min={0}
+              value={aiValue}
+              onChange={(e) => setAiValue(e.target.value)}
+              placeholder="e.g. 240"
+              className="w-32 px-3 py-2 border border-gray-300 rounded-lg text-sm outline-none focus:border-[#144E82]"
+            />
+            <button
+              onClick={saveAiImpressions}
+              disabled={savingAi}
+              className="px-4 py-2 bg-[#83b54b] text-[#213311] text-sm font-semibold rounded-lg hover:bg-[#74a43f] disabled:opacity-50"
+            >
+              {savingAi ? "Saving…" : "Save for this week"}
+            </button>
+            <a
+              href="https://search.google.com/search-console"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-sm text-[#4e7522] font-medium hover:underline"
+            >
+              Open Search Console
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
+          <p className="text-xs text-gray-400 mt-3">
+            While you are in there: Search Console now has a setting that removes your site from
+            Google&apos;s AI answers. It is on by default in the UK, meaning you are included.
+            Leave it alone. Turning it off would hide you from the fastest growing way people
+            search.
+          </p>
         </div>
       )}
     </div>

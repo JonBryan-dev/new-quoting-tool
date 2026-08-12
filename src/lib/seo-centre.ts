@@ -64,6 +64,8 @@ export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
   { title: "301-redirect the other 19 domains to plumbgasrenewables.services", category: "technical", frequency: "once", sortOrder: 430 },
   { title: "Set up Google Cloud service account for Search Console + GA4 APIs (Phase C)", category: "technical", frequency: "once", sortOrder: 440 },
   { title: "Register with Bing Webmaster Tools (Import from Google Search Console button): covers Bing, DuckDuckGo, Yahoo and ChatGPT search", category: "technical", frequency: "once", sortOrder: 450 },
+  { title: "Check the AI answers setting in Search Console is left ON (it removes you from Google's AI results if switched off)", category: "technical", frequency: "once", sortOrder: 460 },
+  { title: "Log AI answer impressions from the Search Console Generative AI report into the SEO tab", category: "weekly", frequency: "weekly", sortOrder: 70 },
 ];
 
 // Starter keyword set, seeded once, then managed from the admin UI.

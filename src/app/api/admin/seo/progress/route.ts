@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
-import { captureSeoSnapshot, ensureSnapshotTable } from "@/lib/seo-snapshot";
+import { captureSeoSnapshot, ensureSnapshotTable, setAiImpressions } from "@/lib/seo-snapshot";
 
 // Admin-only (protected by middleware): weekly progress snapshots.
 // GET  → snapshots newest-first (up to six months)
 // POST → { action: "capture" } records/updates this week's snapshot now
+//        { action: "ai-impressions", value } logs this week's AI Overviews
+//        / AI Mode impressions, which Google does not expose by API
 
 export const maxDuration = 30;
 
@@ -34,11 +36,25 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Database not connected" }, { status: 503 });
   }
 
-  let body: { action?: string };
+  let body: { action?: string; value?: number | null };
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+
+  if (body.action === "ai-impressions") {
+    const value =
+      typeof body.value === "number" && body.value >= 0 ? Math.round(body.value) : null;
+    try {
+      const snapshot = await setAiImpressions(db, value);
+      return NextResponse.json({ success: true, snapshot });
+    } catch (err) {
+      return NextResponse.json(
+        { error: err instanceof Error ? err.message.slice(0, 300) : "Save failed" },
+        { status: 500 },
+      );
+    }
   }
 
   if (body.action !== "capture") {
