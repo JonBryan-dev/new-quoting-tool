@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { DEFAULT_SEO_KEYWORDS } from "@/lib/seo-centre";
+import { ensureRankCheckColumns } from "@/lib/seo-rank";
 
 // Admin-only (protected by middleware): keyword rank tracker.
 // GET  → list keywords with their recent checks (seeds defaults on first use)
@@ -13,6 +14,10 @@ export async function GET() {
   if (!db) return NextResponse.json({ dbAvailable: false, keywords: [] });
 
   try {
+    // Prisma selects every column it knows about, so the rank-check
+    // columns must exist before any query that includes checks.
+    await ensureRankCheckColumns(db);
+
     if ((await db.seoKeyword.count()) === 0) {
       await db.seoKeyword.createMany({ data: DEFAULT_SEO_KEYWORDS });
     } else {
@@ -59,6 +64,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (body.action === "check" && body.keywordId) {
+      await ensureRankCheckColumns(db);
       const position =
         typeof body.position === "number" && body.position > 0 ? Math.round(body.position) : null;
       const check = await db.seoRankCheck.create({

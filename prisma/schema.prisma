@@ -104,12 +104,14 @@ model SeoKeyword {
 }
 
 model SeoRankCheck {
-  id        String     @id @default(cuid())
-  keywordId String
-  keyword   SeoKeyword @relation(fields: [keywordId], references: [id], onDelete: Cascade)
-  position  Int? // Google position; null = not found in top 100
-  source    String     @default("manual") // manual, gsc
-  checkedAt DateTime   @default(now())
+  id          String     @id @default(cuid())
+  keywordId   String
+  keyword     SeoKeyword @relation(fields: [keywordId], references: [id], onDelete: Cascade)
+  position    Int? // Google position; null = not found in top 100
+  clicks      Int? // Search Console clicks over the reporting window
+  impressions Int? // Search Console impressions over the reporting window
+  source      String     @default("manual") // manual, gsc
+  checkedAt   DateTime   @default(now())
 }
 
 model SeoTask {

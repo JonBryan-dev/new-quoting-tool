@@ -38,8 +38,10 @@ function mondayOf(date: Date): Date {
 }
 
 // Gathers all metrics and upserts this week's snapshot. Numbers from
-// Google are 28-day rolling figures at time of capture; the top-queries
-// totals cover the 25 highest queries. Throws if Google isn't set up.
+// Google are 28-day rolling figures at time of capture, totalled across
+// every query Search Console returns. Note that this used to cover only
+// the top 25 queries, so snapshots captured before August 2026 read low
+// against later ones. Throws if Google isn't set up.
 export async function captureSeoSnapshot(db: any) {
   await ensureSnapshotTable(db);
 

@@ -31,6 +31,8 @@ interface SeoStatus {
 interface RankCheck {
   id: string;
   position: number | null;
+  clicks: number | null;
+  impressions: number | null;
   checkedAt: string;
 }
 
@@ -58,6 +60,7 @@ interface Draft {
   status: string;
   title: string | null;
   slug: string | null;
+  metaDescription: string | null;
   publishedAt: string | null;
   createdAt: string;
 }
@@ -560,6 +563,10 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
   const [error, setError] = useState("");
   const [drafts, setDrafts] = useState<Draft[]>([]);
   const [showDrafts, setShowDrafts] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [edit, setEdit] = useState({ title: "", slug: "", metaDescription: "", content: "" });
+  const [editError, setEditError] = useState("");
+  const [saving, setSaving] = useState(false);
 
   const loadDrafts = useCallback(() => {
     fetch("/api/admin/seo/drafts")
@@ -580,6 +587,40 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
       if (res.ok) loadDrafts();
     } catch {
       // list refresh next time round
+    }
+  }
+
+  function startEditing(d: Draft) {
+    setEditingId(d.id);
+    setEditError("");
+    setEdit({
+      title: d.title || "",
+      slug: d.slug || "",
+      metaDescription: d.metaDescription || "",
+      content: d.content,
+    });
+  }
+
+  async function saveEdit(draftId: string) {
+    setSaving(true);
+    setEditError("");
+    try {
+      const res = await fetch("/api/admin/seo/drafts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "update", draftId, ...edit }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setEditError(data.error || "Could not save");
+      } else {
+        setEditingId(null);
+        loadDrafts();
+      }
+    } catch {
+      setEditError("Could not save, check your connection and try again.");
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -753,10 +794,93 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
                 </span>
               </summary>
               <p className="text-xs text-gray-500 mt-2 mb-1">Brief: {d.brief}</p>
-              <pre className="text-xs text-gray-700 whitespace-pre-wrap max-h-60 overflow-y-auto mt-2">
-                {d.content}
-              </pre>
-              {d.kind === "article" && d.slug && (
+
+              {editingId === d.id ? (
+                <div className="mt-3 space-y-3">
+                  <div>
+                    <label className="block text-xs font-medium text-gray-700 mb-1">Headline</label>
+                    <input
+                      type="text"
+                      value={edit.title}
+                      onChange={(e) => setEdit({ ...edit, title: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm outline-none focus:border-[#144E82]"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-medium text-gray-700 mb-1">
+                        Web address
+                      </label>
+                      <input
+                        type="text"
+                        value={edit.slug}
+                        onChange={(e) => setEdit({ ...edit, slug: e.target.value })}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm font-mono outline-none focus:border-[#144E82]"
+                      />
+                      <p className="text-xs text-gray-400 mt-1">/guides/{edit.slug || "..."}</p>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-gray-700 mb-1">
+                        Google description
+                      </label>
+                      <textarea
+                        value={edit.metaDescription}
+                        onChange={(e) => setEdit({ ...edit, metaDescription: e.target.value })}
+                        rows={2}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm outline-none focus:border-[#144E82]"
+                      />
+                      <p
+                        className={`text-xs mt-1 ${
+                          edit.metaDescription.length > 155 ? "text-amber-600" : "text-gray-400"
+                        }`}
+                      >
+                        {edit.metaDescription.length}/155 characters
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                      Article
+                    </label>
+                    <textarea
+                      value={edit.content}
+                      onChange={(e) => setEdit({ ...edit, content: e.target.value })}
+                      rows={18}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm font-mono leading-relaxed outline-none focus:border-[#144E82]"
+                    />
+                    <p className="text-xs text-gray-400 mt-1">
+                      Lines starting with ## become headings, lines starting with - become bullet
+                      points, and **text** comes out bold.
+                    </p>
+                  </div>
+                  {editError && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-sm text-red-700">
+                      {editError}
+                    </div>
+                  )}
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => saveEdit(d.id)}
+                      disabled={saving}
+                      className="px-4 py-2 bg-[#83b54b] text-[#213311] text-sm font-semibold rounded-lg hover:bg-[#74a43f] disabled:opacity-50"
+                    >
+                      {saving ? "Saving…" : "Save changes"}
+                    </button>
+                    <button
+                      onClick={() => setEditingId(null)}
+                      className="text-sm text-gray-500 hover:text-gray-700"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <pre className="text-xs text-gray-700 whitespace-pre-wrap max-h-60 overflow-y-auto mt-2">
+                  {d.content}
+                </pre>
+              )}
+
+              {d.kind === "article" && d.slug && editingId !== d.id && (
                 <div className="flex flex-wrap items-center gap-3 mt-3 pt-3 border-t border-gray-200">
                   {d.status === "published" ? (
                     <>
@@ -769,6 +893,12 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
                         View live page ↗
                       </a>
                       <button
+                        onClick={() => startEditing(d)}
+                        className="text-xs font-medium text-[#144E82] hover:underline"
+                      >
+                        Edit
+                      </button>
+                      <button
                         onClick={() => setDraftStatus(d.id, "draft")}
                         className="text-xs font-medium text-red-600 hover:underline"
                       >
@@ -776,12 +906,20 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
                       </button>
                     </>
                   ) : (
-                    <button
-                      onClick={() => setDraftStatus(d.id, "published")}
-                      className="px-3 py-1.5 bg-[#83b54b] text-[#213311] text-xs font-semibold rounded-lg hover:bg-[#74a43f]"
-                    >
-                      Approve &amp; publish
-                    </button>
+                    <>
+                      <button
+                        onClick={() => setDraftStatus(d.id, "published")}
+                        className="px-3 py-1.5 bg-[#83b54b] text-[#213311] text-xs font-semibold rounded-lg hover:bg-[#74a43f]"
+                      >
+                        Approve &amp; publish
+                      </button>
+                      <button
+                        onClick={() => startEditing(d)}
+                        className="px-3 py-1.5 border border-gray-300 text-gray-700 text-xs font-semibold rounded-lg hover:bg-gray-50"
+                      >
+                        Edit first
+                      </button>
+                    </>
                   )}
                   <span className="text-xs text-gray-400">/guides/{d.slug}</span>
                 </div>
@@ -796,11 +934,36 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
 
 // ── Keyword rank tracker ───────────────────────────────────
 
+// Position colour bands: top 3 is the money, top 10 is page one,
+// anything past that is visible but rarely clicked.
+function positionClass(position: number | null): string {
+  if (position == null) return "bg-gray-100 text-gray-400";
+  if (position <= 3) return "bg-green-100 text-green-700";
+  if (position <= 10) return "bg-blue-50 text-blue-700";
+  if (position <= 20) return "bg-amber-50 text-amber-700";
+  return "bg-orange-50 text-orange-700";
+}
+
+// Positions improve by getting smaller, so a fall in the number is good.
+function PositionMove({ from, to }: { from: number | null; to: number | null }) {
+  if (from == null || to == null || from === to) return null;
+  const better = to < from;
+  return (
+    <span
+      className={`text-xs font-semibold ${better ? "text-green-600" : "text-red-500"}`}
+      title={`Was #${from}`}
+    >
+      {better ? "▲" : "▼"} {Math.abs(from - to)}
+    </span>
+  );
+}
+
 function KeywordTracker({ enabled }: { enabled: boolean }) {
   const [keywords, setKeywords] = useState<Keyword[]>([]);
   const [newPhrase, setNewPhrase] = useState("");
   const [newPath, setNewPath] = useState("");
   const [positions, setPositions] = useState<Record<string, string>>({});
+  const [filter, setFilter] = useState<"all" | "ranking" | "waiting">("all");
 
   const load = useCallback(() => {
     if (!enabled) return;
@@ -821,12 +984,42 @@ function KeywordTracker({ enabled }: { enabled: boolean }) {
     load();
   }
 
+  // checks come back newest-first from the API
+  const latestOf = (k: Keyword) => k.checks[0] ?? null;
+  const rankingCount = keywords.filter((k) => latestOf(k)?.position != null).length;
+  const best = keywords
+    .map((k) => latestOf(k)?.position)
+    .filter((p): p is number => p != null)
+    .sort((a, b) => a - b)[0];
+
+  const visible = keywords
+    .filter((k) => {
+      const ranked = latestOf(k)?.position != null;
+      return filter === "all" || (filter === "ranking" ? ranked : !ranked);
+    })
+    // Ranking keywords first, best position at the top, then the rest A-Z
+    .sort((a, b) => {
+      const pa = latestOf(a)?.position ?? null;
+      const pb = latestOf(b)?.position ?? null;
+      if (pa != null && pb != null) return pa - pb;
+      if (pa != null) return -1;
+      if (pb != null) return 1;
+      return a.phrase.localeCompare(b.phrase);
+    });
+
+  const FILTERS = [
+    { key: "all" as const, label: `All (${keywords.length})` },
+    { key: "ranking" as const, label: `Showing in Google (${rankingCount})` },
+    { key: "waiting" as const, label: `Not yet (${keywords.length - rankingCount})` },
+  ];
+
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-6">
       <h3 className="font-bold text-gray-900 mb-1">Keyword tracker</h3>
       <p className="text-sm text-gray-500 mb-4">
-        Search each phrase in an incognito window weekly and record where the site appears. Once
-        the Search Console API is connected (Phase C), positions fill in automatically.
+        Positions come straight from Google Search Console and refresh every Monday, or whenever
+        you press &quot;Sync positions from Google&quot; above. A blank position is not a fault, it
+        means Google has not shown your site for that search in the last 28 days yet.
       </p>
 
       {!enabled ? (
@@ -835,89 +1028,151 @@ function KeywordTracker({ enabled }: { enabled: boolean }) {
         </div>
       ) : (
         <>
+          <div className="flex flex-wrap items-center gap-4 mb-4 pb-4 border-b border-gray-100">
+            <div>
+              <p className="text-2xl font-bold text-gray-900 leading-none">
+                {rankingCount}
+                <span className="text-base font-normal text-gray-400">/{keywords.length}</span>
+              </p>
+              <p className="text-xs text-gray-500 mt-1">showing in Google</p>
+            </div>
+            {best != null && (
+              <div>
+                <p className="text-2xl font-bold text-gray-900 leading-none">#{best}</p>
+                <p className="text-xs text-gray-500 mt-1">best position</p>
+              </div>
+            )}
+            <div className="flex gap-1.5 ml-auto">
+              {FILTERS.map((f) => (
+                <button
+                  key={f.key}
+                  onClick={() => setFilter(f.key)}
+                  className={`text-xs px-3 py-1.5 rounded-lg font-medium ${
+                    filter === f.key
+                      ? "bg-[#4e7522] text-white"
+                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-200 text-left text-xs text-gray-500 uppercase">
                   <th className="py-2 pr-4">Keyword</th>
+                  <th className="py-2 pr-4">Position now</th>
+                  <th className="py-2 pr-4 text-right">Seen</th>
+                  <th className="py-2 pr-4 text-right">Clicks</th>
                   <th className="py-2 pr-4">Target page</th>
-                  <th className="py-2 pr-4">History (newest first)</th>
-                  <th className="py-2 pr-4">Log position</th>
+                  <th className="py-2 pr-4">History</th>
+                  <th className="py-2 pr-4">Log</th>
                   <th className="py-2" />
                 </tr>
               </thead>
               <tbody>
-                {keywords.map((k) => (
-                  <tr key={k.id} className="border-b border-gray-100 last:border-0 align-middle">
-                    <td className="py-2.5 pr-4 font-medium text-gray-900">{k.phrase}</td>
-                    <td className="py-2.5 pr-4 text-gray-500">{k.targetPath || "—"}</td>
-                    <td className="py-2.5 pr-4">
-                      <div className="flex gap-1.5 flex-wrap">
-                        {k.checks.length === 0 && <span className="text-gray-300">no checks yet</span>}
-                        {k.checks.map((c) => (
-                          <span
-                            key={c.id}
-                            title={new Date(c.checkedAt).toLocaleDateString("en-GB")}
-                            className={`text-xs px-2 py-0.5 rounded-full ${
-                              c.position == null
-                                ? "bg-gray-100 text-gray-400"
-                                : c.position <= 3
-                                  ? "bg-green-100 text-green-700"
-                                  : c.position <= 10
-                                    ? "bg-blue-50 text-blue-700"
-                                    : "bg-amber-50 text-amber-700"
-                            }`}
-                          >
-                            {c.position == null ? "100+" : `#${c.position}`}
+                {visible.map((k) => {
+                  const latest = latestOf(k);
+                  const previous = k.checks[1] ?? null;
+                  return (
+                    <tr key={k.id} className="border-b border-gray-100 last:border-0 align-middle">
+                      <td className="py-2.5 pr-4 font-medium text-gray-900">{k.phrase}</td>
+                      <td className="py-2.5 pr-4">
+                        {latest?.position != null ? (
+                          <span className="flex items-center gap-2">
+                            <span
+                              className={`text-sm font-bold px-2.5 py-1 rounded-lg ${positionClass(latest.position)}`}
+                            >
+                              #{latest.position}
+                            </span>
+                            <PositionMove from={previous?.position ?? null} to={latest.position} />
                           </span>
-                        ))}
-                      </div>
-                    </td>
-                    <td className="py-2.5 pr-4">
-                      <div className="flex items-center gap-1.5">
-                        <input
-                          type="number"
-                          min={0}
-                          max={100}
-                          value={positions[k.id] ?? ""}
-                          onChange={(e) => setPositions({ ...positions, [k.id]: e.target.value })}
-                          placeholder="#"
-                          className="w-16 px-2 py-1 border border-gray-300 rounded text-sm outline-none focus:border-[#144E82]"
-                        />
+                        ) : (
+                          <span className="text-xs text-gray-400">not yet</span>
+                        )}
+                      </td>
+                      <td className="py-2.5 pr-4 text-right tabular-nums text-gray-600">
+                        {latest?.impressions ?? "—"}
+                      </td>
+                      <td className="py-2.5 pr-4 text-right tabular-nums text-gray-600">
+                        {latest?.clicks ?? "—"}
+                      </td>
+                      <td className="py-2.5 pr-4 text-gray-400 text-xs">{k.targetPath || "—"}</td>
+                      <td className="py-2.5 pr-4">
+                        <div className="flex gap-1 flex-wrap">
+                          {k.checks.length === 0 && <span className="text-gray-300 text-xs">—</span>}
+                          {k.checks.slice(0, 6).map((c) => (
+                            <span
+                              key={c.id}
+                              title={new Date(c.checkedAt).toLocaleDateString("en-GB")}
+                              className={`text-xs px-1.5 py-0.5 rounded ${positionClass(c.position)}`}
+                            >
+                              {c.position == null ? "100+" : c.position}
+                            </span>
+                          ))}
+                        </div>
+                      </td>
+                      <td className="py-2.5 pr-4">
+                        <div className="flex items-center gap-1.5">
+                          <input
+                            type="number"
+                            min={0}
+                            max={100}
+                            value={positions[k.id] ?? ""}
+                            onChange={(e) => setPositions({ ...positions, [k.id]: e.target.value })}
+                            placeholder="#"
+                            className="w-14 px-2 py-1 border border-gray-300 rounded text-sm outline-none focus:border-[#144E82]"
+                          />
+                          <button
+                            onClick={() => {
+                              const raw = positions[k.id];
+                              post({
+                                action: "check",
+                                keywordId: k.id,
+                                position: raw === "" || raw == null ? null : Number(raw),
+                              });
+                              setPositions({ ...positions, [k.id]: "" });
+                            }}
+                            className="p-1.5 text-[#144E82] hover:bg-blue-50 rounded"
+                            title="Save a position you checked by hand"
+                          >
+                            <CheckCircle2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </td>
+                      <td className="py-2.5 text-right">
                         <button
                           onClick={() => {
-                            const raw = positions[k.id];
-                            post({
-                              action: "check",
-                              keywordId: k.id,
-                              position: raw === "" || raw == null ? null : Number(raw),
-                            });
-                            setPositions({ ...positions, [k.id]: "" });
+                            if (confirm(`Stop tracking "${k.phrase}"?`)) {
+                              post({ action: "delete", keywordId: k.id });
+                            }
                           }}
-                          className="p-1.5 text-[#144E82] hover:bg-blue-50 rounded"
-                          title="Save position (blank = not in top 100)"
+                          className="p-1.5 text-red-400 hover:bg-red-50 rounded"
                         >
-                          <CheckCircle2 className="w-4 h-4" />
+                          <Trash2 className="w-4 h-4" />
                         </button>
-                      </div>
-                    </td>
-                    <td className="py-2.5 text-right">
-                      <button
-                        onClick={() => {
-                          if (confirm(`Stop tracking "${k.phrase}"?`)) {
-                            post({ action: "delete", keywordId: k.id });
-                          }
-                        }}
-                        className="p-1.5 text-red-400 hover:bg-red-50 rounded"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+                {visible.length === 0 && (
+                  <tr>
+                    <td colSpan={8} className="py-6 text-center text-sm text-gray-400">
+                      Nothing in this view yet.
                     </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-gray-400 mt-3">
+            &quot;Seen&quot; is how many times your site appeared in Google results for that search
+            over the last 28 days. A keyword with lots of impressions but a poor position is
+            usually the best one to work on next.
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-2 mt-4">
             <input

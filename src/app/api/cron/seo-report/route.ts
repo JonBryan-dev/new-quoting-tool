@@ -40,32 +40,22 @@ export async function GET(request: NextRequest) {
 
     try {
       const gsc = await fetchSearchConsole(token);
+      // Keep the emailed report readable; the full list is only needed
+      // for matching tracked keywords, which happens below.
       report.searchConsole = {
         siteUrl: gsc.siteUrl,
-        topQueries: gsc.queries,
-        topPages: gsc.pages,
+        totalQueries: gsc.queries.length,
+        topQueries: gsc.queries.slice(0, 25),
+        topPages: gsc.pages.slice(0, 10),
       };
 
       // Auto-record positions for tracked keywords while we're here
       const db = await getDb();
       if (db) {
         try {
-          const keywords = await db.seoKeyword.findMany();
-          const byPhrase = new Map<string, number>();
-          for (const row of gsc.queries) {
-            byPhrase.set(row.keys[0]?.toLowerCase().trim(), Math.round(row.position));
-          }
-          let synced = 0;
-          for (const keyword of keywords) {
-            const position = byPhrase.get(keyword.phrase.toLowerCase().trim());
-            if (position != null) {
-              await db.seoRankCheck.create({
-                data: { keywordId: keyword.id, position, source: "gsc" },
-              });
-              synced++;
-            }
-          }
-          report.keywordSync = { tracked: keywords.length, synced };
+          const { syncKeywordRanks } = await import("@/lib/seo-rank");
+          const result = await syncKeywordRanks(db, gsc.queries);
+          report.keywordSync = { tracked: result.totalTracked, synced: result.synced };
         } catch {
           report.keywordSync = { error: "SEO tables unavailable" };
         }

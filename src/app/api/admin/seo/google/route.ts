@@ -6,6 +6,7 @@ import {
   getGoogleAccessToken,
   getServiceAccount,
 } from "@/lib/google-apis";
+import { syncKeywordRanks } from "@/lib/seo-rank";
 
 // Admin-only (protected by middleware): live Google data for the SEO tab.
 // GET  → { configured, gsc?, ga4?, errors }
@@ -32,7 +33,10 @@ export async function GET() {
     const token = await getGoogleAccessToken();
 
     try {
-      gsc = await fetchSearchConsole(token);
+      const full = await fetchSearchConsole(token);
+      // The full query list can run to hundreds of rows; the UI only
+      // shows the head of it, and keyword matching happens server-side.
+      gsc = { ...full, queries: full.queries.slice(0, 25), pages: full.pages.slice(0, 10) };
     } catch (err) {
       errors.push(`Search Console: ${err instanceof Error ? err.message : "failed"}`);
     }
@@ -74,25 +78,8 @@ export async function POST(request: NextRequest) {
   try {
     const token = await getGoogleAccessToken();
     const { queries } = await fetchSearchConsole(token);
-    const keywords = await db.seoKeyword.findMany();
-
-    const byPhrase = new Map<string, number>();
-    for (const row of queries) {
-      byPhrase.set(row.keys[0]?.toLowerCase().trim(), Math.round(row.position));
-    }
-
-    let synced = 0;
-    for (const keyword of keywords) {
-      const position = byPhrase.get(keyword.phrase.toLowerCase().trim());
-      if (position != null) {
-        await db.seoRankCheck.create({
-          data: { keywordId: keyword.id, position, source: "gsc" },
-        });
-        synced++;
-      }
-    }
-
-    return NextResponse.json({ success: true, synced, totalTracked: keywords.length });
+    const result = await syncKeywordRanks(db, queries);
+    return NextResponse.json({ success: true, ...result });
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Sync failed" },

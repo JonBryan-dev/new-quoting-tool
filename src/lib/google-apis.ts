@@ -120,7 +120,14 @@ async function gscQuery(
 }
 
 // Resolves which Search Console property the service account can read
-// (domain property vs URL-prefix), then returns top queries and pages.
+// (domain property vs URL-prefix), then returns queries and pages.
+//
+// The query limit is deliberately high. Tracked keywords are matched
+// against this list, so a small limit meant anything outside the site's
+// very top queries never got a recorded position, which is why most of
+// the tracker sat empty. Callers that display the list should slice it.
+const QUERY_ROW_LIMIT = 1000;
+
 export async function fetchSearchConsole(token: string): Promise<{
   siteUrl: string;
   queries: GscRow[];
@@ -133,8 +140,8 @@ export async function fetchSearchConsole(token: string): Promise<{
   let lastError: Error | null = null;
   for (const siteUrl of candidates) {
     try {
-      const queries = await gscQuery(token, siteUrl, "query", 25);
-      const pages = await gscQuery(token, siteUrl, "page", 10);
+      const queries = await gscQuery(token, siteUrl, "query", QUERY_ROW_LIMIT);
+      const pages = await gscQuery(token, siteUrl, "page", 25);
       return { siteUrl, queries, pages };
     } catch (err) {
       lastError = err instanceof Error ? err : new Error(String(err));
