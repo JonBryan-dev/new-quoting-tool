@@ -21,6 +21,12 @@ export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
 
   // ── Content engine ───────────────────────────────────────
   { title: "Publish first real case study with photos + measured figures", category: "content", frequency: "once", sortOrder: 100 },
+  // Facts only Jon can confirm; the site deliberately does not claim
+  // these until he does.
+  { title: "Confirm whether we hold F-Gas certification, so it can go on the air conditioning page", category: "content", frequency: "once", sortOrder: 102 },
+  { title: "Confirm Heat Geek Elite and Octopus Energy Partner status, then add both to the site and schema", category: "content", frequency: "once", sortOrder: 104 },
+  { title: "Sanity-check the £9,000 oil/LPG grant figure in the MCS or Ofgem portal before pushing it in marketing", category: "content", frequency: "once", sortOrder: 106 },
+  { title: "Send a photo of Jon for the About page", category: "content", frequency: "once", sortOrder: 108 },
   { title: "Draft new guide with Claude in Content Studio, review, publish", category: "content", frequency: "monthly", sortOrder: 110 },
   { title: "Add an About / Meet Jon page with a photo and story", category: "content", frequency: "once", sortOrder: 120 },
   { title: "Expand thin service pages: timelines, warranty, install-day detail", category: "content", frequency: "once", sortOrder: 130 },
@@ -65,6 +71,9 @@ export const DEFAULT_SEO_TASKS: SeoTaskSeed[] = [
   { title: "Set up Google Cloud service account for Search Console + GA4 APIs (Phase C)", category: "technical", frequency: "once", sortOrder: 440 },
   { title: "Register with Bing Webmaster Tools (Import from Google Search Console button): covers Bing, DuckDuckGo, Yahoo and ChatGPT search", category: "technical", frequency: "once", sortOrder: 450 },
   { title: "Check the AI answers setting in Search Console is left ON (it removes you from Google's AI results if switched off)", category: "technical", frequency: "once", sortOrder: 460 },
+  { title: "Compress hero-survey.mp4 (17MB) and heat-pump-install.mp4 (13MB) to under 3MB each in HandBrake, then send them over to swap in", category: "technical", frequency: "once", sortOrder: 470 },
+  { title: "Ask Heat Geek: can the estimate journey be embedded in our site, and what is the customer-facing generate-estimate URL?", category: "technical", frequency: "once", sortOrder: 480 },
+  { title: "Capture the baseline snapshot in the SEO tab (Weekly progress, Capture snapshot now)", category: "technical", frequency: "once", sortOrder: 490 },
   { title: "Log AI answer impressions from the Search Console Generative AI report into the SEO tab", category: "weekly", frequency: "weekly", sortOrder: 70 },
 ];
 
