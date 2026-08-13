@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 import InstallGallery from "@/components/InstallGallery";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import { photosFor } from "@/lib/install-photos";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
@@ -213,14 +214,10 @@ export default function HeatPumpInstallationPage() {
 
       {/* Watch an install */}
       <section className="relative overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
+        <BackgroundVideo
           src="/heat-pump-install.mp4"
+          poster="/install-heat-pump-patio.jpg"
+          className="absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0c3560]/85 via-[#144E82]/70 to-[#4e7522]/60" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center text-white">

@@ -8,6 +8,8 @@ import {
   parseArticle,
   sendSiteEmail,
 } from "@/lib/seo-content";
+import { fetchSearchConsole, getGoogleAccessToken, getServiceAccount } from "@/lib/google-apis";
+import { briefFromOpportunity, findContentOpportunities } from "@/lib/seo-opportunities";
 
 // Weekly auto-draft, triggered by Vercel Cron (see vercel.json).
 // Picks the next undrafted topic from the queue, has Claude write the
@@ -45,8 +47,37 @@ export async function GET(request: NextRequest) {
     where: { kind: "article", slug: { not: null } },
     select: { slug: true },
   });
-  const taken = new Set(existing.map((r: { slug: string | null }) => r.slug));
-  const next = ARTICLE_TOPICS.find((t) => !taken.has(t.slug));
+  const taken = new Set(
+    existing.map((r: { slug: string | null }) => r.slug).filter(Boolean) as string[],
+  );
+
+  // Prefer a topic that real Search Console demand points at, and fall
+  // back to the hand-written queue when there is no clear signal yet,
+  // which is normal while the site is still young.
+  let next: { slug: string; topic: string } | null = null;
+  let source = "queue";
+  if (getServiceAccount()) {
+    try {
+      const token = await getGoogleAccessToken();
+      const { queries } = await fetchSearchConsole(token);
+      const opportunities = findContentOpportunities(queries, [...taken]);
+      const top = opportunities.find((o) => {
+        const brief = briefFromOpportunity(o);
+        return brief.slug.length > 8 && !taken.has(brief.slug);
+      });
+      // Only worth overriding the queue when the demand is real
+      if (top && top.impressions >= 20) {
+        next = briefFromOpportunity(top);
+        source = `search-demand (${top.impressions} impressions, position ${top.position})`;
+      }
+    } catch {
+      // Google unavailable, the queue still works
+    }
+  }
+
+  if (!next) {
+    next = ARTICLE_TOPICS.find((t) => !taken.has(t.slug)) ?? null;
+  }
   if (!next) {
     return NextResponse.json({ success: true, done: "All queued topics are drafted" });
   }
@@ -104,6 +135,7 @@ Topic: ${next.topic}`;
         `A new guide article has been drafted for plumbgasrenewables.services and is waiting for your approval.`,
         ``,
         `Title: ${parsed.title}`,
+        `Chosen because: ${source === "queue" ? "next in the planned topic list" : `real Google demand, ${source}`}`,
         `Will publish at: https://www.plumbgasrenewables.services/guides/${parsed.slug}`,
         ``,
         `To review and publish: log in at /admin, open the SEO tab, scroll to Content Studio, open "saved drafts" and press "Approve & publish". Nothing goes live until you do.`,
@@ -119,6 +151,7 @@ Topic: ${next.topic}`;
       draftId: draft.id,
       slug: parsed.slug,
       title: parsed.title,
+      source,
       emailed,
     });
   } catch (err) {

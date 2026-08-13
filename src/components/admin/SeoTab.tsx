@@ -99,6 +99,7 @@ export default function SeoTab() {
       <StatusSection status={status} />
       <ProgressSection />
       <GoogleSection />
+      <ContentOpportunities />
       <ContentStudio anthropicReady={Boolean(status?.anthropicKey)} />
       <KeywordTracker enabled={Boolean(status?.tablesReady)} />
       <TaskChecklist enabled={Boolean(status?.tablesReady)} />
@@ -1005,6 +1006,79 @@ function ContentStudio({ anthropicReady }: { anthropicReady: boolean }) {
                 </div>
               )}
             </details>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── What to write next ─────────────────────────────────────
+
+interface Opportunity {
+  query: string;
+  impressions: number;
+  clicks: number;
+  position: number;
+  score: number;
+  reason: string;
+}
+
+function ContentOpportunities() {
+  const [opportunities, setOpportunities] = useState<Opportunity[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [configured, setConfigured] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/admin/seo/opportunities")
+      .then((r) => r.json())
+      .then((d) => {
+        setConfigured(d.configured !== false);
+        setOpportunities(d.opportunities || []);
+      })
+      .catch(() => setConfigured(false))
+      .finally(() => setLoading(false));
+  }, []);
+
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <h3 className="font-bold text-gray-900 mb-1">What to write next</h3>
+      <p className="text-sm text-gray-500 mb-4">
+        Worked out from the searches that already bring your site up in Google, strongest demand
+        first. A phrase with plenty of searches and a poor position means people in Staffordshire
+        want that answer and we are not giving it to them yet. The Wednesday article picks from
+        the top of this list automatically.
+      </p>
+
+      {loading ? (
+        <p className="text-sm text-gray-400">Checking Search Console…</p>
+      ) : !configured ? (
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-sm text-yellow-800">
+          Needs the Google connection above.
+        </div>
+      ) : opportunities.length === 0 ? (
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 text-sm text-gray-500">
+          Nothing clear yet. Google needs a few more weeks of data about the site before it can
+          tell us which searches are worth chasing. The Wednesday article will keep working
+          through the planned topic list in the meantime.
+        </div>
+      ) : (
+        <div className="space-y-2">
+          {opportunities.slice(0, 10).map((o, i) => (
+            <div
+              key={o.query}
+              className="flex items-start gap-3 p-3 rounded-lg border border-gray-100 hover:border-gray-200"
+            >
+              <span className="text-xs font-bold text-gray-300 w-5 shrink-0 mt-0.5">{i + 1}</span>
+              <div className="flex-1 min-w-0">
+                <p className="font-medium text-gray-900 text-sm">{o.query}</p>
+                <p className="text-xs text-gray-500">{o.reason}</p>
+              </div>
+              <div className="text-right shrink-0">
+                <p className="text-sm font-semibold text-gray-900 tabular-nums">{o.impressions}</p>
+                <p className="text-xs text-gray-400">seen · #{o.position}</p>
+              </div>
+            </div>
           ))}
         </div>
       )}

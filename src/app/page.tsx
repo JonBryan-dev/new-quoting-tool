@@ -8,6 +8,7 @@ import {
 import { towns } from "@/lib/towns";
 import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 import InstallGallery from "@/components/InstallGallery";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import { photosFor } from "@/lib/install-photos";
 
 export default function HomePage() {
@@ -15,15 +16,10 @@ export default function HomePage() {
     <div>
       {/* Hero Section, video background with gradient fallback/overlay */}
       <section className="bg-gradient-to-br from-[#0c3560] via-[#144E82] to-[#4e7522] text-white relative overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
+        <BackgroundVideo
           src="/hero-survey.mp4"
+          poster="/install-heat-pump-twin-fan-sun.jpg"
+          className="absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c3560]/90 via-[#144E82]/80 to-[#4e7522]/75" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative">
