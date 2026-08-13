@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   ArrowRight, Check, Home, Phone, PoundSterling, Snowflake, Sun, Volume2,
 } from "lucide-react";
+import LocalAreaLinks from "@/components/LocalAreaLinks";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -312,6 +313,8 @@ export default function AirConditioningPage() {
           </a>
         </div>
       </section>
+
+      <LocalAreaLinks serviceSlug="air-conditioning" heading="Air conditioning near you" />
     </div>
   );
 }

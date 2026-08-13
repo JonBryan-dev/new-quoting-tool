@@ -113,6 +113,18 @@ export const DEFAULT_SEO_KEYWORDS: { phrase: string; targetPath: string }[] = [
   { phrase: "air conditioning installation stafford", targetPath: "/services/air-conditioning" },
   { phrase: "air con installation staffordshire", targetPath: "/services/air-conditioning" },
   { phrase: "home air conditioning stafford", targetPath: "/services/air-conditioning" },
+  // Service x place pages, added Aug 2026
+  { phrase: "air conditioning stone staffordshire", targetPath: "/services/air-conditioning/stone" },
+  { phrase: "air conditioning installation cannock", targetPath: "/services/air-conditioning/cannock" },
+  { phrase: "air conditioning installation lichfield", targetPath: "/services/air-conditioning/lichfield" },
+  { phrase: "air conditioning installation tamworth", targetPath: "/services/air-conditioning/tamworth" },
+  { phrase: "oil boiler replacement eccleshall", targetPath: "/oil-boiler-grant/eccleshall" },
+  { phrase: "oil heating grant gnosall", targetPath: "/oil-boiler-grant/gnosall" },
+  { phrase: "oil boiler grant penkridge", targetPath: "/oil-boiler-grant/penkridge" },
+  { phrase: "oil heating uttoxeter heat pump", targetPath: "/oil-boiler-grant/uttoxeter" },
+  { phrase: "oil boiler replacement market drayton", targetPath: "/oil-boiler-grant/market-drayton" },
+  { phrase: "heat pump service stafford", targetPath: "/services/heat-pump-servicing/stafford" },
+  { phrase: "heat pump servicing cannock", targetPath: "/services/heat-pump-servicing/cannock" },
 ];
 
 export const SEO_TASK_CATEGORIES = [

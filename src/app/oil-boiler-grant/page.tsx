@@ -4,6 +4,7 @@ import {
   AlertCircle, ArrowRight, CalendarCheck, Check, Droplet,
   Phone, PoundSterling, TrendingDown,
 } from "lucide-react";
+import LocalAreaLinks from "@/components/LocalAreaLinks";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -347,6 +348,11 @@ export default function OilBoilerGrantPage() {
           </p>
         </div>
       </section>
+
+      <LocalAreaLinks
+        serviceSlug="oil-boiler-grant"
+        heading="Off-grid areas we cover for this grant"
+      />
     </div>
   );
 }

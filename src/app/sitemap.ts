@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { towns } from "@/lib/towns";
 import { getDb } from "@/lib/db";
 import { ensureArticleColumns } from "@/lib/seo-content";
+import { LOCAL_SERVICES } from "@/lib/local-pages";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -15,6 +16,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly",
     priority: 0.7,
   }));
+
+  // Service x place pages, e.g. /services/air-conditioning/stafford
+  const localPages: MetadataRoute.Sitemap = LOCAL_SERVICES.flatMap((service) =>
+    service.areas.map((area) => ({
+      url: `${SITE_URL}${service.parentPath}/${area.townSlug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  );
 
   let articlePages: MetadataRoute.Sitemap = [];
   try {
@@ -149,6 +159,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     ...articlePages,
+    ...localPages,
     ...townPages,
   ];
 }

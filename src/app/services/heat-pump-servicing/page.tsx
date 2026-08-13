@@ -4,6 +4,7 @@ import {
   ArrowRight, Check, ClipboardCheck, Droplets, Filter, Gauge,
   Phone, ShieldCheck, Snowflake, Thermometer, Wrench, Zap,
 } from "lucide-react";
+import LocalAreaLinks from "@/components/LocalAreaLinks";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
@@ -238,6 +239,8 @@ export default function HeatPumpServicingPage() {
           </p>
         </div>
       </section>
+
+      <LocalAreaLinks serviceSlug="heat-pump-servicing" heading="Heat pump servicing near you" />
     </div>
   );
 }
