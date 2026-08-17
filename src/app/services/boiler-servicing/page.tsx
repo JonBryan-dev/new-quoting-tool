@@ -7,14 +7,14 @@ import {
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
 export const metadata: Metadata = {
-  title: "Boiler Servicing & Repairs | Stafford, Stone & Staffordshire",
+  title: "Boiler Repairs & Servicing | Stafford, Stone, Uttoxeter",
   description:
-    "Gas boiler servicing and repairs across Stafford, Stone and Staffordshire from the Gas Safe team behind PlumbGas Services, keeping local boilers safe and efficient since 2003. Call to book your service.",
+    "Gas boiler repairs and annual servicing across Stafford, Stone, Uttoxeter and Staffordshire from the Gas Safe team behind PlumbGas Services, looking after local boilers since 2003.",
   alternates: { canonical: "/services/boiler-servicing" },
   openGraph: {
-    title: "Boiler Servicing & Repairs in Staffordshire",
+    title: "Boiler Repairs & Servicing in Staffordshire",
     description:
-      "Annual gas boiler servicing and repairs from trusted local Gas Safe engineers, since 2003.",
+      "Gas boiler repairs and annual servicing from trusted local Gas Safe engineers, since 2003.",
     url: `${SITE_URL}/services/boiler-servicing`,
   },
 };

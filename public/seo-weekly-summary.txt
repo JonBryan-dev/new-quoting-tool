@@ -1,10 +1,30 @@
-Week of 2026-08-10
+Week of 2026-08-17
 
-Hello Jon, this file is where your weekly SEO summary lives from now on. Every Monday the SEO autopilot writes its plain-English summary here, and the site emails it to you at about 9:45am.
+Morning Jon. Google now shows the site for 97 different searches, up from a handful when we started.
 
-This week:
-- The autopilot made its first live pass over the site using real Search Console and GA4 data, and picked up your "more keywords needed" request.
-- Weekly progress snapshots now record every Monday, see the Progress section of the SEO tab in the admin.
-- New: a fresh guide article is drafted automatically every Wednesday morning. You get an email with the full text, and it only goes live when you press Approve and publish in the admin.
+WHAT THE DATA SHOWS
 
-From next Monday this email will cover exactly what changed on the site that morning and why, plus your headline numbers.
+Your best real searches: "air source heat pump lichfield" (19 appearances, position 36), "boiler repairs stone" (15, position 23) and "boiler repair stafford" (9, position 44). The standout is "air source heat pump services burton on trent" at position 16, the closest we are to page one on anything meaningful.
+
+Two things worth knowing. First, boiler repair searches are pulling more than heat pump ones right now, which is interesting on a renewables site. Second, the air conditioning pages we published last week are already appearing for Lichfield and Cannock searches, within days.
+
+Analytics: 699 sessions and 639 visitors, but only 4 clicks came from Google, so most of that traffic is arriving another way. Leads recorded: zero. That may be a tracking gap rather than reality, the lead tracking test is still on your list and worth ten minutes.
+
+WHAT I CHANGED
+
+1. Your town pages linked almost nowhere. They now link through to servicing, the oil grant, air conditioning and boiler repairs, using the local version of each page where one exists. Those pages were earning impressions and passing none of it on.
+
+2. The boiler page now leads with "Repairs" rather than "Servicing" and mentions Uttoxeter, because that is what people are actually typing.
+
+BACKLINK MOVES THIS WEEK
+
+1. SBEN already lists PlumbGas as a green supplier. One email adds the new site. Send to them:
+"Hello, PlumbGas Services is listed on your green suppliers directory. We have launched a renewables arm, PG Renewables, installing air source heat pumps across Staffordshire. Could you add our new website to our listing? https://www.plumbgasrenewables.services Thanks, Jon Bryan, 07872 626573"
+
+2. Update your MCS installer profile to point at the renewables site. Free, and MCS is an authority Google trusts.
+
+ONE THING TO CHECK
+
+Your first auto-written article, "How Long Does a Heat Pump Installation Take", is waiting for approval in the admin SEO tab unless you have already published it.
+
+Also, the AI answers figure is still empty. Search Console, Performance, Generative AI report, last 28 days, then type the number into the SEO tab.

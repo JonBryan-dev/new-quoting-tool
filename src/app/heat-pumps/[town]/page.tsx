@@ -6,9 +6,37 @@ import {
   Phone, PoundSterling, Ruler, TrendingDown, Wrench,
 } from "lucide-react";
 import { towns, getTownBySlug, getNeighbouringTowns } from "@/lib/towns";
+import { getLocalPage } from "@/lib/local-pages";
 import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 
 const SITE_URL = "https://www.plumbgasrenewables.services";
+
+const OTHER_SERVICES = [
+  {
+    slug: "heat-pump-servicing",
+    path: "/services/heat-pump-servicing",
+    label: "Heat pump servicing",
+    blurb: "Annual servicing that keeps the manufacturer warranty valid, whoever installed it.",
+  },
+  {
+    slug: "oil-boiler-grant",
+    path: "/oil-boiler-grant",
+    label: "£9,000 oil & LPG grant",
+    blurb: "Off the mains gas grid? The grant is £9,000 until 31 March 2027.",
+  },
+  {
+    slug: "air-conditioning",
+    path: "/services/air-conditioning",
+    label: "Air conditioning",
+    blurb: "Cool in summer, efficient heating in winter, from an air-to-air heat pump.",
+  },
+  {
+    slug: "boiler-servicing",
+    path: "/services/boiler-servicing",
+    label: "Boiler repairs & servicing",
+    blurb: "Gas Safe repairs and annual services on all major makes, since 2003.",
+  },
+];
 
 export function generateStaticParams() {
   return towns.map((t) => ({ town: t.slug }));
@@ -279,6 +307,36 @@ export default async function TownPage({
               </ul>
             </div>
           </aside>
+        </div>
+      </section>
+
+      {/* Other services here. Search Console shows these town pages
+          picking up boiler and servicing searches as well as heat pump
+          ones, and they previously linked almost nowhere. Uses the
+          local variant of a service where one exists. */}
+      <section className="bg-gray-50 py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">
+            More of what we do in {town.name}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {OTHER_SERVICES.map((service) => {
+              const hasLocal = getLocalPage(service.slug, town.slug) !== null;
+              const href = hasLocal ? `${service.path}/${town.slug}` : service.path;
+              return (
+                <Link
+                  key={service.slug}
+                  href={href}
+                  className="bg-white border border-gray-200 rounded-xl p-4 hover:border-[#4e7522]/40 hover:shadow-sm transition-all"
+                >
+                  <p className="font-semibold text-gray-900 text-sm mb-0.5">
+                    {hasLocal ? `${service.label} in ${town.name}` : service.label}
+                  </p>
+                  <p className="text-xs text-gray-500">{service.blurb}</p>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
