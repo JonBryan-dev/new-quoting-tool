@@ -69,9 +69,12 @@ const localBusinessJsonLd = {
     addressCountry: "GB",
   },
   areaServed: [
-    "Stafford", "Stone", "Uttoxeter", "Cannock", "Rugeley", "Lichfield",
-    "Penkridge", "Eccleshall", "Gnosall", "Stoke-on-Trent", "Newcastle-under-Lyme",
-    "Cheadle", "Leek", "Burton upon Trent", "Tamworth", "Staffordshire",
+    ...[
+      "Stafford", "Stone", "Uttoxeter", "Cannock", "Rugeley", "Lichfield",
+      "Penkridge", "Eccleshall", "Gnosall", "Stoke-on-Trent", "Newcastle-under-Lyme",
+      "Cheadle", "Leek", "Burton upon Trent", "Tamworth", "Market Drayton",
+    ].map((name) => ({ "@type": "City", name })),
+    { "@type": "AdministrativeArea", name: "Staffordshire" },
   ],
   description:
     "Air source heat pump installation and free heat loss surveys across Staffordshire. £7,500 Boiler Upgrade Scheme grant applications handled for customers.",

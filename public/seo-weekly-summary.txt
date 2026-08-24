@@ -1,30 +1,30 @@
-Week of 2026-08-17
+Week of 2026-08-24
 
-Morning Jon. Google now shows the site for 97 different searches, up from a handful when we started.
+Morning Jon. Google now shows the site for 120 searches, up from 97, and sessions nearly doubled.
 
 WHAT THE DATA SHOWS
 
-Your best real searches: "air source heat pump lichfield" (19 appearances, position 36), "boiler repairs stone" (15, position 23) and "boiler repair stafford" (9, position 44). The standout is "air source heat pump services burton on trent" at position 16, the closest we are to page one on anything meaningful.
+Lichfield is your biggest opportunity by a distance. "air source heat pump lichfield" brought you up 47 times, more than double last week, at position 38. Next is "boiler installation in stafford" on 21, then "heat pumps stafford" on 20, which earned a click.
 
-Two things worth knowing. First, boiler repair searches are pulling more than heat pump ones right now, which is interesting on a renewables site. Second, the air conditioning pages we published last week are already appearing for Lichfield and Cannock searches, within days.
+Best news: your Rugeley page got 2 clicks from 16 appearances at position 24. That is the best click rate on the site, and it is a town page, which says the local pages are working.
 
-Analytics: 699 sessions and 639 visitors, but only 4 clicks came from Google, so most of that traffic is arriving another way. Leads recorded: zero. That may be a tracking gap rather than reality, the lead tracking test is still on your list and worth ten minutes.
+Analytics show 1128 sessions and 998 visitors, but only 8 clicks came from Google. Second week running that the traffic is not from search, so it is most likely bots or junk referrals rather than customers. Still zero recorded leads.
+
+TWO THINGS FROM ME
+
+Your site's business record carries the landline 01785 663990, while every button says 07872 626573. Google wants one number everywhere, and this mismatch quietly holds local ranking back. Tell me which to use and I will make them match.
+
+Wednesday's article did not arrive. That is a fault my end, not yours, and I am on it.
 
 WHAT I CHANGED
 
-1. Your town pages linked almost nowhere. They now link through to servicing, the oil grant, air conditioning and boiler repairs, using the local version of each page where one exists. Those pages were earning impressions and passing none of it on.
-
-2. The boiler page now leads with "Repairs" rather than "Servicing" and mentions Uttoxeter, because that is what people are actually typing.
+The Lichfield page now opens by answering what people are asking rather than describing the city, which helps Google and the AI answers alike. Your service area is now listed as proper named towns in the site's data, which should cut the wasted appearances from Macclesfield and Warwickshire.
 
 BACKLINK MOVES THIS WEEK
 
-1. SBEN already lists PlumbGas as a green supplier. One email adds the new site. Send to them:
-"Hello, PlumbGas Services is listed on your green suppliers directory. We have launched a renewables arm, PG Renewables, installing air source heat pumps across Staffordshire. Could you add our new website to our listing? https://www.plumbgasrenewables.services Thanks, Jon Bryan, 07872 626573"
+1. A listing on the Reach news network still shows your old Salcombe Avenue address. Claim it and correct it. Wrong addresses actively hurt local ranking.
 
-2. Update your MCS installer profile to point at the renewables site. Free, and MCS is an authority Google trusts.
+2. Vaillant installer finder. Send your rep:
+"Hi, could you add us to the Vaillant installer finder? PG Renewables, 27 Barnbank Lane, Stafford ST17 9HB, 07872 626573, https://www.plumbgasrenewables.services. Gas Safe, MCS and Which? Trusted Trader. Thanks, Jon"
 
-ONE THING TO CHECK
-
-Your first auto-written article, "How Long Does a Heat Pump Installation Take", is waiting for approval in the admin SEO tab unless you have already published it.
-
-Also, the AI answers figure is still empty. Search Console, Performance, Generative AI report, last 28 days, then type the number into the SEO tab.
+The AI answers figure is still empty. Search Console, Performance, Generative AI report, last 28 days, then type the number into the SEO tab.

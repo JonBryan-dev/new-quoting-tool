@@ -73,7 +73,7 @@ export const towns: TownInfo[] = [
     name: "Lichfield",
     postcodes: ["WS13", "WS14"],
     intro:
-      "Lichfield's blend of period character and high-quality new developments makes it a strong heat pump city, and our surveys are designed to respect both.",
+      "We install air source heat pumps across Lichfield and the villages around it, with the £7,500 grant taken straight off your price and a free heat loss survey first. The city mixes period property near the cathedral with modern estates, and those need different approaches, so our surveys are built to handle both.",
     housing:
       "The newer estates at Darwin Park, Boley Park and around Streethay are textbook heat pump homes. For Lichfield's Georgian and Victorian properties near the cathedral, our room-by-room heat loss survey works out exactly what emitter upgrades (if any) are needed before you commit to anything.",
     nearby: ["Boley Park", "Darwin Park", "Streethay", "Whittington", "Shenstone", "Kings Bromley", "Fradley", "Alrewas"],
