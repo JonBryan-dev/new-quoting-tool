@@ -1,30 +1,30 @@
-Week of 2026-08-24
+Week of 2026-08-31
 
-Morning Jon. Google now shows the site for 120 searches, up from 97, and sessions nearly doubled.
+Morning Jon. Google now shows the site for 142 searches, up from 120, and the homepage alone appeared 334 times.
 
 WHAT THE DATA SHOWS
 
-Lichfield is your biggest opportunity by a distance. "air source heat pump lichfield" brought you up 47 times, more than double last week, at position 38. Next is "boiler installation in stafford" on 21, then "heat pumps stafford" on 20, which earned a click.
+Lichfield keeps climbing. "air source heat pump lichfield" brought you up 77 times, against 47 last week and 19 before that. Tripled in three weeks and comfortably your biggest opportunity, though position 37 is still too far down to earn clicks.
 
-Best news: your Rugeley page got 2 clicks from 16 appearances at position 24. That is the best click rate on the site, and it is a town page, which says the local pages are working.
+People are starting to search for you by name. "pg renewables" appeared 8 times and earned a click, at position 6. Small numbers, but a good sign.
 
-Analytics show 1128 sessions and 998 visitors, but only 8 clicks came from Google. Second week running that the traffic is not from search, so it is most likely bots or junk referrals rather than customers. Still zero recorded leads.
+Burton stays your strongest position at 16 for "air source heat pump services burton on trent".
 
-TWO THINGS FROM ME
+Analytics show 1877 sessions and 1588 visitors, but only 8 clicks came from Google and leads are still zero. Three weeks running. Either the tracking is not recording, or that traffic is not real people. This is now the most important thing on your list, and it is a ten minute job: submit a test booking and see whether it appears.
 
-Your site's business record carries the landline 01785 663990, while every button says 07872 626573. Google wants one number everywhere, and this mismatch quietly holds local ranking back. Tell me which to use and I will make them match.
+A CORRECTION
 
-Wednesday's article did not arrive. That is a fault my end, not yours, and I am on it.
+Wednesday's article did arrive, so last week's miss was a one off, not something broken. Better still, it picked its own subject from real search data: "Boiler Servicing in Stone". Boiler searches are where your local demand is, and it spotted that itself. Two articles now wait for approval in the SEO tab.
 
-WHAT I CHANGED
+NO CHANGES THIS WEEK
 
-The Lichfield page now opens by answering what people are asking rather than describing the city, which helps Google and the AI answers alike. Your service area is now listed as proper named towns in the site's data, which should cut the wasted appearances from Macclesfield and Warwickshire.
+Your main pages are already written well for search. Almost everything sits between position 30 and 70, where wording changes move nothing and only reputation and links help. Better to do nothing than fiddle for the sake of it.
 
 BACKLINK MOVES THIS WEEK
 
-1. A listing on the Reach news network still shows your old Salcombe Avenue address. Claim it and correct it. Wrong addresses actively hurt local ranking.
+1. Claim the free heat pump directories: heatpumpinstallerdirectory.co.uk, findcertifiedinstallers.co.uk and findheatpumpsinstallers.co.uk. One afternoon, identical details on each.
 
-2. Vaillant installer finder. Send your rep:
-"Hi, could you add us to the Vaillant installer finder? PG Renewables, 27 Barnbank Lane, Stafford ST17 9HB, 07872 626573, https://www.plumbgasrenewables.services. Gas Safe, MCS and Which? Trusted Trader. Thanks, Jon"
+2. Viessmann and Daikin installer finders. Send each rep:
+"Hi, could you add us to your approved installer finder? PG Renewables, 27 Barnbank Lane, Stafford ST17 9HB, 07872 626573, https://www.plumbgasrenewables.services. Gas Safe, MCS and Which? Trusted Trader. Thanks, Jon"
 
-The AI answers figure is still empty. Search Console, Performance, Generative AI report, last 28 days, then type the number into the SEO tab.
+Still waiting on you: which phone number should be public, and the AI answers figure (Search Console, Performance, Generative AI report, last 28 days).
