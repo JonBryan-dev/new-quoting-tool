@@ -8,7 +8,7 @@ import { towns } from "@/lib/towns";
 import HeatGeekEstimateSection from "@/components/heatgeek/HeatGeekEstimateSection";
 
 export const metadata: Metadata = {
-  title: "Air Source Heat Pump Installation Staffordshire | £7,500 Grant",
+  title: "Air Source Heat Pump Installers Staffordshire | £7,500 Grant",
   description:
     "MCS-accredited air source heat pump installers covering the whole of Staffordshire, Stafford, Stone, Cannock, Lichfield, Stoke-on-Trent and more. Free heat loss survey, £7,500 Boiler Upgrade Scheme grant handled for you.",
   alternates: { canonical: "/heat-pumps" },

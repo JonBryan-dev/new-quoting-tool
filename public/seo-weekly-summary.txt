@@ -1,30 +1,32 @@
-Week of 2026-08-31
+Week of 2026-09-07
 
-Morning Jon. Google now shows the site for 142 searches, up from 120, and the homepage alone appeared 334 times.
+Morning Jon. I have settled the zero leads question, and the answer is worth reading.
+
+THE LEADS ANSWER
+
+Your booking form works. When you tested it on 8 August it sent two notification emails properly. Since then not one booking email has arrived in 35 days. So the zero in your analytics is accurate, not a broken counter. Nobody has filled the form in.
+
+So the 1803 sessions in analytics are almost certainly not real people. Your genuine search traffic is about 7 clicks a week, normal for a five week old site. Ignore sessions, watch the Google numbers. This does not cover anyone who rang you instead of using the form.
 
 WHAT THE DATA SHOWS
 
-Lichfield keeps climbing. "air source heat pump lichfield" brought you up 77 times, against 47 last week and 19 before that. Tripled in three weeks and comfortably your biggest opportunity, though position 37 is still too far down to earn clicks.
+Google now shows the site for 157 searches. Lichfield has quadrupled in four weeks: "air source heat pump lichfield" appeared 122 times, against 77, 47 and 19 before. Position 37, so no clicks yet, but real demand building.
 
-People are starting to search for you by name. "pg renewables" appeared 8 times and earned a click, at position 6. Small numbers, but a good sign.
+Your town pages are doing the work now. Stoke appeared 105 times and earned a click, Rugeley 42 with two clicks, Eccleshall 35 with one. Best position anywhere is 15, for "air source heat pump installation stone".
 
-Burton stays your strongest position at 16 for "air source heat pump services burton on trent".
+WHAT I CHANGED
 
-Analytics show 1877 sessions and 1588 visitors, but only 8 clicks came from Google and leads are still zero. Three weeks running. Either the tracking is not recording, or that traffic is not real people. This is now the most important thing on your list, and it is a ten minute job: submit a test booking and see whether it appears.
+One edit. The areas page title now says "Installers" rather than "Installation", because "air source heat pump installers in staffordshire" is growing fast, 4 then 5 then 15 appearances, and it is worth matching the words people type.
 
-A CORRECTION
+THREE ARTICLES WAITING
 
-Wednesday's article did arrive, so last week's miss was a one off, not something broken. Better still, it picked its own subject from real search data: "Boiler Servicing in Stone". Boiler searches are where your local demand is, and it spotted that itself. Two articles now wait for approval in the SEO tab.
-
-NO CHANGES THIS WEEK
-
-Your main pages are already written well for search. Almost everything sits between position 30 and 70, where wording changes move nothing and only reputation and links help. Better to do nothing than fiddle for the sake of it.
+The writer keeps producing and nothing goes live. Three drafts sit in the SEO tab: installation timings, boiler servicing in Stone, and boiler upgrades in Uttoxeter. It chose the last two itself from your search data. Unpublished, they earn nothing.
 
 BACKLINK MOVES THIS WEEK
 
-1. Claim the free heat pump directories: heatpumpinstallerdirectory.co.uk, findcertifiedinstallers.co.uk and findheatpumpsinstallers.co.uk. One afternoon, identical details on each.
+1. Update your Which? Trusted Traders profile to mention heat pumps and link the renewables site. You already pay for it.
 
-2. Viessmann and Daikin installer finders. Send each rep:
-"Hi, could you add us to your approved installer finder? PG Renewables, 27 Barnbank Lane, Stafford ST17 9HB, 07872 626573, https://www.plumbgasrenewables.services. Gas Safe, MCS and Which? Trusted Trader. Thanks, Jon"
+2. Stafford Rangers sponsorship, commercial@staffordrangersfc.co.uk:
+"Hi, I run PlumbGas Services in Stafford and we are looking at sponsoring a local club this season. What packages do you offer, and do sponsors get a link from your website? Thanks, Jon Bryan, 07872 626573"
 
-Still waiting on you: which phone number should be public, and the AI answers figure (Search Console, Performance, Generative AI report, last 28 days).
+Still waiting on you: which phone number should be public, and the AI answers figure.
