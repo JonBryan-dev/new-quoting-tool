@@ -1,32 +1,30 @@
-Week of 2026-09-07
+Week of 2026-09-14
 
-Morning Jon. I have settled the zero leads question, and the answer is worth reading.
+Morning Jon. No numbers this week, and the reason needs sorting.
 
-THE LEADS ANSWER
+I CANNOT SEE YOUR EMAIL ANY MORE
 
-Your booking form works. When you tested it on 8 August it sent two notification emails properly. Since then not one booking email has arrived in 35 days. So the zero in your analytics is accurate, not a broken counter. Nobody has filled the form in.
+The whole weekly routine works by me reading the data export the site emails you every Monday at half five. My email access has switched from your inbox to contact@plumbgas.services, so that export is invisible to me. I checked properly: last week's data email cannot be opened any more, and nothing from the site shows up at all.
 
-So the 1803 sessions in analytics are almost certainly not real people. Your genuine search traffic is about 7 clicks a week, normal for a five week old site. Ignore sessions, watch the Google numbers. This does not cover anyone who rang you instead of using the form.
+The site itself is fine. It is still sending you that export, still drafting articles on Wednesdays, and this email reached you because the site sends it directly rather than through me. What has broken is my ability to read the results and act on them.
 
-WHAT THE DATA SHOWS
+WHAT I NEED FROM YOU
 
-Google now shows the site for 157 searches. Lichfield has quadrupled in four weeks: "air source heat pump lichfield" appeared 122 times, against 77, 47 and 19 before. Position 37, so no clicks yet, but real demand building.
+Either reconnect the email so it points at jon@plumbgas.services, or set up a rule on your inbox that forwards anything titled "SEO Autopilot data" to contact@plumbgas.services. Either fixes it. Until then I am working blind and the Monday improvements stop.
 
-Your town pages are doing the work now. Stoke appeared 105 times and earned a click, Rugeley 42 with two clicks, Eccleshall 35 with one. Best position anywhere is 15, for "air source heat pump installation stone".
+NO CHANGES THIS WEEK
 
-WHAT I CHANGED
+I make changes based on what your numbers show. Without them I would be guessing, so I have left the site alone.
 
-One edit. The areas page title now says "Installers" rather than "Installation", because "air source heat pump installers in staffordshire" is growing fast, 4 then 5 then 15 appearances, and it is worth matching the words people type.
+ONE THING I DID SPOT
 
-THREE ARTICLES WAITING
-
-The writer keeps producing and nothing goes live. Three drafts sit in the SEO tab: installation timings, boiler servicing in Stone, and boiler upgrades in Uttoxeter. It chose the last two itself from your search data. Unpublished, they earn nothing.
+Libby's email signature lists 01785 663990 as the Plumbgas landline. That explains the phone mismatch I raised: both numbers are genuine, the landline is the company one and the mobile is yours. I still need to know which should front the renewables side, and then I will make everything match.
 
 BACKLINK MOVES THIS WEEK
 
-1. Update your Which? Trusted Traders profile to mention heat pumps and link the renewables site. You already pay for it.
+1. Your Trustpilot profile is for plumbgas.services. Claim a free one for plumbgasrenewables.services too and point heat pump customers at it.
 
-2. Stafford Rangers sponsorship, commercial@staffordrangersfc.co.uk:
-"Hi, I run PlumbGas Services in Stafford and we are looking at sponsoring a local club this season. What packages do you offer, and do sponsors get a link from your website? Thanks, Jon Bryan, 07872 626573"
+2. Staffordshire Chambers of Commerce, membership enquiry:
+"Hello, I run PlumbGas Services and PG Renewables, a Gas Safe and MCS certified heating and heat pump firm in Stafford, trading since 2003. Could you tell me what membership costs, and whether members get a listing in your online directory? Jon Bryan, 07872 626573"
 
-Still waiting on you: which phone number should be public, and the AI answers figure.
+As of last week three articles were still waiting for approval in the SEO tab. I cannot check that now either.
