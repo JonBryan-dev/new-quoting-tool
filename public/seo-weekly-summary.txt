@@ -1,30 +1,28 @@
-Week of 2026-09-14
+Week of 2026-09-21
 
-Morning Jon. No numbers this week, and the reason needs sorting.
+Morning Jon. Second week without your numbers, and the cause has not changed.
 
-I CANNOT SEE YOUR EMAIL ANY MORE
+STILL LOCKED OUT
 
-The whole weekly routine works by me reading the data export the site emails you every Monday at half five. My email access has switched from your inbox to contact@plumbgas.services, so that export is invisible to me. I checked properly: last week's data email cannot be opened any more, and nothing from the site shows up at all.
+My email access still points at contact@plumbgas.services rather than your inbox, so the Monday data export the site sends you is invisible to me. I checked again this morning, and I also tried reading the site's figures directly, which is blocked from where I run.
 
-The site itself is fine. It is still sending you that export, still drafting articles on Wednesdays, and this email reached you because the site sends it directly rather than through me. What has broken is my ability to read the results and act on them.
+Nothing is wrong with the site. It is still collecting the data, still emailing it to you, still writing an article every Wednesday. It is only my ability to read any of it that has gone.
 
-WHAT I NEED FROM YOU
+THE FIX, IN PLAIN TERMS
 
-Either reconnect the email so it points at jon@plumbgas.services, or set up a rule on your inbox that forwards anything titled "SEO Autopilot data" to contact@plumbgas.services. Either fixes it. Until then I am working blind and the Monday improvements stop.
+In Gmail on jon@plumbgas.services, set up a filter: anything with "SEO Autopilot data" in the subject gets forwarded to contact@plumbgas.services. Two minutes and the whole routine starts working again. Reconnecting the email to your own inbox does the same job.
 
-NO CHANGES THIS WEEK
+WHAT IT IS COSTING
 
-I make changes based on what your numbers show. Without them I would be guessing, so I have left the site alone.
-
-ONE THING I DID SPOT
-
-Libby's email signature lists 01785 663990 as the Plumbgas landline. That explains the phone mismatch I raised: both numbers are genuine, the landline is the company one and the mobile is yours. I still need to know which should front the renewables side, and then I will make everything match.
+The weekly improvements have stopped, because I will not guess at changes with no evidence. Articles are almost certainly still being written each Wednesday and stacking up unapproved, probably five by now. Every one is a page that could be bringing you visitors and is not.
 
 BACKLINK MOVES THIS WEEK
 
-1. Your Trustpilot profile is for plumbgas.services. Claim a free one for plumbgasrenewables.services too and point heat pump customers at it.
+Neither needs data, and both are worth more than anything I do to the site.
 
-2. Staffordshire Chambers of Commerce, membership enquiry:
-"Hello, I run PlumbGas Services and PG Renewables, a Gas Safe and MCS certified heating and heat pump firm in Stafford, trading since 2003. Could you tell me what membership costs, and whether members get a listing in your online directory? Jon Bryan, 07872 626573"
+1. Put a link on plumbgas.services pointing at plumbgasrenewables.services, from your heat pump pages. It is the single most valuable link available to you, it costs nothing, it is entirely in your hands, and it is still not done.
 
-As of last week three articles were still waiting for approval in the SEO tab. I cannot check that now either.
+2. Heat Geek partner listing. Send your rep:
+"Hi, as a Heat Geek partner do we get a profile page or a spot on your installer map? If so, please link https://www.plumbgasrenewables.services. Happy to send photos and our service area. Thanks, Jon"
+
+If you would rather I got on and built something useful instead of waiting on the numbers, say the word and I will.
