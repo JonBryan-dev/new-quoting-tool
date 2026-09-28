@@ -1,28 +1,26 @@
-Week of 2026-09-21
+Week of 2026-09-28
 
-Morning Jon. Second week without your numbers, and the cause has not changed.
+Morning Jon. Third week without your numbers, but I have not wasted this one.
 
-STILL LOCKED OUT
+THE FIX, AND AN IMPORTANT DETAIL
 
-My email access still points at contact@plumbgas.services rather than your inbox, so the Monday data export the site sends you is invisible to me. I checked again this morning, and I also tried reading the site's figures directly, which is blocked from where I run.
+My email access still points at contact@plumbgas.services, so the Monday data export remains invisible to me. The detail I have since learned matters: reconnecting the email to your inbox will not help on its own, because that connection is only read when a session starts. So do this instead, and it works immediately:
 
-Nothing is wrong with the site. It is still collecting the data, still emailing it to you, still writing an article every Wednesday. It is only my ability to read any of it that has gone.
+In Gmail on jon@plumbgas.services, create a filter. Anything with "SEO Autopilot data" in the subject gets forwarded to contact@plumbgas.services. Two minutes, no restarting anything.
 
-THE FIX, IN PLAIN TERMS
+WHAT I CHANGED
 
-In Gmail on jon@plumbgas.services, set up a filter: anything with "SEO Autopilot data" in the subject gets forwarded to contact@plumbgas.services. Two minutes and the whole routine starts working again. Reconnecting the email to your own inbox does the same job.
+Two edits that did not need the numbers, both about how your pages read to Google's AI answers and to anyone skimming. Both now open with the answer rather than a description.
 
-WHAT IT IS COSTING
+1. The grant page said the scheme takes £7,500 off for gas, oil or LPG. That is now incomplete, since off-grid oil and LPG homes get £9,000. The opening sentence now says both, which matters because that sentence is what gets quoted.
 
-The weekly improvements have stopped, because I will not guess at changes with no evidence. Articles are almost certainly still being written each Wednesday and stacking up unapproved, probably five by now. Every one is a page that could be bringing you visitors and is not.
+2. The heat pump installation page opened with a list of what we do. It now opens with what it costs, from around £3,000 installed after the grant, which is the question everyone actually arrives with.
 
 BACKLINK MOVES THIS WEEK
 
-Neither needs data, and both are worth more than anything I do to the site.
+1. Register on the Staffordshire Trader Register at traderregister.org.uk. It is backed by Trading Standards and gets you onto council-linked pages, which are hard for competitors to copy.
 
-1. Put a link on plumbgas.services pointing at plumbgasrenewables.services, from your heat pump pages. It is the single most valuable link available to you, it costs nothing, it is entirely in your hands, and it is still not done.
+2. Your merchant. Send whoever you deal with most:
+"Hi, do you ever feature customer businesses on your website or socials? We have launched PG Renewables doing heat pumps across Staffordshire and would be glad to be included. Happy to send install photos. https://www.plumbgasrenewables.services Thanks, Jon"
 
-2. Heat Geek partner listing. Send your rep:
-"Hi, as a Heat Geek partner do we get a profile page or a spot on your installer map? If so, please link https://www.plumbgasrenewables.services. Happy to send photos and our service area. Thanks, Jon"
-
-If you would rather I got on and built something useful instead of waiting on the numbers, say the word and I will.
+Still worth doing whenever you get a spare hour: the link from plumbgas.services, and the articles waiting in the SEO tab, probably six by now.

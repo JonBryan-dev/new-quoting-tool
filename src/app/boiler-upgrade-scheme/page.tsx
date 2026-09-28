@@ -82,7 +82,8 @@ export default function BoilerUpgradeSchemePage() {
           </h1>
           <p className="text-lg text-blue-100 mb-6 max-w-2xl">
             The Boiler Upgrade Scheme takes &pound;7,500 off the cost of replacing your
-            gas, oil or LPG boiler with an air source heat pump. Here&apos;s exactly how
+            gas, oil or LPG boiler with an air source heat pump, and &pound;9,000 if your
+            home is off the mains gas grid. Here&apos;s exactly how
             it works for Staffordshire homeowners, and how we handle every bit of
             the paperwork for you.
           </p>

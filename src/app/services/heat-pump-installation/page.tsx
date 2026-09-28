@@ -126,9 +126,10 @@ export default function HeatPumpInstallationPage() {
             <span className="text-[#c4dd9b]">done properly</span>
           </h1>
           <p className="text-lg text-blue-100 mb-6 max-w-2xl">
-            Survey-first design, MCS-certified installation and the &pound;7,500 grant
-            handled for you, across Stafford, Stone, Cannock, Lichfield and the whole
-            of Staffordshire.
+            A properly designed heat pump costs from around &pound;3,000 installed once
+            the &pound;7,500 grant is taken off, about the same as a new gas boiler.
+            Survey-first design and MCS-certified installation across Stafford, Stone,
+            Cannock, Lichfield and the whole of Staffordshire.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
