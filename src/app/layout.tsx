@@ -57,7 +57,7 @@ const localBusinessJsonLd = {
   "@type": "HVACBusiness",
   name: "PlumbGas Renewables",
   url: SITE_URL,
-  telephone: "+441785663990",
+  telephone: "+447872626573",
   email: "info@plumbgasrenewables.services",
   founder: { "@type": "Person", name: "Jon Bryan" },
   address: {
