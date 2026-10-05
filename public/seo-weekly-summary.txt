@@ -1,26 +1,30 @@
-Week of 2026-09-28
+Week of 2026-10-05
 
-Morning Jon. Third week without your numbers, but I have not wasted this one.
+Morning Jon. Everything is connected again, and the numbers are good this week.
 
-THE FIX, AND AN IMPORTANT DETAIL
+WHAT THE DATA SHOWS
 
-My email access still points at contact@plumbgas.services, so the Monday data export remains invisible to me. The detail I have since learned matters: reconnecting the email to your inbox will not help on its own, because that connection is only read when a session starts. So do this instead, and it works immediately:
+Your homepage has climbed from an average position of 28.7 to 19.6. That is into the top 20 and heading for page two, which is real movement in a week.
 
-In Gmail on jon@plumbgas.services, create a filter. Anything with "SEO Autopilot data" in the subject gets forwarded to contact@plumbgas.services. Two minutes, no restarting anything.
+Others improving: your accreditations page sits at 13, Leek at 11.8 and earned a click from 13 appearances, and "air source heat pump installers in staffordshire" has gone 34.6, then 25.3, now 23.3 since I changed that page's title.
 
-WHAT I CHANGED
+The standout: your "heat pump cost in Staffordshire" guide is at position 3.5. Page one. Only two people searched it, so it earns little today, but it proves your guides can rank, which makes the four articles waiting in your SEO tab worth publishing.
 
-Two edits that did not need the numbers, both about how your pages read to Google's AI answers and to anyone skimming. Both now open with the answer rather than a description.
+Leads held at 3 for a second week, from 355 sessions. Traffic keeps falling as the bots drain away, which is fine. Three leads from 355 real visitors beats none from 1800 fake ones.
 
-1. The grant page said the scheme takes £7,500 off for gas, oil or LPG. That is now incomplete, since off-grid oil and LPG homes get £9,000. The opening sentence now says both, which matters because that sentence is what gets quoted.
+NO CHANGES THIS WEEK
 
-2. The heat pump installation page opened with a list of what we do. It now opens with what it costs, from around £3,000 installed after the grant, which is the question everyone actually arrives with.
+Nothing needed doing. The pages drawing impressions already have accurate titles and positions are moving the right way on their own.
+
+ONE THING I FOUND
+
+Your instant estimate pages, /quote/heatpump and /quote/boiler, have no proper Google title, the same fault the booking page had until last week. They are in your sitemap, so Google is indexing pages whose title does not describe them. Quick fix, but I need your nod: creating files is outside what I may do on a Monday run.
 
 BACKLINK MOVES THIS WEEK
 
-1. Register on the Staffordshire Trader Register at traderregister.org.uk. It is backed by Trading Standards and gets you onto council-linked pages, which are hard for competitors to copy.
+1. Your Checkatrade profile has gone dormant and there appear to be two. Reactivate one, merge the other, add air source heat pumps as a category.
 
-2. Your merchant. Send whoever you deal with most:
-"Hi, do you ever feature customer businesses on your website or socials? We have launched PG Renewables doing heat pumps across Staffordshire and would be glad to be included. Happy to send install photos. https://www.plumbgasrenewables.services Thanks, Jon"
+2. NSCG Stafford College, plumbing and heating department:
+"Hello, I am a Gas Safe and MCS certified heating engineer in Stafford, running PlumbGas since 2003. I would be glad to give your students a free talk on real world heat pump installation and the £7,500 grant. Who is best to speak to? Jon Bryan, 07872 626573"
 
-Still worth doing whenever you get a spare hour: the link from plumbgas.services, and the articles waiting in the SEO tab, probably six by now.
+Still empty: the AI answers figure in the SEO tab.
