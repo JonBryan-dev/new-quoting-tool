@@ -50,9 +50,16 @@ export async function generateMetadata({
   const { town: slug } = await params;
   const town = getTownBySlug(slug);
   if (!town) return {};
+  // Both were overflowing and getting cut off in Google: every one of
+  // the 16 descriptions ran past 155 characters, and five titles past
+  // 60, the long town names worst of all. Uttoxeter now sits on page
+  // one, so a truncated snippet costs real clicks.
+  const baseTitle = `Air Source Heat Pumps ${town.name} | £7,500 Grant`;
+  const title = baseTitle.length <= 46 ? `${baseTitle} | Free Survey` : baseTitle;
+
   return {
-    title: `Air Source Heat Pumps ${town.name} | £7,500 Grant | Free Survey`,
-    description: `Air source heat pump installation in ${town.name} (${town.postcodes.join(", ")}). Free heat loss survey, £7,500 Boiler Upgrade Scheme grant handled for you. MCS accredited local engineers, book online.`,
+    title,
+    description: `Air source heat pump installation in ${town.name} (${town.postcodes.slice(0, 2).join(", ")}). Free heat loss survey, then a fixed price with the £7,500 grant taken off.`,
     alternates: { canonical: `/heat-pumps/${town.slug}` },
     openGraph: {
       title: `Air Source Heat Pumps in ${town.name}, Free Heat Loss Survey`,

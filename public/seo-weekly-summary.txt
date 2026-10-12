@@ -1,30 +1,28 @@
-Week of 2026-10-05
+Week of 2026-10-12
 
-Morning Jon. Everything is connected again, and the numbers are good this week.
+Morning Jon. Two big shifts this week, one of them unmistakable.
 
-WHAT THE DATA SHOWS
+BOILER SERVICING HAS TAKEN OVER
 
-Your homepage has climbed from an average position of 28.7 to 19.6. That is into the top 20 and heading for page two, which is real movement in a week.
+Your boiler repairs and servicing page appeared in Google 790 times this week, against 3 last week. It is now easily the busiest page on the site, more than double the homepage. It sits at position 32, so it earns little yet, but that is a lot of people looking for exactly what you do.
 
-Others improving: your accreditations page sits at 13, Leek at 11.8 and earned a click from 13 appearances, and "air source heat pump installers in staffordshire" has gone 34.6, then 25.3, now 23.3 since I changed that page's title.
+This is the third month running the numbers have said the same thing: locally, boiler work is where the demand is, heat pumps are where the growth is. Worth remembering when you decide where to spend your own time.
 
-The standout: your "heat pump cost in Staffordshire" guide is at position 3.5. Page one. Only two people searched it, so it earns little today, but it proves your guides can rank, which makes the four articles waiting in your SEO tab worth publishing.
+AND UTTOXETER IS ON PAGE ONE
 
-Leads held at 3 for a second week, from 355 sessions. Traffic keeps falling as the bots drain away, which is fine. Three leads from 355 real visitors beats none from 1800 fake ones.
+Your Uttoxeter heat pump page is at position 8.4 from 133 appearances. That is your first substantial page on page one. Leek is just behind at 10.9.
 
-NO CHANGES THIS WEEK
+Leads held at 3 for a third week, from 160 sessions. The bot traffic has almost entirely gone now. Three enquiries from 160 real visitors is close to 2 in every 100, which for a trade website is a good rate, not a poor one.
 
-Nothing needed doing. The pages drawing impressions already have accurate titles and positions are moving the right way on their own.
+WHAT I CHANGED
 
-ONE THING I FOUND
-
-Your instant estimate pages, /quote/heatpump and /quote/boiler, have no proper Google title, the same fault the booking page had until last week. They are in your sitemap, so Google is indexing pages whose title does not describe them. Quick fix, but I need your nod: creating files is outside what I may do on a Monday run.
+One fix, and it was overdue. Every one of your 16 town pages had a description too long for Google, so all 16 were being cut off mid sentence in the results. Five titles were too long as well. Both now fit. That matters most for Uttoxeter, since a truncated snippet on page one costs real clicks.
 
 BACKLINK MOVES THIS WEEK
 
-1. Your Checkatrade profile has gone dormant and there appear to be two. Reactivate one, merge the other, add air source heat pumps as a category.
+1. Given boiler work is pulling hardest, your dormant Checkatrade profile is the obvious one. Reactivate it and make sure boiler repairs and servicing are listed categories.
 
-2. NSCG Stafford College, plumbing and heating department:
-"Hello, I am a Gas Safe and MCS certified heating engineer in Stafford, running PlumbGas since 2003. I would be glad to give your students a free talk on real world heat pump installation and the £7,500 grant. Who is best to speak to? Jon Bryan, 07872 626573"
+2. Staffordshire Newsletter, business news desk:
+"Hello, I run PlumbGas Services in Stafford, a Gas Safe heating firm trading since 2003. Most local homeowners do not know the government now pays £7,500 towards a heat pump, or £9,000 off the gas grid. Happy to explain it for your readers. Jon Bryan, 07872 626573"
 
-Still empty: the AI answers figure in the SEO tab.
+Still waiting: the four articles in your SEO tab, and the AI answers figure.
