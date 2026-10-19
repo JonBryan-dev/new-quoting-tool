@@ -84,9 +84,10 @@ export default function BoilerServicingPage() {
             <span className="text-[#c4dd9b]">Stafford, Stone &amp; Staffordshire</span>
           </h1>
           <p className="text-lg text-blue-100 mb-6 max-w-2xl">
-            The same Gas Safe engineers who have looked after local boilers since
-            2003. Annual services, breakdowns and honest advice when a boiler is
-            past its best.
+            We service and repair all the major makes of gas boiler across
+            Stafford, Stone, Uttoxeter and the rest of Staffordshire, whether or
+            not we fitted it. Annual services, breakdowns, and honest advice when
+            a boiler is past its best, from Gas Safe engineers since 2003.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a

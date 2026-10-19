@@ -90,8 +90,10 @@ export default function HeatPumpServicingPage() {
             <span className="text-[#c4dd9b]">maintenance</span>
           </h1>
           <p className="text-lg text-blue-100 mb-6 max-w-2xl">
-            Keep your warranty valid, your efficiency high and your winter worry-free.
-            Annual servicing across Staffordshire for any brand, whoever installed it.
+            We service air source heat pumps of any brand across Staffordshire,
+            whoever installed them. An annual service keeps the manufacturer
+            warranty valid and catches the efficiency problems that quietly put
+            your running costs up.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a

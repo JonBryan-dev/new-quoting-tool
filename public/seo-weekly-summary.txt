@@ -1,28 +1,32 @@
-Week of 2026-10-12
+Week of 2026-10-19
 
-Morning Jon. Two big shifts this week, one of them unmistakable.
+Morning Jon. Quieter week on the surface, but three things worth knowing.
 
-BOILER SERVICING HAS TAKEN OVER
+FIRST CLICK FROM A LOCAL PAGE
 
-Your boiler repairs and servicing page appeared in Google 790 times this week, against 3 last week. It is now easily the busiest page on the site, more than double the homepage. It sits at position 32, so it earns little yet, but that is a lot of people looking for exactly what you do.
+Your air conditioning page for Stafford got its first click, at position 3. One visit, so nothing to celebrate yet, but the first proof that the town-by-town pages work.
 
-This is the third month running the numbers have said the same thing: locally, boiler work is where the demand is, heat pumps are where the growth is. Worth remembering when you decide where to spend your own time.
+Your booking page also earned its first ever click. That is the title fix from a fortnight ago working: it was being seen plenty and ignored, because the title in Google did not describe the page.
 
-AND UTTOXETER IS ON PAGE ONE
+LICHFIELD KEEPS CLIMBING
 
-Your Uttoxeter heat pump page is at position 8.4 from 133 appearances. That is your first substantial page on page one. Leek is just behind at 10.9.
+"air source heat pump lichfield" has moved 37, then 33, now 27. Fewer appearances than a month ago but a steadily better position, which is the right direction. Uttoxeter holds at 10.9 and Leek at 10.4.
 
-Leads held at 3 for a third week, from 160 sessions. The bot traffic has almost entirely gone now. Three enquiries from 160 real visitors is close to 2 in every 100, which for a trade website is a good rate, not a poor one.
+The quiet winners are the "near me" searches. Servicing near me sits at 5, engineer and installers near me both at 9. Barely any volume yet, but those are what people search when they are ready to pick up the phone, and you are on page one for all of them.
+
+Boiler servicing held at 756 appearances, still the busiest page on the site by a distance, still stuck at position 32.
+
+Leads held at 3 for a fourth week, from 181 sessions.
 
 WHAT I CHANGED
 
-One fix, and it was overdue. Every one of your 16 town pages had a description too long for Google, so all 16 were being cut off mid sentence in the results. Five titles were too long as well. Both now fit. That matters most for Uttoxeter, since a truncated snippet on page one costs real clicks.
+Both servicing pages opened by saying who we are. They now open by answering what was actually asked: we service all the major makes, anywhere in Staffordshire, whether or not we fitted it. That first sentence is what Google's AI answers quote, and it matters most on the boiler page given how many are seeing it.
 
 BACKLINK MOVES THIS WEEK
 
-1. Given boiler work is pulling hardest, your dormant Checkatrade profile is the obvious one. Reactivate it and make sure boiler repairs and servicing are listed categories.
+1. Renewable Heating Hub forum. Free to join, homeowners ask installer questions daily, and your profile carries a link. Answer a few honestly and it builds on its own.
 
-2. Staffordshire Newsletter, business news desk:
-"Hello, I run PlumbGas Services in Stafford, a Gas Safe heating firm trading since 2003. Most local homeowners do not know the government now pays £7,500 towards a heat pump, or £9,000 off the gas grid. Happy to explain it for your readers. Jon Bryan, 07872 626573"
+2. Your main merchant:
+"Hi, do you feature customer businesses on your site or socials? We run PG Renewables doing heat pumps across Staffordshire and would be glad to be included. Happy to send install photos. https://www.plumbgasrenewables.services Thanks, Jon"
 
 Still waiting: the four articles in your SEO tab, and the AI answers figure.
