@@ -1,32 +1,30 @@
-Week of 2026-10-19
+Week of 2026-10-26
 
-Morning Jon. Quieter week on the surface, but three things worth knowing.
+Morning Jon. Best week the site has had, and one genuine first.
 
-FIRST CLICK FROM A LOCAL PAGE
+OUR FIRST NUMBER ONE
 
-Your air conditioning page for Stafford got its first click, at position 3. One visit, so nothing to celebrate yet, but the first proof that the town-by-town pages work.
+The heat pump cost guide now ranks at position 1 for what it was written for. Tiny volume so far, two appearances and one click, but it is the first page on the site to reach the top spot, and cost guides tend to grow.
 
-Your booking page also earned its first ever click. That is the title fix from a fortnight ago working: it was being seen plenty and ignored, because the title in Google did not describe the page.
+Eccleshall sits at 2.4 too. Fourteen clicks this week, more than any week so far, and your booking page took two of them.
 
-LICHFIELD KEEPS CLIMBING
+THE BIG ONE STILL STUCK
 
-"air source heat pump lichfield" has moved 37, then 33, now 27. Fewer appearances than a month ago but a steadily better position, which is the right direction. Uttoxeter holds at 10.9 and Leek at 10.4.
+Boiler servicing was seen 987 times, up again from 790, still at position 32. It is by far your busiest page and the furthest from paying off, so that is where I keep aiming.
 
-The quiet winners are the "near me" searches. Servicing near me sits at 5, engineer and installers near me both at 9. Barely any volume yet, but those are what people search when they are ready to pick up the phone, and you are on page one for all of them.
+Lichfield holds around 28 after 82 appearances. The Black Country searches we never wanted are fading on their own, which is fine, they were never going to call.
 
-Boiler servicing held at 756 appearances, still the busiest page on the site by a distance, still stuck at position 32.
-
-Leads held at 3 for a fourth week, from 181 sessions.
+Leads came in at 1 this week from 166 sessions, after four weeks at 3. At these small numbers that is normal wobble rather than a trend, so I would not read anything into it yet.
 
 WHAT I CHANGED
 
-Both servicing pages opened by saying who we are. They now open by answering what was actually asked: we service all the major makes, anywhere in Staffordshire, whether or not we fitted it. That first sentence is what Google's AI answers quote, and it matters most on the boiler page given how many are seeing it.
+Two new questions on the boiler servicing page: how long a service takes, and what happens if a boiler fails its safety check. The second one matters most, it is the question people are nervous about, and answering it plainly is what Google's AI answers quote. I left last week's rewrite alone so I can still measure it properly.
 
 BACKLINK MOVES THIS WEEK
 
-1. Renewable Heating Hub forum. Free to join, homeowners ask installer questions daily, and your profile carries a link. Answer a few honestly and it builds on its own.
+1. Eccleshall parish newsletter. You already rank 2.4 there, so local coverage compounds:
+"Hi, I run PG Renewables, a Staffordshire heat pump installer. Could I write a short piece for the newsletter on the £7,500 grant and what it means for Eccleshall homes? No sales pitch, just the facts. Jon, https://www.plumbgasrenewables.services"
 
-2. Your main merchant:
-"Hi, do you feature customer businesses on your site or socials? We run PG Renewables doing heat pumps across Staffordshire and would be glad to be included. Happy to send install photos. https://www.plumbgasrenewables.services Thanks, Jon"
+2. Your boiler manufacturer's find an installer directory, Worcester Bosch or Vaillant. Free to join and a strong link from a site Google trusts.
 
-Still waiting: the four articles in your SEO tab, and the AI answers figure.
+Still waiting on you: the four articles in your SEO tab, and the AI answers figure.

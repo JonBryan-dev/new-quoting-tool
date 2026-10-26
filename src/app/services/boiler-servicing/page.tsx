@@ -33,6 +33,14 @@ const FAQS = [
     a: "Yes, we repair all the major makes: Worcester Bosch, Vaillant, Ideal, Baxi, Navien and more. Call us with the make, model and any error code showing and we will tell you honestly whether it is worth repairing, and what your options are if it is not.",
   },
   {
+    q: "How long does a boiler service take?",
+    a: "Most services take 45 minutes to an hour on an accessible boiler. It runs longer if the manufacturer requires a full strip-down at that interval, or if we find something worth investigating properly while we are there. If we think your visit will take longer than usual, we will say so before we start rather than after.",
+  },
+  {
+    q: "What happens if my boiler fails its safety check?",
+    a: "That depends what we find. Anything that makes the boiler unsafe is classified under the gas industry's unsafe situations procedure, either At Risk or Immediately Dangerous. With your permission we turn the appliance off, label it, and leave you a warning notice setting out what is wrong and what it needs. Most of the time the fix is a part, and we quote that before doing any work. We do not condemn boilers to sell new ones, and if replacing it genuinely is the sensible route we will show you the cost both ways and let you decide.",
+  },
+  {
     q: "My boiler is old. Should I service it or replace it?",
     a: "A fair question, and the answer depends on age, condition and repair history. If a boiler is past its economic life we will say so, and you have two routes: a new boiler quoted online in about 90 seconds, or, since the £7,500 grant now brings a heat pump to around the same price as a boiler, a free heat loss survey to compare both properly before you decide.",
   },
