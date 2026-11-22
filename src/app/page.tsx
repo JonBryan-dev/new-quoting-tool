@@ -145,6 +145,13 @@ export default function HomePage() {
                 See What You&apos;d Pay
                 <ArrowRight className="w-5 h-5" />
               </Link>
+              <p className="text-sm text-gray-500 mt-4">
+                Or read our{" "}
+                <Link href="/guides/heat-pump-cost-staffordshire-2026" className="text-[#4e7522] underline">
+                  2026 Staffordshire heat pump cost guide
+                </Link>{" "}
+                for what installations really cost around here.
+              </p>
             </div>
             <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl border border-green-100 p-8">
               <p className="text-sm font-medium text-gray-500 mb-6">Typical 3-bed semi in Stafford</p>

@@ -1,30 +1,45 @@
-Week of 2026-10-26
+Week of 2026-11-22
 
-Morning Jon. Best week the site has had, and one genuine first.
+Morning Jon. Own up first: the automation that writes this email failed three
+Mondays running, so the last three you got were a repeat of the 26 October
+one. No data was lost, but no site changes went live either. They have all
+gone live today. Figures are the week to 16 November.
 
-OUR FIRST NUMBER ONE
+THE BOILER SIDE HAS WOKEN UP
 
-The heat pump cost guide now ranks at position 1 for what it was written for. Tiny volume so far, two appearances and one click, but it is the first page on the site to reach the top spot, and cost guides tend to grow.
+A boiler cluster has appeared that was not there a month ago. "Boiler
+installation in Stafford" was seen 50 times, "boiler engineer Uttoxeter" 53,
+Cannock 15, Market Drayton 11. That page is now at 135
+appearances and took its first click, at position 42, which is normal for a
+page Google has only just started showing.
 
-Eccleshall sits at 2.4 too. Fourteen clicks this week, more than any week so far, and your booking page took two of them.
+Cheadle has climbed to 11 and Stoke on Trent to 15. Leek holds at 7 with 3
+clicks, still your best page. Fifteen clicks in total, 136 sessions, 2 leads.
 
-THE BIG ONE STILL STUCK
+The "near me" searches are very strong now: "air source heat pump installers
+near me" and "best heat pump installers near me" both sit at position 1.
 
-Boiler servicing was seen 987 times, up again from 790, still at position 32. It is by far your busiest page and the furthest from paying off, so that is where I keep aiming.
+WHAT I CHANGED TODAY
 
-Lichfield holds around 28 after 82 appearances. The Black Country searches we never wanted are fading on their own, which is fine, they were never going to call.
-
-Leads came in at 1 this week from 166 sessions, after four weeks at 3. At these small numbers that is normal wobble rather than a trend, so I would not read anything into it yet.
-
-WHAT I CHANGED
-
-Two new questions on the boiler servicing page: how long a service takes, and what happens if a boiler fails its safety check. The second one matters most, it is the question people are nervous about, and answering it plainly is what Google's AI answers quote. I left last week's rewrite alone so I can still measure it properly.
+Five edits. The boiler installation page now names Stafford, Stone, Uttoxeter,
+Cannock and Market Drayton in its title, first sentence and schema, because
+those are the words people type and the page mentioned none of them. The other
+three put links to your 2026 cost guide on the home page, the grant page and
+all sixteen town pages. It reached number one in Google and almost nothing on
+the site linked to it.
 
 BACKLINK MOVES THIS WEEK
 
-1. Eccleshall parish newsletter. You already rank 2.4 there, so local coverage compounds:
-"Hi, I run PG Renewables, a Staffordshire heat pump installer. Could I write a short piece for the newsletter on the £7,500 grant and what it means for Eccleshall homes? No sales pitch, just the facts. Jon, https://www.plumbgasrenewables.services"
+1. Uttoxeter is sending real boiler searches. Try its community Facebook group
+or local paper:
+"Hi, I'm Jon from PG Renewables. We fit boilers and heat pumps around
+Uttoxeter. Would you take a short piece on the £7,500 grant and what it means
+for local homes? No sales pitch. https://www.plumbgasrenewables.services"
 
-2. Your boiler manufacturer's find an installer directory, Worcester Bosch or Vaillant. Free to join and a strong link from a site Google trusts.
+2. Ask your last three customers for a Google review. Strongest local signal
+there is, and free.
 
-Still waiting on you: the four articles in your SEO tab, and the AI answers figure.
+Seven article drafts wait in your SEO tab, oldest from August.
+
+Still no AI answers figure: Search Console, Performance, Generative AI report,
+last 28 days.

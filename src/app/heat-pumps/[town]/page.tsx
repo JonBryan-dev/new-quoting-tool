@@ -197,6 +197,13 @@ export default async function TownPage({
               </Link>{" "}
               already applied. No guesswork, no pressure, no obligation.
             </p>
+            <p className="text-gray-600 mb-6">
+              If you would rather see the numbers before booking anything, our{" "}
+              <Link href="/guides/heat-pump-cost-staffordshire-2026" className="text-[#4e7522] font-medium underline">
+                2026 Staffordshire heat pump cost guide
+              </Link>{" "}
+              sets out what installations actually cost around here, grant included.
+            </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {[

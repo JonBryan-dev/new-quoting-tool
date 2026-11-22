@@ -7,9 +7,9 @@ import {
 const SITE_URL = "https://www.plumbgasrenewables.services";
 
 export const metadata: Metadata = {
-  title: "New Boiler Installation | Stafford & Staffordshire",
+  title: "New Boiler Installation | Stafford, Stone & Uttoxeter",
   description:
-    "Fixed-price gas boiler installation across Stafford, Stone and Staffordshire from Gas Safe engineers trading since 2003. Get your price online in about 90 seconds, no pushy sales visit.",
+    "Fixed-price gas boiler installation in Stafford, Stone, Uttoxeter and across Staffordshire from Gas Safe engineers since 2003. Price online in 90 seconds.",
   alternates: { canonical: "/services/boiler-installation" },
   openGraph: {
     title: "New Boiler Installation in Staffordshire",
@@ -52,7 +52,7 @@ export default function BoilerInstallationPage() {
     "@type": "Service",
     name: "Gas Boiler Installation",
     serviceType: "Boiler installation and replacement",
-    areaServed: ["Stafford", "Stone", "Staffordshire"],
+    areaServed: ["Stafford", "Stone", "Uttoxeter", "Cannock", "Market Drayton", "Staffordshire"],
     provider: {
       "@type": "HVACBusiness",
       name: "PlumbGas Renewables",
@@ -92,9 +92,11 @@ export default function BoilerInstallationPage() {
             <span className="text-[#c4dd9b]">Stafford &amp; Staffordshire</span>
           </h1>
           <p className="text-lg text-blue-100 mb-6 max-w-2xl">
-            Fixed price, fitted properly, by Gas Safe engineers who have been
-            heating Staffordshire homes since 2003. Get your price online in
-            about 90 seconds, with no salesman sat in your living room.
+            We fit new gas boilers across Stafford, Stone, Uttoxeter, Cannock,
+            Market Drayton and the rest of Staffordshire, at a fixed price
+            agreed before we start. Gas Safe engineers who have been heating
+            local homes since 2003. Get your price online in about 90 seconds,
+            with no salesman sat in your living room.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link

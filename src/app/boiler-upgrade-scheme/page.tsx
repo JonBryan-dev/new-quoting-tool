@@ -87,6 +87,13 @@ export default function BoilerUpgradeSchemePage() {
             it works for Staffordshire homeowners, and how we handle every bit of
             the paperwork for you.
           </p>
+          <p className="text-blue-100 mb-6 max-w-2xl">
+            Want the figures first? Our{" "}
+            <Link href="/guides/heat-pump-cost-staffordshire-2026" className="text-[#c4dd9b] font-medium underline">
+              2026 Staffordshire cost guide
+            </Link>{" "}
+            shows what a heat pump costs here once the grant comes off.
+          </p>
           <Link
             href="/book"
             className="inline-flex items-center justify-center gap-2 bg-[#83b54b] hover:bg-[#74a43f] text-[#213311] px-7 py-3.5 rounded-xl font-semibold transition-colors"
