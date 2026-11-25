@@ -1,45 +1,46 @@
-Week of 2026-11-22
+Week of 2026-11-25
 
-Morning Jon. Own up first: the automation that writes this email failed three
-Mondays running, so the last three you got were a repeat of the 26 October
-one. No data was lost, but no site changes went live either. They have all
-gone live today. Figures are the week to 16 November.
+Morning Jon. Figures are the week to 23 November.
 
-THE BOILER SIDE HAS WOKEN UP
+BOILER WORK IS THE STORY NOW
 
-A boiler cluster has appeared that was not there a month ago. "Boiler
-installation in Stafford" was seen 50 times, "boiler engineer Uttoxeter" 53,
-Cannock 15, Market Drayton 11. That page is now at 135
-appearances and took its first click, at position 42, which is normal for a
-page Google has only just started showing.
+Your boiler installation page went from 135 appearances to 212 in a week, at
+position 43. Shown a lot, clicked rarely, which is what a page looks like when
+Google trusts the topic but not yet the page. "Boiler installation in
+Stafford" was seen 52 times, "boiler engineer Uttoxeter" 54, Cannock 21,
+Market Drayton 11.
 
-Cheadle has climbed to 11 and Stoke on Trent to 15. Leek holds at 7 with 3
-clicks, still your best page. Fifteen clicks in total, 136 sessions, 2 leads.
+My changes to that page went live on Sunday, after this data was collected, so
+next Monday is the first honest read on whether they worked.
 
-The "near me" searches are very strong now: "air source heat pump installers
-near me" and "best heat pump installers near me" both sit at position 1.
+Lichfield has turned a corner: 106 appearances, position 15, first click. The
+home page took 4 clicks and has moved from 28 to 24 to 21 over three weeks.
+Thirteen clicks in total, 121 sessions, 2 leads.
 
-WHAT I CHANGED TODAY
+Sessions slid from 166 to 121 over five weeks while leads held at 2 or 3. That
+is junk traffic draining away, not real people leaving, so it is a good sign
+even though the number looks worse.
 
-Five edits. The boiler installation page now names Stafford, Stone, Uttoxeter,
-Cannock and Market Drayton in its title, first sentence and schema, because
-those are the words people type and the page mentioned none of them. The other
-three put links to your 2026 cost guide on the home page, the grant page and
-all sixteen town pages. It reached number one in Google and almost nothing on
-the site linked to it.
+NO CHANGES THIS WEEK
+
+Deliberately. Five edits went live Sunday, and changing the same pages again
+now means never knowing which change did what. One clean week first.
 
 BACKLINK MOVES THIS WEEK
 
-1. Uttoxeter is sending real boiler searches. Try its community Facebook group
-or local paper:
-"Hi, I'm Jon from PG Renewables. We fit boilers and heat pumps around
-Uttoxeter. Would you take a short piece on the £7,500 grant and what it means
-for local homes? No sales pitch. https://www.plumbgasrenewables.services"
+1. Worth half an hour: check where your existing listings point. MCS, Gas
+Safe, Heat Geek, any merchant or manufacturer profile. If one links to
+plumbgas.services instead of the renewables site, you are handing a strong
+link to the wrong address.
 
-2. Ask your last three customers for a Google review. Strongest local signal
-there is, and free.
+2. Cannock sees your boiler page 21 times a week at position 90: demand, no
+foothold. Try a Cannock community group or the district business directory:
+"Hi, I'm Jon from PG Renewables. We fit boilers and heat pumps across Cannock
+and Staffordshire. Could I be listed, or write a short piece on the £7,500
+grant for local homes? https://www.plumbgasrenewables.services"
 
-Seven article drafts wait in your SEO tab, oldest from August.
+Seven article drafts still wait in your SEO tab. Worth knowing: the newest is
+28 October, so three Wednesdays have produced nothing. I will look into why.
 
 Still no AI answers figure: Search Console, Performance, Generative AI report,
 last 28 days.
