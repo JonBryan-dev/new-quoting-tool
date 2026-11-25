@@ -14,7 +14,7 @@ first honest read on whether they worked.
 
 Lichfield turned a corner: 106 appearances, position 15, first click. The home
 page took 4 clicks and moved from 28 to 24 to 21 in three weeks. Thirteen
-clicks in all, 121 sessions, 2 leads.
+clicks, 121 sessions, 2 leads.
 
 Sessions slid from 166 to 121 over five weeks while leads held at 2 or 3, so
 that is junk traffic draining, not real people leaving.
