@@ -1,46 +1,46 @@
 Week of 2026-11-25
 
-Morning Jon. Figures are the week to 23 November.
+Morning Jon. Week to 23 November.
 
-BOILER WORK IS THE STORY NOW
+BOILER WORK IS THE STORY
 
 Your boiler installation page went from 135 appearances to 212 in a week, at
-position 43. Shown a lot, clicked rarely, which is what a page looks like when
-Google trusts the topic but not yet the page. "Boiler installation in
-Stafford" was seen 52 times, "boiler engineer Uttoxeter" 54, Cannock 21,
-Market Drayton 11.
+position 43. Shown a lot, clicked rarely, which is how a page looks when
+Google trusts the topic but not the page. "Boiler installation in Stafford"
+was seen 52 times, "boiler engineer Uttoxeter" 54, Cannock 21.
 
-My changes to that page went live on Sunday, after this data was collected, so
-next Monday is the first honest read on whether they worked.
+My changes to it went live Sunday, after this data, so next Monday is the
+first honest read on whether they worked.
 
-Lichfield has turned a corner: 106 appearances, position 15, first click. The
-home page took 4 clicks and has moved from 28 to 24 to 21 over three weeks.
-Thirteen clicks in total, 121 sessions, 2 leads.
+Lichfield turned a corner: 106 appearances, position 15, first click. The home
+page took 4 clicks and moved from 28 to 24 to 21 in three weeks. Thirteen
+clicks in all, 121 sessions, 2 leads.
 
-Sessions slid from 166 to 121 over five weeks while leads held at 2 or 3. That
-is junk traffic draining away, not real people leaving, so it is a good sign
-even though the number looks worse.
+Sessions slid from 166 to 121 over five weeks while leads held at 2 or 3, so
+that is junk traffic draining, not real people leaving.
 
 NO CHANGES THIS WEEK
 
-Deliberately. Five edits went live Sunday, and changing the same pages again
-now means never knowing which change did what. One clean week first.
+Deliberately. Five edits went live Sunday, and touching those pages again now
+means never knowing which change did what. One clean week first.
 
 BACKLINK MOVES THIS WEEK
 
-1. Worth half an hour: check where your existing listings point. MCS, Gas
-Safe, Heat Geek, any merchant or manufacturer profile. If one links to
-plumbgas.services instead of the renewables site, you are handing a strong
-link to the wrong address.
+1. Worth half an hour: check where your listings point. MCS, Gas Safe, Heat
+Geek, any merchant profile. If one points at plumbgas.services instead of this
+site, you are handing a strong link to the wrong address.
 
-2. Cannock sees your boiler page 21 times a week at position 90: demand, no
-foothold. Try a Cannock community group or the district business directory:
-"Hi, I'm Jon from PG Renewables. We fit boilers and heat pumps across Cannock
-and Staffordshire. Could I be listed, or write a short piece on the £7,500
-grant for local homes? https://www.plumbgasrenewables.services"
+2. Cannock sees that page 21 times a week at position 90: demand, no foothold.
+Try its community groups or the district business directory:
+"Hi, I'm Jon from PG Renewables. We fit boilers and heat pumps across Cannock.
+Could I be listed, or write a short piece on the £7,500 grant for local homes?
+https://www.plumbgasrenewables.services"
 
-Seven article drafts still wait in your SEO tab. Worth knowing: the newest is
-28 October, so three Wednesdays have produced nothing. I will look into why.
+Seven drafts still wait in your SEO tab, none new since 28 October. I found
+why: the Wednesday job that writes them is cut off at 60 seconds, not long
+enough to write an article. It timed out again this morning. The fix means
+changing a file I am not allowed to touch on these automatic runs, so say the
+word and I will do it as a normal job.
 
-Still no AI answers figure: Search Console, Performance, Generative AI report,
-last 28 days.
+Still no AI answers figure: Search Console, Performance, Generative AI
+report.
